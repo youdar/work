@@ -1,0 +1,314 @@
+
+--------------------------------------------------------------------------------
+STARTING NEW DEBUG LOGGING SESSION
+--------------------------------------------------------------------------------
+wingdbg - 2013/09/19 15:51:31 - 'Setting stdoutencoding=UTF-8' 
+wingdbg - 2013/09/19 15:51:31 - 'Setting stdinencoding=UTF-8' 
+wingdbg - 2013/09/19 15:51:31 - "sys.path=['/net/chevy/raid1/youval/Work_chevy/phenix_sources/phaser', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/tntbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/phenix', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/reel', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/elbow', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/PyQuante', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/docutils', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/boost_adaptbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/libtbx/pythonpath', '/net/chevy/raid1/youval/Work_chevy/phenix_build/lib', '/net/chevy/raid1/youval/Work_chevy/phenix_build', '/net/cci-filer2/raid1/home/youval/Work', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python27.zip', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/plat-linux2', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-tk', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-old', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-dynload', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/PIL', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/wx-2.8-gtk2-ansi']" 
+wingdbg - 2013/09/19 15:51:31 - 'sys.argv=[]' 
+wingdbg - 2013/09/19 15:51:31 - 'Network peer is ' '127.0.0.1' 'port' 59731 
+wingdbg - 2013/09/19 15:51:31 - 'Attach port = ' 0 
+wingdbg - 2013/09/19 15:51:31 - 'Initial stop = ' 0 
+wingdbg - 2013/09/19 15:51:31 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 15:51:31 - 'Bound attach listener to port' 49659 
+wingdbg - 2013/09/19 15:51:31 - u'wingdb.py: Running /net/cci-filer2/raid1/home/youval/Work/work/t3.py' 
+wingdbg - 2013/09/19 15:51:31 - '******************** RUN ************************' 
+wingdbg - 2013/09/19 15:51:31 - 'ABOUT TO INIT' 
+wingdbg - 2013/09/19 15:51:31 - 'SET UP C CORE' 
+wingdbg - 2013/09/19 15:51:31 - 'RESET' 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'abstract' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'constants' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'dbgserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'dbgutils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module '_extensions' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'extregistry' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'findmodules' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'netserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.py'" 
+wingdbg - 2013/09/19 15:51:31 - 'Registering internal module: ' <module 'channel' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module 'dbginspect' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module 'py2utils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_django' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_matplotlib' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_wxhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_wx25hooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_gtkhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_zopehooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '_tkinterhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'setting __fClient to' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 15:51:32 - 'RESET' 
+wingdbg - 2013/09/19 15:51:32 - 'Registering internal module: ' <module '__main__' from '/usr/local/lib/wingide4.1/bin/wingdb.py'> '; ' "'/usr/local/lib/wingide4.1/bin/wingdb.py'" 
+wingdbg - 2013/09/19 15:51:32 - 'Connecting to client...' 
+wingdbg - 2013/09/19 15:51:32 - 'Connected to client' 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x11004' None 
+wingdbg - 2013/09/19 15:51:32 - 'netserver sending back' '0x1016' ('127.0.0.1', 49659, 10801, 't3.py', 'Kq3R0sVsrxY2MhK9', 15, 1, 34014192) 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x30004' (1, [], [], [(u'/net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v1_loop_over_atoms.py', 18, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/read_pdb.py', 30, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/testing/remark3_min_f_over_sigma/tst_my.py', 19, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/testing/tst_idealized_aa.py', 29, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/Test_reconstruction.py', 141, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/test.py', 47, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/zz2.py', 89, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 232, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 65, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 58, 0, None, 1, 0), (u'/net/cci/youval/Work/work/t2.py', 20, 0, None, 1, 0), (u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/pdb/multimer_reconstruction.py', 89, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v0_getting_started.py', 12, 0, None, 1, 0)]) 
+wingdbg - 2013/09/19 15:51:32 - 'SERVER SIDE UPDATE BREAKS' [] 
+wingdbg - 2013/09/19 15:51:32 - 'SERVER SIDE SET BREAKS' [(u'/net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v1_loop_over_atoms.py', 18, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/read_pdb.py', 30, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/testing/remark3_min_f_over_sigma/tst_my.py', 19, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/testing/tst_idealized_aa.py', 29, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/Test_reconstruction.py', 141, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/test.py', 47, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/work/zz2.py', 89, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 232, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 65, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py', 58, 0, None, 1, 0), (u'/net/cci/youval/Work/work/t2.py', 20, 0, None, 1, 0), (u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/pdb/multimer_reconstruction.py', 89, 0, None, 1, 0), (u'/net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v0_getting_started.py', 12, 0, None, 1, 0)] 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 18 in /net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v1_loop_over_atoms.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 30 in /net/cci-filer2/raid1/home/youval/Work/read_pdb.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 19 in /net/cci-filer2/raid1/home/youval/Work/testing/remark3_min_f_over_sigma/tst_my.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 29 in /net/cci-filer2/raid1/home/youval/Work/testing/tst_idealized_aa.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 141 in /net/cci-filer2/raid1/home/youval/Work/work/Test_reconstruction.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 47 in /net/cci-filer2/raid1/home/youval/Work/work/test.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 89 in /net/cci-filer2/raid1/home/youval/Work/work/zz2.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 232 in /net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 65 in /net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 58 in /net/cci-filer2/raid1/home/youval/Work/multimer_reconstruction.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 20 in /net/cci/youval/Work/work/t2.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 89 in /net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/pdb/multimer_reconstruction.py' 
+wingdbg - 2013/09/19 15:51:32 - 'setting BP at 12 in /net/cci-filer2/raid1/home/youval/Work/examples/pdb_truncate_to_ala/v0_getting_started.py' 
+wingdbg - 2013/09/19 15:51:32 - 'netserver sending back' '0x5' (1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x12003' None 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x12004' ({'debug-all-threads': True, 'use-stdin-wrapper': 1, 'allow-dynamic-introspection': False, 'resolve-properties': False, 'always-stop-exceptions': ['AssertionError'], 'sub-languages': True, 'use-members-attrib': 1, 'stop-timeout': 3.0, 'matplotlib-event-loop': True, 'never-stop-exceptions': ['SystemExit', 'GeneratorExit']},) 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x12001' (5,) 
+wingdbg - 2013/09/19 15:51:32 - 'Set exception mode' 5 
+wingdbg - 2013/09/19 15:51:32 - 'Set sys.excepthook' <bound method CWhenPrintExceptionSupport.__ExceptHook of <dbgutils.CWhenPrintExceptionSupport instance at 0xcc9fc8>> 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x12005' (('function', 'builtin_function_or_method', 'class', 'classobj', 'instance method', 'type', 'module', 'ufunc', 'wrapper_descriptor', 'method_descriptor', 'member_descriptor'), (), ('GdkColormap', 'IOBTree', 'JPackage')) 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x12006' (65, 2000, 64000) 
+wingdbg - 2013/09/19 15:51:32 - 'netserver executing' '0x11002' None 
+wingdbg - 2013/09/19 15:51:32 - 'Starting run' '/net/cci-filer2/raid1/home/youval/Work/work/t3.py' [] 
+wingdbg - 2013/09/19 15:51:32 - 'RESET' 
+wingdbg - 2013/09/19 15:51:32 - 'Starting debug with file' '/net/cci-filer2/raid1/home/youval/Work/work/t3.py' 
+wingdbg - 2013/09/19 15:51:32 - '__RunFileInMain' 
+wingdbg - 2013/09/19 15:51:32 - '__CheckFloatingPointMode' 
+wingdbg - 2013/09/19 15:51:32 - 'RESET' 
+wingdbg - 2013/09/19 15:51:32 - '_CB_DebugThread called with thread_id =' 46912496332944 
+wingdbg - 2013/09/19 15:51:32 - '_CB_DebugThread returning' 1 
+wingdbg - 2013/09/19 15:51:32 - 'Reading /net/cci-filer2/raid1/home/youval/Work/work/t3.py' 
+wingdbg - 2013/09/19 15:51:32 - 'Compiling /net/cci-filer2/raid1/home/youval/Work/work/t3.py' 
+wingdbg - 2013/09/19 15:51:32 - 'Executing /net/cci-filer2/raid1/home/youval/Work/work/t3.py' 
+wingdbg - 2013/09/19 15:51:33 - 'netserver FORK DETECTED' 
+wingdbg - 2013/09/19 15:51:33 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 15:51:33 - 'STOPPING DEBUG' 
+wingdbg - 2013/09/19 15:51:33 - 'RESET' 
+wingdbg - 2013/09/19 15:51:34 - 'USER EXCEPTION' 
+wingdbg - 2013/09/19 15:51:34 - 'AssertionError:' '' 
+wingdbg - 2013/09/19 15:51:34 - 'Traceback:' 
+wingdbg - 2013/09/19 15:51:34 - '  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/no_merge_original_index.py", line 34, in __init__\n    assert line[5] == " "' 
+wingdbg - 2013/09/19 15:51:34 - '_BlockUntilReadyToRun: <frame object at 0x204f2f0>' 
+wingdbg - 2013/09/19 15:51:34 - '  filename = /net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/no_merge_original_index.py, lineno = 34' 
+wingdbg - 2013/09/19 15:51:34 - 'USER EXCEPTION IN BLOCKUNTILREADYTORUN' 
+wingdbg - 2013/09/19 15:51:34 - 'SENDING PROGRAM STOPPED ON EXCEPTION' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 15:51:34 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2013/09/19 15:51:34 - 'QUIT=FALSE' 
+wingdbg - 2013/09/19 15:51:34 - 'THREADS=' [(8073376, u'MainThread', 0)] 
+wingdbg - 2013/09/19 15:51:34 - 'CURRENT THREAD=' 8073376 
+wingdbg - 2013/09/19 15:51:34 - 'STACK =' [((u'/net/cci-filer2/raid1/home/youval/Work/work/t3.py', 9, u'    cs = crystal_symmetry_from_any.extract_from(pdb_file_name)\n', u'<module>', []), 9), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/crystal_symmetry_from_any.py', 76, u'    try: return fmt.extract_from(file_name)\n', u'extract_from', [u'file_name', u'fmt']), 76), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/crystal_symmetry_from_hkl.py', 18, u'  return extract_from_no_merge_original_index(file_name)\n', u'extract_from', [u'file_name']), 18), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/crystal_symmetry_from_hkl.py', 10, u'  scalepack_file = no_merge_original_index.reader(file_name, header_only=True)\n', u'extract_from_no_merge_original_index', [u'file_name', u'scalepack_file']), 10), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/no_merge_original_index.py', 34, u'    assert line[5] == " "\n', u'__init__', [u'self', u'file_name', u'header_only', u'f', u'line', u'n_sym_ops_from_file', u'i', u'j', u'r', u't', u'all_arrays']), 34)] 
+wingdbg - 2013/09/19 15:51:34 - 'FRAMEIDX' 4 
+wingdbg - 2013/09/19 15:51:34 - 'Packing' 1 [(8073376, u'MainThread', 0)] 8073376 [((u'/net/cci-filer2/raid1/home/youval/Work/work/t3.py', 9, u'    cs = crystal_symmetry_from_any.extract_from(pdb_file_name)\n', u'<module>', []), 9), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/crystal_symmetry_from_any.py', 76, u'    try: return fmt.extract_from(file_name)\n', u'extract_from', [u'file_name', u'fmt']), 76), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/crystal_symmetry_from_hkl.py', 18, u'  return extract_from_no_merge_original_index(file_name)\n', u'extract_from', [u'file_name']), 18), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/crystal_symmetry_from_hkl.py', 10, u'  scalepack_file = no_merge_original_index.reader(file_name, header_only=True)\n', u'extract_from_no_merge_original_index', [u'file_name', u'scalepack_file']), 10), ((u'/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/iotbx/scalepack/no_merge_original_index.py', 34, u'    assert line[5] == " "\n', u'__init__', [u'self', u'file_name', u'header_only', u'f', u'line', u'n_sym_ops_from_file', u'i', u'j', u'r', u't', u'all_arrays']), 34)] 4 0 u'AssertionError: ' [] [] 
+wingdbg - 2013/09/19 15:51:34 - 'Sending packet' 
+wingdbg - 2013/09/19 15:51:34 - 'Exiting ProgramStopped' 
+
+--------------------------------------------------------------------------------
+STARTING NEW DEBUG LOGGING SESSION
+--------------------------------------------------------------------------------
+wingdbg - 2013/09/19 15:54:07 - 'Setting stdoutencoding=UTF-8' 
+wingdbg - 2013/09/19 15:54:07 - 'Setting stdinencoding=UTF-8' 
+wingdbg - 2013/09/19 15:54:07 - "sys.path=['/net/chevy/raid1/youval/Work_chevy/phenix_sources/phaser', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/tntbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/phenix', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/reel', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/elbow', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/PyQuante', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/docutils', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/boost_adaptbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/libtbx/pythonpath', '/net/chevy/raid1/youval/Work_chevy/phenix_build/lib', '/net/chevy/raid1/youval/Work_chevy/phenix_build', '/net/cci-filer2/raid1/home/youval/Work', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python27.zip', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/plat-linux2', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-tk', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-old', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-dynload', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/PIL', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/wx-2.8-gtk2-ansi']" 
+wingdbg - 2013/09/19 15:54:07 - 'sys.argv=[]' 
+wingdbg - 2013/09/19 15:54:07 - 'Network peer is ' '127.0.0.1' 'port' 53142 
+wingdbg - 2013/09/19 15:54:07 - 'Attach port = ' -1 
+wingdbg - 2013/09/19 15:54:07 - 'Initial stop = ' 1 
+wingdbg - 2013/09/19 15:54:07 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 15:54:07 - u'wingdb.py: Running /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 15:54:07 - '******************** RUN ************************' 
+wingdbg - 2013/09/19 15:54:07 - 'ABOUT TO INIT' 
+wingdbg - 2013/09/19 15:54:07 - 'SET UP C CORE' 
+wingdbg - 2013/09/19 15:54:07 - 'RESET' 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'abstract' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'constants' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'dbgserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'dbgutils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_extensions' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'extregistry' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'findmodules' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'netserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'channel' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'dbginspect' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module 'py2utils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_django' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_matplotlib' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_wxhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_wx25hooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_gtkhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_zopehooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '_tkinterhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'setting __fClient to' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 15:54:07 - 'RESET' 
+wingdbg - 2013/09/19 15:54:07 - 'Registering internal module: ' <module '__main__' from '/usr/local/lib/wingide4.1/bin/wingdb.py'> '; ' "'/usr/local/lib/wingide4.1/bin/wingdb.py'" 
+wingdbg - 2013/09/19 15:54:07 - 'Connecting to client...' 
+wingdbg - 2013/09/19 15:54:07 - 'Connected to client' 
+wingdbg - 2013/09/19 15:54:07 - 'netserver executing' '0x11004' None 
+wingdbg - 2013/09/19 15:54:07 - 'netserver sending back' '0x1016' ('127.0.0.1', -1, 11132, '_sandbox.py', 'Kq3R0sVsrxY2MhK9', 15, 1, 34014192) 
+wingdbg - 2013/09/19 15:54:07 - 'netserver executing' '0x12004' ({'use-stdin-wrapper': 1, 'matplotlib-event-loop': True, 'resolve-properties': False, 'sub-languages': 0, 'allow-dynamic-introspection': False},) 
+wingdbg - 2013/09/19 15:54:07 - 'netserver executing' '0x12005' (('function', 'builtin_function_or_method', 'class', 'classobj', 'instance method', 'type', 'module', 'ufunc', 'wrapper_descriptor', 'method_descriptor', 'member_descriptor'), (), ('GdkColormap', 'IOBTree', 'JPackage')) 
+wingdbg - 2013/09/19 15:54:07 - 'netserver executing' '0x12006' (65, 2000, 64000) 
+wingdbg - 2013/09/19 15:54:08 - 'netserver executing' '0x11002' None 
+wingdbg - 2013/09/19 15:54:08 - 'Starting run' '/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' [] 
+wingdbg - 2013/09/19 15:54:08 - 'RESET' 
+wingdbg - 2013/09/19 15:54:08 - 'Starting debug with file' '/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 15:54:08 - '__RunFileInMain' 
+wingdbg - 2013/09/19 15:54:08 - '__CheckFloatingPointMode' 
+wingdbg - 2013/09/19 15:54:08 - 'RESET' 
+wingdbg - 2013/09/19 15:54:08 - '_CB_DebugThread called with thread_id =' 46912496332944 
+wingdbg - 2013/09/19 15:54:08 - '_CB_DebugThread returning' 1 
+wingdbg - 2013/09/19 15:54:08 - 'Reading /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 15:54:08 - 'Compiling /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 15:54:08 - 'Executing /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 15:54:08 - 'stopping tracer on first line' 
+wingdbg - 2013/09/19 15:54:08 - '_BlockUntilReadyToRun: <frame object at 0xd73d10>' 
+wingdbg - 2013/09/19 15:54:08 - '  filename = /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py, lineno = 2' 
+wingdbg - 2013/09/19 15:54:08 - 'SENDING NORMAL PROGRAM STOPPED' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 15:54:08 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2013/09/19 15:54:08 - 'QUIT=FALSE' 
+wingdbg - 2013/09/19 15:54:08 - 'THREADS=' [(8073376, u'MainThread', 0)] 
+wingdbg - 2013/09/19 15:54:08 - 'CURRENT THREAD=' 8073376 
+wingdbg - 2013/09/19 15:54:08 - 'STACK =' [((u'/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py', 2, u"if __name__ == '__main__':\n", u'<module>', []), 2)] 
+wingdbg - 2013/09/19 15:54:08 - 'FRAMEIDX' 0 
+wingdbg - 2013/09/19 15:54:08 - 'Packing' 1 [(8073376, u'MainThread', 0)] 8073376 [((u'/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py', 2, u"if __name__ == '__main__':\n", u'<module>', []), 2)] 0 0 None [] [] 
+wingdbg - 2013/09/19 15:54:08 - 'Sending packet' 
+wingdbg - 2013/09/19 15:54:08 - 'Exiting ProgramStopped' 
+wingdbg - 2013/09/19 15:54:08 - 'netserver executing' '0x10002' (1, 'import sys\nsys.path[0] = r\'\'.replace(r"\\\'", "\'").replace(\'/\', \'\\\\\')\nsys.stdout.write(str(sys.version) + \'\\n\')\ndel sys\nimport os\nif os.environ.get(\'PYTHONSTARTUP\') and os.path.isfile(os.environ[\'PYTHONSTARTUP\']):\n  f = open(os.environ[\'PYTHONSTARTUP\'])\n  txt = f.read()\n  f.close()\n  code = compile(txt + \'\\n\', os.environ[\'PYTHONSTARTUP\'], \'exec\')\n  exec(code)\ntry:\n  del os\n  del f\n  del txt\n  del code\nexcept NameError:\n  pass\n', {'futureflags': 0, 'mode': 'exec'}) 
+wingdbg - 2013/09/19 15:54:08 - 'netserver sending back' '0x3' (1, None, '2.7.3 (default_cci, Apr 10 2013, 04:59:03) \n[GCC 4.1.2 20070925 (Red Hat 4.1.2-33)]\n', 'UTF-8', 0) 
+wingdbg - 2013/09/19 15:54:08 - 'netserver executing' '0xa0000' ('SetDebugThreads', {8073376: 1}, 0, 4096) 
+wingdbg - 2013/09/19 15:54:08 - 'SetDebugThreads called: threads =' '{8073376: 1}' ', default_policy =' 0 
+wingdbg - 2013/09/19 15:54:12 - 'netserver executing' '0x10002' (2, 'from iotbx import pdb\nfrom iotbx import cif\nfrom cctbx import miller\nfrom iotbx import crystal_symmetry_from_any\nimport os, sys\n', {'futureflags': 0, 'mode': 'exec'}) 
+wingdbg - 2013/09/19 15:54:12 - 'netserver FORK DETECTED' 
+wingdbg - 2013/09/19 15:54:12 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 15:54:12 - 'STOPPING DEBUG' 
+wingdbg - 2013/09/19 15:54:12 - 'RESET' 
+wingdbg - 2013/09/19 15:54:13 - 'netserver sending back' '0x3' (2, None, '', 'UTF-8', 0) 
+wingdbg - 2013/09/19 15:54:16 - 'netserver executing' '0x10002' (3, "pdb_file_name = '/net/chevy/raid1/pdb_mirror/pdb/00/pdb100d.ent.gz'", {'futureflags': 0}) 
+wingdbg - 2013/09/19 15:54:16 - 'netserver sending back' '0x3' (3, None, '', 'UTF-8', 0) 
+wingdbg - 2013/09/19 15:54:20 - 'netserver executing' '0x10002' (4, 'cs = crystal_symmetry_from_any.extract_from(pdb_file_name)', {'futureflags': 0}) 
+wingdbg - 2013/09/19 15:54:20 - 'netserver sending back' '0x3' (4, None, '', 'UTF-8', 0) 
+wingdbg - 2013/09/19 16:00:27 - 'netserver executing' '0xf0001' () 
+wingdbg - 2013/09/19 16:00:27 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:00:27 - 'CHECK FOR CONNECTION' 
+wingdbg - 2013/09/19 16:00:27 - 'Not checking because recursive call or no listener' 
+wingdbg - 2013/09/19 16:00:27 - 'CONTINUE' 
+wingdbg - 2013/09/19 16:00:27 - 'EXITING TO RUN' 
+wingdbg - 2013/09/19 16:00:27 - '_CB_DebugThread called with thread_id =' 46912496332944 
+wingdbg - 2013/09/19 16:00:28 - '_CB_DebugThread returning' 0 
+wingdbg - 2013/09/19 16:00:28 - 'finish exec' 
+wingdbg - 2013/09/19 16:00:28 - 'STOP TRACE AFTER RUN' 
+wingdbg - 2013/09/19 16:00:28 - 'EXITING DEBUG SESSION IN DBGSERVER' 
+wingdbg - 2013/09/19 16:00:28 - 'Run complete' 
+wingdbg - 2013/09/19 16:00:28 - 'SERVER RUNFILE EXITED' 
+wingdbg - 2013/09/19 16:00:28 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2013/09/19 16:00:28 - 'QUIT=TRUE' 
+wingdbg - 2013/09/19 16:00:28 - 'THREADS=' [] 
+wingdbg - 2013/09/19 16:00:28 - 'CURRENT THREAD=' -1 
+wingdbg - 2013/09/19 16:00:28 - 'STACK = None' 
+wingdbg - 2013/09/19 16:00:28 - 'FRAMEIDX' None 
+wingdbg - 2013/09/19 16:00:28 - 'STOPPING DEBUG' 
+wingdbg - 2013/09/19 16:00:28 - 'RESET' 
+wingdbg - 2013/09/19 16:00:28 - 'setting __fClient to' None 
+wingdbg - 2013/09/19 16:00:28 - 'RESET' 
+wingdbg - 2013/09/19 16:00:28 - <bound method CDbgServer.destroy of <dbgserver.CDbgServer instance at 0xb52a28>> 'called' 
+wingdbg - 2013/09/19 16:00:28 - 'RESET' 
+wingdbg - 2013/09/19 16:00:28 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:00:28 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:00:28 - 'netserver CLOSECHANNEL' 
+
+--------------------------------------------------------------------------------
+STARTING NEW DEBUG LOGGING SESSION
+--------------------------------------------------------------------------------
+wingdbg - 2013/09/19 16:28:38 - 'Setting stdoutencoding=UTF-8' 
+wingdbg - 2013/09/19 16:28:38 - 'Setting stdinencoding=UTF-8' 
+wingdbg - 2013/09/19 16:28:38 - "sys.path=['/net/chevy/raid1/youval/Work_chevy/phenix_sources/phaser', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/tntbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/phenix', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/reel', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/elbow', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/PyQuante', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/docutils', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/boost_adaptbx', '/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/libtbx/pythonpath', '/net/chevy/raid1/youval/Work_chevy/phenix_build/lib', '/net/chevy/raid1/youval/Work_chevy/phenix_build', '/net/cci-filer2/raid1/home/youval/Work', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python27.zip', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/plat-linux2', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-tk', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-old', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/lib-dynload', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/PIL', '/net/cci-filer2/raid1/xp/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/lib/python2.7/site-packages/wx-2.8-gtk2-ansi']" 
+wingdbg - 2013/09/19 16:28:38 - 'sys.argv=[]' 
+wingdbg - 2013/09/19 16:28:38 - 'Network peer is ' '127.0.0.1' 'port' 44759 
+wingdbg - 2013/09/19 16:28:38 - 'Attach port = ' -1 
+wingdbg - 2013/09/19 16:28:38 - 'Initial stop = ' 1 
+wingdbg - 2013/09/19 16:28:38 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:28:38 - u'wingdb.py: Running /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 16:28:38 - '******************** RUN ************************' 
+wingdbg - 2013/09/19 16:28:38 - 'ABOUT TO INIT' 
+wingdbg - 2013/09/19 16:28:38 - 'SET UP C CORE' 
+wingdbg - 2013/09/19 16:28:38 - 'RESET' 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'abstract' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/abstract.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'constants' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/constants.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'dbgserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgserver.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'dbgutils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbgutils.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_extensions' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_extensions.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'extregistry' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/extregistry.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'findmodules' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/findmodules.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'netserver' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/netserver.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'channel' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/channel.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'dbginspect' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/dbginspect.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module 'py2utils' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/py2utils.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_django' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_django.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_matplotlib' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_matplotlib.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_wxhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wxhooks.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_wx25hooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_wx25hooks.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_gtkhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_gtkhooks.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_zopehooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_zopehooks.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '_tkinterhooks' from '/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.pyc'> '; ' "'/usr/local/lib/wingide4.1/bin/2.7/src/debug/tserver/_tkinterhooks.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'setting __fClient to' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 16:28:38 - 'RESET' 
+wingdbg - 2013/09/19 16:28:38 - 'Registering internal module: ' <module '__main__' from '/usr/local/lib/wingide4.1/bin/wingdb.py'> '; ' "'/usr/local/lib/wingide4.1/bin/wingdb.py'" 
+wingdbg - 2013/09/19 16:28:38 - 'Connecting to client...' 
+wingdbg - 2013/09/19 16:28:38 - 'Connected to client' 
+wingdbg - 2013/09/19 16:28:38 - 'netserver executing' '0x11004' None 
+wingdbg - 2013/09/19 16:28:38 - 'netserver sending back' '0x1016' ('127.0.0.1', -1, 18355, '_sandbox.py', 'obVLf8OLJC177UPb', 15, 1, 34014192) 
+wingdbg - 2013/09/19 16:28:38 - 'netserver executing' '0x12004' ({'use-stdin-wrapper': 1, 'matplotlib-event-loop': True, 'resolve-properties': False, 'sub-languages': 0, 'allow-dynamic-introspection': False},) 
+wingdbg - 2013/09/19 16:28:38 - 'netserver executing' '0x12005' (('function', 'builtin_function_or_method', 'class', 'classobj', 'instance method', 'type', 'module', 'ufunc', 'wrapper_descriptor', 'method_descriptor', 'member_descriptor'), (), ('GdkColormap', 'IOBTree', 'JPackage')) 
+wingdbg - 2013/09/19 16:28:38 - 'netserver executing' '0x12006' (65, 2000, 64000) 
+wingdbg - 2013/09/19 16:28:38 - 'netserver executing' '0x11002' None 
+wingdbg - 2013/09/19 16:28:38 - 'Starting run' '/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' [] 
+wingdbg - 2013/09/19 16:28:38 - 'RESET' 
+wingdbg - 2013/09/19 16:28:38 - 'Starting debug with file' '/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 16:28:38 - '__RunFileInMain' 
+wingdbg - 2013/09/19 16:28:38 - '__CheckFloatingPointMode' 
+wingdbg - 2013/09/19 16:28:38 - 'RESET' 
+wingdbg - 2013/09/19 16:28:38 - '_CB_DebugThread called with thread_id =' 46912496332944 
+wingdbg - 2013/09/19 16:28:38 - '_CB_DebugThread returning' 1 
+wingdbg - 2013/09/19 16:28:38 - 'Reading /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 16:28:38 - 'Compiling /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 16:28:38 - 'Executing /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py' 
+wingdbg - 2013/09/19 16:28:38 - 'stopping tracer on first line' 
+wingdbg - 2013/09/19 16:28:38 - '_BlockUntilReadyToRun: <frame object at 0xd73d10>' 
+wingdbg - 2013/09/19 16:28:38 - '  filename = /usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py, lineno = 2' 
+wingdbg - 2013/09/19 16:28:38 - 'SENDING NORMAL PROGRAM STOPPED' <netserver.CNetworkServer instance at 0x92df38> 
+wingdbg - 2013/09/19 16:28:38 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2013/09/19 16:28:38 - 'QUIT=FALSE' 
+wingdbg - 2013/09/19 16:28:38 - 'THREADS=' [(8073376, u'MainThread', 0)] 
+wingdbg - 2013/09/19 16:28:38 - 'CURRENT THREAD=' 8073376 
+wingdbg - 2013/09/19 16:28:38 - 'STACK =' [((u'/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py', 2, u"if __name__ == '__main__':\n", u'<module>', []), 2)] 
+wingdbg - 2013/09/19 16:28:38 - 'FRAMEIDX' 0 
+wingdbg - 2013/09/19 16:28:39 - 'Packing' 1 [(8073376, u'MainThread', 0)] 8073376 [((u'/usr/local/lib/wingide4.1/src/debug/tserver/_sandbox.py', 2, u"if __name__ == '__main__':\n", u'<module>', []), 2)] 0 0 None [] [] 
+wingdbg - 2013/09/19 16:28:39 - 'Sending packet' 
+wingdbg - 2013/09/19 16:28:39 - 'Exiting ProgramStopped' 
+wingdbg - 2013/09/19 16:28:39 - 'netserver executing' '0x10002' (1, 'import sys\nsys.path[0] = r\'\'.replace(r"\\\'", "\'").replace(\'/\', \'\\\\\')\nsys.stdout.write(str(sys.version) + \'\\n\')\ndel sys\nimport os\nif os.environ.get(\'PYTHONSTARTUP\') and os.path.isfile(os.environ[\'PYTHONSTARTUP\']):\n  f = open(os.environ[\'PYTHONSTARTUP\'])\n  txt = f.read()\n  f.close()\n  code = compile(txt + \'\\n\', os.environ[\'PYTHONSTARTUP\'], \'exec\')\n  exec(code)\ntry:\n  del os\n  del f\n  del txt\n  del code\nexcept NameError:\n  pass\n', {'futureflags': 0, 'mode': 'exec'}) 
+wingdbg - 2013/09/19 16:28:39 - 'netserver sending back' '0x3' (1, None, '2.7.3 (default_cci, Apr 10 2013, 04:59:03) \n[GCC 4.1.2 20070925 (Red Hat 4.1.2-33)]\n', 'UTF-8', 0) 
+wingdbg - 2013/09/19 16:28:39 - 'netserver executing' '0xa0000' ('SetDebugThreads', {8073376: 1}, 0, 4096) 
+wingdbg - 2013/09/19 16:28:39 - 'SetDebugThreads called: threads =' '{8073376: 1}' ', default_policy =' 0 
+wingdbg - 2013/09/19 16:54:18 - 'netserver executing' '0xf0001' () 
+wingdbg - 2013/09/19 16:54:18 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:54:18 - 'CHECK FOR CONNECTION' 
+wingdbg - 2013/09/19 16:54:18 - 'Not checking because recursive call or no listener' 
+wingdbg - 2013/09/19 16:54:18 - 'CONTINUE' 
+wingdbg - 2013/09/19 16:54:18 - 'EXITING TO RUN' 
+wingdbg - 2013/09/19 16:54:18 - '_CB_DebugThread called with thread_id =' 46912496332944 
+wingdbg - 2013/09/19 16:54:18 - '_CB_DebugThread returning' 0 
+wingdbg - 2013/09/19 16:54:18 - 'finish exec' 
+wingdbg - 2013/09/19 16:54:18 - 'STOP TRACE AFTER RUN' 
+wingdbg - 2013/09/19 16:54:18 - 'EXITING DEBUG SESSION IN DBGSERVER' 
+wingdbg - 2013/09/19 16:54:18 - 'Run complete' 
+wingdbg - 2013/09/19 16:54:18 - 'SERVER RUNFILE EXITED' 
+wingdbg - 2013/09/19 16:54:18 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2013/09/19 16:54:18 - 'QUIT=TRUE' 
+wingdbg - 2013/09/19 16:54:18 - 'THREADS=' [] 
+wingdbg - 2013/09/19 16:54:18 - 'CURRENT THREAD=' -1 
+wingdbg - 2013/09/19 16:54:18 - 'STACK = None' 
+wingdbg - 2013/09/19 16:54:18 - 'FRAMEIDX' None 
+wingdbg - 2013/09/19 16:54:18 - 'STOPPING DEBUG' 
+wingdbg - 2013/09/19 16:54:18 - 'RESET' 
+wingdbg - 2013/09/19 16:54:18 - 'setting __fClient to' None 
+wingdbg - 2013/09/19 16:54:18 - 'RESET' 
+wingdbg - 2013/09/19 16:54:18 - <bound method CDbgServer.destroy of <dbgserver.CDbgServer instance at 0xb52a28>> 'called' 
+wingdbg - 2013/09/19 16:54:18 - 'RESET' 
+wingdbg - 2013/09/19 16:54:18 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:54:18 - 'netserver CLOSECHANNEL' 
+wingdbg - 2013/09/19 16:54:18 - 'netserver CLOSECHANNEL' 

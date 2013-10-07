@@ -1,0 +1,384 @@
+(lp1
+S'common_amino_acid                 - common_amino_acid                '
+p2
+aS'common_amino_acid                 - common_small_molecule            '
+p3
+aS'common_amino_acid                 - common_water                     '
+p4
+aS'common_amino_acid                 - d-gamma-peptide, c-delta linking '
+p5
+aS'common_amino_acid                 - d-peptide linking                '
+p6
+aS'common_amino_acid                 - d-saccharide                     '
+p7
+aS'common_amino_acid                 - dna linking                      '
+p8
+aS'common_amino_acid                 - l-beta-peptide, c-gamma linking  '
+p9
+aS'common_amino_acid                 - l-peptide cooh carboxy terminus  '
+p10
+aS'common_amino_acid                 - l-peptide linking                '
+p11
+aS'common_amino_acid                 - l-peptide nh3 amino terminus     '
+p12
+aS'common_amino_acid                 - non-polymer                      '
+p13
+aS'common_amino_acid                 - none                             '
+p14
+aS'common_amino_acid                 - peptide linking                  '
+p15
+aS'common_amino_acid                 - peptide-like                     '
+p16
+aS'common_amino_acid                 - rna linking                      '
+p17
+aS'common_amino_acid                 - saccharide                       '
+p18
+aS'common_element                    - common_amino_acid                '
+p19
+aS'common_element                    - common_element                   '
+p20
+aS'common_element                    - common_rna_dna                   '
+p21
+aS'common_element                    - common_small_molecule            '
+p22
+aS'common_element                    - common_water                     '
+p23
+aS'common_element                    - d-peptide linking                '
+p24
+aS'common_element                    - d-peptide nh3 amino terminus     '
+p25
+aS'common_element                    - d-saccharide                     '
+p26
+aS'common_element                    - d-saccharide 1,4 and 1,4 linking '
+p27
+aS'common_element                    - dna linking                      '
+p28
+aS'common_element                    - dna oh 3 prime terminus          '
+p29
+aS'common_element                    - l-beta-peptide, c-gamma linking  '
+p30
+aS'common_element                    - l-peptide cooh carboxy terminus  '
+p31
+aS'common_element                    - l-peptide linking                '
+p32
+aS'common_element                    - l-peptide nh3 amino terminus     '
+p33
+aS'common_element                    - l-saccharide                     '
+p34
+aS'common_element                    - non-polymer                      '
+p35
+aS'common_element                    - none                             '
+p36
+aS'common_element                    - peptide linking                  '
+p37
+aS'common_element                    - peptide-like                     '
+p38
+aS'common_element                    - rna linking                      '
+p39
+aS'common_element                    - saccharide                       '
+p40
+aS'common_rna_dna                    - common_amino_acid                '
+p41
+aS'common_rna_dna                    - common_element                   '
+p42
+aS'common_rna_dna                    - common_rna_dna                   '
+p43
+aS'common_rna_dna                    - common_small_molecule            '
+p44
+aS'common_rna_dna                    - dna linking                      '
+p45
+aS'common_rna_dna                    - dna oh 3 prime terminus          '
+p46
+aS'common_rna_dna                    - l-dna linking                    '
+p47
+aS'common_rna_dna                    - l-peptide linking                '
+p48
+aS'common_rna_dna                    - non-polymer                      '
+p49
+aS'common_rna_dna                    - none                             '
+p50
+aS'common_rna_dna                    - rna linking                      '
+p51
+aS'common_rna_dna                    - rna oh 3 prime terminus          '
+p52
+aS'common_rna_dna                    - saccharide                       '
+p53
+aS'common_small_molecule             - common_amino_acid                '
+p54
+aS'common_small_molecule             - common_small_molecule            '
+p55
+aS'common_small_molecule             - d-saccharide                     '
+p56
+aS'common_small_molecule             - dna linking                      '
+p57
+aS'common_small_molecule             - non-polymer                      '
+p58
+aS'common_small_molecule             - rna linking                      '
+p59
+aS'common_water                      - common_amino_acid                '
+p60
+aS'common_water                      - common_small_molecule            '
+p61
+aS'common_water                      - common_water                     '
+p62
+aS'common_water                      - dna linking                      '
+p63
+aS'common_water                      - non-polymer                      '
+p64
+aS'd-beta-peptide, c-gamma linking   - common_amino_acid                '
+p65
+aS'd-beta-peptide, c-gamma linking   - peptide linking                  '
+p66
+aS'd-gamma-peptide, c-delta linking  - common_amino_acid                '
+p67
+aS'd-gamma-peptide, c-delta linking  - d-gamma-peptide, c-delta linking '
+p68
+aS'd-gamma-peptide, c-delta linking  - l-peptide linking                '
+p69
+aS'd-gamma-peptide, c-delta linking  - non-polymer                      '
+p70
+aS'd-gamma-peptide, c-delta linking  - peptide linking                  '
+p71
+aS'd-peptide linking                 - common_amino_acid                '
+p72
+aS'd-peptide linking                 - d-gamma-peptide, c-delta linking '
+p73
+aS'd-peptide linking                 - d-peptide linking                '
+p74
+aS'd-peptide linking                 - d-saccharide                     '
+p75
+aS'd-peptide linking                 - l-beta-peptide, c-gamma linking  '
+p76
+aS'd-peptide linking                 - l-peptide linking                '
+p77
+aS'd-peptide linking                 - non-polymer                      '
+p78
+aS'd-peptide linking                 - peptide linking                  '
+p79
+aS'd-peptide linking                 - peptide-like                     '
+p80
+aS'd-peptide linking                 - saccharide                       '
+p81
+aS'd-saccharide                      - common_amino_acid                '
+p82
+aS'd-saccharide                      - common_small_molecule            '
+p83
+aS'd-saccharide                      - d-peptide linking                '
+p84
+aS'd-saccharide                      - d-saccharide                     '
+p85
+aS'd-saccharide                      - l-peptide linking                '
+p86
+aS'd-saccharide                      - l-saccharide                     '
+p87
+aS'd-saccharide                      - non-polymer                      '
+p88
+aS'd-saccharide                      - rna linking                      '
+p89
+aS'd-saccharide                      - saccharide                       '
+p90
+aS'd-saccharide 1,4 and 1,4 linking  - d-saccharide 1,4 and 1,4 linking '
+p91
+aS'dna linking                       - common_amino_acid                '
+p92
+aS'dna linking                       - common_element                   '
+p93
+aS'dna linking                       - common_rna_dna                   '
+p94
+aS'dna linking                       - common_small_molecule            '
+p95
+aS'dna linking                       - dna linking                      '
+p96
+aS'dna linking                       - l-peptide linking                '
+p97
+aS'dna linking                       - non-polymer                      '
+p98
+aS'dna linking                       - peptide-like                     '
+p99
+aS'dna linking                       - rna linking                      '
+p100
+aS'l-beta-peptide, c-gamma linking   - common_amino_acid                '
+p101
+aS'l-beta-peptide, c-gamma linking   - l-beta-peptide, c-gamma linking  '
+p102
+aS'l-beta-peptide, c-gamma linking   - l-peptide linking                '
+p103
+aS'l-dna linking                     - dna linking                      '
+p104
+aS'l-dna linking                     - l-dna linking                    '
+p105
+aS'l-gamma-peptide, c-delta linking  - common_amino_acid                '
+p106
+aS'l-gamma-peptide, c-delta linking  - l-gamma-peptide, c-delta linking '
+p107
+aS'l-gamma-peptide, c-delta linking  - l-peptide linking                '
+p108
+aS'l-gamma-peptide, c-delta linking  - non-polymer                      '
+p109
+aS'l-peptide cooh carboxy terminus   - common_amino_acid                '
+p110
+aS'l-peptide linking                 - common_amino_acid                '
+p111
+aS'l-peptide linking                 - common_water                     '
+p112
+aS'l-peptide linking                 - d-gamma-peptide, c-delta linking '
+p113
+aS'l-peptide linking                 - d-peptide linking                '
+p114
+aS'l-peptide linking                 - d-saccharide                     '
+p115
+aS'l-peptide linking                 - dna linking                      '
+p116
+aS'l-peptide linking                 - l-gamma-peptide, c-delta linking '
+p117
+aS'l-peptide linking                 - l-peptide linking                '
+p118
+aS'l-peptide linking                 - non-polymer                      '
+p119
+aS'l-peptide linking                 - none                             '
+p120
+aS'l-peptide linking                 - peptide linking                  '
+p121
+aS'l-peptide linking                 - peptide-like                     '
+p122
+aS'l-peptide linking                 - rna linking                      '
+p123
+aS'l-peptide linking                 - saccharide                       '
+p124
+aS'l-peptide nh3 amino terminus      - common_amino_acid                '
+p125
+aS'l-rna linking                     - common_element                   '
+p126
+aS'l-rna linking                     - l-rna linking                    '
+p127
+aS'l-saccharide                      - common_amino_acid                '
+p128
+aS'l-saccharide                      - d-saccharide                     '
+p129
+aS'l-saccharide                      - l-saccharide                     '
+p130
+aS'l-saccharide                      - non-polymer                      '
+p131
+aS'l-saccharide                      - saccharide                       '
+p132
+aS'l-saccharide 1,4 and 1,4 linking  - d-saccharide                     '
+p133
+aS'l-saccharide 1,4 and 1,4 linking  - d-saccharide 1,4 and 1,4 linking '
+p134
+aS'non-polymer                       - common_amino_acid                '
+p135
+aS'non-polymer                       - common_element                   '
+p136
+aS'non-polymer                       - common_rna_dna                   '
+p137
+aS'non-polymer                       - common_small_molecule            '
+p138
+aS'non-polymer                       - common_water                     '
+p139
+aS'non-polymer                       - d-peptide linking                '
+p140
+aS'non-polymer                       - d-saccharide                     '
+p141
+aS'non-polymer                       - dna linking                      '
+p142
+aS'non-polymer                       - l-gamma-peptide, c-delta linking '
+p143
+aS'non-polymer                       - l-peptide cooh carboxy terminus  '
+p144
+aS'non-polymer                       - l-peptide linking                '
+p145
+aS'non-polymer                       - l-saccharide                     '
+p146
+aS'non-polymer                       - non-polymer                      '
+p147
+aS'non-polymer                       - none                             '
+p148
+aS'non-polymer                       - peptide linking                  '
+p149
+aS'non-polymer                       - peptide-like                     '
+p150
+aS'non-polymer                       - rna linking                      '
+p151
+aS'non-polymer                       - saccharide                       '
+p152
+aS'none                              - common_amino_acid                '
+p153
+aS'none                              - non-polymer                      '
+p154
+aS'none                              - none                             '
+p155
+aS'none                              - peptide linking                  '
+p156
+aS'none                              - saccharide                       '
+p157
+aS'peptide linking                   - common_amino_acid                '
+p158
+aS'peptide linking                   - d-gamma-peptide, c-delta linking '
+p159
+aS'peptide linking                   - d-peptide linking                '
+p160
+aS'peptide linking                   - l-peptide linking                '
+p161
+aS'peptide linking                   - non-polymer                      '
+p162
+aS'peptide linking                   - peptide linking                  '
+p163
+aS'peptide linking                   - peptide-like                     '
+p164
+aS'peptide-like                      - common_amino_acid                '
+p165
+aS'peptide-like                      - d-gamma-peptide, c-delta linking '
+p166
+aS'peptide-like                      - d-peptide linking                '
+p167
+aS'peptide-like                      - dna linking                      '
+p168
+aS'peptide-like                      - l-peptide linking                '
+p169
+aS'peptide-like                      - non-polymer                      '
+p170
+aS'peptide-like                      - peptide linking                  '
+p171
+aS'peptide-like                      - peptide-like                     '
+p172
+aS'peptide-like                      - rna linking                      '
+p173
+aS'rna linking                       - common_amino_acid                '
+p174
+aS'rna linking                       - common_element                   '
+p175
+aS'rna linking                       - common_small_molecule            '
+p176
+aS'rna linking                       - dna linking                      '
+p177
+aS'rna linking                       - l-peptide linking                '
+p178
+aS'rna linking                       - non-polymer                      '
+p179
+aS'rna linking                       - peptide-like                     '
+p180
+aS'rna linking                       - rna linking                      '
+p181
+aS'saccharide                        - common_amino_acid                '
+p182
+aS'saccharide                        - common_small_molecule            '
+p183
+aS'saccharide                        - d-peptide linking                '
+p184
+aS'saccharide                        - d-saccharide                     '
+p185
+aS'saccharide                        - d-saccharide 1,4 and 1,4 linking '
+p186
+aS'saccharide                        - l-peptide linking                '
+p187
+aS'saccharide                        - l-saccharide                     '
+p188
+aS'saccharide                        - non-polymer                      '
+p189
+aS'saccharide                        - none                             '
+p190
+aS'saccharide                        - rna linking                      '
+p191
+aS'saccharide                        - saccharide                       '
+p192
+a.

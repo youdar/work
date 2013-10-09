@@ -1,6 +1,7 @@
 from __future__ import division
 from  misc_scripts.r_factor_calc import *
 from  iotbx.pdb.multimer_reconstruction import multimer
+import multiprocessing as mp
 from iotbx import pdb
 import cPickle as pickle
 import os
@@ -80,6 +81,20 @@ def make_dict(index_file_name,data_dir=''):
       result[file_name] = data_dir+file_path
   return result
 
+def start_multiprocessing():
+  while True:
+    try:
+      np = int(raw_input('Number of processors available is {}. How many would you like to use? '.format(mp.cpu_count())))
+      if np>mp.cpu_count():
+        raise Exception
+      break
+    except ValueError:
+      print 'Please enter an integer \n'
+    except Exception:
+      print 'Please choose smaller number of processors \n'
+  # set number of CPUs
+  p = mp.Pool(processes=np)
+  return p
 def run(recon_test=False,build_new_dictinaries=False):
   '''
   good_MTRIX_pdb_files, good_BIOMT_pdb_files and structure_factors_files
@@ -100,7 +115,7 @@ def run(recon_test=False,build_new_dictinaries=False):
     # If you already have the dictionaries use:
     good_MTRIX_pdb_files = pickle.load(open('dict_good_MTRIX_pdb_files','r'))
     good_BIOMT_pdb_files = pickle.load(open('dict_good_BIOMT_pdb_files','r'))
-    structure_factors_files = pickle.load(open('dict_structure_factors_files2','r'))
+    structure_factors_files = pickle.load(open('dict_structure_factors_files','r'))
     MTRIX_with_Straucture_Factor = pickle.load(open('MTRIX_with_Straucture_Factor_file_list','r'))
     print 'Dictionaries are loaded...'
 
@@ -129,32 +144,47 @@ def run(recon_test=False,build_new_dictinaries=False):
     #f1.close()
   # run test - compare r-work fromreconstructed pdb file to that of the mtz data
   if recon_test:
+    #p = start_multiprocessing()
     print '*'*50
     print 'Start testing MTRIX reconstruction testing'
     print '*'*50
-    reconstruction_test_dict = {}
-    reconstruction_test_list = []
+    # Load previous results
+    reconstruction_test_dict = pickle.load(open('reconstruction_test_dict','r'))
+    reconstruction_test_list = pickle.load(open('reconstruction_test_list','r'))
     # iterate over file and calculate qulity of R-work of reconstructed pdb file
     # Test of all files in MTRIX_with_Straucture_Factor
+    # collect all good results and save them on a file so that
+    # not to repeat them
+    #tested_files = open('Collect_tested_files',"r").readlines()
+    tested_files = open('Collect_tested_files',"r").read().splitlines()
+    files_with_problems = open('files_with_problems',"r").read().splitlines()
+    files_with_problems = [x[:4] for x in files_with_problems]
+    f = open('Collect_tested_files',"a")
+    g = open('files_with_problems',"a")
     for file_name in MTRIX_with_Straucture_Factor:
-      print file_name
-      pdb_file = good_MTRIX_pdb_files[file_name]
-      sf_file = structure_factors_files[file_name]
-      # calculate the precent of difference of R-work reconstructed vs mtz data
-      t = r_factor_calc([pdb_file,sf_file],eps=1e-3)
-      reconstruction_test_dict[file_name] = t
-      reconstruction_test_list.append(t)
+      if (file_name not in tested_files) and (file_name not in files_with_problems):
+        print file_name
+        pdb_file = good_MTRIX_pdb_files[file_name]
+        sf_file = structure_factors_files[file_name]
+        # calculate the precent of difference of R-work reconstructed vs mtz data
+        try:
+          t = r_factor_calc([pdb_file,sf_file],eps=2e-3)
+          msg = ''
+        except Sorry as e:
+          msg = '  # ' + e.message
+          t = 100
+        except TypeError as e:
+          msg = '  # ' + e.message
+          t = 100
+        reconstruction_test_dict[file_name] = t
+        reconstruction_test_list.append(t)
+        if t<1:
+          f.write(file_name + msg + '\n')
+        else:
+          g.write(file_name + msg + '\n')
 
-    ## Test of a single wile
-    ##file_name = '4kn2' # have both IOBS and FOBS
-    #file_name = '4aun'  # have issues running phenix.cif_as_mtz
-    #print file_name
-    #pdb_file = good_MTRIX_pdb_files[file_name]
-    #sf_file = structure_factors_files[file_name]
-    ## calculate the precent of difference of R-work reconstructed vs mtz data
-    #t = r_factor_calc([pdb_file,sf_file],eps=1e-3)
-    #reconstruction_test_dict[file_name] = t
-    #reconstruction_test_list.append(t)
+    f.close()
+    g.close()
 
     # save the results
     pickle.dump(reconstruction_test_dict,open('reconstruction_test_dict','w'))
@@ -164,6 +194,8 @@ def run(recon_test=False,build_new_dictinaries=False):
 
 
 if __name__=='__main__':
+  # move to working directory
   os.chdir('/net/cci-filer2/raid1/home/youval/Work/work')
   #os.chdir('c:\\Phenix\\Dev\\Work\\work')
+  # check how many processors are available
   run(recon_test=True)

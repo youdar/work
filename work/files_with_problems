@@ -1,0 +1,176 @@
+1o7k  # Warning: merging non-unique data
+4aum  # Warning: merging non-unique data
+4aun  # Warning: merging non-unique data
+2va0  # Warning: merging non-unique data
+1dao  # f_obs is None 
+3zv0  # Warning: merging non-unique data
+1vyw  # f_obs is None    F(+),SIGF(+),F(-),SIGF(-)
+2vax  # Rotation issues
+4loq  # Warning: merging non-unique data
+3n97  # f_obs.crystal_symmetry is not similar to crystal symmetry
+2wkn  # DANO,SIGDANO   F(+),SIGF(+),F(-),SIGF(-)
+1gll  # r_factor_calc line 150, unsupported operand type(s)-" 'NoneType' and 'float'
+1glj  # r_factor_calc line 150, unsupported operand type(s)-" 'NoneType' and 'float'
+3zxw  # Rotation issues
+3zxu  # Warning: merging non-unique data
+3zxt  # Warning: merging non-unique data
+3v9g  # I(+),SIGI(+),I(-),SIGI(-)
+1b8d  # f_obs is None      FOBS
+4aue  # Warning: merging non-unique data
+1lts  # r_factor_calc line 150, unsupported operand type(s)-" 'NoneType' and 'float'
+4dqy  # Warning: merging non-unique data
+1qnu  # Rotation issues
+2x17  # Sorry: Bad sigmas: all sigmas are equual to zero.
+12e8  # Warning: merging non-unique data
+1bv4  # Rotation issues
+1tdt  # r_factor_calc line 150, unsupported operand type(s)-" 'NoneType' and 'float'
+1usq  # r_factor_calc line 150, unsupported operand type(s)-" 'NoneType' and 'float'
+2wvh  # DANO,SIGDANO   F(+),SIGF(+),F(-),SIGF(-)  I(+),SIGI(+),I(-),SIGI(-)
+2wva  # DANO,SIGDANO   F(+),SIGF(+),F(-),SIGF(-)  I(+),SIGI(+),I(-),SIGI(-)
+2vbf  # DANO,SIGDANO
+4afn  # Warning: merging non-unique data
+4afl  # f_obs.crystal_symmetry is not similar to crystal symmetry
+3ukk  # Warning: merging non-unique data
+4ev0  # f_obs is None
+3ukq  # DANO,SIGDANO   F(+),SIGF(+),F(-),SIGF(-)  I(+),SIGI(+),I(-),SIGI(-)
+2wdq  # Warning: merging non-unique data
+1e4d  # Rotation issues
+2wdr  # Warning: merging non-unique data
+2wdz  # Rotation issues
+4au5  # DANO,SIGDANO   F(+),SIGF(+),F(-),SIGF(-)  I(+),SIGI(+),I(-),SIGI(-)
+2wws
+2xlb
+2ygu  # Warning: merging non-unique data
+4bl4  # CifParserError:
+4atv  # Warning: merging non-unique data
+4hzl  # Warning: merging non-unique data
+4ejf  # f_obs is None
+4hzl  # Rotation issues
+1gmu  # Rotation issues
+3zll  # CifParserError:
+2yq5  # Warning: merging non-unique data
+1w7q  # f_obs is None
+1w7r  # f_obs is None
+2xmn  # Warning: merging non-unique data
+1tgx  # r_factor_calc line 166, unsupported operand type(s)-" 'NoneType' and 'float'
+2uwa  # Rotation issues
+1sdy  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1hyh  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1vew  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+4asx
+2wu5
+2yf2
+3zzh
+3zzg
+3zzf
+1gn2  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1gn6  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+2bny  # CifBuilderError:  Space group is incompatible with unit cell parameters
+2bnl  # RuntimeError: Empty miller_array.
+4fi4  # Sorry: Bad sigmas: all sigmas are equal to zero.
+4ts1  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+2qfj  # Warning: merging non-unique data
+1h5q  # Rotation issues
+2xlc  # Warning: merging non-unique data
+2hoh  # Rotation issues
+2vdh  # Rotation issues
+2ux2
+3uun
+3uum
+3toi
+2boy
+2yaw
+3nop  # Sorry: cctbx Error: merge_equivalents_exact:... Add --incompatible_flags_to_work_set
+2wtl  # Sorry: Unknown chemical element type
+3not
+3nou
+1b37  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+2jb6  # Rotation issues
+1gy8
+1x33
+1x35
+3ejh
+1fui
+1up7
+1up4
+3ide
+3cf2
+1upm
+1upp
+4acs
+3dpr
+3ode
+4b98
+2y9x
+3od8
+4b9q  # Rotation issues
+1vcr
+4eya  # Rotation issues
+4iss
+2scu  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+4hkj
+4bqs
+1h24  # Rotation issues
+1b26
+3uul
+2bhw  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1b26
+1nds
+1ndr
+2xrf  # Rotation issues
+3gqx  # Rotation issues
+1gzh
+3p0s
+3dar
+5cro  # Rotation issues
+1hh3
+2x5k
+1hhf
+4a9w  # Rotation issues
+1w2t  # Rotation issues
+1hhc
+1hha
+1hhz
+1hhu
+1bz1  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1bz0  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1dla
+4aby
+1bzz  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1a0s
+1mms
+2xaa
+2hmg
+4apa
+4apb
+2yc2  # Rotation issues
+1am7
+1rh2
+2ymm
+4lxf
+2bo2  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1w3z  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+1hkd
+1w3m
+1w39
+1w33  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+2xg8
+4a6g
+4a6l  # Rotation issues
+4a6s  # Rotation issues
+2a5h
+4a63
+2gd1  # r_factor_calc line 169, unsupported operand type(s)-" 'NoneType' and 'float'
+4aa7  # Rotation isues
+3m8l
+2btv
+1b0w  # Rotation isues
+1mpr
+2woe
+1ojy  # unsupported operand type(s) for -: 'NoneType' and 'float'
+4baa  # Rotation matrices are not proper! 
+1gt8  # Rotation matrices are not proper! 
+1axg
+1ovo
+3qhw
+3qhr

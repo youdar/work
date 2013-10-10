@@ -81,20 +81,7 @@ def make_dict(index_file_name,data_dir=''):
       result[file_name] = data_dir+file_path
   return result
 
-def start_multiprocessing():
-  while True:
-    try:
-      np = int(raw_input('Number of processors available is {}. How many would you like to use? '.format(mp.cpu_count())))
-      if np>mp.cpu_count():
-        raise Exception
-      break
-    except ValueError:
-      print 'Please enter an integer \n'
-    except Exception:
-      print 'Please choose smaller number of processors \n'
-  # set number of CPUs
-  p = mp.Pool(processes=np)
-  return p
+
 def run(recon_test=False,build_new_dictinaries=False):
   '''
   good_MTRIX_pdb_files, good_BIOMT_pdb_files and structure_factors_files
@@ -144,7 +131,6 @@ def run(recon_test=False,build_new_dictinaries=False):
     #f1.close()
   # run test - compare r-work fromreconstructed pdb file to that of the mtz data
   if recon_test:
-    #p = start_multiprocessing()
     print '*'*50
     print 'Start testing MTRIX reconstruction testing'
     print '*'*50
@@ -169,19 +155,21 @@ def run(recon_test=False,build_new_dictinaries=False):
         # calculate the precent of difference of R-work reconstructed vs mtz data
         try:
           t = r_factor_calc([pdb_file,sf_file],eps=2e-3)
-          msg = ''
+          msg = 'OK'
         except Sorry as e:
-          msg = '  # ' + e.message
+          msg = e.message
           t = 100
         except TypeError as e:
-          msg = '  # ' + e.message
+          msg = e.message
           t = 100
+          outString = '{0}:{1}:{2}\n'.format(file_name,t,msg)
+          if t<1:
+            f.write(outString)
+          else:
+            g.write(outString)
         reconstruction_test_dict[file_name] = t
         reconstruction_test_list.append(t)
-        if t<1:
-          f.write(file_name + msg + '\n')
-        else:
-          g.write(file_name + msg + '\n')
+
 
     f.close()
     g.close()

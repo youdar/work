@@ -195,10 +195,11 @@ def run(recon_test=False,build_new_dictinaries=False):
       r = float(r)
       reconstruction_test_dict[file_name] = r
       reconstruction_test_list.append(r)
+      outString = '{}:OK\n'.format(x)
       if r<1:
-        f.write(x + '\n')
+        f.write(outString)
       else:
-        g.write(x + '\n')
+        g.write(outString)
 
     f.close()
     g.close()

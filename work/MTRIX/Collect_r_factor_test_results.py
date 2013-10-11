@@ -15,16 +15,16 @@ def run(directory_path):
         if (len(d) > 1):
             msg = '  '.join(d[-2:])
             msg = msg.replace('\n','  ',10)
-            probelm_files.append(file + ':100:' + msg)                   
+            probelm_files.append(file + '::100::' + msg)                   
         elif (d == []):
             #print 'problem with the file {}'.format(file)
-            probelm_files.append(file + ':100:')
+            probelm_files.append(file + '::100::')
         else:
             # remove '\n' from the end of the file name
             d = d[0].strip()
             if d.startswith('Sorry'):
                 d = d.replace('\n','  ',10)
-                probelm_files.append(file + ":100:" + d)
+                probelm_files.append(file + "::100::" + d)
             else:
                 t = d.split(':')
                 pdb_file = t[0]

@@ -52,7 +52,7 @@ def Call_function(queue,lock):
     [pdb_file,sf_file,file_name] = x
     print 'Processing file {}'.format(file_name)
     try:
-      r = r_factor_calc([pdb_file,sf_file],eps=2e-3)
+      r = r_factor_calc([pdb_file,sf_file],eps=2e-3,fromRCSB=False)
       msg = 'OK'
     except Sorry as e:
       r = 100

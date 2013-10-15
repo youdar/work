@@ -154,7 +154,7 @@ def run(recon_test=False,build_new_dictinaries=False):
         sf_file = structure_factors_files[file_name]
         # calculate the precent of difference of R-work reconstructed vs mtz data
         try:
-          t = r_factor_calc([pdb_file,sf_file],eps=2e-3)
+          t = r_factor_calc([pdb_file,sf_file],eps=2e-3,fromRCSB=False)
           msg = 'OK'
         except Sorry as e:
           msg = e.message

@@ -17,23 +17,33 @@ def run(directory_path):
     for file in files:
         d = open(os.path.join(directory_path, file), "r").readlines()
         file = file[4:]
+        # files with errors have more than one line
+        ld =  len(d)
         # check every line in d if it can be splited
+        msg = []
         for l in d:
             l_parts = l.split('::')
-            # check if this is the line with the r values
-            if len(l_parts)>3:
-                l_parts = [x.strip() for x in l_parts]
-                # check if score is OK
-                if l_parts[1]<'100':
-                    data_files.append([file,float(l_parts[1]),float(l_parts[2])])
-                    data.append(float(min(l_parts[1:2])))
-                else:
-                    new_record = [file,'::'.join(l_parts[3:])]
-                    probelm_files.append(new_record)
-                    #print new_record
-                    
-        
-    print 'number of files with good data line: {}'.format(len(data))
+            if l_parts[0] == file:
+                # check if this is the line with the r values
+                if len(l_parts)>3:
+                    l_parts = [x.strip() for x in l_parts]
+                    # check if score is OK
+                    if l_parts[2]<'100':
+                        temp_data_files = [file,float(l_parts[1]),float(l_parts[2]),float(l_parts[3])]
+                        msg.append('::'.join(l_parts[4:]))
+                        #temp_data.append(float(min(l_parts[1:3])))
+                    else:
+                        # collect files with issues
+                        new_record = [file,'::'.join(l_parts[4:])]
+                        probelm_files.append(new_record)
+            # add information on rotation matix problems
+            elif l_parts[0].startswith('Rotation matrices are not proper!'):
+                msg.append('::Rotation matrices are not proper!')
+        temp_data_files.extend(msg)
+        data_files.append(temp_data_files)
+
+
+    print 'number of files with good data line: {}'.format(len(data_files))
     print 'number of files with problems: {}'.format(len(probelm_files))
     # plot results
     #xend = len(data)+1
@@ -50,7 +60,7 @@ def add_to_data_files(data_files, probelm_files,write_files=False):
     else:
         directory_path = '/net/cci-filer2/raid1/home/youval/Work/work'
     os.chdir(directory_path)
-    print os.getcwd()    
+    print os.getcwd()
     if write_files:
         pickle.dump(data_files, open('Collect_tested_files','w'))
         pickle.dump(probelm_files, open('files_with_problems','w'))
@@ -70,4 +80,4 @@ if __name__=='__main__':
     data_files, probelm_files = run(directory_path)
     print os.getcwd()
     #os.chdir('c:\\Phenix\\Dev\\Work\\work')
-    add_to_data_files(data_files, probelm_files,write_files=True)
+    #add_to_data_files(data_files, probelm_files,write_files=True)

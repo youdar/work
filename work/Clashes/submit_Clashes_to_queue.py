@@ -33,7 +33,7 @@ def run():
   com_path = '/net/cci/youval/Work/work/Clashes/test_clashes.py'
   #
   for [pdb_file,file_name] in files:
-    outString = '{0} {1} verbose=False &> log_{2}'.format(com_path,pdb_file,file_name)
+    outString = '{0} {1} &> log_{2}'.format(com_path,pdb_file,file_name)
     commands.append(
       "python {}".format(outString))
 
@@ -42,7 +42,7 @@ def run():
     phenix_source = phenix_source,
     where         = where_to_run_dir,
     commands      = commands,
-    size_of_chunks= 300) # because jobs are quick
+    size_of_chunks= 200) # because jobs are quick
 
 if (__name__ == "__main__"):
   run()

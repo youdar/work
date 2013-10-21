@@ -1,5 +1,6 @@
 from __future__ import division
 import numpy as np
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 from numpy.random import rand
 #import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
@@ -54,55 +55,112 @@ def print_list(l,n):
 
 
 def plot_data(pdb_clash_score_and_name,by_type_dict):
+    
+    for k in by_type_dict:
+        # create a list with the same color for all points with the same experiment type
+        data = by_type_dict[k]
+        
+        #c = np.ones(len(data))*0.647933889333
+        # build data with size and color
+        #datalist = [[i,d[0],(d[0]-d[1])] for i,d in enumerate(data)]
+        x = range(1,len(data)+1)
+        #x = [d[0] for d in datalist]
+        y = [d[1] for d in data]	# use clash score without pdb hydrogens as y
+        y2 = [d[0] for d in data]	# use clash score with pdb hydrogens as y
+        # make the size of the points on the plot relative to the difference in the clash scores
+        s = [50 + 5*abs(d[1]-d[0]) for d in data]
+        # The color of points where both clash scores are the same
+        c = ['y',]*len(data)
+        # Color the data points in a different colors
+        for i in range(len(data)):
+            if data[i][0]>data[i][1]: c[i] = 'b'
+            elif data[i][0]<data[i][1]: c[i] = 'r'
+        #c = rand(len(data))
+        plot_experiment(x,y,s,c,k,data)  
+        #hist_both_clash_scores(y,y2,k)
+    
 
+def plot_experiment(x,y,s,c,k,data):
+    '''
+    plot a sub plot for an experiment type
+    x: enumerating data points
+    y: clash score with hydrogen
+    s: size the data point, related to the difference between with/without hydrogen clash scores
+    c: data point color
+    k: pdb file experiment type
+    '''
     def onpick3(event):
         ind = event.ind
         i = ind[0]
-        print '{0}  Clash Score: {1:.4f}'.format(pdb_clash_score_and_name[i][1],pdb_clash_score_and_name[i][0])
-        #print 'onpick3 scatter:', ind, npy.take(x, ind), npy.take(y, ind)
+        print '*'*50
+        print 'PDB file {0}     Experiment type: {1}'.format(data[i][2],k)
+        print 'Clash score with hydrogen kept: {0:.4f}    without hydrogen: {1:.4f}'.format(data[i][0],data[i][1])
+        print c[i]
 
     # set figure look
     gr = 1.61803398875
-    h = 10
-    w = gr*h
-    d = 0.03
+    h = 10	# figure hight
+    w = gr*h	# figure width
+    d = 0.05	# distance between plot regon and figure edge
     fig = plt.figure(figsize=(w,h))
     plt.subplots_adjust(left=d, right=1-d, top=1-d, bottom=d)
     ax1 = fig.add_subplot(111)
-    #
-    #col = ax1.scatter(z, y, 100*s, c, picker=True)
-    #l = len(pdb_clash_score_and_name)
-    #x = xrange(1,l+1)
-    # size of data point reflects the diference between the with - without hydrogen scores
-    #s = [0.5+abs(x[0]-x[1]) for x in pdb_clash_score_and_name]
-    #s = 0.5 + abs(rand(l) - 1)
-    # set the colors. there are 6 type of experiments
-    ct = [x/6 for x in range(1,7)]
-    c = []
-    data = []
-    experiment_type = []
-    for i,k in enumerate(by_type_dict):
-        # create a list with the same color for all points with the same experiment type
-        c.extend([ct[i]]*len(by_type_dict[k]))
-        # collect data
-        experiment_type.append(k)
-        data.extend(by_type_dict[k])
-    #data = [d[0] for d in data]
-    #col = ax1.scatter(x, data, 100*s, c, picker=True)
-    # build data with size and color
-    data = [[i,d[0],100*(0.5+abs(d[0]-d[1])),c[i]] for i,d in enumerate(data)]
-    x = [d[0] for d in data]
-    y = [d[1] for d in data]
-    s = [d[2] for d in data]
-    c = [d[3] for d in data]
-    col = ax1.scatter(x,y,s,c, picker=True)
-    #fig.savefig('pscoll.eps')
+    # set scattering plot and allow interactinve selection of points on plot
+    col = ax1.scatter(x,y,s,c=c, picker=True)
     fig.canvas.mpl_connect('pick_event',onpick3)
     fig.set_size_inches(w,h)
-    ax1.set_ylim([0,max(y)+100])
-    ax1.set_xlim([0,x[-1]+1000])
-    plt.show()
+    #
+    maxy = max(y)
+    maxs = max(s)/100
+    ax1.set_ylim([-maxy*.01,maxy+maxs])
+    ax1.set_xlim([-x[-1]*0.01,x[-1]*1.01+maxs])
+    #
+    plt.title(k)
+    delta_score = [abs(i[0]-i[1]) for i in data]
+    minscore = min(delta_score)
+    maxscore = max(delta_score)
+    text1 = 'Number of data points: {0}\nMin score difference: {1}\nMax score difference: {2}\n\n'.format(x[-1],minscore,maxscore)
+    text2 = 'Blue: Score excluding H is lower\nRed: Score including PDB H is lower\nYellow: The same '
+    plt.text(x[-1]*0.1,maxy*.65, text1+text2,fontsize=16)
+    plt.ylabel('Clash score - Excluding hydrogens in input file')
+    fig.savefig('pscoll.eps')
+    plt.show()     
 
+
+def hist_both_clash_scores(x,y,k):
+    
+    # set figure look
+    
+    h = 11	# figure hight
+    w = 11	# figure width
+    d = 0.05	# distance between plot regon and figure edge
+    plt.figtext(0,0,k, fontsize=16)
+    fig, axScatter = plt.subplots(figsize=(w,h))
+
+    plt.subplots_adjust(left=d, right=1-d, top=1-d, bottom=d)
+
+    # the scatter plot:
+    axScatter.scatter(x, y)
+    axScatter.set_aspect(1.)
+    
+    # create new axes on the right and on the top of the current axes
+    # The first argument of the new_vertical(new_horizontal) method is
+    # the height (width) of the axes to be created in inches.
+    divider = make_axes_locatable(axScatter)
+    binlim = 200
+    axHistx = divider.append_axes("top", 3, pad=1, sharex=axScatter, xlabel='Clash score without PDB Hydrogen', xlim=[0,binlim])
+    axHisty = divider.append_axes("right", 3, pad=1, sharey=axScatter, ylabel='Clash score with PDB Hydrogen', ylim=[0,binlim])
+    plt.annotate
+    
+    #bins = np.arange(-lim, lim + binwidth, binwidth)
+    bins = 40
+    axHistx.hist(x, bins=bins)
+    axHisty.hist(y, bins=bins, orientation='horizontal')
+    plt.figtext(0.4,0.97,k, fontsize=16)
+    plt.draw()
+    plt.show()
+    
+    
 def zero_scores(clash_data):
     '''
     In ELECTRON MICROSCOPE files there is no EXPERIMENT TYPE and clash score are zero
@@ -115,10 +173,10 @@ def zero_scores(clash_data):
         for k in keys:
             zero_scores_dict[k].append(x[3])
 
-    print 'Number of records with 0.0 clash scores'
+    print 'Number of records with 0.0 clash scores: {}'.format(len(zero_score))
     print '='*60
     for x in zero_scores_dict:
-        print 'from {0} is: {1}'.format(x,len(zero_scores_dict[x]))
+        print '{0:30} : {1:4}'.format(x,len(zero_scores_dict[x]))
     print '*'*60
 
 def create_by_type_dict(pdb_clash_score_and_name):
@@ -134,7 +192,7 @@ def create_by_type_dict(pdb_clash_score_and_name):
     print 'Experimental type breakdown'
     print '='*60
     for x in by_type_dict:
-        print 'Number of from {0} is: {1}'.format(x,len(by_type_dict[x]))
+        print ' {0:30} : {1:4}'.format(x,len(by_type_dict[x]))
     print '*'*60
     return by_type_dict
 

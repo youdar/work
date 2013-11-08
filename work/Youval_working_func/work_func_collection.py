@@ -16,7 +16,7 @@ def set_working_path(work_path):
   >>>set_working_path('Clashes\junk')
   '''
   # locate the directory containing the log files
-  if '\\' in work_path:
+  if '\\' in work_path:  # this does not work is the folder name starts with 't'
     work_path = work_path.split('\\')
   elif '/' in work_path:
     work_path = work_path.split('/')
@@ -48,7 +48,7 @@ def get_file_name(file_name):
   return file_name
 
 
-def get_pdb_file(file_name):
+def get_pdb_file(file_name, print_out=True):
   ''' (file_name) -> file_path
   This function will check if a pdb file_name exist.
   If it is not, it will either fetch it from the RCSB website 
@@ -72,7 +72,8 @@ def get_pdb_file(file_name):
   
   if not os.path.isfile(file_name):
     # get a clean pdb file name
-    print 'No such file in working directory. Try to fetch {} file from RCSB web site'.format(file_name)
+    if print_out:
+      print 'No such file in working directory. Trying to fetch {} file from RCSB web site'.format(file_name)
     file_name = get_file_name(file_name)  
     osType = sys.platform
     if osType.startswith('win'):
@@ -86,6 +87,6 @@ def get_pdb_file(file_name):
         if file_name in p:
           break
       file_name = os.path.join(pdb_dir,pdb_files[i])
-  else:
+  elif print_out:
     print 'Using the file {} found in the working directory'.format(file_name)
   return file_name

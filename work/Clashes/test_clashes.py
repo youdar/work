@@ -4,6 +4,7 @@ from mmtbx.tls.tools import tls_from_pdb_inp
 from iotbx import pdb
 import iotbx.phil
 from libtbx.utils import Usage
+import cProfile
 import sys,os
 
 

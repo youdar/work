@@ -13,9 +13,9 @@ def run():
     '''
     Read results of clash score servey
 
-    data = list([score_with_hydrogen,score_without_hydrogen]...)
-    data_files = list([score_with_hydrogen,score_without_hydrogen,experment_type,file_name]...)
-    data_dict[file_name] = [score_with_hydrogen,score_without_hydrogen,experment_type]
+    pdb_clash_scores = list([score_with_hydrogen,score_without_hydrogen]...)
+    pdb_clash_score_and_name = list([score_with_hydrogen,score_without_hydrogen,experment_type,file_name]...)
+    pdb_clash_score_dict[file_name] = [score_with_hydrogen,score_without_hydrogen,experment_type]
     '''
     # locate the directory containing the log files
     osType = sys.platform
@@ -65,7 +65,7 @@ def plot_data(pdb_clash_score_and_name,by_type_dict):
         #datalist = [[i,d[0],(d[0]-d[1])] for i,d in enumerate(data)]
         x = range(1,len(data)+1)
         #x = [d[0] for d in datalist]
-        y = [d[1] for d in data]	# use clash score without pdb hydrogens as y
+        y = [d[1] for d in data]	# use clash score without pdb hydrogens as y (keep_hydrogens=False)
         y2 = [d[0] for d in data]	# use clash score with pdb hydrogens as y
         # make the size of the points on the plot relative to the difference in the clash scores
         s = [50 + 5*abs(d[1]-d[0]) for d in data]
@@ -77,7 +77,7 @@ def plot_data(pdb_clash_score_and_name,by_type_dict):
             elif data[i][0]<data[i][1]: c[i] = 'r'
         #c = rand(len(data))
         plot_experiment(x,y,s,c,k,data)  
-        #hist_both_clash_scores(y,y2,k)
+        hist_both_clash_scores(y,y2,k)
     
 
 def plot_experiment(x,y,s,c,k,data):
@@ -128,6 +128,11 @@ def plot_experiment(x,y,s,c,k,data):
 
 
 def hist_both_clash_scores(x,y,k):
+    '''
+    x: clash score without pdb hydrogens as y (keep_hydrogens=False)
+    y: clash score with pdb hydrogens as y
+    k: Experiment type
+    '''
     
     # set figure look
     

@@ -5,6 +5,7 @@ from mmtbx import monomer_library
 import mmtbx.monomer_library.server
 import cctbx.geometry_restraints.manager
 from libtbx.utils import Sorry
+from libtbx.utils import null_out
 from libtbx import easy_run
 import iotbx.utils
 import iotbx.phil
@@ -38,8 +39,8 @@ def run(file_name):
     strict_conflict_handling=work_params.strict_processing,
     substitute_non_crystallographic_unit_cell_if_necessary=True,
     max_atoms=work_params.max_atoms,
-    log=sys.stdout)
-    #log=temp_log)
+    #log=sys.stdout)
+    log=null_out())
   # conflict handling
   if (work_params.strict_processing):
     msg = processed_pdb_file.all_chain_proxies.fatal_problems_message()

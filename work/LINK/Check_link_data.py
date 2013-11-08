@@ -4,7 +4,7 @@ from mmtbx.chemical_components import get_type
 from iotbx.pdb import common_residue_names_get_class
 import cPickle as pickle
 import numpy as nm
-import os
+import os,sys
 
 '''
 Exploring the contant of the LINK records in PDB files
@@ -29,7 +29,7 @@ COLUMNS         DATA TYPE      FIELD           DEFINITION
 57              AChar          iCode2          Insertion code.
 60 - 65         SymOP          sym1            Symmetry operator atom 1.
 67 - 72         SymOP          sym2            Symmetry operator atom 2.
-74 – 78         Real(5.2)      Length          Link distance
+74 ï¿½ 78         Real(5.2)      Length          Link distance
 
 @author: Youval Dar
 '''
@@ -75,6 +75,8 @@ def process_links(record_items):
     link_file_dict = {}		# dictionary to files containing the LINK type
     link_type_dict = {}		# dictionary to the number of LINKs of particular type
     link_length_dict = {}	# dictionary to the length of LINKs of particular type
+    # Open dictionary with number of models for each file
+    file_name_to_model_number_dict = pickle.load(open('file_name_to_model_number_dict','r'))
     # Name locations
     n1 = record_items.name_location['resName1']
     n2 = record_items.name_location['resName2']
@@ -108,7 +110,22 @@ def process_links(record_items):
     print '{0:<69}{1:<9}{2:>6}{3:>9}'.format('Link Type','LINKS Number','  Length','File')
     print '_'*99
     for link_type,count in sorted(link_type_dict.items()):
-        first_file = link_file_dict[link_type][0]
+        # look for first file with 1 model
+        link_file_dict[link_type][0]
+        n_models = 1000
+        for rec in link_file_dict[link_type]:
+            key = rec[3:7]	# take only the 4 letter pdb file name
+            if key in file_name_to_model_number_dict:
+                n_models_tmp = file_name_to_model_number_dict[key]
+            else:
+                n_models_tmp = 1000
+            if n_models_tmp == 1:
+                first_file = rec
+                break
+            elif (n_models_tmp > 0) and (n_models > n_models_tmp):
+                n_models = n_models_tmp
+                first_file = rec
+
         mean = sum(link_length_dict[link_type])/len(link_length_dict[link_type])
         print '{0:<76}{1:<9}{2:<6.2f}{3:>15}'.format(link_type,count,mean,first_file)
     # Save results dictionaries
@@ -186,7 +203,11 @@ def run(raw_link_data):
 
 if __name__=='__main__':
     # work in my working directory
-    os.chdir('/net/cci-filer2/raid1/home/youval/Work/work')
+    osType = sys.platform
+    if osType.startswith('win'):
+        os.chdir('c:\Phenix\Dev\Work\work\LINK')
+    else:
+        os.chdir('/net/cci-filer2/raid1/home/youval/Work/work/LINK')
     # open the raw data file that was produced by gather_link_info.py
     f = open('Link_pdb_file_raw_data.txt','r')
     raw_link_data = f.readlines()

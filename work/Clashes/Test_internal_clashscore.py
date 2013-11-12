@@ -68,6 +68,7 @@ def get_clashscore_internal(file_name):
     substitute_non_crystallographic_unit_cell_if_necessary=True,
     max_atoms=work_params.max_atoms,
     log=null_out())
+    #log=sys.stdout)
   # conflict handling
   if (work_params.strict_processing):
     msg = processed_pdb_file.all_chain_proxies.fatal_problems_message()

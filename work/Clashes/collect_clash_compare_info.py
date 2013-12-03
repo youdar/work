@@ -59,12 +59,12 @@ def run(directory_path):
 
 
 def add_to_data_files(data,data_files,data_dict,work_path):
-    pickle.dump(data, open('clashscore_compare_no_sym_op_same_Ovdw','w'))
-    pickle.dump(data_files, open('clashscore_compare_and_name_no_sym_op_same_Ovdw','w'))
-    pickle.dump(data_dict, open('clashscore_compare_dict_no_sym_op_same_Ovdw','w'))
+    pickle.dump(data, open('clashscore_compare_ref_1','w'))
+    pickle.dump(data_files, open('clashscore_compare_and_name_ref_1','w'))
+    pickle.dump(data_dict, open('clashscore_compare_dict_ref_1','w'))
 
 def write_to_txt_file(data_files):
-    f = open('clashscore_compare_and_name_no_sym_op_same_Ovdw.txt','w')
+    f = open('clashscore_compare_and_name_ref_1.txt','w')
     for x in data_files:
         outstr = '{4},{0:.1f},{1:.1f},{2:.1f},{3:.1f}\n'.format(*x)
         f.write(outstr)

@@ -15,7 +15,6 @@ import os,sys
 import cProfile
 import time
 
-
 ''' (str) -> str
 Compare clash scores of phenix.clashscore and the internal clashscore function
 
@@ -42,54 +41,82 @@ def get_clashscore_internal(file_name):
   clashscore: a float number representning the clashscore of the pdb file
 
   '''
-  # get the default wroking parameters
-  master_phil = get_master_phil_interpertation()
-  input_objects = iotbx.utils.process_command_line_inputs(
-    args=[file_name],
-    master_phil=master_phil,
-    input_types=("pdb","cif"))
-  work_phil = master_phil.fetch(sources=input_objects["phil"])
-  work_params = work_phil.extract()
-  # Get monomers and their properties information
-  mon_lib_srv = mmtbx.monomer_library.server.server()
-  # Get bonds properties from
-  # phenix_sources\cctbx_project\mmtbx\monomer_library\server.py
-  # phenix_sources/chem_data/mon_lib/list/mon_lib_list.cif
-  
-  ener_lib = mmtbx.monomer_library.server.ener_lib()
-  # Process pdb file
-  processed_pdb_file = mmtbx.monomer_library.pdb_interpretation.process(
-    mon_lib_srv=mon_lib_srv,
-    ener_lib=ener_lib,
-    params=work_params.pdb_interpretation,
-    file_name=file_name,
-    atom_selection_string=work_params.atom_selection,
-    strict_conflict_handling=work_params.strict_processing,
+  pdb = monomer_library.pdb_interpretation.run(args=[file_name],
     substitute_non_crystallographic_unit_cell_if_necessary=True,
-    max_atoms=work_params.max_atoms,
+    assume_hydrogens_all_missing=False,
+    hard_minimum_nonbonded_distance=0.0,
     log=null_out())
-    #log=sys.stdout)
-  # conflict handling
-  if (work_params.strict_processing):
-    msg = processed_pdb_file.all_chain_proxies.fatal_problems_message()
-    if (msg is not None):
-      raise Sorry(msg)
+
+  grm = pdb.geometry_restraints_manager(assume_hydrogens_all_missing=False,
+                                        hard_minimum_nonbonded_distance=0.0)
+
+  xrs = pdb.xray_structure()
+  sites_cart = xrs.sites_cart()
+  site_labels = pdb._geometry_restraints_manager._site_lables
+  hd_sel = xrs.hd_selection()
+  table_bonds = grm.shell_sym_tables[0]
+  full_connectivty_table = table_bonds.full_simple_connectivity()
+
+  grm.get_nonbonded_clashscore(sites_cart=sites_cart,
+                               site_labels=site_labels,
+                               hd_sel=hd_sel,
+                               full_connectivty_table=full_connectivty_table)
+
+  clashscore_all = grm.nonbonded_clash_info.nb_clashscore_all_clashes
+  clashscore_without_sym_op = grm.nonbonded_clash_info.nb_clashscore_without_sym_op
+  clashscore_due_to_sym_op = grm.nonbonded_clash_info.nb_clashscore_due_to_sym_op
+
+  return clashscore_all,clashscore_without_sym_op,clashscore_due_to_sym_op
+
+  ## get the default wroking parameters
+  #master_phil = get_master_phil_interpertation()
+  #input_objects = iotbx.utils.process_command_line_inputs(
+    #args=[file_name],
+    #master_phil=master_phil,
+    #input_types=("pdb","cif"))
+  #work_phil = master_phil.fetch(sources=input_objects["phil"])
+  #work_params = work_phil.extract()
+  ## Get monomers and their properties information
+  #mon_lib_srv = mmtbx.monomer_library.server.server()
+  ## Get bonds properties from
+  ## phenix_sources\cctbx_project\mmtbx\monomer_library\server.py
+  ## phenix_sources/chem_data/mon_lib/list/mon_lib_list.cif
+
+  #ener_lib = mmtbx.monomer_library.server.ener_lib()
+  ## Process pdb file
+  #processed_pdb_file = mmtbx.monomer_library.pdb_interpretation.process(
+    #mon_lib_srv=mon_lib_srv,
+    #ener_lib=ener_lib,
+    #params=work_params.pdb_interpretation,
+    #file_name=file_name,
+    #atom_selection_string=work_params.atom_selection,
+    #strict_conflict_handling=work_params.strict_processing,
+    #substitute_non_crystallographic_unit_cell_if_necessary=True,
+    #max_atoms=work_params.max_atoms,
+    #log=null_out())
+    ##log=sys.stdout)
+  ## conflict handling
+  #if (work_params.strict_processing):
+    #msg = processed_pdb_file.all_chain_proxies.fatal_problems_message()
+    #if (msg is not None):
+      #raise Sorry(msg)
 
 
-  if (work_params.build_geometry_restraints_manager):
-    processed_pdb_file.geometry_restraints_manager(
-      assume_hydrogens_all_missing=False,
-      hard_minimum_nonbonded_distance=0.0,
-      params_edits=work_params.geometry_restraints.edits,
-      params_remove=work_params.geometry_restraints.remove)
-    # Get clashscore
-    clashscore_all = processed_pdb_file._geometry_restraints_manager._clashscore_all_clashes
-    clashscore_only_sym_op = processed_pdb_file._geometry_restraints_manager._clashscore_only_sym_op
-    clashscore_without_sym_op = processed_pdb_file._geometry_restraints_manager._clashscore_without_sym_op
-    return clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op
-  else:
-    # a clashscore of -1 indicates the process did not work
-    return -1
+  #if (work_params.build_geometry_restraints_manager):
+    #processed_pdb_file.geometry_restraints_manager(
+      #assume_hydrogens_all_missing=False,
+      #hard_minimum_nonbonded_distance=0.0,
+      #params_edits=work_params.geometry_restraints.edits,
+      #params_remove=work_params.geometry_restraints.remove)
+    ## Get clashscore
+    #clashscore_all = processed_pdb_file.nonbonded_clash_info.nb_clashscore_all_clashes
+    #clashscore_only_sym_op = processed_pdb_file.nonbonded_clash_info.nb_clashscore_only_sym_op
+    #clashscore_without_sym_op = processed_pdb_file.nonbonded_clash_info.nb_clashscore_without_sym_op
+    #return clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op
+  #else:
+    ## a clashscore of -1 indicates the process did not work
+    #return -1
+
 
 
 def tic():
@@ -324,10 +351,10 @@ def call_both_clashscores(file_name):
   #clashscore_all = clashscore_without_sym_op = clashscore_only_sym_op = 0
   clashscore_internal = [clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op]
   tic()
-  clashscore_probe = get_clashscore_probe(file_name, out=null_out())
+  #clashscore_probe = get_clashscore_probe(file_name, out=null_out())
   #clashscore_probe = get_clashscore_probe(file_name)
   time_probe = toc(print_time=False)
-  #clashscore_probe = 0
+  clashscore_probe = 0
   return clashscore_internal,clashscore_probe,time_internal,time_probe
 
 
@@ -350,12 +377,12 @@ if (__name__ == "__main__"):
 
   # regular run
   clashscore_internal,clashscore_probe,time_internal,time_probe = call_both_clashscores(file_name)
-  
+
   #print '\nClashscore all: {0:.2f}\nwithout_sym_op: {1:.2f}\nonly_sym_op   : {2:.3f}\n'.format(*clashscore_internal)
   output_file_name = get_file_name(file_name)
   outstr = '{0}::{1:.1f}::{2:.1f}::{3}::{4}'.format(output_file_name,clashscore_internal[0],clashscore_probe,time_internal,time_probe)
   print outstr
-  
+
 
 
 

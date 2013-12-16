@@ -11,9 +11,9 @@ def run(directory_path):
     This will read the files from c:\Phenix\Dev\Work\work\Clashes\queue_clash_compare
     and orgenized it as follow:
 
-    data = list([clashscore_internal,lashscore_probe]...)
-    data_files = list([clashscore_internal,lashscore_probe,file_name]...)
-    data_dict[file_name] = [sclashscore_internal,lashscore_probe]
+    data = list([total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe]...)
+    data_files = list([total_nb_clashscore,without_sym_nb_clashscore,clashscore_probee,file_name]...)
+    data_dict[file_name] = [total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe]
 
     '''
     # Read files in directory_path
@@ -26,25 +26,26 @@ def run(directory_path):
     files_with_problems = []
     test = set()
     for file in files:
-        d = open(os.path.join(directory_path, file), "r").readlines()
+        d = open(os.path.join(directory_path, file), "r").read().splitlines()
         file = file[4:]
         # check every line in d if it can be splited
         if len(d)==1 and d[0][4:6]=='::':
             # for l in d:
-            # pdb_file_name::clashscore_internal::lashscore_probe,file_name
+            # pdb_file_name::total_nb_clashscore::without_sym_nb_clashscore::clashscore_probe::run_time::run_time_probe
             raw_data = d[0].split('::')
             file_name = raw_data[0]
-            clashscore_internal = float(raw_data[1])
-            clashscore_probe = float(raw_data[2])
-            clashscore_internal_time = float(raw_data[3])
-            clashscore_probe_time = float(raw_data[4])
+            total_nb_clashscore = float(raw_data[1])
+            without_sym_nb_clashscore = float(raw_data[2])
+            clashscore_probe = float(raw_data[3])
+            total_nb_clashscore_time = float(raw_data[4])
+            clashscore_probe_time = float(raw_data[5])
             #
-            data.append([clashscore_internal,clashscore_probe])
-            data_files.append([clashscore_internal,clashscore_probe,clashscore_internal_time,clashscore_probe_time,file_name])
-            data_dict[file_name] = [clashscore_internal,clashscore_probe]
+            data.append([total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe])
+            data_files.append([total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe,total_nb_clashscore_time,clashscore_probe_time,file_name])
+            data_dict[file_name] = [total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe]
         elif d != []:
             if len(d) > 1:
-                print file
+                #print file
                 for x in d:
                     if 'KeyError' in x:
                         new_key = x.split(':')[-1].strip()
@@ -58,15 +59,20 @@ def run(directory_path):
     return data,data_files,data_dict,files_with_problems
 
 
-def add_to_data_files(data,data_files,data_dict,work_path):
-    pickle.dump(data, open('clashscore_compare_ref_1','w'))
-    pickle.dump(data_files, open('clashscore_compare_and_name_ref_1','w'))
-    pickle.dump(data_dict, open('clashscore_compare_dict_ref_1','w'))
+def add_to_data_files(data,data_files,data_dict,work_path,outFileName):
+    pickle.dump(data, open(outFileName,'w'))
+    pickle.dump(data_files, open(outFileName+'_and_name','w'))
+    pickle.dump(data_dict, open(outFileName+'_dict','w'))
 
-def write_to_txt_file(data_files):
-    f = open('clashscore_compare_and_name_ref_1.txt','w')
+def write_to_txt_file(data_files,outFileName):
+    '''
+    lines in text file
+    file_name,total_nb_clashscore,without_sym_nb_clashscore,clashscore_probe,total_nb_clashscore_time,clashscore_probe_time
+    '''
+    f = open(outFileName+'.txt','w')
     for x in data_files:
-        outstr = '{4},{0:.1f},{1:.1f},{2:.1f},{3:.1f}\n'.format(*x)
+
+        outstr = '{5},{0:.2f},{1:.2f},{2:.2f},{3:.1f},{4:.1f}\n'.format(*x)
         f.write(outstr)
     f.close()
 
@@ -74,16 +80,17 @@ if __name__=='__main__':
     # locate the directory containing the log files
     osType = sys.platform
     if osType.startswith('win'):
-        directory_path = 'c:\Phenix\Dev\Work\work\Clashes\queue_clash_compare'
+        directory_path = 'c:\Phenix\Dev\Work\work\Clashes\queue_clash_compare-12-4-2013'
         work_path = 'c:\Phenix\Dev\Work\work\Clashes'
     else:
-        directory_path = '/net/cci/youval/Work/work/Clashes/queue_clash_compare'
+        directory_path = '/net/cci/youval/Work/work/Clashes/queue_clash_compare-12-4-2013'
         work_path = '/net/cci/youval/Work/work/Clashes'
     # convert the path to python format
     directory_path = os.path.realpath(directory_path)
     os.chdir(work_path)
     data,data_files,data_dict,files_with_problems = run(directory_path)
-    #add_to_data_files(data,data_files,data_dict,work_path)
-    #write_to_txt_file(data_files)
+    outFileName = 'clashscore_compare_ready_set_12_6_2013'
+    #add_to_data_files(data,data_files,data_dict,work_path,outFileName)
+    #write_to_txt_file(data_files,outFileName)
     print len(data_files)
     print 'Done...'

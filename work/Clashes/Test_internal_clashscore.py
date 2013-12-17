@@ -288,10 +288,10 @@ def call_both_clashscores(file_name):
   #clashscore_all = clashscore_without_sym_op = clashscore_only_sym_op = 0
   nb_clashscore = [clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op]
   tic()
-  clashscore_probe = get_clashscore_probe(file_name, out=null_out())
+  #clashscore_probe = get_clashscore_probe(file_name, out=null_out())
   #clashscore_probe = get_clashscore_probe(file_name)
   time_probe = toc(print_time=False)
-  #clashscore_probe = 0
+  clashscore_probe = 0
   return nb_clashscore,clashscore_probe,time_internal,time_probe
 
 
@@ -302,18 +302,6 @@ if (__name__ == "__main__"):
   # get the file name of the file that includes hydrogens
   file_name = get_new_file_name(file_name)
   #
-  #print 'Starting'
-  #print os.getcwd()
-  #print file_name
-  #print '*'*80
-
-
-  # Performance test
-  #cProfile.run("clashscore_internal,clashscore_probe = call_both_clashscores(file_name)")
-  #print '*'*80
-  #print 'done'
-
-  # regular run
   nb_clashscore,clashscore_probe,time_internal,time_probe = call_both_clashscores(file_name)
   # Cleanup
   #os.remove(file_name)

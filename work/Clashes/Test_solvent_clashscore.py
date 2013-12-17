@@ -44,7 +44,8 @@ def get_clashscore_internal(file_name):
     assume_hydrogens_all_missing=False,
     hard_minimum_nonbonded_distance=0.0,
     nonbonded_distance_threshold=None,
-    log=null_out())
+    log=sys.stdout)
+    #log=null_out())
   
   pdb_inp = pdb.hierarchy.input(file_name=file_name)
   
@@ -213,6 +214,7 @@ def run(file_name):
 if (__name__ == "__main__"):
   file_name = sys.argv[1]
   run(file_name)
+  #run('1ppf.pdb')
 
 
 

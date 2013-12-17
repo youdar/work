@@ -176,7 +176,7 @@ if (__name__ == "__main__"):
   file_name = sys.argv[1]
   # get the file name of the file that includes hydrogens
   #file_name = get_new_file_name(file_name)
-  clashscore_probe = get_clashscore_probe(file_name, out=null_out())
+  #clashscore_probe = get_clashscore_probe(file_name, out=null_out())
   clashscore_probe = get_clashscore_probe(file_name)
   print clashscore_probe
   print 'Done'

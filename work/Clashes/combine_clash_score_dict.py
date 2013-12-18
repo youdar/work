@@ -55,11 +55,11 @@ def run():
           s.append(data_dict_Ovdw_152[pdb_file][-1])
           s .append(file_to_year_dict[pdb_file])
           clashscore_data_dict[pdb_file] = s
-        else:
-          missing_files.append(pdb_file)
+        #else:
+          #missing_files.append(pdb_file)
           
   print len(missing_files)     
-  pickle.dump(missing_files,open(os.path.join(datapath,'missing_files'),'w'))
+  #pickle.dump(missing_files,open(os.path.join(datapath,'missing_files'),'w'))
   pickle.dump(clashscore_data_dict, open(os.path.join(datapath,'clashscore_data_dict'),'w'))
   print 'Done...'
   

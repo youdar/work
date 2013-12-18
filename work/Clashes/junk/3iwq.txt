@@ -1,0 +1,149 @@
+Clash info for: 3iwq
+================================================================================
+nonbonded_clashscore: 10.477
+clashscore          : 5.040
+================================================================================
+Clashes that show up only in PROBE
+--------------------------------------------------------------------------------
+ CZ  TYR A 344  HG2 ARG A 349     -0.402    
+ O   HOH B 530  OE1 GLU B 228     -0.424    
+ CD1 TYR A 325 HG22 THR A 316     -0.405    
+ CD2 TRP A 276  HA  PRO A 277     -0.400    
+ HD3 LYS A 246 HD12 LEU B 241     -0.407    
+ NE2 GLN B 253  O   HOH B 724     -0.466    
+ OD2 ASP B  87  OH  TYR B  92     -0.495    
+ OD2 ASP A  87  OH  TYR A  92     -0.410    
+================================================================================
+Clashes that show up only in restraints_manager
+Note: those clashes do not include clashes due to symmetry operations
+--------------------------------------------------------------------------------
+ CD  GLU A 124  H   GLU A 124     -0.422    
+ HA  LEU A 109 HD23 LEU A 109     -0.444    
+ HB3 GLN B 361 HE21 GLN B 361     -0.428    
+ HH  TYR A 325  ND1 HIS A 314     -0.661    
+ C   ASP B  47  OD1 ASP B  47     -0.502    
+ C   ALA B 307  O   PRO B 306     -0.597    
+ O   LEU A 119 HD22 LEU A 119     -0.509    
+ C   ALA A 307  O   PRO A 306     -0.582    
+ HA  ALA B 208  O   GLY B 202     -0.417    
+ C   ASP A  47  OD1 ASP A  47     -0.445    
+ HG1 THR B  17  ND1 HIS B  13     -0.663    
+ HG2 GLN B  52  O   HOH B 675     -0.489    
+ H   THR B 105  ND1 HIS B 108     -0.486    
+ C   ASN B   9  O   ILE B   8     -0.463    
+ HA  GLN B 139  HD2 PRO B 140     -0.436    
+ HA  VAL B  30  O   VAL B 337     -0.410    
+ HB3 MET A 265  HE2 MET A 265     -0.528    
+ HA  ALA A 327  O   VAL A 313     -0.454    
+ HG2 GLN B 175  O   HOH B 478     -0.519    
+ C   LYS B  91  O   THR B  90     -0.452    
+ CB  SER B  64  O   HOH B 643     -0.422    
+ C   PRO A 122  O   VAL A 121     -0.427    
+ HG3 GLN A 256  O   HOH A 457     -0.413    
+ HA  ASP B  87  HD3 PRO B  88     -0.417    
+ CE  MET A 265 HG22 THR A 262     -0.624    
+ HA  ARG A 296  HD3 PRO A 297     -0.431    
+ HB3 SER B  64  OH  TYR B 150     -0.466    
+ CG  PRO B 240 HE21 GLN B 253     -0.421    
+ HB2 GLN A  22 HE21 GLN A  22     -0.453    
+ HG2 GLN A 355  O   HOH A 682     -0.458    
+ C   TYR A 150  O   LEU A 149     -0.446    
+ HA  ASN A 137 HD22 ASN A 137     -0.546    
+ C   GLN A  35  O   TYR A  34     -0.430    
+ H   ARG A 349  HG3 ARG A 349     -0.419    
+ O   ASP B 275 HG12 VAL B 278     -0.442    
+ HB2 ALA A   4  O   HOH A1049     -0.446    
+ HG2 GLN B 355  O   ASP B 351     -0.452    
+ HB3 LEU A 117  OG  SER A 153     -0.417    
+ HH  TYR B  92  OD2 ASP B  87     -0.420    
+ CD1 ILE B 243  CD1 ILE B 252     -0.530    
+ HE2 LYS B  91  O   HOH B 844     -0.516    
+ CG  GLN A 172  O   HOH A 522     -0.687    
+ HE3 MET A 265 HG22 THR A 262     -0.668    
+ HB3 TYR B 112  O   LEU B 149     -0.436    
+ HG2 GLU B 333  O   HOH B 523     -0.415    
+ C   ASN A   9  O   ILE A   8     -0.444    
+ HG3 MET A 265  O   HOH A 523     -0.456    
+ C   PRO B 122  O   VAL B 121     -0.421    
+HD12 ILE B 243 HD12 ILE B 252     -0.448    
+ HA  ILE A  25  HD3 PRO A  26     -0.418    
+ H   ILE A 283 HG13 ILE A 283     -0.426    
+ HG3 GLN B 235  O   ALA B 231     -0.523    
+ C   LEU A 293 HD23 LEU A 293     -0.411    
+ HB3 SER A  64  OH  TYR A 150     -0.474    
+ HD2 LYS B 246 HD12 LEU A 241     -0.432    
+ HA  VAL A  30  O   VAL A 337     -0.458    
+ HE3 MET A 265 HG23 THR A 262     -0.519    
+ HD3 ARG A 258 HH11 ARG A 258     -0.414    
+ C   PRO B 181  O   GLN B 180     -0.431    
+ CZ2 TRP A 354  HG3 PRO A 280     -0.437    
+ CE  MET A 265 HG23 THR A 262     -0.617    
+ HA  TYR A 266  O   TRP A 260     -0.426    
+ CD1 ILE A 284  OD2 ASP A 351     -0.421    
+ HA  ASN B 137 HD22 ASN B 137     -0.492    
+ HB3 GLN B  23 HE21 GLN B  23     -0.412    
+ O   HOH B 724 HE22 GLN B 253     -0.429    
+ C   PRO A 330  O   ILE A 329     -0.447    
+ C   PRO B 193  O   PRO B 192     -0.422    
+ C   GLY A 320  O   THR A 319     -0.413    
+ HB2 ASP A 242  O   LYS A 239     -0.410    
+ CG2 THR A 262  HE1 MET A 265     -0.529    
+ HB3 GLN A 361 HE21 GLN A 361     -0.628    
+ HH  TYR B 325  ND1 HIS B 314     -0.695    
+ HE2 LYS B 342  O   HOH B 539     -0.432    
+ HA  TYR B 266  O   TRP B 260     -0.453    
+ C   PHE B 158  O   LEU B 157     -0.429    
+ HB3 TYR A 112  O   LEU A 149     -0.439    
+ CB  LYS A  99  O   HOH A 467     -0.492    
+ C   TYR B 150  O   LEU B 149     -0.492    
+ HA  ILE B  25  HD3 PRO B  26     -0.443    
+ HB3 MET A 265  HE3 MET A 265     -0.545    
+ CG2 THR A 262  HE3 MET A 265     -0.744    
+ C   ASP B 217  O   LEU B 216     -0.478    
+ C   LEU B 119  O   PRO B 118     -0.411    
+ HB2 ASN A 152  O   LEU A 119     -0.512    
+ H   GLN B  57  HG2 GLN B  57     -0.493    
+ C   PRO A 345  O   TYR A 344     -0.457    
+ C   THR B  17  O   ILE B  16     -0.478    
+================================================================================
+Clashes in both
+Clash                           overlap RM  overlap RPROBE     diff          vdw      
+--------------------------------------------------------------------------------
+ HE3 LYS B 164  O   HOH B 661     -0.853        -0.712        -0.141        2.740     
+ HB3 LYS A  99  O   HOH A 467     -0.739        -0.616        -0.123        2.740     
+ OD2 ASP A 351 HG12 ILE A 284     -0.534        -0.412        -0.122        2.740     
+ HD2 ARG A 133  O   HOH A 581     -0.609        -0.481        -0.128        2.740     
+ CD2 TRP B 276  HA  PRO B 277     -0.422        -0.414        -0.008        2.970     
+ HG2 GLN A 120 HD13 LEU A 119     -0.432        -0.429        -0.003        2.440     
+ HB3 PRO A 347 HG23 ILE A 284     -0.507        -0.501        -0.006        2.440     
+ HG2 GLN A 250  O   HOH A 491     -0.961        -0.817        -0.144        2.740     
+ CZ2 TRP B 276  HG3 GLN B 361     -0.447        -0.434        -0.013        2.970     
+ HG3 GLN A 172  O   HOH A 522     -0.925        -0.787        -0.138        2.740     
+ HG3 PRO A 240 HE21 GLN A 253     -0.492        -0.483        -0.009        2.270     
+ HG3 GLN A 250  O   HOH A 647     -0.594        -0.457        -0.137        2.740     
+ HB3 GLN A 180  O   HOH A 408     -0.562        -0.433        -0.129        2.740     
+ HD2 HIS A 186  O   HOH A 382     -0.738        -0.611        -0.127        2.570     
+ HG  LEU A 334 HD22 LEU A 357     -0.711        -0.703        -0.008        2.440     
+ HB  ILE A 283 HG11 VAL A 350     -0.513        -0.511        -0.002        2.440     
+ CE3 TRP A 276 HG12 VAL A 278     -0.425        -0.425        0.000         2.970     
+ HD3 PRO A   5  O   HOH A1014     -0.571        -0.434        -0.137        2.740     
+ HB2 LEU A 241  HD3 LYS B 246     -0.594        -0.564        -0.030        2.440     
+ HB3 ASN A 279  OG  SER A 282     -0.609        -0.488        -0.121        2.740     
+ HB  THR A  17  HD3 PRO A  18     -0.548        -0.546        -0.002        2.440     
+ HA  ILE A 283  O   HOH A 436     -1.064        -0.937        -0.127        2.740     
+ HG  LEU B 334 HD22 LEU B 357     -0.528        -0.516        -0.012        2.440     
+ HB2 GLN A 180  HD3 PRO A 181     -0.432        -0.430        -0.002        2.440     
+ N   ILE A  33 HD12 ILE A  33     -0.474        -0.467        -0.007        2.770     
+ HG2 GLN A  57  O   HOH A 690     -0.584        -0.442        -0.142        2.740     
+ CE  MET A 265  CG2 THR A 262     -0.866        -0.851        -0.015        3.400     
+ HG3 PRO B 240 HE21 GLN B 253     -0.577        -0.569        -0.008        2.270     
+ HA  ALA A 151  HA  LEU A 119     -0.422        -0.407        -0.015        2.440     
+ CD1 ILE B 243 HD12 ILE B 252     -0.673        -0.663        -0.010        2.920     
+ O   PRO A 280 HD12 ILE A 284     -0.978        -0.852        -0.126        2.740     
+ CD2 TYR A  34 HD11 ILE A   8     -0.442        -0.434        -0.008        2.970     
+ CE2 TRP A 354  HG3 PRO A 280     -0.561        -0.549        -0.012        2.970     
+ HG2 GLN B  57  OG1 THR B  55     -0.802        -0.670        -0.132        2.740     
+ HB2 PHE A 328 HD21 LEU A 238     -0.418        -0.402        -0.016        2.440     
+ HB  THR B  17  HD3 PRO B  18     -0.427        -0.415        -0.012        2.440     
+================================================================================
+Done

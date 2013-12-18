@@ -1,0 +1,477 @@
+(lp1
+(lp2
+S'1a0s'
+p3
+aS'FOBS::f_obs is None::i_obs is None'
+p4
+aa(lp5
+S'1am7'
+p6
+aS'FOBS::f_obs is None::i_obs is None'
+p7
+aa(lp8
+S'1av2'
+p9
+aS'I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p10
+aa(lp11
+S'1axg'
+p12
+aS'FOBS::f_obs is None::i_obs is None'
+p13
+aa(lp14
+S'1b26'
+p15
+aS'FOBS::f_obs is None::i_obs is None'
+p16
+aa(lp17
+S'1b7b'
+p18
+aS'FOBS::f_obs is None::i_obs is None'
+p19
+aa(lp20
+S'1b8d'
+p21
+aS'FOBS::f_obs is None::i_obs is None'
+p22
+aa(lp23
+S'1bxz'
+p24
+aS'f_obs is None::'
+p25
+aa(lp26
+S'1c5e'
+p27
+aS'f_obs is None::'
+p28
+aa(lp29
+S'1dao'
+p30
+aS'f_obs is None::'
+p31
+aa(lp32
+S'1dwn'
+p33
+aS'FOBS::f_obs is None::i_obs is None'
+p34
+aa(lp35
+S'1dzl'
+p36
+aS'f_obs is None::'
+p37
+aa(lp38
+S'1e3d'
+p39
+aS'f_obs is None::'
+p40
+aa(lp41
+S'1ei7'
+p42
+aS'f_obs is None::'
+p43
+aa(lp44
+S'1fui'
+p45
+aS'FOBS::f_obs is None::i_obs is None'
+p46
+aa(lp47
+S'1gy8'
+p48
+aS'F(+),SIGF(+),F(-),SIGF(-)::f_obs is None::i_obs is None'
+p49
+aa(lp50
+S'1gzh'
+p51
+aS'F(+),SIGF(+),F(-),SIGF(-)::f_obs is None::i_obs is None'
+p52
+aa(lp53
+S'1hcy'
+p54
+aS'Warning: merging non-unique data::FOBS::f_obs is None::i_obs is None'
+p55
+aa(lp56
+S'1hh3'
+p57
+aS'f_obs is None::'
+p58
+aa(lp59
+S'1hha'
+p60
+aS'f_obs is None::'
+p61
+aa(lp62
+S'1hhc'
+p63
+aS'f_obs is None::'
+p64
+aa(lp65
+S'1hhf'
+p66
+aS'f_obs is None::'
+p67
+aa(lp68
+S'1hhu'
+p69
+aS'f_obs is None::'
+p70
+aa(lp71
+S'1hhz'
+p72
+aS'f_obs is None::'
+p73
+aa(lp74
+S'1hkd'
+p75
+aS'f_obs is None::'
+p76
+aa(lp77
+S'1kmn'
+p78
+aS'f_obs is None::'
+p79
+aa(lp80
+S'1llc'
+p81
+aS'FOBS::f_obs is None::i_obs is None'
+p82
+aa(lp83
+S'1mms'
+p84
+aS'F(+),SIGF(+),F(-),SIGF(-)::f_obs is None::i_obs is None'
+p85
+aa(lp86
+S'1mpr'
+p87
+aS'FOBS::f_obs is None::i_obs is None'
+p88
+aa(lp89
+S'1nal'
+p90
+aS'FOBS::f_obs is None::i_obs is None'
+p91
+aa(lp92
+S'1o4z'
+p93
+aS'F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p94
+aa(lp95
+S'1o7j'
+p96
+aS'f_obs is None::'
+p97
+aa(lp98
+S'1ofs'
+p99
+aS'I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p100
+aa(lp101
+S'1ovo'
+p102
+aS'FOBS::f_obs is None::i_obs is None'
+p103
+aa(lp104
+S'1qox'
+p105
+aS'f_obs is None::'
+p106
+aa(lp107
+S'1swb'
+p108
+aS'f_obs is None::'
+p109
+aa(lp110
+S'1swd'
+p111
+aS'f_obs is None::'
+p112
+aa(lp113
+S'1swe'
+p114
+aS'f_obs is None::'
+p115
+aa(lp116
+S'1swf'
+p117
+aS'f_obs is None::'
+p118
+aa(lp119
+S'1swg'
+p120
+aS'f_obs is None::'
+p121
+aa(lp122
+S'1swh'
+p123
+aS'f_obs is None::'
+p124
+aa(lp125
+S'1swj'
+p126
+aS'f_obs is None::'
+p127
+aa(lp128
+S'1swk'
+p129
+aS'f_obs is None::'
+p130
+aa(lp131
+S'1swl'
+p132
+aS'f_obs is None::'
+p133
+aa(lp134
+S'1swn'
+p135
+aS'f_obs is None::'
+p136
+aa(lp137
+S'1swo'
+p138
+aS'f_obs is None::'
+p139
+aa(lp140
+S'1swp'
+p141
+aS'f_obs is None::'
+p142
+aa(lp143
+S'1swq'
+p144
+aS'f_obs is None::'
+p145
+aa(lp146
+S'1swr'
+p147
+aS'f_obs is None::'
+p148
+aa(lp149
+S'1tnv'
+p150
+aS'FOBS::f_obs is None::i_obs is None'
+p151
+aa(lp152
+S'1ugi'
+p153
+aS'f_obs is None::'
+p154
+aa(lp155
+S'1up4'
+p156
+aS'F(+),F(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p157
+aa(lp158
+S'1up6'
+p159
+aS'F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p160
+aa(lp161
+S'1up7'
+p162
+aS'F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p163
+aa(lp164
+S'1upm'
+p165
+aS'f_obs is None::'
+p166
+aa(lp167
+S'1upp'
+p168
+aS'f_obs is None::'
+p169
+aa(lp170
+S'1vcr'
+p171
+aS'f_obs is None::'
+p172
+aa(lp173
+S'1vyw'
+p174
+aS'F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p175
+aa(lp176
+S'1vzm'
+p177
+aS'f_obs is None::'
+p178
+aa(lp179
+S'1w39'
+p180
+aS'f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p181
+aa(lp182
+S'1w3m'
+p183
+aS'f_obs is None::'
+p184
+aa(lp185
+S'1w7q'
+p186
+aS'f_obs is None::'
+p187
+aa(lp188
+S'1w7r'
+p189
+aS'f_obs is None::'
+p190
+aa(lp191
+S'1wc7'
+p192
+aS'f_obs is None::'
+p193
+aa(lp194
+S'1x35'
+p195
+aS'f_obs is None::'
+p196
+aa(lp197
+S'2a5h'
+p198
+aS'Warning: merging non-unique data::I1(+),SIGI1(+),I1(-),SIGI1(-)::I2(+),SIGI2(+),I2(-),SIGI2(-)::f_obs is None::i_obs is None'
+p199
+aa(lp200
+S'2bht'
+p201
+aS'Warning: merging non-unique data::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p202
+aa(lp203
+S'2boy'
+p204
+aS'f_obs is None::'
+p205
+aa(lp206
+S'2hmg'
+p207
+aS'FOBS::f_obs is None::i_obs is None'
+p208
+aa(lp209
+S'2izw'
+p210
+aS'f_obs is None::'
+p211
+aa(lp212
+S'2mpr'
+p213
+aS'FOBS::f_obs is None::i_obs is None'
+p214
+aa(lp215
+S'2rsl'
+p216
+aS'f_obs is None::'
+p217
+aa(lp218
+S'2ux2'
+p219
+aS'FOBS::f_obs is None::i_obs is None'
+p220
+aa(lp221
+S'2v4j'
+p222
+aS'f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p223
+aa(lp224
+S'2vkr'
+p225
+aS'f_obs is None::'
+p226
+aa(lp227
+S'2w4y'
+p228
+aS'f_obs is None::'
+p229
+aa(lp230
+S'2xvt'
+p231
+aS'Warning: merging non-unique data::DANO::FOBS-1,SIGFOBS-1::DANO-1,SIGDANO-1::F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::FOBS-2,SIGFOBS-2::IOBS-1,SIGIOBS-1::DANO-2,SIGDANO-2::R-free-flags-2::F-1(+),SIGF-1(+),F-1(-),SIGF-1(-)::I-1(+),SIGI-1(+),I-1(-),SIGI-1(-)::FOBS-3,SIGFOBS-3::IOBS-2,SIGIOBS-2::DANO-3,SIGDANO-3::R-free-flags-3::F-2(+),SIGF-2(+),F-2(-),SIGF-2(-)::I-2(+),SIGI-2(+),I-2(-),SIGI-2(-)::f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p232
+aa(lp233
+S'2yaw'
+p234
+aS'f_obs is None::'
+p235
+aa(lp236
+S'3cf2'
+p237
+aS'F(+),SIGF(+),F(-),SIGF(-)::f_obs is None::i_obs is None'
+p238
+aa(lp239
+S'3dar'
+p240
+aS'Warning: merging non-unique data::HLA,HLB,HLC,HLD::DANO,SIGDANO::F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p241
+aa(lp242
+S'3n97'
+p243
+aS'f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p244
+aa(lp245
+S'3q7h'
+p246
+aS'f_obs is None::'
+p247
+aa(lp248
+S'3sod'
+p249
+aS'Warning: merging non-unique data::FOBS::f_obs is None::i_obs is None'
+p250
+aa(lp251
+S'3u1n'
+p252
+aS'F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs is None::i_obs is None'
+p253
+aa(lp254
+S'4a63'
+p255
+aS'Warning: merging non-unique data::DANO,SIGDANO::F(+),SIGF(+),F(-),SIGF(-)::I(+),SIGI(+),I(-),SIGI(-)::f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p256
+aa(lp257
+S'4afl'
+p258
+aS'f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p259
+aa(lp260
+S'4b3z'
+p261
+aS'f_obs is None::'
+p262
+aa(lp263
+S'4bik'
+p264
+aS'f_obs is None::'
+p265
+aa(lp266
+S'4ejf'
+p267
+aS'f_obs is None::'
+p268
+aa(lp269
+S'4ev0'
+p270
+aS'f_obs is None::'
+p271
+aa(lp272
+S'4hkj'
+p273
+aS'Warning: merging non-unique data::IOBS-11,SIGIOBS-11::I2(+),SIGI2(+),I2(-),SIGI2(-)::f_obs is None::'
+p274
+aa(lp275
+S'4hmg'
+p276
+aS'FOBS::f_obs is None::i_obs is None'
+p277
+aa(lp278
+S'4j26'
+p279
+aS'f_obs.crystal_symmetry is not similar to crystal symmetry::'
+p280
+aa(lp281
+S'5cro'
+p282
+aS'FOBS::f_obs is None::i_obs is None'
+p283
+aa(lp284
+S'5hmg'
+p285
+aS'FOBS::f_obs is None::i_obs is None'
+p286
+aa.

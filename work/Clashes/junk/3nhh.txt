@@ -1,0 +1,44 @@
+Clash info for: 3nhh
+================================================================================
+nonbonded_clashscore: 12.091
+clashscore          : 2.333
+================================================================================
+Clashes that show up only in PROBE
+--------------------------------------------------------------------------------
+================================================================================
+Clashes that show up only in restraints_manager
+Note: those clashes do not include clashes due to symmetry operations
+--------------------------------------------------------------------------------
+ OD1 ASP A  21 CA    CA A 151     -0.574    
+ C   ASP A  19  OD1 ASP A  19     -0.418    
+ HB2 LEU A  38  O   LEU A  37     -0.422    
+ C   GLY A  20  O   ASP A  19     -0.445    
+ CG  GLN A  80  O   THR A  82     -0.493    
+ C   ASP A  95  O   ALA A  94     -0.411    
+ C   ASP A  83  OD1 ASP A  83     -0.498    
+ O   SER A  59 HG22BTHR A  62     -0.449    
+ HD3 PRO A  56  O   PHE A  50     -0.415    
+ C   LYS A  63  O   THR A  62     -0.415    
+ C   ARG A 105  O   VAL A 104     -0.437    
+ C   ASN A 100  O   VAL A  99     -0.444    
+ HA  LEU A  38 HD23 LEU A  38     -0.629    
+ HA  LEU A  37 HD23 LEU A  37     -0.424    
+HD13 ILE A 139 HG21 ILE A 139     -0.492    
+ HG3 LYS A  36  O   HOH A 213     -0.464    
+ CG2ATHR A  62  OE2 GLU A  23     -0.475    
+ HB  ILE A 139  O   GLY A 107     -0.476    
+ HB2 GLU A  67  O   LYS A  63     -0.430    
+ HA  THR A  82  O   ARG A  87     -0.423    
+ HB2 LYS A 134  HE3 LYS A 134     -0.447    
+ HB3 SER A 141  O   LYS A 136     -0.460    
+================================================================================
+Clashes in both
+Clash                           overlap RM  overlap RPROBE     diff          vdw      
+--------------------------------------------------------------------------------
+ HB2 ALA A 109 HG22 THR A  41     -0.449        -0.440        -0.009        2.440     
+ HB1 ALA A  94  HB2 ALA A  69     -0.475        -0.458        -0.017        2.440     
+ HG2 GLN A  80  O   THR A  82     -0.548        -0.424        -0.124        2.740     
+ HB3 ASP A  77  OD1 ASN A 118     -0.547        -0.419        -0.128        2.740     
+ HA  GLU A 101 HD22 LEU A 125     -0.550        -0.549        -0.001        2.440     
+================================================================================
+Done

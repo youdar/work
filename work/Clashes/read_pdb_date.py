@@ -11,15 +11,17 @@ def run():
   file_to_year_dict = {}
 
   # find the file in LBL pdb mirror folder
-  pdb_dir = os.environ["PDB_MIRROR_PDB"]
-  pdb_files = open(os.path.join(pdb_dir, "INDEX"), "r").read().splitlines()
-  for p in pdb_files:
-    file_name = p[-11:-7]
-    file_name_with_path = os.path.join(pdb_dir,p)
-    file_lines = smart_open.for_reading(
-            file_name = file_name_with_path).read().splitlines()
-    year = get_year(file_lines)
-    file_to_year_dict[file_name] = year
+  #pdb_dir = os.environ["PDB_MIRROR_PDB"]
+  #pdb_files = open(os.path.join(pdb_dir, "INDEX"), "r").read().splitlines()
+  #for p in pdb_files:
+    #file_name = p[-11:-7]
+    #file_name_with_path = os.path.join(pdb_dir,p)
+    #file_lines = smart_open.for_reading(
+            #file_name = file_name_with_path).read().splitlines()
+    #year = get_year(file_lines)
+    #file_to_year_dict[file_name] = year
+
+  #print len(file_to_year_dict)
 
   # collect year for files that are not in INDEX
   os.chdir('/net/cci/youval/Work/work/Clashes/junk')
@@ -37,10 +39,12 @@ def run():
     file_lines = smart_open.for_reading(
                 file_name = file_name).read().splitlines()
     year = get_year(file_lines)
-    file_to_year_dict[file_name] = year
+    file_to_year_dict[f] = year
+    print len(file_to_year_dict)
     os.remove(file_name)
 
-  pickle.dump(file_to_year_dict, open(os.path.join(data_file_path, "file_to_year_dict"),'w'))
+  #pickle.dump(file_to_year_dict, open(os.path.join(data_file_path, "file_to_year_dict"),'w'))
+  print len(file_to_year_dict)
   print 'Done...'
 
 def get_year(file_lines):

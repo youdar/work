@@ -31,7 +31,7 @@ def run():
   data_dict_file_Ovdw_152 = 'clashscore_compare_reduce_12_11_2013_dict' 	# Probe O vdw is 1.52
   data_dict_Ovdw_152 = pickle.load(open(os.path.join(datapath,data_dict_file_Ovdw_152),'r'))
   
-  data_dict_file_solvent = 'clashscore_solvent_reduce_12_13_2013_dict' 		# with solvent-solvent results
+  data_dict_file_solvent = 'clashscore_solvent_reduce_12_18_2013_dict' 		# with solvent-solvent results
   data_dict_solvent = pickle.load(open(os.path.join(datapath,data_dict_file_solvent),'r'))
   
   experiment_dict_file = 'experiment_type_to_files_dict'		# source for experiment_type_dict
@@ -58,9 +58,9 @@ def run():
         #else:
           #missing_files.append(pdb_file)
           
-  print len(missing_files)     
+  #print len(missing_files)     
   #pickle.dump(missing_files,open(os.path.join(datapath,'missing_files'),'w'))
-  pickle.dump(clashscore_data_dict, open(os.path.join(datapath,'clashscore_data_dict'),'w'))
+  #pickle.dump(clashscore_data_dict, open(os.path.join(datapath,'clashscore_data_dict'),'w'))
   print 'Done...'
   
 if __name__=='__main__':

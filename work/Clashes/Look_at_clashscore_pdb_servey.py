@@ -116,7 +116,8 @@ def plot_experiment(x,y1,y2,y3,k,files):
             return False, dict()
 
     # set figure look
-    gr = 1.61803398875 	# Golden ratio
+    #gr = 1.61803398875 	# Golden ratio
+    gr = 1
     h = 10				# figure hight
     w = gr*h			# figure width
     d = 0.05			# distance between plot regon and figure edge
@@ -203,7 +204,8 @@ def plot_scatter_plots(data_dict,experiment_type_dict,pdb_file_list):
         files = [d[1] for d in data]
         
         # set figure look
-        gr = 1.61803398875
+        #gr = 1.61803398875
+        gr = 1
         h = 10	# figure hight
         w = gr*h	# figure width
         d = 0.05	# distance between plot regon and figure edge

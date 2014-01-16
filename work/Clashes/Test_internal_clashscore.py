@@ -41,7 +41,6 @@ def get_clashscore_internal(file_name):
   clashscore: a float number representning the clashscore of the pdb file
 
   '''
-  #os.chdir('/net/cci/youval/Work/work/Clashes/wtest')
   pdb = monomer_library.pdb_interpretation.run(args=[file_name],
     substitute_non_crystallographic_unit_cell_if_necessary=True,
     assume_hydrogens_all_missing=False,
@@ -65,11 +64,12 @@ def get_clashscore_internal(file_name):
   clashscore_without_sym_op = obj.nb_clashscore_simple
   clashscore_due_to_sym_op = obj.nb_clashscore_due_to_sym_op
   
-  for x in obj.nb_clash_proxies_simple:
-    if abs(x[3]-x[4])>0.5:
-      print x[0]
+  #for x in obj.nb_clash_proxies_simple:
+    #if abs(x[3]-x[4])>0.5:
+      #print x[0]
 
-  return clashscore_all,clashscore_without_sym_op,clashscore_due_to_sym_op
+  #return clashscore_all,clashscore_without_sym_op,clashscore_due_to_sym_op
+  return obj
 
 
 def tic():
@@ -283,21 +283,21 @@ def get_pdb_file(file_name,fetch_file=False,print_out=True):
 
 def call_both_clashscores(file_name):
   tic()
-  clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op = get_clashscore_internal(file_name)
+  #clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op = get_clashscore_internal(file_name)
+  nb_clashscore = get_clashscore_internal(file_name)
   time_internal = toc(print_time=False)
   #clashscore_all = clashscore_without_sym_op = clashscore_only_sym_op = 0
-  nb_clashscore = [clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op]
+  #nb_clashscore = [clashscore_all,clashscore_without_sym_op,clashscore_only_sym_op]
   tic()
-  #clashscore_probe = get_clashscore_probe(file_name, out=null_out())
+  clashscore_probe = get_clashscore_probe(file_name, out=null_out())
   #clashscore_probe = get_clashscore_probe(file_name)
   time_probe = toc(print_time=False)
-  clashscore_probe = 0
+  #clashscore_probe = 0
   return nb_clashscore,clashscore_probe,time_internal,time_probe
 
 
 if (__name__ == "__main__"):
   set_working_path('Clashes\wtest')
-  #os.chdir('/net/cci/youval/Work/work/Clashes/wtest/')
   file_name = sys.argv[1]
   # get the file name of the file that includes hydrogens
   file_name = get_new_file_name(file_name)
@@ -306,12 +306,18 @@ if (__name__ == "__main__"):
   # Cleanup
   #os.remove(file_name)
   #os.remove(file_name[0:5] + file_name[-3:])
-  #print '\nClashscore all: {0:.2f}\nwithout_sym_op: {1:.2f}\nonly_sym_op   : {2:.3f}\n'.format(*clashscore)
+  #
+  for x in nb_clashscore.nb_clash_proxies_solvent_solvent:
+    print x
+  
+  #
   output_file_name = get_file_name(file_name)
-  outstr = '{0}::{1:.1f}::{2:.1f}::{3:.1f}::{4}::{5}'.format(
-    output_file_name,
-    nb_clashscore[0],
-    nb_clashscore[1],
+  outstr = '{0}::{1:.1f}::{2:.1f}::{3:.1f}::{4:.1f}::{5:.1f}::{6}::{7}'.format(
+    output_file_name,  					# pdb 4 letter file name
+    nb_clashscore.nb_clashscore_all_clashes,		# clashscore_all_clashes
+    nb_clashscore.nb_clashscore_simple,  			# clashscore_simple
+    nb_clashscore.nb_clashscore_due_to_sym_op,	# clashscore_only_sym_op
+    nb_clashscore.nb_clashscore_solvent_solvent,  # clashscore_solvent_solvent
     clashscore_probe,
     time_internal,
     time_probe)

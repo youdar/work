@@ -5,10 +5,8 @@ import mmtbx.monomer_library.server
 import cctbx.geometry_restraints.manager
 from libtbx.utils import Sorry
 from libtbx.utils import null_out
-#from libtbx.utils import Usage
 from libtbx import easy_run
 from iotbx import pdb
-#import iotbx.utils
 import os,sys
 import cProfile
 import time
@@ -46,8 +44,6 @@ def get_clashscore_internal(file_name):
     nonbonded_distance_threshold=None,
     #log=sys.stdout)
     log=null_out())
-  
-  #pdb_inp = pdb.hierarchy.input(file_name=file_name)
   
   grm = pdb_processed_file.geometry_restraints_manager(assume_hydrogens_all_missing=False)
 

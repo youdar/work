@@ -36,7 +36,7 @@ def run():
   commands = []
   cntr = 0
   # Set command path
-  com_path = '/net/cci/youval/Work/work/Clashes/Test_solvent_clashscore.py'
+  com_path = '/net/cci/youval/Work/work/Clashes/Test_internal_clashscore.py'
   #
   for [pdb_file,file_name] in files_list:
     outString = '{0} {1} &> log_{2}'.format(com_path,pdb_file,file_name)

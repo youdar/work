@@ -77,10 +77,10 @@ def write_to_txt_file(data_files,out_directory,outFileName):
         f.write(outstr)
     f.close()
 
-if __name__=='__main__':
+def runall():
     # locate the directory containing the log files
-    queue_folder = 'queue_clash_solvent_12_13_2013'
-    outFileName = 'clashscore_solvent_reduce_12_13_2013'
+    queue_folder = 'queue_clash_solvent_12_18_2013'
+    outFileName = 'clashscore_solvent_reduce_12_18_2013'
     outflder = 'Data'
     osType = sys.platform
     if osType.startswith('win'):
@@ -95,7 +95,13 @@ if __name__=='__main__':
     directory_path = os.path.realpath(directory_path)
     #os.chdir(work_path)
     data,data_files,data_dict,files_with_problems = run(directory_path)
-    #add_to_data_files(data,data_files,data_dict,out_directory,outFileName)
-    #write_to_txt_file(data_files,out_directory,outFileName)
-    print len(data_files)
+    add_to_data_files(data,data_files,data_dict,out_directory,outFileName)
+    write_to_txt_file(data_files,out_directory,outFileName)
+    print '# of good files: {}'.format(len(data_files))
+    print '# of files with issues: {}'.format(len(files_with_problems))
+    for i in range(20):
+        print files_with_problems[i][0]
     print 'Done...'
+
+if __name__=='__main__':
+    runall()

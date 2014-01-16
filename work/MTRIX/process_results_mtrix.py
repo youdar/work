@@ -34,7 +34,7 @@ def add_to_data_files(data_files, probelm_files,write_files=False):
     else:
         directory_path = '/net/cci-filer2/raid1/home/youval/Work/work'
     os.chdir(directory_path)
-    print os.getcwd()    
+    print os.getcwd()
     if write_files:
         pickle.dump(data_files, open('files_with_good_MTRIX','w'))
         pickle.dump(probelm_files, open('files_with_bad_MTRIX','w'))
@@ -52,4 +52,4 @@ if __name__=='__main__':
     data_files, probelm_files = run(directory_path)
     print os.getcwd()
     #os.chdir('c:\\Phenix\\Dev\\Work\\work')
-    add_to_data_files(data_files, probelm_files,write_files=True)
+    #add_to_data_files(data_files, probelm_files,write_files=True)

@@ -5,7 +5,6 @@ from iotbx import pdb
 import unittest
 import cProfile
 import shutil
-import zipfile
 import tempfile
 import sys,os
 

@@ -1,15 +1,9 @@
 from __future__ import division
 from iotbx.pdb.multimer_reconstruction import multimer
-from mmtbx import utils
-from iotbx import reflection_file_reader
-from libtbx import easy_run
-from iotbx import pdb
-import unittest
-import cProfile
-import shutil
-import zipfile
-import tempfile
 from cctbx import crystal
+from iotbx import pdb
+import shutil
+import tempfile
 import sys,os
 
 '''
@@ -69,6 +63,10 @@ def run():
   print 'The MTRIX records for the NCS'
   print ncs0_pdb
   print 'Done.'
+
+  # Shake ncs0 to create ncs1
+  pdb_inp = pdb.input(file_name = ncs0_filename)
+  #site_cart
 
   # Cleanup
   os.chdir(currnet_dir)

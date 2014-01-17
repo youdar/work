@@ -29,8 +29,8 @@ def run():
   3) ncs1.pdb  pertubed version of ncs0_pdb, with a single NCS and MTRIX info
   '''
   currnet_dir = os.getcwd()
-  #tempdir = empfile.mkdtemp('tempdir')
-  #os.chdir(tempdir)
+  tempdir = tempfile.mkdtemp('tempdir')
+  os.chdir(tempdir)
   #
   testdir = r'C:\Phenix\Dev\Work\work\NCS\test_files'
   os.chdir(testdir)
@@ -70,6 +70,10 @@ def run():
   print ncs0_pdb
   print 'Done.'
 
+  # Cleanup
+  os.chdir(currnet_dir)
+  shutil.rmtree(tempdir)
+
 def get_file_as_str(fn):
   print '='*100
   print open(fn,'r').read()
@@ -88,13 +92,13 @@ MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1       9.483   9.256  10.995  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.489   7.820  10.603  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.725   6.911  11.796  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.586   7.189  12.629  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.632   7.506   9.642  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.831   8.604   8.746  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.308   6.254   8.859  1.00 43.17           C
+ATOM      1  N   THR 1   1       9.483  10.256  10.995  1.00 26.11           N
+ATOM      2  CA  THR 1   1       9.489   8.820  10.603  1.00 27.16           C
+ATOM      3  C   THR 1   1       9.725   7.911  11.796  1.00 20.29           C
+ATOM      4  O   THR 1   1      10.586   8.189  12.629  1.00 35.00           O
+ATOM      5  CB  THR 1   1      10.632   8.506   9.642  1.00 34.84           C
+ATOM      6  OG1 THR 1   1      10.831   9.604   8.746  1.00 67.35           O
+ATOM      7  CG2 THR 1   1      10.308   7.254   8.859  1.00 43.17           C
 TER
 """
 

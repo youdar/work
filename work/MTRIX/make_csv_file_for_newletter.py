@@ -10,6 +10,7 @@ def run():
   # read needed data
   Collect_tested_files = pickle.load(open('Collect_tested_files','r'))
   Collect_tested_fn = {x[0] for x in Collect_tested_files}
+  make_collect_tested_files_dict(Collect_tested_files)
   Collect_tested_files_dict = pickle.load(open('Collect_tested_files_dict','r'))
   files_with_good_MTRIX = set(pickle.load(open('files_with_good_MTRIX','r')))
   file_to_year_dict = pickle.load(open('file_to_year_dict','r'))
@@ -101,7 +102,6 @@ def get_worklist(Collect_tested_files_dict,work_set=[]):
            '3ra8', '3ra9', '4gmp', '1x33', '7msf', '1x36', '2izw', '1x35', '1vsz', '3kz4',
            '1ohf', '1ohg', '3nap', '4fsj', '4bcu', '2wzr', '2izn'])
 
-
   b = set(['1am7', '3m8l', '2btv', '1fui', '2uu7', '1o7j', '1mpr', '4hmg', '3u1n', '1up6', '1up7', '1up4', '3dar',
            '2uwa', '3zll', '1c5e', '2v4j', '3hmg', '4afl', '1gzh', '4b3z', '4ev0', '2vxi', '1dao', '3cf2', '1upm',
            '1vyw', '1upp', '3sod', '5hmg', '3nop', '1ofs', '2bny', '2wtl', '1ugi', '1swo', '3nou', '3dpr', '3n97',
@@ -133,6 +133,11 @@ def get_worklist(Collect_tested_files_dict,work_set=[]):
   print 'records sent back: {}'.format(len(results))
   print '*'*60
   return results
+
+def make_collect_tested_files_dict(Collect_tested_files):
+  tmp = {x[0]:x for x in Collect_tested_files}
+  pickle.dump(tmp, open('Collect_tested_files_dict','w'))
+
 
 
 if __name__=='__main__':

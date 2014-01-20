@@ -1,6 +1,8 @@
 from __future__ import division
 from iotbx.pdb.multimer_reconstruction import multimer
+from mmtbx.utils import flex
 from cctbx import crystal
+from numpy import random
 from iotbx import pdb
 import shutil
 import tempfile
@@ -66,6 +68,19 @@ def run():
 
   # Shake ncs0 to create ncs1
   pdb_inp = pdb.input(file_name = ncs0_filename)
+  xyz = pdb_inp.atoms().extract_xyz()
+  sig = 0.05
+  # apply random shift on all atoms
+  xyz = random.normal(xyz,sig)
+  tmp = [tuple(x) for x in xyz]
+  pdb_inp.atoms().set_xyz(flex.vec3_double(tmp))
+  xrs = pdb_inp.xray_structure_simple()
+  crystal_symmetry = xrs.crystal_symmetry()
+  pdb_inp.write_pdb_file(file_name = ncs1_filename, crystal_symmetry = crystal_symmetry)
+  print '*'*100
+  print "The modified NCS as a starting point (don't forget to add MTRIX records)"
+  get_file_as_str(ncs1_filename)
+  print 'ok'
   #site_cart
 
   # Cleanup

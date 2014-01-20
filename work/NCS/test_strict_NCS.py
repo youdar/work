@@ -26,7 +26,9 @@ class TestStrictNCS(unittest.TestCase):
   def setUp(self):
     '''
     create a temporary folder with files for testing.
-    Using ncs0_pdb, which contains a single NCS, CRYST1 and MTRIX records,
+    The files information was produced using
+    c:\Phenix\Dev\Work\work\NCS\create_test_file.pyncs0_pdb, which contains
+    a single NCS, CRYST1 and MTRIX records.
     produce:
     1) asu0.pdb, with complete Asymmetric Unit (ASU)
     2) ncs1.pdb  pertubed version of ncs0_pdb, with a single NCS and MTRIX info
@@ -171,6 +173,29 @@ ATOM      7  CG2 THRab   1       3.722   4.502  14.256  1.00 43.17           C
 TER
 """
 
+ncs1_pdb = """\n
+CRYST1    9.114   10.768   11.649  90.00  90.00  90.00 P 1
+SCALE1      0.109721  0.000000  0.000000        0.00000
+SCALE2      0.000000  0.092868  0.000000        0.00000
+SCALE3      0.000000  0.000000  0.085844        0.00000
+MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
+MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
+MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
+MTRIX1   2  0.496590 -0.643597  0.582393        0.00000
+MTRIX2   2  0.867925  0.376088 -0.324443        0.00000
+MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
+MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
+MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
+MTRIX3   3  0.565855  0.754120  0.333333        0.00000
+ATOM      1  N   THR 1   1       9.411  10.196  11.069  1.00 26.11           N
+ATOM      2  CA  THR 1   1       9.490   8.813  10.595  1.00 27.16           C
+ATOM      3  C   THR 1   1       9.738   7.873  11.784  1.00 20.29           C
+ATOM      4  O   THR 1   1      10.548   8.203  12.667  1.00 35.00           O
+ATOM      5  CB  THR 1   1      10.655   8.589   9.569  1.00 34.84           C
+ATOM      6  OG1 THR 1   1      10.763   9.578   8.756  1.00 67.35           O
+ATOM      7  CG2 THR 1   1      10.286   7.245   8.852  1.00 43.17           C
+TER
+"""
 
 if __name__ == "__main__":
   unittest.main(verbosity=2)  # provides a command-line interface to the test script

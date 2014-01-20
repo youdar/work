@@ -106,7 +106,8 @@ def plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.7):
     #s = [1000*rec[1] for rec in data]
     s = 40
     #c = rand(l)
-    c_ncs = 'b'
+    c_ncs = 'm'
+    #c_ncs = 'b'
     c_asu = 'y'
     c_issues = 'black'
     x_ncs = [rec[0] for rec in data_NCS]
@@ -118,7 +119,7 @@ def plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.7):
     #col = ax1.scatter(x,data)
     p1 = ax1.scatter(x_asu,y_asu, s, c_asu, linewidths=0)
     p2 = ax1.scatter(x_ncs,y_ncs, s, c_ncs, linewidths=0)
-    p3 = ax1.scatter(x_issues,y_issues, s, c_issues, linewidths=0)
+    p3 = ax1.scatter(x_issues,y_issues,s+100, c_issues, linewidths=0, marker='*')
     #fig.savefig('pscoll.eps')
     #fig.set_size_inches(w,h)
     #ax1.set_ylim([0,max(data)+0.2])
@@ -126,13 +127,13 @@ def plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.7):
     plt.xlim([0,plt_lim])
     plt.ylim([0,plt_lim])
     #
-    #plt.xlabel('R-work calculated from PDB file',fontsize=18)
-    #plt.ylabel('R-work calculated from reconstructed PDB file',fontsize=18)
-    #plt.legend([p1,p2,p3],['From PDB','Reconstructed','R-work discrepancies'])
+    plt.xlabel('R-work calculated from PDB file',fontsize=18)
+    plt.ylabel('R-work calculated from reconstructed PDB file',fontsize=18)
+    plt.legend([p1,p2,p3],['From PDB','Reconstructed','R-work discrepancies'])
     #
-    plt.xlabel('R-work calculated from PDB file - R-work reported',fontsize=18)
-    plt.ylabel('R-work calculated from reconstructed PDB file - R-work reported',fontsize=18)
-    plt.legend([p1,p2],['From PDB','Reconstructed'])
+    #plt.xlabel('R-work calculated from PDB file - R-work reported',fontsize=18)
+    #plt.ylabel('R-work calculated from reconstructed PDB file - R-work reported',fontsize=18)
+    #plt.legend([p1,p2],['From PDB','Reconstructed'])
     #
     #plt.xlabel('R-work from PDB file REMARKS',fontsize=18)
     #plt.ylabel('Calculated R-work ',fontsize=18)
@@ -240,16 +241,15 @@ if __name__=='__main__':
             ASU.append(x)
 
     #
-    #data_NCS = [[x[2],x[3]] for x in NCS]
-    #data_ASU = [[x[2],x[3]] for x in ASU]
-    #data_issues = [[x[2],x[3]] for x in data_files if (abs((x[1]-x[3])/x[1])>0.5)]
-    ##data_issues = [[x[2],x[3]] for x in NCS if (abs((x[1]-x[3])/x[1])>0.5)]
-    #plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.7)
+    data_NCS = [[x[2],x[3]] for x in NCS]
+    data_ASU = [[x[2],x[3]] for x in ASU]
+    data_issues = [[x[2],x[3]] for x in data_files if (abs((x[1]-x[3])/x[1])>0.5)]
+    plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.7)
     #
-    data_NCS = [[x[2]-x[1],x[3]-x[1]] for x in NCS]
-    data_ASU = [[x[2]-x[1],x[3]-x[1]] for x in ASU]
-    data_issues = []
-    plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.4)
+    #data_NCS = [[x[2]-x[1],x[3]-x[1]] for x in NCS]
+    #data_ASU = [[x[2]-x[1],x[3]-x[1]] for x in ASU]
+    #data_issues = []
+    #plot_data4(data_NCS,data_ASU,data_issues,plt_lim=0.4)
     #
     #data_NCS = [[x[1],x[3]] for x in NCS]
     #data_ASU = [[x[1],x[3]] for x in ASU]

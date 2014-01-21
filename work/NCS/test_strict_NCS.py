@@ -29,16 +29,34 @@ class TestStrictNCS(unittest.TestCase):
     The files information was produced using
     c:\Phenix\Dev\Work\work\NCS\create_test_file.pyncs0_pdb, which contains
     a single NCS, CRYST1 and MTRIX records.
-    produce:
-    1) asu0.pdb, with complete Asymmetric Unit (ASU)
-    2) ncs1.pdb  pertubed version of ncs0_pdb, with a single NCS and MTRIX info
+    produce the strings ncs0_pdb, asu0_pdb and ncs1_pdb for the tests below
+
+    1) Create ncs0.pdb, with complete Asymmetric Unit (ASU)
+    2) Create ncs1.pdb, pertubed version of ncs0_pdb, with a single NCS and MTRIX info
+    3) Create asu0.pdb, A complete ASU produced form ncs0
     '''
     self.currnet_dir = os.getcwd()
     self.tempdir = tempfile.mkdtemp('tempdir')
     os.chdir(self.tempdir)
     self.asu0_filename = 'asu0.pdb'
+    self.ncs0_filename = 'ncs0.pdb'
     self.ncs1_filename = 'ncs1.pdb'
-    # Create and write a file ncs0.pdb
+    # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
+    f = open(self.ncs0_filename,'w')
+    f.write(ncs0_pdb)
+    f.close()
+    # Create and write ncs1.pdb
+    f = open(self.ncs1_filename,'w')
+    f.write(ncs1_pdb)
+    f.close()
+    # Create and write asu0.pdb
+    f = open(self.asu0_filename,'w')
+    f.write(asu0_pdb)
+    f.close()
+
+    # Produce experimental data for asu0
+
+
     prefix = 'ncs0'
     pdb_inp = pdb.input(source_info=None, lines=ncs0_pdb)
     pdb_inp.write_pdb_file(file_name = '{}.pdb'.format(prefix))
@@ -78,14 +96,6 @@ class TestStrictNCS(unittest.TestCase):
     print os.getcwd()
 
 
-    # Create and write asu0.pdb
-    f = open(self.asu0_filename,'w')
-    f.write(ncs0_pdb)
-    f.close()
-    # Create and write ncs0.pdb
-    f = open(self.asu0_filename,'w')
-    f.write(ncs0_pdb)
-    f.close()
 
   def test_process_integrity(self):
     ''' Test that when comparing asu0 to itself we get R-work is zero'''

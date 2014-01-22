@@ -41,6 +41,12 @@ class TestStrictNCS(unittest.TestCase):
     '''
     self.currnet_dir = os.getcwd()
     self.tempdir = tempfile.mkdtemp('tempdir')
+    # for testing use junk folder insted of real temp directory
+    os.chdir('/net/cci/youval/Work/work/NCS/junk')
+    #os.mkdir('junk')
+    self.tempdir = '/net/cci/youval/Work/work/NCS/junk'
+    # remember to change back the clean up when going back to real temp dir
+    #
     os.chdir(self.tempdir)
     self.asu0_filename = 'asu0.pdb'
     self.asu1_filename = 'asu1.pdb'
@@ -109,6 +115,8 @@ class TestStrictNCS(unittest.TestCase):
     file_name_refined = 'refine_output_001.pdb'
     f_calc = self.get_f_calc(file_name=file_name_refined)
     r_factor_refined = self.get_r_factor(f_obs=f_obs,f_calc=f_calc)
+    print r_factor
+    print r_factor_refined
     print 'done with refinement'
 
 
@@ -124,8 +132,8 @@ class TestStrictNCS(unittest.TestCase):
 
   def tearDown(self):
     '''remove temp files and folder'''
-    os.chdir(self.currnet_dir)
-    shutil.rmtree(self.tempdir)
+    #os.chdir(self.currnet_dir)
+    #shutil.rmtree(self.tempdir)
 
   def call_refine(self,pdb_file,mtz_file,output_file_name,pdb_file_symmetry_target=None):
     '''
@@ -148,7 +156,7 @@ class TestStrictNCS(unittest.TestCase):
     cmd = " ".join([
       "phenix.refine",
       "{0} {1}".format(pdb_file,mtz_file),
-      "strategy=none",
+      #"strategy=none",
       "main.number_of_macro_cycles=3",
       "output.prefix={}".format(output_file_name),
       "--overwrite",

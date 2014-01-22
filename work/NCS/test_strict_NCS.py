@@ -1,12 +1,16 @@
 from __future__ import division
+from iotbx.pdb.multimer_reconstruction import multimer
 from iotbx import reflection_file_reader
+from mmtbx.utils import flex
 from libtbx import easy_run
 from iotbx import pdb
+from mmtbx import f_model
 import unittest
 import cProfile
 import shutil
 import tempfile
 import sys,os
+import time
 
 '''
 Test strict Non-crystallographic symmetry (NCS)
@@ -55,21 +59,22 @@ class TestStrictNCS(unittest.TestCase):
     f.close()
 
     # Produce experimental data for asu0
+    self.pdb_inp_asu0 = pdb.input(file_name=self.asu0_filename)
+    self.xrs_asu0 = self.pdb_inp_asu0.xray_structure_simple()
+    self.f_obs_asu0 = abs(self.xrs_asu0.structure_factors(d_min = 2).f_calc())
+    #self.f_obs_asu0 = self.xrs_asu0.structure_factors(d_min = 2).f_calc()
 
 
-    prefix = 'ncs0'
-    pdb_inp = pdb.input(source_info=None, lines=ncs0_pdb)
-    pdb_inp.write_pdb_file(file_name = '{}.pdb'.format(prefix))
-    xrs = pdb_inp.xray_structure_simple()
-    f_obs = abs(xrs.structure_factors(d_min = 2).f_calc())
-    mtz_dataset = f_obs.as_mtz_dataset(column_root_label="F-obs")
-    mtz_dataset.add_miller_array(
-      miller_array=f_obs.generate_r_free_flags(),
-      column_root_label="R-free-flags")
-    mtz_object = mtz_dataset.mtz_object()
-    mtz_object.write(file_name = '{}_map.mtz'.format(prefix))
-    # Process the mtz_object
-    miller_arrays = mtz_object.as_miller_arrays()
+
+
+    #mtz_dataset = f_obs.as_mtz_dataset(column_root_label="F-obs")
+    #mtz_dataset.add_miller_array(
+      #miller_array=f_obs.generate_r_free_flags(),
+      #column_root_label="R-free-flags")
+    #mtz_object = mtz_dataset.mtz_object()
+    #mtz_object.write(file_name = '{}_map.mtz'.format(prefix))
+    ## Process the mtz_object
+    #miller_arrays = mtz_object.as_miller_arrays()
     #
     #cmd = " ".join([
       #"phenix.refine",
@@ -82,16 +87,16 @@ class TestStrictNCS(unittest.TestCase):
     #easy_run.call(cmd)
     #miller_arrays = reflection_file_reader.any_reflection_file(
       #file_name = "{}_map.mtz".format(prefix)).as_miller_arrays()
-    labels = []
-    for ma in miller_arrays:
-      l = ",".join(ma.info().labels)
-      if(ma.is_complex_array()): labels.append(l)
-    for i, l in enumerate(labels):
-      cmd = " ".join([
-        "phenix.map_box", pdbf, "%s_map.mtz"%prefix,
-        "label='%s'"%l,
-        ">zlog_%s_%s"%(str(i),prefix)])
-      easy_run.call(cmd)
+    #labels = []
+    #for ma in miller_arrays:
+      #l = ",".join(ma.info().labels)
+      #if(ma.is_complex_array()): labels.append(l)
+    #for i, l in enumerate(labels):
+      #cmd = " ".join([
+        #"phenix.map_box", pdbf, "%s_map.mtz"%prefix,
+        #"label='%s'"%l,
+        #">zlog_%s_%s"%(str(i),prefix)])
+      #easy_run.call(cmd)
 
     print os.getcwd()
 
@@ -99,16 +104,54 @@ class TestStrictNCS(unittest.TestCase):
 
   def test_process_integrity(self):
     ''' Test that when comparing asu0 to itself we get R-work is zero'''
-    pdb_inp = pdb.input(file_name=self.asu0_filename)
-    pass
+    # Reconstruct ncs0 and retrive f_obs
+    m = multimer(pdb_input_file_name=self.ncs0_filename,
+                 reconstruction_type='cau',
+                 error_handle=True,
+                 eps=0.01)
+    m.write(pdb_output_file_name='asu0_calc.pdb')
+    pdb_inp = pdb.input(file_name='asu0_calc.pdb')
+    xrs_calc = pdb_inp.xray_structure_simple()
+    f_obs_calc = abs(xrs_calc.structure_factors(d_min = 2).f_calc())
+
+    f1 = self.f_obs_asu0.data()
+    f2 = f_obs_calc.data()
+
+    # this way only works if f1 and f2 are of the same length
+    scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
+    r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
+    self.assertEqual(r_factor,0, msg='Problem with test data, f_obs from ASU do not match those from from the same ASU as constructed by NCS')
+
 
   def test_pertubed_ncs(self):
     '''Test that the pertubed NCS (ncs1.pd) is different than the original one (ncs0_pdb)
     by checking that R-work is not zero
-    Compare:
-    ncs0_pdb to ncs1.pd
-    asu0.pdb to asu1.pdb'''
-    pass
+    Compare f_obs from asu0.pdb to f_calc from asu1.pdb'''
+    # Reconstruct ncs1 and retrive f_obs
+    m = multimer(pdb_input_file_name=self.ncs1_filename,
+                 reconstruction_type='cau',
+                 error_handle=True,
+                 eps=0.01)
+    m.write(pdb_output_file_name='asu1_calc.pdb')
+    pdb_inp = pdb.input(file_name='asu1_calc.pdb')
+    xrs_calc = pdb_inp.xray_structure_simple()
+    f_obs_calc = abs(xrs_calc.structure_factors(d_min = 2).f_calc())
+
+    f_obs_calc = f_obs_calc.common_set(self.f_obs_asu0)
+
+    f1 = self.f_obs_asu0.data()
+    f2 = f_obs_calc.data()
+
+
+    scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
+    print scale
+
+    r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
+    print r_factor
+    msg='''\
+    Problem with test data, f_obs from ASU do not match those from
+    the same ASU as constructed by NCS'''
+    self.assertTrue(r_factor>0, msg)
 
   def test_refinement(self):
     '''Test that refining asu1.pdb converge to asu0.pdb
@@ -128,13 +171,40 @@ class TestStrictNCS(unittest.TestCase):
     os.chdir(self.currnet_dir)
     shutil.rmtree(self.tempdir)
 
+  def get_r_factor(self,f_obs,f_calc):
+    # Note that f_model requires that
+    # f_obs is real and that f_calc is complex
+    fmodel = f_model.manager(
+      f_obs = f_obs,
+      f_calc = f_calc,
+      f_mask = f_calc.customized_copy(data = f_calc.data()*0))
+    r_factor = fmodel.r_work()
+    return r_factor
+
+
+  def tic(self):
+    #Homemade version of matlab tic and toc functions
+    global startTime_for_tictoc
+    startTime_for_tictoc = time.time()
+
+  def toc(self,msg='',print_time=True):
+    if 'startTime_for_tictoc' in globals():
+      if print_time:
+        outstr = '{0}: Elapsed time is: {1:.4f} seconds\n'.format(msg,time.time() - startTime_for_tictoc)
+        print outstr
+      else:
+        outstr = '{0:.4f}'.format(time.time() - startTime_for_tictoc)
+        return outstr
+    else:
+      print "Toc: start time not set"
+
 
 # Raw data used to build test cases
-ncs0_pdb="""\n
-CRYST1    9.114   10.768   11.649  90.00  90.00  90.00 P 1
-SCALE1      0.109721  0.000000  0.000000        0.00000
-SCALE2      0.000000  0.092868  0.000000        0.00000
-SCALE3      0.000000  0.000000  0.085844        0.00000
+ncs0_pdb="""\
+CRYST1   23.826   24.019   24.057  90.00  90.00  90.00 P 1
+SCALE1      0.041971  0.000000  0.000000        0.00000
+SCALE2      0.000000  0.041634  0.000000        0.00000
+SCALE3      0.000000  0.000000  0.041568        0.00000
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
@@ -152,7 +222,7 @@ ATOM      5  CB  THR 1   1      10.632   8.506   9.642  1.00 34.84           C
 ATOM      6  OG1 THR 1   1      10.831   9.604   8.746  1.00 67.35           O
 ATOM      7  CG2 THR 1   1      10.308   7.254   8.859  1.00 43.17           C
 """
-asu0_pdb="""\n
+asu0_pdb="""\
 CRYST1   23.826   24.019   24.057  90.00  90.00  90.00 P 1
 SCALE1      0.041971  0.000000  0.000000        0.00000
 SCALE2      0.000000  0.041634  0.000000        0.00000
@@ -183,11 +253,11 @@ ATOM      7  CG2 THRab   1       3.722   4.502  14.256  1.00 43.17           C
 TER
 """
 
-ncs1_pdb = """\n
-CRYST1    9.114   10.768   11.649  90.00  90.00  90.00 P 1
-SCALE1      0.109721  0.000000  0.000000        0.00000
-SCALE2      0.000000  0.092868  0.000000        0.00000
-SCALE3      0.000000  0.000000  0.085844        0.00000
+ncs1_pdb = """\
+CRYST1   23.826   24.019   24.057  90.00  90.00  90.00 P 1
+SCALE1      0.041971  0.000000  0.000000        0.00000
+SCALE2      0.000000  0.041634  0.000000        0.00000
+SCALE3      0.000000  0.000000  0.041568        0.00000
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
@@ -197,13 +267,13 @@ MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1       9.411  10.196  11.069  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.490   8.813  10.595  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.738   7.873  11.784  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.548   8.203  12.667  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.655   8.589   9.569  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.763   9.578   8.756  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.286   7.245   8.852  1.00 43.17           C
+ATOM      1  N   THR 1   1       9.514  10.278  10.935  1.00 26.11           N
+ATOM      2  CA  THR 1   1       9.519   8.854  10.711  1.00 27.16           C
+ATOM      3  C   THR 1   1       9.699   7.867  11.829  1.00 20.29           C
+ATOM      4  O   THR 1   1      10.692   8.121  12.544  1.00 35.00           O
+ATOM      5  CB  THR 1   1      10.676   8.475   9.646  1.00 34.84           C
+ATOM      6  OG1 THR 1   1      10.859   9.626   8.815  1.00 67.35           O
+ATOM      7  CG2 THR 1   1      10.262   7.276   8.864  1.00 43.17           C
 TER
 """
 

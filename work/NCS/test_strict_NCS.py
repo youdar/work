@@ -91,14 +91,9 @@ class TestStrictNCS(unittest.TestCase):
     m.write(pdb_output_file_name='asu1_calc.pdb')
     pdb_inp = pdb.input(file_name='asu1_calc.pdb')
     xrs_calc = pdb_inp.xray_structure_simple()
-    f_obs_calc = abs(xrs_calc.structure_factors(d_min = 2).f_calc())
+    f_obs_calc = xrs_calc.structure_factors(d_min = 2).f_calc()
 
-    f_obs_calc = f_obs_calc.common_set(self.f_obs_asu0)
-
-    f1 = self.f_obs_asu0.data()
-    f2 = f_obs_calc.data()
-    scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
-    r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
+    r_factor = self.calc_r_factor(self.f_obs_asu0,f_obs_calc)
     msg='''\
     Problem with test data, f_obs from ASU do not match those from
     the same ASU as constructed by NCS'''
@@ -122,9 +117,21 @@ class TestStrictNCS(unittest.TestCase):
     os.chdir(self.currnet_dir)
     shutil.rmtree(self.tempdir)
 
+  def calc_r_factor(self,f_obs,f_calc):
+    ''' Both f_obs and f_calc need to be real'''
+    f1 = abs(f_obs).data()
+    f2 = abs(f_calc).data()
+    scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
+    r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
+    return r_factor
+
+
   def get_r_factor(self,f_obs,f_calc):
-    # Note that f_model requires that
-    # f_obs is real and that f_calc is complex
+    '''
+    When using f_model to get r_factor,
+    Note that f_model requires that
+    f_obs is real and that f_calc is complex
+    '''
     fmodel = f_model.manager(
       f_obs = f_obs,
       f_calc = f_calc,

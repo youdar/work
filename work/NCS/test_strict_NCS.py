@@ -43,6 +43,7 @@ class TestStrictNCS(unittest.TestCase):
     self.tempdir = tempfile.mkdtemp('tempdir')
     os.chdir(self.tempdir)
     self.asu0_filename = 'asu0.pdb'
+    self.asu1_filename = 'asu1.pdb'
     self.ncs0_filename = 'ncs0.pdb'
     self.ncs1_filename = 'ncs1.pdb'
     # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
@@ -61,38 +62,19 @@ class TestStrictNCS(unittest.TestCase):
   def test_process_integrity(self):
     ''' Test that when comparing asu0 to itself we get R-work is zero'''
     # Reconstruct ncs0 and retrive f_obs
-    m = multimer(pdb_input_file_name=self.ncs0_filename,
-                 reconstruction_type='cau',
-                 error_handle=True,
-                 eps=0.01)
-    m.write(pdb_output_file_name='asu0_calc.pdb')
-    pdb_inp = pdb.input(file_name='asu0_calc.pdb')
-    xrs_calc = pdb_inp.xray_structure_simple()
-    f_obs_calc = abs(xrs_calc.structure_factors(d_min = 2).f_calc())
-
-    f1 = self.f_obs_asu0.data()
-    f2 = f_obs_calc.data()
-
-    # this way only works if f1 and f2 are of the same length
-    scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
-    r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
-    self.assertEqual(r_factor,0, msg='Problem with test data, f_obs from ASU do not match those from from the same ASU as constructed by NCS')
-
+    m = self.build_asu(file_name_ncs=self.ncs0_filename, file_name_asu='asu0_calc.pdb')
+    f_obs_calc = self.get_f_calc(file_name='asu0_calc.pdb')
+    r_factor = self.calc_r_factor(self.f_obs_asu0,f_obs_calc)
+    msg='Problem with test data, f_obs from ASU do not match those from from the same ASU as constructed by NCS'
+    self.assertEqual(r_factor,0, msg)
 
   def test_pertubed_ncs(self):
     '''Test that the pertubed NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
     by checking that R-work is not zero
     Compare f_obs from asu0.pdb to f_calc from asu1.pdb'''
     # Reconstruct ncs1 and retrive f_obs
-    m = multimer(pdb_input_file_name=self.ncs1_filename,
-                 reconstruction_type='cau',
-                 error_handle=True,
-                 eps=0.01)
-    m.write(pdb_output_file_name='asu1_calc.pdb')
-    pdb_inp = pdb.input(file_name='asu1_calc.pdb')
-    xrs_calc = pdb_inp.xray_structure_simple()
-    f_obs_calc = xrs_calc.structure_factors(d_min = 2).f_calc()
-
+    m = self.build_asu(file_name_ncs=self.ncs1_filename, file_name_asu='asu1_calc.pdb')
+    f_obs_calc = self.get_f_calc(file_name='asu1_calc.pdb')
     r_factor = self.calc_r_factor(self.f_obs_asu0,f_obs_calc)
     msg='''\
     Problem with test data, f_obs from ASU do not match those from
@@ -103,7 +85,35 @@ class TestStrictNCS(unittest.TestCase):
     '''Test that refining asu1.pdb converge to asu0.pdb
     Use asu0.pdb to create x-ray structure (xrs)
     and from it produce F_obs_test (observed structure factors)'''
-    pass
+    # produce the ASUs from the NCSs, in the current directory
+    m_asu0 = self.build_asu(file_name_ncs=self.ncs0_filename, file_name_asu=self.asu0_filename)
+    m_asu1 = self.build_asu(file_name_ncs=self.ncs1_filename, file_name_asu=self.asu1_filename)
+    #
+    f_obs = abs(self.get_f_calc(file_name=self.asu0_filename))
+    f_calc_asu1 = self.get_f_calc(file_name=self.asu1_filename)
+    # r_factor at start
+    r_factor = self.calc_r_factor(f_obs,f_calc_asu1)
+    # Make sure the difference between the f_calc, at start, is segnificant
+    self.assertTrue(r_factor > 0.05)
+    # Refine
+    # 1) create mtz file
+    file_name_mtz = self.asu0_filename.split('.')[0] + '_map.mtz'
+    self.make_mtz_file(f_obs=f_obs, file_name_mtz=file_name_mtz)
+    # 2) Refine
+    self.call_refine(
+      pdb_file=self.asu1_filename,
+      mtz_file=file_name_mtz,
+      output_file_name='refine_output')
+      #pdb_file_symmetry_target=self.asu0_filename)
+    # Process refinement resaults
+    file_name_refined = 'refine_output_001.pdb'
+    f_calc = self.get_f_calc(file_name=file_name_refined)
+    r_factor_refined = self.get_r_factor(f_obs=f_obs,f_calc=f_calc)
+    print 'done with refinement'
+
+
+
+
 
 
   #def test_2(self):
@@ -117,6 +127,67 @@ class TestStrictNCS(unittest.TestCase):
     os.chdir(self.currnet_dir)
     shutil.rmtree(self.tempdir)
 
+  def call_refine(self,pdb_file,mtz_file,output_file_name,pdb_file_symmetry_target=None):
+    '''
+    Run refinement and produce refined pdb file in current directory
+
+    To set the number of refinement cycles change main.number_of_macro_cycles
+
+    Argument:
+    ---------
+    pdb_file : pdb file to be refined
+    mtz_file : mtz file from the target experiment f_obs
+    output_file_name : the output file prefix
+    pdb_file_symmetry_target : use if you want to force symmetry of a pdb file
+
+    Output:
+    -------
+    writing out refined model, complete refinement statistics and
+    electron density maps in various formats.
+    '''
+    cmd = " ".join([
+      "phenix.refine",
+      "{0} {1}".format(pdb_file,mtz_file),
+      "strategy=none",
+      "main.number_of_macro_cycles=3",
+      "output.prefix={}".format(output_file_name),
+      "--overwrite",
+      "--quiet"])
+    if pdb_file_symmetry_target:
+      cmd = ' '.join([cmd,"--symmetry={}".format(pdb_file_symmetry_target)])
+    print cmd
+    easy_run.call(cmd)
+
+
+  def make_mtz_file(self,f_obs,file_name_mtz):
+    '''
+    Create mtz file, from f_obs or f_calc, in the current directory
+    file_name_mtz need to have the format name.mtz
+    '''
+    mtz_dataset = abs(f_obs).as_mtz_dataset(column_root_label="F-obs")
+    mtz_dataset.add_miller_array(
+      miller_array=f_obs.generate_r_free_flags(),
+      column_root_label="R-free-flags")
+    mtz_object = mtz_dataset.mtz_object()
+    mtz_object.write(file_name=file_name_mtz)
+
+  def get_f_calc(self,file_name):
+    '''Calculate f_calc (diffraction image frequencies) from a pdb file'''
+    pdb_inp = pdb.input(file_name=file_name)
+    xrs = pdb_inp.xray_structure_simple()
+    f_calc = xrs.structure_factors(d_min = 2).f_calc()
+    return f_calc
+
+  def build_asu(self,file_name_ncs,file_name_asu):
+    '''Build ASU from NCS and save the new pdb file in local directory'''
+    m = multimer(
+      pdb_input_file_name=file_name_ncs,
+      reconstruction_type='cau',
+      error_handle=True,
+      eps=0.01)
+    m.write(pdb_output_file_name=file_name_asu)
+    return m
+
   def calc_r_factor(self,f_obs,f_calc):
     ''' Both f_obs and f_calc need to be real'''
     f1 = abs(f_obs).data()
@@ -124,7 +195,6 @@ class TestStrictNCS(unittest.TestCase):
     scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
     r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
     return r_factor
-
 
   def get_r_factor(self,f_obs,f_calc):
     '''
@@ -241,24 +311,9 @@ if __name__ == "__main__":
 
 
 '''
-#mtz_dataset = f_obs.as_mtz_dataset(column_root_label="F-obs")
-    #mtz_dataset.add_miller_array(
-      #miller_array=f_obs.generate_r_free_flags(),
-      #column_root_label="R-free-flags")
-    #mtz_object = mtz_dataset.mtz_object()
-    #mtz_object.write(file_name = '{}_map.mtz'.format(prefix))
     ## Process the mtz_object
     #miller_arrays = mtz_object.as_miller_arrays()
     #
-    #cmd = " ".join([
-      #"phenix.refine",
-      #"{0}.pdb {0}_map.mtz".format(prefix),
-      #"strategy=none",
-      #"main.number_of_macro_cycles=0",
-      #"output.prefix={}".format(prefix),
-      #"--overwrite",
-      #"--quiet"])
-    #easy_run.call(cmd)
     #miller_arrays = reflection_file_reader.any_reflection_file(
       #file_name = "{}_map.mtz".format(prefix)).as_miller_arrays()
     #labels = []

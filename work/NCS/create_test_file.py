@@ -49,7 +49,6 @@ def run():
   xrs = pdb_inp.xray_structure_simple()
   crystal_symmetry = xrs.crystal_symmetry()
   pdb_inp.write_pdb_file(file_name = asu0_filename, crystal_symmetry = crystal_symmetry)
-  pdb_inp.crystal_symmetry()
   print '*'*100
   print 'Complete Asymmetric Unit (ASU) - use as target'
   get_file_as_str(asu0_filename)
@@ -70,7 +69,7 @@ def run():
   # Shake ncs0 to create ncs1
   pdb_inp = pdb.input(file_name = ncs0_filename)
   xyz = pdb_inp.atoms().extract_xyz()
-  sig = 0.05
+  sig = 0.5
   # apply random shift on all atoms
   xyz = random.normal(xyz,sig)
   tmp = [tuple(x) for x in xyz]
@@ -119,6 +118,7 @@ def get_file_as_str(fn):
 
 
 # Raw data used to build test cases
+# The coordinates below where first optimized using phenix.geometry_minimization
 ncs0_pdb="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
@@ -129,13 +129,13 @@ MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1       9.483  10.256  10.995  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.489   8.820  10.603  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.725   7.911  11.796  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.586   8.189  12.629  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.632   8.506   9.642  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.831   9.604   8.746  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.308   7.254   8.859  1.00 43.17           C
+ATOM      1  N   THR 1   1       9.670  10.289  11.135  1.00 26.11           N
+ATOM      2  CA  THR 1   1       9.559   8.931  10.615  1.00 27.16           C
+ATOM      3  C   THR 1   1       9.634   7.903  11.739  1.00 20.29           C
+ATOM      4  O   THR 1   1      10.449   8.027  12.653  1.00 35.00           O
+ATOM      5  CB  THR 1   1      10.660   8.630   9.582  1.00 34.84           C
+ATOM      6  OG1 THR 1   1      10.560   9.552   8.490  1.00 67.35           O
+ATOM      7  CG2 THR 1   1      10.523   7.209   9.055  1.00 43.17           C
 TER
 """
 
@@ -149,13 +149,13 @@ MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1       9.456  10.265  11.023  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.499   8.732  10.712  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.743   7.914  11.762  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.605   8.227  12.668  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.648   8.628   9.700  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.794   9.614   8.603  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.303   7.250   8.852  1.00 43.17           C
+ATOM      1  N   THR 1   1       9.513  10.305  11.154  1.00 26.11           N
+ATOM      2  CA  THR 1   1       9.613   8.935  10.562  1.00 27.16           C
+ATOM      3  C   THR 1   1       9.689   7.900  11.761  1.00 20.29           C
+ATOM      4  O   THR 1   1      10.471   8.143  12.706  1.00 35.00           O
+ATOM      5  CB  THR 1   1      10.672   8.519   9.617  1.00 34.84           C
+ATOM      6  OG1 THR 1   1      10.619   9.509   8.449  1.00 67.35           O
+ATOM      7  CG2 THR 1   1      10.524   7.258   9.087  1.00 43.17           C
 TER
 """
 

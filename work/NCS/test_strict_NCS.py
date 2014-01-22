@@ -46,60 +46,16 @@ class TestStrictNCS(unittest.TestCase):
     self.ncs0_filename = 'ncs0.pdb'
     self.ncs1_filename = 'ncs1.pdb'
     # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
-    f = open(self.ncs0_filename,'w')
-    f.write(ncs0_pdb)
-    f.close()
+    f = open(self.ncs0_filename,'w').write(ncs0_pdb)
     # Create and write ncs1.pdb
-    f = open(self.ncs1_filename,'w')
-    f.write(ncs1_pdb)
-    f.close()
+    f = open(self.ncs1_filename,'w').write(ncs1_pdb)
     # Create and write asu0.pdb
-    f = open(self.asu0_filename,'w')
-    f.write(asu0_pdb)
-    f.close()
+    f = open(self.asu0_filename,'w').write(asu0_pdb)
 
     # Produce experimental data for asu0
     self.pdb_inp_asu0 = pdb.input(file_name=self.asu0_filename)
     self.xrs_asu0 = self.pdb_inp_asu0.xray_structure_simple()
     self.f_obs_asu0 = abs(self.xrs_asu0.structure_factors(d_min = 2).f_calc())
-    #self.f_obs_asu0 = self.xrs_asu0.structure_factors(d_min = 2).f_calc()
-
-
-
-
-    #mtz_dataset = f_obs.as_mtz_dataset(column_root_label="F-obs")
-    #mtz_dataset.add_miller_array(
-      #miller_array=f_obs.generate_r_free_flags(),
-      #column_root_label="R-free-flags")
-    #mtz_object = mtz_dataset.mtz_object()
-    #mtz_object.write(file_name = '{}_map.mtz'.format(prefix))
-    ## Process the mtz_object
-    #miller_arrays = mtz_object.as_miller_arrays()
-    #
-    #cmd = " ".join([
-      #"phenix.refine",
-      #"{0}.pdb {0}_map.mtz".format(prefix),
-      #"strategy=none",
-      #"main.number_of_macro_cycles=0",
-      #"output.prefix={}".format(prefix),
-      #"--overwrite",
-      #"--quiet"])
-    #easy_run.call(cmd)
-    #miller_arrays = reflection_file_reader.any_reflection_file(
-      #file_name = "{}_map.mtz".format(prefix)).as_miller_arrays()
-    #labels = []
-    #for ma in miller_arrays:
-      #l = ",".join(ma.info().labels)
-      #if(ma.is_complex_array()): labels.append(l)
-    #for i, l in enumerate(labels):
-      #cmd = " ".join([
-        #"phenix.map_box", pdbf, "%s_map.mtz"%prefix,
-        #"label='%s'"%l,
-        #">zlog_%s_%s"%(str(i),prefix)])
-      #easy_run.call(cmd)
-
-    print os.getcwd()
-
 
 
   def test_process_integrity(self):
@@ -124,7 +80,7 @@ class TestStrictNCS(unittest.TestCase):
 
 
   def test_pertubed_ncs(self):
-    '''Test that the pertubed NCS (ncs1.pd) is different than the original one (ncs0_pdb)
+    '''Test that the pertubed NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
     by checking that R-work is not zero
     Compare f_obs from asu0.pdb to f_calc from asu1.pdb'''
     # Reconstruct ncs1 and retrive f_obs
@@ -141,13 +97,8 @@ class TestStrictNCS(unittest.TestCase):
 
     f1 = self.f_obs_asu0.data()
     f2 = f_obs_calc.data()
-
-
     scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
-    print scale
-
     r_factor = flex.sum( flex.abs( f1 - scale*f2 ) ) / flex.sum( flex.abs(f1+f2) ) * 2
-    print r_factor
     msg='''\
     Problem with test data, f_obs from ASU do not match those from
     the same ASU as constructed by NCS'''
@@ -181,7 +132,6 @@ class TestStrictNCS(unittest.TestCase):
     r_factor = fmodel.r_work()
     return r_factor
 
-
   def tic(self):
     #Homemade version of matlab tic and toc functions
     global startTime_for_tictoc
@@ -197,6 +147,7 @@ class TestStrictNCS(unittest.TestCase):
         return outstr
     else:
       print "Toc: start time not set"
+
 
 
 # Raw data used to build test cases
@@ -280,3 +231,37 @@ TER
 if __name__ == "__main__":
   unittest.main(verbosity=2)  # provides a command-line interface to the test script
   #unittest.main()
+
+
+'''
+#mtz_dataset = f_obs.as_mtz_dataset(column_root_label="F-obs")
+    #mtz_dataset.add_miller_array(
+      #miller_array=f_obs.generate_r_free_flags(),
+      #column_root_label="R-free-flags")
+    #mtz_object = mtz_dataset.mtz_object()
+    #mtz_object.write(file_name = '{}_map.mtz'.format(prefix))
+    ## Process the mtz_object
+    #miller_arrays = mtz_object.as_miller_arrays()
+    #
+    #cmd = " ".join([
+      #"phenix.refine",
+      #"{0}.pdb {0}_map.mtz".format(prefix),
+      #"strategy=none",
+      #"main.number_of_macro_cycles=0",
+      #"output.prefix={}".format(prefix),
+      #"--overwrite",
+      #"--quiet"])
+    #easy_run.call(cmd)
+    #miller_arrays = reflection_file_reader.any_reflection_file(
+      #file_name = "{}_map.mtz".format(prefix)).as_miller_arrays()
+    #labels = []
+    #for ma in miller_arrays:
+      #l = ",".join(ma.info().labels)
+      #if(ma.is_complex_array()): labels.append(l)
+    #for i, l in enumerate(labels):
+      #cmd = " ".join([
+        #"phenix.map_box", pdbf, "%s_map.mtz"%prefix,
+        #"label='%s'"%l,
+        #">zlog_%s_%s"%(str(i),prefix)])
+      #easy_run.call(cmd)
+'''

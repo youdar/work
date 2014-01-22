@@ -38,9 +38,7 @@ def run():
   ncs0_filename = 'ncs0.pdb'
   asu1_filename = 'asu1.pdb'
   #
-  f = open(ncs0_filename,'w')
-  f.write(ncs0_pdb)
-  f.close()
+  f = open(ncs0_filename,'w').write(ncs0_pdb)
   # Create the ASU coordinates using MTRIX records
   # Do it before creating the CRYST1 records, when creating them the MTRIX will not be saved
   m = multimer(ncs0_filename,'cau',error_handle=True,eps=1e-2)
@@ -86,10 +84,7 @@ def run():
   # create a complete ASU with the new coordinates
 
   # Assuming that ncs1_pdb are now with the correct coordinates
-  f = open(ncs1_filename,'w')
-  f.write(ncs1_pdb)
-  f.close()
-
+  f = open(ncs1_filename,'w').write(ncs1_pdb)
   m = multimer(ncs1_filename,'cau',error_handle=True,eps=1e-2)
   assert(m.number_of_transforms >0,'Number of transforms is zero')
   #if m.number_of_transforms == 0:

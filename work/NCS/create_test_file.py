@@ -24,6 +24,9 @@ def run(ncs0_pdb):
   1) ncs0.pdb, with CRYST1 and SCALE records
   2) asu0.pdb, with complete Asymmetric Unit (ASU)
   3) ncs1.pdb  pertubed version of ncs0_pdb, with a single NCS and MTRIX info
+
+  Then print all those files on screen, so that they can be copy and paste
+  to the test_strict_NCS.py file
   '''
   currnet_dir = os.getcwd()
   tempdir = tempfile.mkdtemp('tempdir')
@@ -32,22 +35,21 @@ def run(ncs0_pdb):
   testdir = r'C:\Phenix\Dev\Work\work\NCS\test_files'
   os.chdir(testdir)
   #
-  print 'working at {}'.format(os.getcwd())
+  print 'working at {}\n'.format(os.getcwd())
   #
   asu0_filename = 'asu0.pdb'
   ncs1_filename = 'ncs1.pdb'
   ncs0_filename = 'ncs0.pdb'
   asu1_filename = 'asu1.pdb'
   #
-
   f = open(ncs0_filename,'w').write(ncs0_pdb)
   f = open('ncs0_origin.pdb','w').write(ncs0_pdb)
   # Create the ASU coordinates using MTRIX records
-  # Do it before creating the CRYST1 records, when creating them the MTRIX will not be saved
   crystal_symmetry = create_asu(ncs_filename=ncs0_filename, asu_filename=asu0_filename)
   # Add CRYST1 records to ncs0
   pdb_inp = pdb.input(file_name = ncs0_filename)
   pdb_inp.write_pdb_file(file_name = ncs0_filename, crystal_symmetry = crystal_symmetry)
+  # When using pdb_inp.write_pdb_file the MTRIX record are omitted. Add them back
   add_MTRIX_to_pdb(ncs0_filename, 'ncs0_origin.pdb')
   print '*'*100
   print 'The generating NCS'

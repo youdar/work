@@ -77,7 +77,8 @@ class TestStrictNCS(unittest.TestCase):
     self.assertEqual(r_factor,0, msg)
 
   def test_pertubed_ncs(self):
-    '''Test that the pertubed NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
+    '''
+    Test that the pertubed NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
     by checking that R-work is not zero
     Compare f_obs from asu0.pdb to f_calc from asu1.pdb'''
     # Reconstruct ncs1 and retrive f_obs
@@ -87,10 +88,11 @@ class TestStrictNCS(unittest.TestCase):
     msg='''\
     Problem with test data, f_obs from ASU do not match those from
     the same ASU as constructed by NCS'''
-    self.assertTrue(r_factor>0, msg)
+    self.assertTrue(r_factor > 0.3, msg)
 
   def test_refinement(self):
-    '''Test that refining asu1.pdb converge to asu0.pdb
+    '''
+    Test that refining asu1.pdb converge to asu0.pdb
     Use asu0.pdb to create x-ray structure (xrs)
     and from it produce F_obs_test (observed structure factors)'''
     # produce the ASUs from the NCSs, in the current directory
@@ -121,10 +123,13 @@ class TestStrictNCS(unittest.TestCase):
     msg2='Refinement did not work well, r_factor before {0:.5f}  after {1:.5f}'.format(r_factor,r_factor_refined)
     self.assertTrue(r_factor_refined<0.05,msg2)
 
+  def test_ncs_refinement(self):
+    '''Test refinement using strict NCS'''
+    pass
 
   #def test_2(self):
-    #'''Test that Error is raised when trying to archive the current directory'''
-    ##self.assertRaises(ValueError,archive_dir.archive_dir_files,self.tempdir)
+    #'''Test that Error is raised when trying to ...'''
+    ##self.assertRaises(ValueError,..)
     #pass
 
   def tearDown(self):

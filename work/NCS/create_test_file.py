@@ -15,7 +15,8 @@ application in refinement
 @author Youval Dar (LBL 2014)
 '''
 
-def run():
+
+def run(ncs0_pdb,ncs1_pdb):
   '''
   create a temporary folder with files for testing.
   Using ncs0_pdb, which contains a single NCS, CRYST1 and MTRIX records,
@@ -41,31 +42,13 @@ def run():
   f = open(ncs0_filename,'w').write(ncs0_pdb)
   # Create the ASU coordinates using MTRIX records
   # Do it before creating the CRYST1 records, when creating them the MTRIX will not be saved
-  m = multimer(ncs0_filename,'cau',error_handle=True,eps=1e-2)
-  if m.number_of_transforms == 0:
-    print 'Number of transforms is zero'
-  m.write(asu0_filename)
-  pdb_inp = pdb.input(file_name = asu0_filename)
-  xrs = pdb_inp.xray_structure_simple()
-  crystal_symmetry = xrs.crystal_symmetry()
-  pdb_inp.write_pdb_file(file_name = asu0_filename, crystal_symmetry = crystal_symmetry)
+  crystal_symmetry = create_asu(ncs_filename=ncs0_filename, asu_filename=asu0_filename)
   print '*'*100
   print 'Complete Asymmetric Unit (ASU) - use as target'
-  get_file_as_str(asu0_filename)
-  #
-  # Create and write a file ncs0.pdb
+  print_file(asu0_filename)
   print 'ncs0 need to have the same CRYST1 and SCALE records and asu0'
-  #pdb_inp = pdb.input(file_name = ncs0_filename)
-  #xrs = pdb_inp.xray_structure_simple()
-  #crystal_symmetry = xrs.crystal_symmetry()
-  #pdb_inp.write_pdb_file(file_name = ncs0_filename, crystal_symmetry = crystal_symmetry)
-  #print '*'*100
-  #print 'For the NCS remember to add the MTRIX portion (see below) back to the pdb'
-  #get_file_as_str(ncs0_filename)
-  #print 'The MTRIX records for the NCS'
-  #print ncs0_pdb
-
   print '*'*100
+  #
   # Shake ncs0 to create ncs1
   pdb_inp = pdb.input(file_name = ncs0_filename)
   xyz = pdb_inp.atoms().extract_xyz()
@@ -74,52 +57,69 @@ def run():
   xyz = random.normal(xyz,sig)
   tmp = [tuple(x) for x in xyz]
   pdb_inp.atoms().set_xyz(flex.vec3_double(tmp))
-  pdb_inp.write_pdb_file(file_name = ncs1_filename)
+  pdb_inp.write_pdb_file(file_name = ncs1_filename, crystal_symmetry = crystal_symmetry)
   print 'Shaked coordinates'
-  get_file_as_str(ncs1_filename)
   print '-'*100
-  # collect the coordinates from the printed ncs1 and put in ncs1_pdb
-  # We do that since when writing pdb file, the MRTIX records are not being writen
-  # create a complete ASU with the new coordinates
-
-  # Assuming that ncs1_pdb are now with the correct coordinates
+  print 'Use the coordinates below for the modified NCS'
+  # add MTRIX records to file
+  ncs1_pdb = open(ncs1_filename,'r').read().splitlines()
+  ncs0_pdb = open(ncs0_filename,'r').read().splitlines()
+  i = 0
+  while 1:
+    if ncs0_pdb[i].startswith('MTRIX'):
+      ncs1_pdb.insert(i+4, ncs0_pdb[i])
+      i += 1
+    else: break
+  ncs1_pdb = '\n'.join(ncs1_pdb)
   f = open(ncs1_filename,'w').write(ncs1_pdb)
-  m = multimer(ncs1_filename,'cau',error_handle=True,eps=1e-2)
-  assert(m.number_of_transforms >0,'Number of transforms is zero')
-  #if m.number_of_transforms == 0:
-    #print 'Number of transforms is zero'
-  m.write(asu1_filename)
-  # read the asu1 and get CRYST and SCALE information
-  pdb_inp = pdb.input(file_name = asu1_filename)
-  xrs = pdb_inp.xray_structure_simple()
-  # use the same crystal symmetry as the target file
-  #crystal_symmetry = xrs.crystal_symmetry()
-  pdb_inp.write_pdb_file(file_name = asu1_filename, crystal_symmetry = crystal_symmetry)
+  print_file(ncs1_filename)
+
+  # Create the ASU from the modified coordinates
+  create_asu(ncs_filename=ncs1_filename, asu_filename=asu1_filename, crystal_symmetry=crystal_symmetry)
   print '*'*100
-  print "The modified NCS as a starting point (don't forget to add MTRIX records)"
-  # get the first 5 lines
-  f = open(asu1_filename,'r').read().splitlines()
-  for i,rec in enumerate(f):
-    print rec
-    if i>2: break
-  print 'ok'
-  #site_cart
 
   print 'Done.'
   # Cleanup
   os.chdir(currnet_dir)
   shutil.rmtree(tempdir)
 
-def get_file_as_str(fn):
+def create_asu(ncs_filename,asu_filename,crystal_symmetry=None):
+  ''' (str,str) -> crystal_symmetry object
+  Create ASU from NCS and save the new pdb file
+  with CRYST1 and SCALE records in local directory
+
+  Argument:
+  ---------
+  ncs_filename : NCS to be used to create the ASU
+  asu_filename : ASU file name
+  crystal_symmetry : Allow forcing other crystal_symmetry
+
+  Returns:
+  --------
+  crystal_symmetry
+  '''
+  m = multimer(ncs_filename,'cau',error_handle=True,eps=1e-2)
+  if m.number_of_transforms == 0:
+    print 'Number of transforms is zero'
+  m.write(asu_filename)
+  pdb_inp = pdb.input(file_name = asu_filename)
+  xrs = pdb_inp.xray_structure_simple()
+  if not crystal_symmetry:
+    crystal_symmetry = xrs.crystal_symmetry()
+  pdb_inp.write_pdb_file(file_name = asu_filename, crystal_symmetry = crystal_symmetry)
+  return crystal_symmetry
+
+
+def print_file(fn):
   print '='*100
   print open(fn,'r').read()
   print '='*100
 
+if __name__ == "__main__":
 
-
-# Raw data used to build test cases
-# The coordinates below where first optimized using phenix.geometry_minimization
-ncs0_pdb="""\
+  # Raw data used to build test cases
+  # The coordinates below where first optimized using phenix.geometry_minimization
+  ncs0_pdb="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
@@ -139,7 +139,7 @@ ATOM      7  CG2 THR 1   1      10.523   7.209   9.055  1.00 43.17           C
 TER
 """
 
-ncs1_pdb="""\
+  ncs1_pdb="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
@@ -158,8 +158,4 @@ ATOM      6  OG1 THR 1   1      10.619   9.509   8.449  1.00 67.35           O
 ATOM      7  CG2 THR 1   1      10.524   7.258   9.087  1.00 43.17           C
 TER
 """
-
-
-
-if __name__ == "__main__":
-  run()
+  run(ncs0_pdb,ncs1_pdb)

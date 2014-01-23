@@ -78,8 +78,8 @@ class TestStrictNCS(unittest.TestCase):
 
   def test_pertubed_ncs(self):
     '''
-    Test that the pertubed NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
-    by checking that R-work is not zero
+    Test that the perturbed  NCS (ncs1.pdb) is different than the original one (ncs0_pdb)
+    by checking that R-work > 0.3
     Compare f_obs from asu0.pdb to f_calc from asu1.pdb'''
     # Reconstruct ncs1 and retrive f_obs
     m = self.build_asu(file_name_ncs=self.ncs1_filename, file_name_asu='asu1.pdb')
@@ -92,9 +92,9 @@ class TestStrictNCS(unittest.TestCase):
 
   def test_refinement(self):
     '''
-    Test that refining asu1.pdb converge to asu0.pdb
+    Test that refining asu1.pdb, build from the perturbed NCS, converge to asu0.pdb
     Use asu0.pdb to create x-ray structure (xrs)
-    and from it produce F_obs_test (observed structure factors)'''
+    and from it produce F_obs (observed structure factors)'''
     # produce the ASUs from the NCSs, in the current directory
     m_asu0 = self.build_asu(file_name_ncs=self.ncs0_filename, file_name_asu=self.asu0_filename)
     m_asu1 = self.build_asu(file_name_ncs=self.ncs1_filename, file_name_asu=self.asu1_filename)
@@ -124,7 +124,8 @@ class TestStrictNCS(unittest.TestCase):
     self.assertTrue(r_factor_refined<0.05,msg2)
 
   def test_ncs_refinement(self):
-    '''Test refinement using strict NCS'''
+    '''Test refinement using strict NCS.
+    Refinement using the gradient of only one NCS copy'''
     pass
 
   #def test_2(self):

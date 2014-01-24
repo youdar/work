@@ -96,9 +96,8 @@ class FAB_elbow_angle(object):
     #
     self.rotation_const = tranformation_const.r
     self.rotation_var = tranformation_var.r
-    # get eigen values
-
-    # Calc engel
+    # Get the angle
+    self.FAB_elbow_angle = self.rotation_const(self.rotation_var)
 
   def get_transformation(self,pdb_hierarchy_fixed,pdb_hierarchy_moving):
     '''

@@ -1,6 +1,7 @@
 from __future__ import division
 from FAB.FAB_elbow_angle import FAB_elbow_angle
 from libtbx.utils import null_out
+from scitbx import matrix
 from iotbx.pdb import fetch
 import unittest
 import cProfile
@@ -46,6 +47,13 @@ class TestFabElbowAngle(unittest.TestCase):
     expected = 127
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,1, msg)
+
+  def test_mtrix_angle(self):
+    '''Test several rotation matrices angle method, to make sure it works as intended'''
+    theta = 90
+    a = matrix([])
+    b = matrix([])
+
 
 
   def tearDown(self):

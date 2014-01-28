@@ -29,14 +29,13 @@ class TestStrictNCS(unittest.TestCase):
 
   def setUp(self):
     '''
-    create a temporary folder with files for testing.
-    The files information was produced using
-    c:\Phenix\Dev\Work\work\NCS\create_test_file.pyncs0_pdb, which contains
-    a single NCS, CRYST1 and MTRIX records.
-    produce the strings ncs0_pdb, asu0_pdb and ncs1_pdb for the tests below
+    create a temporary folder with files for testing, based
+    on ncs_0_copy (see below)
+
 
     1) Create ncs0.pdb, with complete Asymmetric Unit (ASU)
-    2) Create ncs1.pdb, pertubed version of ncs0_pdb, with a single NCS and MTRIX info
+    2) Create ncs1.pdb, pertubed (shaken) version of ncs0_pdb,
+       with a single NCS and MTRIX info
     3) Create asu0.pdb, A complete ASU produced form ncs0
     '''
     self.currnet_dir = os.getcwd()
@@ -55,18 +54,38 @@ class TestStrictNCS(unittest.TestCase):
     self.ncs0_filename = 'ncs0.pdb'
     self.ncs1_filename = 'ncs1.pdb'
     # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
-    f = open(self.ncs0_filename,'w').write(ncs0_pdb)
-    # Create and write ncs1.pdb
-    f = open(self.ncs1_filename,'w').write(ncs1_pdb)
-    # Create and write asu0.pdb
-    f = open(self.asu0_filename,'w').write(asu0_pdb)
-
-    # Produce experimental data for asu0
-    self.pdb_inp_asu0 = pdb.input(file_name=self.asu0_filename)
-    self.xrs_asu0 = self.pdb_inp_asu0.xray_structure_simple()
-    self.f_obs_asu0 = abs(self.xrs_asu0.structure_factors(d_min = 2).f_calc())
-    #
     # 1 NCS copy: starting template to generate whole asu; place into P1 box
+    pdb_inp = pdb.input(source_info=None, lines=ncs_0_copy)
+    print ncs_0_copy
+    mtrix_object = pdb_inp.process_mtrix_records()
+
+    # 1 NCS copy -> full asu (expand NCS). This is the answer-strucure
+    #m = multimer("one_ncs_in_asu.pdb",'cau',error_handle=True,eps=1e-2)
+    #assert m.number_of_transforms == 3
+
+    ph = pdb_inp.construct_hierarchy()
+    xrs = pdb_inp.xray_structure_simple()
+    xrs_one_ncs = xrs.orthorhombic_unit_cell_around_centered_scatterers(
+      buffer_size=8)
+    ph.adopt_xray_structure(xrs)
+    of = open("one_ncs_in_asu.pdb", "w")
+    print >> of, mtrix_object.format_MTRIX_pdb_string()
+    print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
+    of.close()
+
+
+    #f = open(self.ncs0_filename,'w').write(ncs0_pdb)
+    ## Create and write ncs1.pdb
+    #f = open(self.ncs1_filename,'w').write(ncs1_pdb)
+    ## Create and write asu0.pdb
+    #f = open(self.asu0_filename,'w').write(asu0_pdb)
+
+    ## Produce experimental data for asu0
+    #self.pdb_inp_asu0 = pdb.input(file_name=self.asu0_filename)
+    #self.xrs_asu0 = self.pdb_inp_asu0.xray_structure_simple()
+    #self.f_obs_asu0 = abs(self.xrs_asu0.structure_factors(d_min = 2).f_calc())
+    ##
+
     pdb_inp = pdb.input(source_info=None, lines=ncs_0_copy)
     mtrix_object = pdb_inp.process_mtrix_records()
     ph = pdb_inp.construct_hierarchy()
@@ -75,9 +94,11 @@ class TestStrictNCS(unittest.TestCase):
       buffer_size=8)
     ph.adopt_xray_structure(xrs)
     of = open("one_ncs_in_asu.pdb", "w")
-    print >> of, mtrix_object.format_pdb_string()
+    print >> of, mtrix_object.format_MTRIX_pdb_string()
     print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
     of.close()
+
+
     # 1 NCS copy -> full asu (expand NCS). This is the answer-strucure
     m = multimer("one_ncs_in_asu.pdb",'cau',error_handle=True,eps=1e-2)
     assert m.number_of_transforms == 3
@@ -89,7 +110,7 @@ class TestStrictNCS(unittest.TestCase):
     xrs_shaken.shake_sites_in_place(mean_distance=0.3)
     ph.adopt_xray_structure(xrs_shaken)
     of = open("one_ncs_in_asu_shaken.pdb", "w")
-    print >> of, mtrix_object.format_pdb_string()
+    print >> of, mtrix_object.format_MTRIX_pdb_string()
     print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
 
 
@@ -277,37 +298,13 @@ class TestStrictNCS(unittest.TestCase):
 
 
 # Raw data used to build test cases
-ncs0_pdb="""\
-CRYST1   24.667   24.779   25.359  90.00  90.00  90.00 P 1
-SCALE1      0.040540  0.000000  0.000000        0.00000
-SCALE2      0.000000  0.040357  0.000000        0.00000
-SCALE3      0.000000  0.000000  0.039434        0.00000
-MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
-MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
-MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
-MTRIX1   2  0.496590 -0.643597  0.582393        0.00000
-MTRIX2   2  0.867925  0.376088 -0.324443        0.00000
-MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
-MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
-MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
-MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1       9.670  10.289  11.135  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.559   8.931  10.615  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.634   7.903  11.739  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.449   8.027  12.653  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.660   8.630   9.582  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.560   9.552   8.490  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.523   7.209   9.055  1.00 43.17           C
-TER
-"""
-
 ncs_0_copy="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
-MTRIX1   2  0.496590 -0.643597  0.582393        0.00000
-MTRIX2   2  0.867925  0.376088 -0.324443        0.00000
-MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
+MTRIX1   2  0.496590 -0.643597  0.582393        0.00000    1
+MTRIX2   2  0.867925  0.376088 -0.324443        0.00000    1
+MTRIX3   2 -0.010221  0.666588  0.745356        0.00000    1
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
@@ -318,61 +315,6 @@ ATOM      4  O   THR A   1      10.449   8.027  12.653  1.00 20.00           O
 ATOM      5  CB  THR A   1      10.660   8.630   9.582  1.00 20.00           C
 ATOM      6  OG1 THR A   1      10.560   9.552   8.490  1.00 20.00           O
 ATOM      7  CG2 THR A   1      10.523   7.209   9.055  1.00 20.00           C
-TER
-"""
-
-asu0_pdb="""\
-CRYST1   24.667   24.779   25.359  90.00  90.00  90.00 P 1
-SCALE1      0.040540  0.000000  0.000000        0.00000
-SCALE2      0.000000  0.040357  0.000000        0.00000
-SCALE3      0.000000  0.000000  0.039434        0.00000
-ATOM      1  N   THR 1   1       9.670  10.289  11.135  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.559   8.931  10.615  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.634   7.903  11.739  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.449   8.027  12.653  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.660   8.630   9.582  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.560   9.552   8.490  1.00 67.35           O
-ATOM      7  CG2 THR 1   1      10.523   7.209   9.055  1.00 43.17           C
-TER
-ATOM      1  N   THRaa   1       4.665   8.650  15.059  1.00 26.11           N
-ATOM      2  CA  THRaa   1       5.181   8.211  13.768  1.00 27.16           C
-ATOM      3  C   THRaa   1       6.535   7.525  13.919  1.00 20.29           C
-ATOM      4  O   THRaa   1       7.392   7.983  14.675  1.00 35.00           O
-ATOM      5  CB  THRaa   1       5.320   9.389  12.786  1.00 34.84           C
-ATOM      6  OG1 THRaa   1       4.041  10.003  12.587  1.00 67.35           O
-ATOM      7  CG2 THRaa   1       5.859   8.907  11.447  1.00 43.17           C
-TER
-ATOM      1  N   THRab   1       5.520   2.416  16.943  1.00 26.11           N
-ATOM      2  CA  THRab   1       5.306   3.118  15.682  1.00 27.16           C
-ATOM      3  C   THRab   1       6.508   3.986  15.324  1.00 20.29           C
-ATOM      4  O   THRab   1       7.080   4.656  16.184  1.00 35.00           O
-ATOM      5  CB  THRab   1       4.045   4.000  15.734  1.00 34.84           C
-ATOM      6  OG1 THRab   1       2.899   3.185  16.009  1.00 67.35           O
-ATOM      7  CG2 THRab   1       3.844   4.721  14.409  1.00 43.17           C
-TER
-"""
-
-ncs1_pdb = """\
-CRYST1   24.667   24.779   25.359  90.00  90.00  90.00 P 1
-SCALE1      0.040540  0.000000  0.000000        0.00000
-SCALE2      0.000000  0.040357  0.000000        0.00000
-SCALE3      0.000000  0.000000  0.039434        0.00000
-MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
-MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
-MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
-MTRIX1   2  0.496590 -0.643597  0.582393        0.00000
-MTRIX2   2  0.867925  0.376088 -0.324443        0.00000
-MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
-MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
-MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
-MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR 1   1      10.904  10.178  11.494  1.00 26.11           N
-ATOM      2  CA  THR 1   1       9.292   8.774  11.496  1.00 27.16           C
-ATOM      3  C   THR 1   1       9.382   8.627  11.583  1.00 20.29           C
-ATOM      4  O   THR 1   1      10.030   8.190  12.474  1.00 35.00           O
-ATOM      5  CB  THR 1   1      10.864   8.019   9.596  1.00 34.84           C
-ATOM      6  OG1 THR 1   1      10.347   9.523   7.536  1.00 67.35           O
-ATOM      7  CG2 THR 1   1       9.170   6.827   9.870  1.00 43.17           C
 TER
 """
 

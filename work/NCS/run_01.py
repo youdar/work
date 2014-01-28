@@ -33,7 +33,7 @@ def run():
     buffer_size=8)
   ph.adopt_xray_structure(xrs)
   of = open("one_ncs_in_asu.pdb", "w")
-  print >> of, mtrix_object.format_pdb_string()
+  print >> of, mtrix_object.format_MTRIX_pdb_string()
   print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
   of.close()
   # 1 NCS copy -> full asu (expand NCS). This is the answer-strucure
@@ -56,9 +56,9 @@ def run():
   xrs_shaken.shake_sites_in_place(mean_distance=0.3)
   ph.adopt_xray_structure(xrs_shaken)
   of = open("one_ncs_in_asu_shaken.pdb", "w")
-  print >> of, mtrix_object.format_pdb_string()
+  print >> of, mtrix_object.format_MTRIX_pdb_string()
   print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
-  # Refinement 
+  # Refinement
 
 if __name__ == "__main__":
   run()

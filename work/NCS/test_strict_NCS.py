@@ -32,32 +32,74 @@ class TestStrictNCS(unittest.TestCase):
     create a temporary folder with files for testing, based
     on ncs_0_copy (see below)
 
-
     1) Create ncs0.pdb, with complete Asymmetric Unit (ASU)
     2) Create ncs1.pdb, pertubed (shaken) version of ncs0_pdb,
        with a single NCS and MTRIX info
     3) Create asu0.pdb, A complete ASU produced form ncs0
+    4) Create asu1.pdb, A complete ASU produced form ncs1
     '''
     self.currnet_dir = os.getcwd()
     self.tempdir = tempfile.mkdtemp('tempdir')
     # for testing use junk folder insted of real temp directory
+
+    # remember to change back the clean up when going back to real temp dir
     osType = sys.platform
     if osType.startswith('win'):
       self.tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk')
     else:
       self.tempdir = ('/net/cci/youval/Work/work/NCS/junk')
-    # remember to change back the clean up when going back to real temp dir
-    #
+
     os.chdir(self.tempdir)
-    self.asu0_filename = 'asu0.pdb'
-    self.asu1_filename = 'asu1.pdb'
-    self.ncs0_filename = 'ncs0.pdb'
-    self.ncs1_filename = 'ncs1.pdb'
+    ncs0_filename = 'ncs0.pdb'
+    ncs1_filename = 'ncs1_shaken.pdb'
+    asu0_filename = 'asu0.pdb'
+    asu1_filename = 'asu1_shaken.pdb'
+
+    # Write single copy NCS file with MTRIX record
+    open(ncs0_filename,'w').write(ncs_0_copy)
+
+    # Create the ASU coordinates using MTRIX records
+    crystal_symmetry = self.create_asu(
+      ncs_filename=ncs0_filename,
+      asu_filename=asu0_filename)
+
     # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
     # 1 NCS copy: starting template to generate whole asu; place into P1 box
-    pdb_inp = pdb.input(source_info=None, lines=ncs_0_copy)
-    print ncs_0_copy
-    mtrix_object = pdb_inp.process_mtrix_records()
+    pdb_inp_ncs = pdb.input(source_info=None, lines=ncs_0_copy)
+    pdb_inp_ncs.write_pdb_file(
+      file_name=ncs0_filename,
+      crystal_symmetry = crystal_symmetry)
+
+    # When using pdb_inp.write_pdb_file the MTRIX record are omitted. Add them back
+    self.add_MTRIX_to_pdb(ncs0_filename, record=ncs_0_copy)
+
+    # Shake structure - subject to refinement input
+    pdb_inp_ncs = pdb.input(file_name = ncs0_filename)
+    # Create xrs from the single ncs
+    xrs = pdb_inp_ncs.xray_structure_simple()
+    xrs_one_ncs = xrs.orthorhombic_unit_cell_around_centered_scatterers(
+      buffer_size=8)
+    ph = pdb_inp_ncs.construct_hierarchy()
+    ph.adopt_xray_structure(xrs)
+    xrs_shaken = xrs_one_ncs.deep_copy_scatterers()
+    xrs_shaken.shake_sites_in_place(mean_distance=0.3)
+    ph.adopt_xray_structure(xrs_shaken)
+    ph.write_pdb_file(file_name=ncs1_filename, crystal_symmetry = crystal_symmetry)
+    self.add_MTRIX_to_pdb(ncs0_filename, record=ncs_0_copy)
+
+
+    m = multimer(ncs_filename,'cau',error_handle=True,eps=1e-2)
+    m.write(self.asu0_filename)
+    pdb_inp_asu = pdb.input(file_name = asu_filename)
+    # Create xrs from the complete asu
+    xrs = pdb_inp_asu.xray_structure_simple()
+    crystal_symmetry = xrs.crystal_symmetry()
+    # write the pdb files again with MTRIX and CRYST1 records
+    mtrix_object = pdb_inp_ncs.process_mtrix_records()
+
+    pdb_inp.write_pdb_file(file_name = asu_filename, crystal_symmetry = crystal_symmetry)
+
+    mtrix_object = pdb_inp_ncs.process_mtrix_records()
 
     # 1 NCS copy -> full asu (expand NCS). This is the answer-strucure
     #m = multimer("one_ncs_in_asu.pdb",'cau',error_handle=True,eps=1e-2)
@@ -198,6 +240,49 @@ class TestStrictNCS(unittest.TestCase):
     '''remove temp files and folder'''
     #os.chdir(self.currnet_dir)
     #shutil.rmtree(self.tempdir)
+
+  def create_asu(self,ncs_filename,asu_filename,crystal_symmetry=None):
+    ''' (str,str) -> crystal_symmetry object
+    Create ASU from NCS and save the new pdb file
+    with CRYST1 and SCALE records in local directory
+
+    Argument:
+    ---------
+    ncs_filename : NCS to be used to create the ASU
+    asu_filename : ASU file name
+    crystal_symmetry : Allow forcing other crystal_symmetry
+
+    Returns:
+    --------
+    crystal_symmetry
+    '''
+    m = multimer(ncs_filename,'cau',error_handle=True,eps=1e-2)
+    if m.number_of_transforms == 0:
+      print 'Number of transforms is zero'
+    m.write(asu_filename)
+    pdb_inp = pdb.input(file_name = asu_filename)
+    xrs = pdb_inp.xray_structure_simple()
+    if not crystal_symmetry:
+      crystal_symmetry = xrs.crystal_symmetry()
+    pdb_inp.write_pdb_file(file_name = asu_filename, crystal_symmetry = crystal_symmetry)
+    return crystal_symmetry
+
+  def add_MTRIX_to_pdb(self,pdb_fn, record):
+    '''(str,ste) -> None
+    Add MTRIX records from the string record
+    to the file pdb_fn and write the modified pdb file, with
+    the MTRIX records, in the current directory
+    '''
+    ncs_pdb = open(pdb_fn,'r').read().splitlines()
+    record = record.splitlines()
+    i = 0
+    while record:
+      x = record.pop(0)
+      if x.startswith('MTRIX'):
+        ncs_pdb.insert(i+4, x)
+        i += 1
+    ncs_pdb = '\n'.join(ncs_pdb)
+    open(pdb_fn,'w').write(ncs_pdb)
 
   def call_refine(self,pdb_file,mtz_file,output_file_name,pdb_file_symmetry_target=None):
     '''

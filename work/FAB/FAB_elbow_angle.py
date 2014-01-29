@@ -5,6 +5,9 @@ from iotbx.pdb import fetch
 from libtbx import easy_run
 from libtbx.utils import Sorry
 from libtbx.utils import null_out
+from scitbx.linalg import eigensystem
+from scitbx.array_family import flex
+from math import acos,pi
 import shutil
 import tempfile
 import os,sys
@@ -51,11 +54,11 @@ class FAB_elbow_angle(object):
     # H : heavy,  L : light
     # start_to_limit : Constant
     # limit_to_end : Variable
-    pdb_const_H,pdb_var_H = self.get_pdb_protions(
+    pdb_var_H,pdb_const_H = self.get_pdb_protions(
       pdb_file_name=pdb_file_name,
       chain_ID=chain_ID_heavy,
       limit=limit_heavy)
-    pdb_const_L,pdb_var_L = self.get_pdb_protions(
+    pdb_var_L,pdb_const_L = self.get_pdb_protions(
       pdb_file_name=pdb_file_name,
       chain_ID=chain_ID_light,
       limit=limit_light)
@@ -71,7 +74,64 @@ class FAB_elbow_angle(object):
     self.rotation_const = tranformation_const.r
     self.rotation_var = tranformation_var.r
     # Get the angle
-    self.FAB_elbow_angle = self.rotation_const.angle(self.rotation_var,deg=True)
+    # get eigenvalues
+    eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
+    eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
+    eigen_vectors_const = self.get_eigenvector(eigen_const)
+    eigen_vectors_var = self.get_eigenvector(eigen_var)
+    angle_cos = eigen_vectors_const.dot(eigen_vectors_var)
+    angle = 180/pi*acos(angle_cos)
+    cross = self.cross_prod(eigen_vectors_var,eigen_vectors_const)
+    # Get vector from heavy limit residue to light limit residue
+    limit_H = pdb_const_H.atoms()[-1].xyz
+    limit_L = pdb_const_L.atoms()[-1].xyz
+    limits_vec = flex.double([x-y for (x,y) in zip(limit_H,limit_L)])
+    #
+    if angle < 90:
+      angle = 180 - angle
+    if limits_vec.dot(cross) > 0:
+      # Choose angle smaller than 180
+      angle = 360 - angle
+    #else:
+      #less180 = False
+    #if angle > 180 and less180:
+      #angle = 360 - angle
+    #elif
+    #if angle_cos < 0:
+      #angle = 360 - angle
+    #elif angle < 90:
+      #angle = 180 - angle
+
+    self.FAB_elbow_angle = angle
+    #self.FAB_elbow_angle = self.rotation_const.angle(self.rotation_var,deg=True)
+
+  def cross_prod(self,a,b):
+    '''(array,array) -> array'''
+    a1,a2,a3 = a
+    b1,b2,b3 = b
+    return flex.double([a2*b3-a3*b2,a3*b1-a1*b3,a1*b2-a2*b1])
+
+
+
+  def get_eigenvector(self,eigen):
+    '''
+    Get the eigen vector for eigen value 1
+    and normalize it
+    '''
+    v = eigen.vectors()
+    e = eigen.values()
+    indx = None
+    # select eigenvector that corespondes to a real egienvalue == 1
+    for i,x in enumerate(e):
+      if not isinstance(x,complex):
+        if abs(1-x)<1e-6:
+          indx = i
+          break
+    # make sure we have egienvalue == 1
+    assert not indx
+    eigenvector = v[indx:indx+3]
+    # normalize and return
+    return eigenvector / eigenvector.dot(eigenvector)
 
   def get_transformation(self,pdb_hierarchy_fixed,pdb_hierarchy_moving):
     '''
@@ -109,7 +169,9 @@ class FAB_elbow_angle(object):
     Produces two new hierarchies from the two protions of the protein
 
     Can writes  two pdb parts into new files, in a pdb format
+    (Start to Limit -> Variable)
     str1 with the name pdb_file_name + chain_ID + Var .pdb
+    (Limit to End -> Constant)
     str2 with the name pdb_file_name + chain_ID + Const .pdb
 
     Example:
@@ -134,23 +196,27 @@ class FAB_elbow_angle(object):
     chains = pdb_obj.hierarchy.models()[0].chains()
     chain_names = [x.id for x in chains]
     # check if correct name is given and find the correct chain
+    # Note that there could be several chains with the smae ID
+    # and that we use the first
     if chain_ID in chain_names:
       indx = chain_names.index(chain_ID)
       chain_to_split = pdb_obj.hierarchy.models()[0].chains()[indx]
       # create copies for the variable and the constant
-      pdb_limit_to_end = self.creat_new_pdb_from_chain(
+      pdb_limit_to_end_const = self.creat_new_pdb_from_chain(
         chain=chain_to_split,
-        new_file_name='1bbd_{}_Const.pdb'.format(chain_ID),
+        limit=limit,
+        new_file_name='{0}_{1}_Const.pdb'.format(pdb_file_name,chain_ID),
         to_end=True,
         write_to_file=write_to_file)
-      pdb_start_to_limit = self.creat_new_pdb_from_chain(
+      pdb_start_to_limit_var = self.creat_new_pdb_from_chain(
         chain=chain_to_split,
-        new_file_name='1bbd_{}_Var.pdb'.format(chain_ID),
+        limit=limit,
+        new_file_name='{0}_{1}_Var.pdb'.format(pdb_file_name,chain_ID),
         to_end=False,
         write_to_file=write_to_file)
     else:
       raise Sorry('The is not chain with {0} name in {1}'.format(chain_ID,fn))
-    return pdb_start_to_limit,pdb_limit_to_end
+    return pdb_start_to_limit_var,pdb_limit_to_end_const
 
   def creat_new_pdb_from_chain(self,chain,new_file_name,limit=117,to_end=True,write_to_file=False):
     '''(pdb_object,int,bool,bool) -> pdb_hierarchy
@@ -172,12 +238,26 @@ class FAB_elbow_angle(object):
 
     '''
     chain = chain.detached_copy()
+    # find the residue group number corespond to
+    # the limit residues ID
+    for i,res in enumerate(chain.residue_groups()):
+      try:
+        resid = int(chain.residue_groups()[i].resid())
+      except: pass
+      if limit <= resid:
+        print str(limit),chain.residue_groups()[i].resid().strip()
+        limit = i
+        break
+
     if to_end:
-      i_start = 0
-      i_end = limit
-    else:
-      i_start = limit
+      # Constant
+      i_start = limit + 1
       i_end = len(chain.residue_groups())
+    else:
+      # Variable
+      i_start = 0
+      i_end = limit + 1
+
     # Create a new hierarchy, keep chain ID
     new_chain = pdb.hierarchy.chain()
     new_model = pdb.hierarchy.model()

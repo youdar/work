@@ -41,7 +41,6 @@ class TestStrictNCS(unittest.TestCase):
     self.currnet_dir = os.getcwd()
     self.tempdir = tempfile.mkdtemp('tempdir')
     # for testing use junk folder insted of real temp directory
-
     # remember to change back the clean up when going back to real temp dir
     osType = sys.platform
     if osType.startswith('win'):
@@ -63,14 +62,14 @@ class TestStrictNCS(unittest.TestCase):
       ncs_filename=ncs0_filename,
       asu_filename=asu0_filename)
 
-    # Create and write a file ncs0.pdb with complete Asymmetric Unit (ASU)
+    # Updates ncs0.pdb with complete Asymmetric Unit (ASU)
     # 1 NCS copy: starting template to generate whole asu; place into P1 box
     pdb_inp_ncs = pdb.input(source_info=None, lines=ncs_0_copy)
     pdb_inp_ncs.write_pdb_file(
       file_name=ncs0_filename,
       crystal_symmetry = crystal_symmetry)
 
-    # When using pdb_inp.write_pdb_file the MTRIX record are omitted. Add them back
+    # Add MTRIX records
     self.add_MTRIX_to_pdb(ncs0_filename, record=ncs_0_copy)
 
     # Shake structure - subject to refinement input
@@ -262,8 +261,10 @@ class TestStrictNCS(unittest.TestCase):
     m.write(asu_filename)
     pdb_inp = pdb.input(file_name = asu_filename)
     xrs = pdb_inp.xray_structure_simple()
+    xrs_unit_cell = xrs.orthorhombic_unit_cell_around_centered_scatterers(
+    buffer_size=2)
     if not crystal_symmetry:
-      crystal_symmetry = xrs.crystal_symmetry()
+      crystal_symmetry = xrs_unit_cell.crystal_symmetry()
     pdb_inp.write_pdb_file(file_name = asu_filename, crystal_symmetry = crystal_symmetry)
     return crystal_symmetry
 
@@ -387,9 +388,9 @@ ncs_0_copy="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
 MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1
 MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1
-MTRIX1   2  0.496590 -0.643597  0.582393        0.00000    1
-MTRIX2   2  0.867925  0.376088 -0.324443        0.00000    1
-MTRIX3   2 -0.010221  0.666588  0.745356        0.00000    1
+MTRIX1   2  0.496590 -0.643597  0.582393        0.00000
+MTRIX2   2  0.867925  0.376088 -0.324443        0.00000
+MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000

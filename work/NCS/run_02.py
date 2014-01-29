@@ -2,6 +2,7 @@ from __future__ import division
 from iotbx.pdb.multimer_reconstruction import multimer
 from iotbx import pdb
 import iotbx.pdb
+import os,sys
 
 ncs_1_copy="""\
 MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1
@@ -32,16 +33,46 @@ def run():
   xrs_one_ncs = xrs.orthorhombic_unit_cell_around_centered_scatterers(
     buffer_size=8)
   ph.adopt_xray_structure(xrs_one_ncs)
-  of = open("one_ncs_in_asu.pdb", "w")
-  print >> of, mtrix_object.format_pdb_string()
-  print >> of, ph.as_pdb_string(crystal_symmetry=xrs_one_ncs.crystal_symmetry())
-  of.close()
+  open("one_ncs_in_asu.pdb", "w").write(ncs_1_copy)
+  #of = open("one_ncs_in_asu.pdb", "w")
+  #print >> of, mtrix_object.format_MTRIX_pdb_string()
+  #print >> of, ph.as_pdb_string(crystal_symmetry=xrs_one_ncs.crystal_symmetry())
+  #of.close()
   # 1 NCS copy -> full asu (expand NCS). This is the answer-strucure
   m = multimer("one_ncs_in_asu.pdb",'cau',error_handle=True,eps=1e-2)
-  assert m.number_of_transforms == 3
+  m.write("full_asu_2.pdb")
+  pdb_inp = iotbx.pdb.input(file_name="full_asu_2.pdb")
+  xrs = pdb_inp.xray_structure_simple()
+  xrs_one_asu = xrs.orthorhombic_unit_cell_around_centered_scatterers(
+    buffer_size=2)
+  #xrs_one_asu = xrs.cubic_unit_cell_around_centered_scatterers(
+    #buffer_size=1)
+
+  crystal_symmetry = xrs_one_asu.crystal_symmetry()
+  #crystal_symmetry = xrs.crystal_symmetry()
   xrs_asu = m.assembled_multimer.extract_xray_structure(
-    crystal_symmetry = xrs_one_ncs.crystal_symmetry())
-  m.write("full_asu.pdb")
+    crystal_symmetry = crystal_symmetry)
+
+  #ph = pdb_inp.construct_hierarchy()
+  #ph.adopt_xray_structure(xrs_one_asu)
+
+  pdb_inp_2 = iotbx.pdb.input(file_name="one_ncs_in_asu.pdb")
+  pdb_inp_2.write_pdb_file(file_name = "one_ncs_in_asu.pdb",
+                         crystal_symmetry = crystal_symmetry)
+
+
+
+  #of = open("one_ncs_in_asu.pdb", "w")
+  #print >> of, mtrix_object.format_MTRIX_pdb_string()
+  #print >> of, ph.as_pdb_string(crystal_symmetry=xrs_one_asu.crystal_symmetry())
+  #of.close()
+  #m = multimer("one_ncs_in_asu.pdb",'cau',error_handle=True,eps=1e-2)
+  m.write("full_asu_2.pdb")
+
+  assert m.number_of_transforms == 2
+  #xrs_asu = m.assembled_multimer.extract_xray_structure(
+    #crystal_symmetry = xrs_one_ncs.crystal_symmetry())
+  #m.write("full_asu.pdb")
   assert xrs_asu.crystal_symmetry().is_similar_symmetry(
     xrs_one_ncs.crystal_symmetry())
   # Generate Fobs from answer structure
@@ -56,11 +87,15 @@ def run():
   # Shake structure - subject to refinement input
   xrs_shaken = xrs_one_ncs.deep_copy_scatterers()
   xrs_shaken.shake_sites_in_place(mean_distance=0.3)
-  ph.adopt_xray_structure(xrs_shaken)
+  #ph.adopt_xray_structure(xrs_shaken)
   of = open("one_ncs_in_asu_shaken.pdb", "w")
-  print >> of, mtrix_object.format_pdb_string()
-  print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
-  # Refinement 
+  print >> of, mtrix_object.format_MTRIX_pdb_string()
+  #print >> of, ph.as_pdb_string(crystal_symmetry=xrs.crystal_symmetry())
+  # Refinement
+
+
 
 if __name__ == "__main__":
+  testdir = r'C:\Phenix\Dev\Work\work\NCS\test_files'
+  os.chdir(testdir)
   run()

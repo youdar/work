@@ -48,6 +48,10 @@ def run(ncs0_pdb):
   crystal_symmetry = create_asu(ncs_filename=ncs0_filename, asu_filename=asu0_filename)
   # Add CRYST1 records to ncs0
   pdb_inp = pdb.input(file_name = ncs0_filename)
+
+  #xrs = pdb_inp.xray_structure_simple()
+  #crystal_symmetry = xrs.crystal_symmetry()
+
   pdb_inp.write_pdb_file(file_name = ncs0_filename, crystal_symmetry = crystal_symmetry)
   # When using pdb_inp.write_pdb_file the MTRIX record are omitted. Add them back
   add_MTRIX_to_pdb(ncs0_filename, 'ncs0_origin.pdb')

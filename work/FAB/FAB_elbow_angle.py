@@ -1,12 +1,12 @@
 from __future__ import division
 from phenix.command_line import superpose_pdbs
-from iotbx import pdb
-from libtbx import easy_run
-from libtbx.utils import Sorry
-from libtbx.utils import null_out
 from scitbx.linalg import eigensystem
 from scitbx.array_family import flex
+from libtbx.utils import null_out
+from libtbx.utils import Sorry
+from iotbx.pdb import fetch
 from math import acos,pi
+from iotbx import pdb
 import shutil
 import tempfile
 import os,sys
@@ -62,6 +62,8 @@ class FAB_elbow_angle(object):
 
     @author Youval Dar (LBL 2014)
     '''
+    # abolute path and test that file exist
+    pdb_file_name = self.get_pdb_file_name_and_path(pdb_file_name)
     # Devide to variable and constant part, and get the hirarchy for
     # H : heavy,  L : light
     # start_to_limit : Constant
@@ -101,15 +103,23 @@ class FAB_elbow_angle(object):
     # Get the angle and eigenvalues
     eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
     eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
+    # get 1bbd
+    currnet_dir = os.getcwd()
+    tempdir = tempfile.mkdtemp('tempdir')
+    os.chdir(tempdir)
+    fetch.get_pdb ('1bbd',data_type='pdb',mirror='rcsb',log=null_out())
     # align constant heavy of tested protein with a reference protein 1ddb
     test_var_H,test_const_H = self.get_pdb_protions(
       pdb_file_name=pdb_file_name,
       chain_ID=chain_ID_heavy,
       limit=limit_heavy)
     ref_var_H,ref_const_H = self.get_pdb_protions(
-      pdb_file_name='1bbd',
+      pdb_file_name='1bbd.pdb',
       chain_ID=chain_ID_heavy,
       limit=limit_heavy)
+    # clean temp folder
+    os.chdir(currnet_dir)
+    shutil.rmtree(tempdir)
     # get rotation and translation
     ref_tranformation = self.get_transformation(
       pdb_hierarchy_fixed=ref_const_H,
@@ -248,8 +258,8 @@ class FAB_elbow_angle(object):
     pdb_hierarchy1: 0 to limit atoms from  pdb_file_name
     pdb_hierarchy2: limit to end atoms from pdb_file_name
     '''
-    fn = self.check_pdb_file_name(pdb_file_name)
-    pdb_obj = pdb.hierarchy.input(file_name=fn)
+    fn = os.path.splitext(os.path.basename(pdb_file_name))[0]
+    pdb_obj = pdb.hierarchy.input(file_name=pdb_file_name)
     chains = pdb_obj.hierarchy.models()[0].chains()
     chain_names = [x.id for x in chains]
     # check if correct name is given and find the correct chain
@@ -262,26 +272,27 @@ class FAB_elbow_angle(object):
       pdb_limit_to_end_const = self.creat_new_pdb_from_chain(
         chain=chain_to_split,
         limit=limit,
-        new_file_name='{0}_{1}_Const.pdb'.format(pdb_file_name,chain_ID),
+        new_file_name='{0}_{1}_Const.pdb'.format(fn,chain_ID),
         to_end=True,
         write_to_file=write_to_file)
       pdb_start_to_limit_var = self.creat_new_pdb_from_chain(
         chain=chain_to_split,
         limit=limit,
-        new_file_name='{0}_{1}_Var.pdb'.format(pdb_file_name,chain_ID),
+        new_file_name='{0}_{1}_Var.pdb'.format(fn,chain_ID),
         to_end=False,
         write_to_file=write_to_file)
     else:
       raise Sorry('The is not chain with {0} name in {1}'.format(chain_ID,fn))
     return pdb_start_to_limit_var,pdb_limit_to_end_const
 
-  def creat_new_pdb_from_chain(self,chain,new_file_name,limit=117,to_end=True,write_to_file=False):
+  def creat_new_pdb_from_chain(self,chain,new_file_name,chain_ID,limit=117,to_end=True,write_to_file=False):
     '''(pdb_object,int,bool,bool) -> pdb_hierarchy
 
     Creates new pdb hierarchy from a portion of chain
 
     Arguments:
     ----------
+    chain: a hierarchy chain object to be split
     pdb_object : a chain from a pdb file
     limit : the cutoff between the Variable and the Constant FAB domains
     to_end : if False take portion before limit, if true, the protion after
@@ -294,26 +305,29 @@ class FAB_elbow_angle(object):
     pdb_hierarchy2: limit to end atoms from pdb_file_name
 
     '''
-    chain = chain.detached_copy()
-    # find the residue group number corespond to
-    # the limit residues ID
+    # Make sure the limit residues ID value is good
     for i,res in enumerate(chain.residue_groups()):
       try:
         # some resid have letters
         resid = int(chain.residue_groups()[i].resid())
       except: pass
-      if limit <= resid:
+      if (limit + 1)<= resid:
         limit = i
         break
 
-    if to_end:
-      # Constant
-      i_start = limit + 1
-      i_end = len(chain.residue_groups())
-    else:
-      # Variable
-      i_start = 0
-      i_end = limit + 1
+    chain_length = len(chain.residue_groups())
+    selection_var = 'chain {0}  and resseq {1}:{2}'.format(chain_ID,1,limit)
+    selection_const = 'chain {0} and resseq {1}:{2}'.format(chain_ID,limit,chain_length)
+
+
+
+
+
+    chain = chain.detached_copy()
+    # find the residue group number corespond to
+    # the limit residues ID
+
+
 
     # Create a new hierarchy, keep chain ID
     new_chain = pdb.hierarchy.chain()
@@ -327,10 +341,18 @@ class FAB_elbow_angle(object):
     new_model.append_chain(new_chain)
     new_root.append_model(new_model)
     if write_to_file:
+      const_file_name='{0}_{1}_Const.pdb'.format(fn,chain_ID)
+      var_file_name='{0}_{1}_Var.pdb'.format(fn,chain_ID)
+
+
       new_root.write_pdb_file(file_name=new_file_name)
+
+
+
+
     return new_root
 
-  def check_pdb_file_name(self,file_name):
+  def get_pdb_file_name_and_path(self,file_name):
     tmp = os.path.basename(file_name)
     tmp = tmp.split('.')
     assert len(tmp[0])==4
@@ -338,4 +360,5 @@ class FAB_elbow_angle(object):
       fn = file_name
     else:
       fn = tmp[0] + '.pdb'
-    return fn
+    assert os.path.isfile(fn)
+    return os.path.abspath(fn)

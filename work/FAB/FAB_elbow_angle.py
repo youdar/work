@@ -62,6 +62,22 @@ class FAB_elbow_angle(object):
       pdb_file_name=pdb_file_name,
       chain_ID=chain_ID_light,
       limit=limit_light)
+    # Get vector from heavy limit residue to light limit residue
+    # before applying transformations
+    limit_H = pdb_var_H.atoms()[-1].xyz
+    limit_L = pdb_var_L.atoms()[-1].xyz
+    limits_vec = flex.double([x-y for (x,y) in zip(limit_H,limit_L)])
+    # Get the direction from variable to constant
+    protein_start = pdb_var_L.atoms()[0].xyz
+    protein_end = pdb_const_L.atoms()[-1].xyz
+    general_oriantation_vec = flex.double([x-y for (x,y) in zip(protein_start,protein_end)])
+
+    #
+    print pdb_var_H.atoms()[-1].id_str(),limit_H
+    print pdb_var_L.atoms()[-1].id_str(),limit_L
+    print '-'*50
+    #
+
     # get ratoation and translation information
     tranformation_const = self.get_transformation(
       pdb_hierarchy_fixed=pdb_const_H,
@@ -70,40 +86,108 @@ class FAB_elbow_angle(object):
     tranformation_var = self.get_transformation(
       pdb_hierarchy_fixed=pdb_var_H,
       pdb_hierarchy_moving=pdb_var_L)
-    #
     self.rotation_const = tranformation_const.r
     self.rotation_var = tranformation_var.r
-    # Get the angle
-    # get eigenvalues
+    # Get the angle and eigenvalues
     eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
     eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
+
+    # align constant heavy of tested protein with a reference protein 1ddb
+    test_var_H,test_const_H = self.get_pdb_protions(
+      pdb_file_name=pdb_file_name,
+      chain_ID=chain_ID_heavy,
+      limit=limit_heavy)
+    ref_var_H,ref_const_H = self.get_pdb_protions(
+      pdb_file_name='1bbd',
+      chain_ID=chain_ID_heavy,
+      limit=limit_heavy)
+    # get rotation and translation
+    ref_tranformation = self.get_transformation(
+      pdb_hierarchy_fixed=ref_const_H,
+      pdb_hierarchy_moving=test_const_H)
+    self.ref_rotation = ref_tranformation.r
+    self.ref_translation = ref_tranformation.t
+    # Apply transformation on the variable portion of the tesed protein
+    new_sites = ref_tranformation.r.elems*test_var_H.atoms().extract_xyz() + ref_tranformation.t
+    test_var_H.atoms().set_xyz(new_sites)
+    # get rotation and translation
+    ref_tranformation_var = self.get_transformation(
+      pdb_hierarchy_fixed=ref_var_H,
+      pdb_hierarchy_moving=test_var_H)
+    self.ref_rotation_var = ref_tranformation_var.r
+    # Get the angle and eigenvalues for reference protein
+    eigen_ref = eigensystem.real_symmetric(ref_tranformation_var.r.as_sym_mat3())
+
+
+
+    # test retation !!!!!!!!!!!!!!!!!!!!!
+    print 'var  : ',tranformation_var.r.elems
+    print 'const: ',tranformation_const.r.elems
+    print 'ref  : ',ref_tranformation.r.elems
+    print 'ref.t: ',ref_tranformation.t.elems
+    print 'ref var: ',ref_tranformation_var.r.elems
+
+    pdb_var_L,pdb_const_L = self.get_pdb_protions(
+      pdb_file_name=pdb_file_name,
+      chain_ID=chain_ID_light,
+      limit=limit_light)
+
+    pdb_var_L.write_pdb_file('test_clean.pdb')
+
+    new_sites = tranformation_var.r.elems*pdb_var_L.atoms().extract_xyz()
+    pdb_var_L.atoms().set_xyz(new_sites)
+    pdb_var_L.write_pdb_file('test_rot.pdb')
+
+    new_sites = pdb_var_L.atoms().extract_xyz() + tranformation_var.t
+    pdb_var_L.atoms().set_xyz(new_sites)
+    pdb_var_L.write_pdb_file('test_rot_t.pdb')
+
+    # End test  !!!!!!!!!!!!!!!!!!!!!!
+
     eigen_vectors_const = self.get_eigenvector(eigen_const)
     eigen_vectors_var = self.get_eigenvector(eigen_var)
-    angle_cos = eigen_vectors_const.dot(eigen_vectors_var)
-    angle = 180/pi*acos(angle_cos)
-    cross = self.cross_prod(eigen_vectors_var,eigen_vectors_const)
-    # Get vector from heavy limit residue to light limit residue
-    limit_H = pdb_const_H.atoms()[-1].xyz
-    limit_L = pdb_const_L.atoms()[-1].xyz
-    limits_vec = flex.double([x-y for (x,y) in zip(limit_H,limit_L)])
-    #
-    if angle < 90:
-      angle = 180 - angle
-    if limits_vec.dot(cross) > 0:
+    eigen_vectors_var_ref = self.get_eigenvector(eigen_ref)
+    angle = self.get_angle(vec1=eigen_vectors_const, vec2=eigen_vectors_var)
+    ref_angle = self.get_angle(vec1=eigen_vectors_var_ref, vec2=eigen_vectors_var,larger=False)
+    if ref_angle > 90: ref_angle = 180 - ref_angle
+
+    if angle + ref_angle > 180:
       # Choose angle smaller than 180
       angle = 360 - angle
-    #else:
-      #less180 = False
-    #if angle > 180 and less180:
+
+
+    ## make sure the rotation vectors point in opposite way
+    #if eigen_vectors_const.dot(eigen_vectors_var) > 0:
+      #eigen_vectors_const = -eigen_vectors_const
+
+    #print 'const dor var : ',eigen_vectors_const.dot(eigen_vectors_var)
+    #print 'general vec : ',eigen_vectors_const.dot(general_oriantation_vec)
+
+
+    ## calculate V x C to help determine if angle smaller or lateger than 180
+    #cross = self.cross_prod(eigen_vectors_var,eigen_vectors_const)
+    ##
+    #print 'angle = ',angle
+    #print 'limit dot cross : ',limits_vec.dot(cross)
+
+    #if limits_vec.dot(cross) > 0:
+      ## Choose angle smaller than 180
       #angle = 360 - angle
-    #elif
-    #if angle_cos < 0:
-      #angle = 360 - angle
-    #elif angle < 90:
-      #angle = 180 - angle
+
 
     self.FAB_elbow_angle = angle
     #self.FAB_elbow_angle = self.rotation_const.angle(self.rotation_var,deg=True)
+
+  def get_angle(self,vec1,vec2,larger=True):
+    '''retrun the larger angle between vvec1 and vec2'''
+    if vec1 and vec1:
+      angle_cos = vec1.dot(vec2)
+      angle = 180/pi*acos(angle_cos)
+    else:
+      angle = 0
+    if (angle < 90) and larger: angle = 180 - angle
+    if (angle > 90) and not larger: angle = 180 - angle
+    return angle
 
   def cross_prod(self,a,b):
     '''(array,array) -> array'''
@@ -130,8 +214,12 @@ class FAB_elbow_angle(object):
     # make sure we have egienvalue == 1
     assert not indx
     eigenvector = v[indx:indx+3]
-    # normalize and return
-    return eigenvector / eigenvector.dot(eigenvector)
+    # normalize
+    eigenvector = eigenvector / eigenvector.dot(eigenvector)
+    if e == flex.double([1,1,1]):
+      eigenvector = None
+
+    return eigenvector
 
   def get_transformation(self,pdb_hierarchy_fixed,pdb_hierarchy_moving):
     '''
@@ -242,10 +330,10 @@ class FAB_elbow_angle(object):
     # the limit residues ID
     for i,res in enumerate(chain.residue_groups()):
       try:
+        # some resid have letters
         resid = int(chain.residue_groups()[i].resid())
       except: pass
       if limit <= resid:
-        print str(limit),chain.residue_groups()[i].resid().strip()
         limit = i
         break
 

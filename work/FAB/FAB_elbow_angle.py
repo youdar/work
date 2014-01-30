@@ -1,7 +1,6 @@
 from __future__ import division
 from phenix.command_line import superpose_pdbs
 from iotbx import pdb
-from iotbx.pdb import fetch
 from libtbx import easy_run
 from libtbx.utils import Sorry
 from libtbx.utils import null_out
@@ -20,7 +19,8 @@ class FAB_elbow_angle(object):
                chain_ID_heavy='H',
                limit_light=107,
                limit_heavy=113):
-    '''Get elbow angle for Fragment antigen-binding (Fab)
+    '''
+    Get elbow angle for Fragment antigen-binding (Fab)
 
     - Default heavy and light chains IDs are: H : heavy,  L : light
     - Default limit (cutoff) between variable and constant parts
@@ -48,18 +48,20 @@ class FAB_elbow_angle(object):
     Example:
     --------
     >>>fab = FAB_elbow_angle(
-         pdb_file_name=file_name,
+         pdb_file_name='1bbd',
          chain_ID_light='L',
          chain_ID_heavy='H',
          limit_light=114,
          limit_heavy=118)
     >>> print fab.FAB_elbow_angle
+    133
+    >>>fab = FAB_elbow_angle(pdb_file_name='1bbd')
+    >>> print fab.FAB_elbow_angle
+    126
+    (127 in Stanfield, et al., JMB 2006)
 
-
+    @author Youval Dar (LBL 2014)
     '''
-
-    # Test if FAB
-
     # Devide to variable and constant part, and get the hirarchy for
     # H : heavy,  L : light
     # start_to_limit : Constant
@@ -124,66 +126,17 @@ class FAB_elbow_angle(object):
     self.ref_rotation_var = ref_tranformation_var.r
     # Get the angle and eigenvalues for reference protein
     eigen_ref = eigensystem.real_symmetric(ref_tranformation_var.r.as_sym_mat3())
-
-
-
-    # test retation !!!!!!!!!!!!!!!!!!!!!
-    print 'var  : ',tranformation_var.r.elems
-    print 'const: ',tranformation_const.r.elems
-    print 'ref  : ',ref_tranformation.r.elems
-    print 'ref.t: ',ref_tranformation.t.elems
-    print 'ref var: ',ref_tranformation_var.r.elems
-
-    pdb_var_L,pdb_const_L = self.get_pdb_protions(
-      pdb_file_name=pdb_file_name,
-      chain_ID=chain_ID_light,
-      limit=limit_light)
-
-    pdb_var_L.write_pdb_file('test_clean.pdb')
-
-    new_sites = tranformation_var.r.elems*pdb_var_L.atoms().extract_xyz()
-    pdb_var_L.atoms().set_xyz(new_sites)
-    pdb_var_L.write_pdb_file('test_rot.pdb')
-
-    new_sites = pdb_var_L.atoms().extract_xyz() + tranformation_var.t
-    pdb_var_L.atoms().set_xyz(new_sites)
-    pdb_var_L.write_pdb_file('test_rot_t.pdb')
-
-    # End test  !!!!!!!!!!!!!!!!!!!!!!
-
     eigen_vectors_const = self.get_eigenvector(eigen_const)
     eigen_vectors_var = self.get_eigenvector(eigen_var)
     eigen_vectors_var_ref = self.get_eigenvector(eigen_ref)
     angle = self.get_angle(vec1=eigen_vectors_const, vec2=eigen_vectors_var)
     ref_angle = self.get_angle(vec1=eigen_vectors_var_ref, vec2=eigen_vectors_var,larger=False)
+    # Resolve ambiguity with angle
     if ref_angle > 90: ref_angle = 180 - ref_angle
-
     if angle + ref_angle > 180:
       # Choose angle smaller than 180
       angle = 360 - angle
-
-
-    ## make sure the rotation vectors point in opposite way
-    #if eigen_vectors_const.dot(eigen_vectors_var) > 0:
-      #eigen_vectors_const = -eigen_vectors_const
-
-    #print 'const dor var : ',eigen_vectors_const.dot(eigen_vectors_var)
-    #print 'general vec : ',eigen_vectors_const.dot(general_oriantation_vec)
-
-
-    ## calculate V x C to help determine if angle smaller or lateger than 180
-    #cross = self.cross_prod(eigen_vectors_var,eigen_vectors_const)
-    ##
-    #print 'angle = ',angle
-    #print 'limit dot cross : ',limits_vec.dot(cross)
-
-    #if limits_vec.dot(cross) > 0:
-      ## Choose angle smaller than 180
-      #angle = 360 - angle
-
-
     self.FAB_elbow_angle = angle
-    #self.FAB_elbow_angle = self.rotation_const.angle(self.rotation_var,deg=True)
 
   def get_segment_info(self,pdb_obj,segment_id):
     '''(pdb_hierarchy,str) -> str,int
@@ -212,8 +165,6 @@ class FAB_elbow_angle(object):
     a1,a2,a3 = a
     b1,b2,b3 = b
     return flex.double([a2*b3-a3*b2,a3*b1-a1*b3,a1*b2-a2*b1])
-
-
 
   def get_eigenvector(self,eigen):
     '''

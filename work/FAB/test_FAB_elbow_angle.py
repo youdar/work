@@ -43,7 +43,7 @@ class TestFabElbowAngle(unittest.TestCase):
     # Remove this os.chdir when test is working
     os.chdir(r'C:\Phenix\Dev\Work\work\FAB')
 
-  #@unittest.skip('Skip test')
+  @unittest.skip('Skip test')
   def test_1bbd(self):
     '''Compare to published value'''
     fn = '1bbd'
@@ -67,13 +67,9 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '7fab'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=sys.stdout)
+    fab = FAB_elbow_angle(pdb_file_name=fn,limit_light=104,limit_heavy=117)
 
-    fab = FAB_elbow_angle(
-      pdb_file_name=fn,
-      chain_ID_light='L',
-      chain_ID_heavy='H',
-      limit_light=104,
-      limit_heavy=117)
+    #fab = FAB_elbow_angle(pdb_file_name=fn)
 
     calculated = fab.FAB_elbow_angle
     expected = 132
@@ -81,7 +77,7 @@ class TestFabElbowAngle(unittest.TestCase):
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
 
-  #@unittest.skip('Skip test')
+  @unittest.skip('Skip test')
   def test_1dba(self):
     '''Compare to published value'''
     fn = '1dba'
@@ -93,7 +89,7 @@ class TestFabElbowAngle(unittest.TestCase):
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
 
-  #@unittest.skip('Skip test')
+  @unittest.skip('Skip test')
   def test_1plg(self):
     '''Compare to published value'''
     fn = '1plg'
@@ -112,7 +108,7 @@ class TestFabElbowAngle(unittest.TestCase):
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
 
-  #@unittest.skip('Skip test')
+  @unittest.skip('Skip test')
   def test_1nl0(self):
     '''Compare to published value'''
     fn = '1nl0'

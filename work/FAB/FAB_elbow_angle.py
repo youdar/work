@@ -22,13 +22,12 @@ class FAB_elbow_angle(object):
                limit_heavy=113):
     '''Get elbow angle for Fragment antigen-binding (Fab)
 
-    If not specified otherwise, the chains IDs are: H : heavy,  L : light
-
-    I assume that the Constant protion of the protein is from start_to_limit
-    and that the Vairiable one is from limit_to_end
-
-    !!!!  need to check if the assumption above is true !!!!
-
+    - Default heavy and light chains IDs are: H : heavy,  L : light
+    - Default limit (cutoff) between variable and constant parts
+      is residue number 107/113 for light/heavy chains
+    - Variable domain si from residue 1 to limit.
+      Constant domain form limit+1 to end.
+    - Method of calculating angle is based on Stanfield, et al., JMB 2006
 
     Argument:
     ---------
@@ -45,6 +44,17 @@ class FAB_elbow_angle(object):
     self.FAB_elbow_angle : the elbow angle calculated as the dot product of
                            the VL-VH pseudodyade axie and the CL-CH pseudodyade axie
                            The angle always computes between 90 and 180
+
+    Example:
+    --------
+    >>>fab = FAB_elbow_angle(
+         pdb_file_name=file_name,
+         chain_ID_light='L',
+         chain_ID_heavy='H',
+         limit_light=114,
+         limit_heavy=118)
+    >>> print fab.FAB_elbow_angle
+
 
     '''
 
@@ -71,13 +81,11 @@ class FAB_elbow_angle(object):
     protein_start = pdb_var_L.atoms()[0].xyz
     protein_end = pdb_const_L.atoms()[-1].xyz
     general_oriantation_vec = flex.double([x-y for (x,y) in zip(protein_start,protein_end)])
-
-    #
-    print pdb_var_H.atoms()[-1].id_str(),limit_H
-    print pdb_var_L.atoms()[-1].id_str(),limit_L
-    print '-'*50
-    #
-
+    # Collect infor about FAB segments
+    self.var_L,self.var_L_nAtoms = self.get_segment_info(pdb_var_L,'VL')
+    self.var_H,self.var_H_nAtoms = self.get_segment_info(pdb_var_H,'VH')
+    self.const_L,self.const_L_nAtoms = self.get_segment_info(pdb_const_L,'CL')
+    self.const_H,self.const_H_nAtoms = self.get_segment_info(pdb_const_H,'CH')
     # get ratoation and translation information
     tranformation_const = self.get_transformation(
       pdb_hierarchy_fixed=pdb_const_H,
@@ -91,7 +99,6 @@ class FAB_elbow_angle(object):
     # Get the angle and eigenvalues
     eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
     eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
-
     # align constant heavy of tested protein with a reference protein 1ddb
     test_var_H,test_const_H = self.get_pdb_protions(
       pdb_file_name=pdb_file_name,
@@ -178,6 +185,17 @@ class FAB_elbow_angle(object):
     self.FAB_elbow_angle = angle
     #self.FAB_elbow_angle = self.rotation_const.angle(self.rotation_var,deg=True)
 
+  def get_segment_info(self,pdb_obj,segment_id):
+    '''(pdb_hierarchy,str) -> str,int
+    Return information on first and last residues in pdb_obj
+    as well as the number of atoms in it'''
+    segment_start_end = '{0} from {1} to {2}'
+    n_atoms_in_segment = len(pdb_obj.atoms())
+    s_start = pdb_obj.atoms()[0].pdb_label_columns()
+    s_end = pdb_obj.atoms()[-1].pdb_label_columns()
+    segment_start_end = segment_start_end.format(segment_id,s_start,s_end)
+    return segment_start_end,n_atoms_in_segment
+
   def get_angle(self,vec1,vec2,larger=True):
     '''retrun the larger angle between vvec1 and vec2'''
     if vec1 and vec1:
@@ -216,7 +234,7 @@ class FAB_elbow_angle(object):
     eigenvector = v[indx:indx+3]
     # normalize
     eigenvector = eigenvector / eigenvector.dot(eigenvector)
-    if e == flex.double([1,1,1]):
+    if e.all_eq(flex.double([1,1,1])):
       eigenvector = None
 
     return eigenvector

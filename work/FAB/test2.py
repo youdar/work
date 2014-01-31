@@ -26,7 +26,7 @@ def get_file(fn):
 
 def set_work_folder():
   if sys.platform.startswith('win'):
-    wrokpath = r'C:\Phenix\Dev\Work\work\FAB elbow angle'
+    wrokpath = r'C:\Phenix\Dev\Work\work\FAB'
   else:
     workpath = '~youval/Work/work/FAB'
   os.chdir(wrokpath)

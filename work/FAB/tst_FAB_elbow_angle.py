@@ -34,10 +34,8 @@ class TestFabElbowAngle(unittest.TestCase):
     self.currnet_dir = os.getcwd()
     self.tempdir = tempfile.mkdtemp('tempdir')
     os.chdir(self.tempdir)
-    # get reference protein 1bbd
-    fetch.get_pdb ('1bbd',data_type='pdb',mirror='rcsb',log=null_out())
     # Set delta for testing angles (degrees)
-    self.delta = 10
+    self.delta = 0
 
     # Remove this os.chdir when test is working
     #os.chdir(r'C:\Phenix\Dev\Work\work\FAB')

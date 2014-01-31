@@ -2,8 +2,8 @@ from __future__ import division
 from phenix.command_line import superpose_pdbs
 from iotbx import pdb
 from iotbx.pdb import fetch
-from libtbx import easy_run
 from libtbx.utils import Sorry
+from libtbx.utils import null_out
 import shutil
 import tempfile
 import os,sys
@@ -11,12 +11,30 @@ import os,sys
 def run(fn):
   ''' '''
   pdb_hierarchy = pdb.hierarchy.input(file_name=fn).hierarchy
-  #select_str = 'chain H and resseq 1:end'
-  select_str = 'chain L not HETATM'
-  #select_str = 'chain H and resseq 0:102'
+  ss = 'pepnames and (name ca or name n or name c) and altloc " "'
+  select_str = 'chain L and resseq 104:end and %s' % ss
+  select_str = 'chain H and resseq 114:end and pepnames and (name ca or name n or name c) and altloc " "'
   pdb_selection_bool = pdb_hierarchy.atom_selection_cache().selection(select_str)
-  selected_chain_portion  = pdb_hierarchy.select(pdb_selection_bool)
-  selected_chain_portion.atoms()[0].xyz
+  const_L  = pdb_hierarchy.select(pdb_selection_bool)
+
+
+  ss = 'pepnames and (name ca or name n or name c) and altloc " "'
+  select_str = 'chain H and resseq 114:end and %s' % ss
+  pdb_selection_bool = pdb_hierarchy.atom_selection_cache().selection(select_str)
+  const_H  = pdb_hierarchy.select(pdb_selection_bool)
+
+  params = superpose_pdbs.master_params.extract()
+
+
+
+  x = superpose_pdbs.manager(
+    params,
+    log=null_out(),
+    write_output=False,
+    save_lsq_fit_obj=True,
+    pdb_hierarchy_fixed=const_H,
+    pdb_hierarchy_moving=const_L)
+
 
   print 'ok'
 

@@ -60,8 +60,11 @@ class FAB_elbow_angle(object):
     133
     >>>fab = FAB_elbow_angle(pdb_file_name='1bbd')
     >>> print fab.FAB_elbow_angle
-    126
-    (127 in Stanfield, et al., JMB 2006)
+    126 (127 in Stanfield, et al., JMB 2006)
+    >>> print fab.var_L
+    'VL from  N   ASP L   1  to  O   GLY L 107 '
+    >>> print fab.var_L_nAtoms
+    826
 
     @author Youval Dar (LBL 2014)
     '''
@@ -71,42 +74,30 @@ class FAB_elbow_angle(object):
     # H : heavy,  L : light
     # start_to_limit : Constant
     # limit_to_end : Variable
-
-    select_var_str_H,select_const_str_H  = select_str(chain_ID=chain_ID_heavy,limit=limit_heavy)
-    select_var_str_L,select_const_str_L  = select_str(chain_ID=chain_ID_light,limit=limit_light)
-
-    #pdb_var_H,pdb_const_H = self.get_pdb_protions(
-      #pdb_file_name=pdb_file_name,
-      #chain_ID=chain_ID_heavy,
-      #limit=limit_heavy)
-    #pdb_var_L,pdb_const_L = self.get_pdb_protions(
-      #pdb_file_name=pdb_file_name,
-      #chain_ID=chain_ID_light,
-      #limit=limit_light)
-    # get ratoation and translation information
-    tranformation_const = self.get_transformation(
-      fixed_selection=select_const_str_H,
-      moving_selection=select_const_str_L)
-    self.rotation_const = tranformation_const.r
-    tranformation_var = self.get_transformation(
-      fixed_selection=select_var_str_H,
-      moving_selection=select_var_str_L)
-    self.rotation_const = tranformation_const.r
-    self.rotation_var = tranformation_var.r
-    # Get the angle and eigenvalues
-    eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
-    eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
+    pdb_var_H,pdb_const_H = self.get_pdb_protions(
+      pdb_file_name=pdb_file_name,
+      chain_ID=chain_ID_heavy,
+      limit=limit_heavy)
+    pdb_var_L,pdb_const_L = self.get_pdb_protions(
+      pdb_file_name=pdb_file_name,
+      chain_ID=chain_ID_light,
+      limit=limit_light)
+    # Collect info about FAB segments
+    self.var_L,self.var_L_nAtoms = self.get_segment_info(pdb_var_L,'VL')
+    self.var_H,self.var_H_nAtoms = self.get_segment_info(pdb_var_H,'VH')
+    self.const_L,self.const_L_nAtoms = self.get_segment_info(pdb_const_L,'CL')
+    self.const_H,self.const_H_nAtoms = self.get_segment_info(pdb_const_H,'CH')
     # get 1bbd
     currnet_dir = os.getcwd()
     tempdir = tempfile.mkdtemp('tempdir')
     os.chdir(tempdir)
     fetch.get_pdb ('1bbd',data_type='pdb',mirror='rcsb',log=null_out())
-    # align constant heavy of tested protein with a reference protein 1ddb
+    # seperate chains for testing and referance
     test_var_H,test_const_H = self.get_pdb_protions(
       pdb_file_name=pdb_file_name,
       chain_ID=chain_ID_heavy,
       limit=limit_heavy)
-    ref_var_H,ref_const_H = self.get_pdb_protions(
+    pdb_ref_var_H,pdb_ref_const_H = self.get_pdb_protions(
       pdb_file_name='1bbd.pdb',
       chain_ID=chain_ID_heavy,
       limit=limit_heavy)
@@ -114,25 +105,38 @@ class FAB_elbow_angle(object):
     os.chdir(currnet_dir)
     shutil.rmtree(tempdir)
     # get rotation and translation
-    ref_tranformation = self.get_transformation(
-      fixed_selection=ref_const_H,
-      moving_selection=test_const_H)
-    self.ref_rotation = ref_tranformation.r
-    self.ref_translation = ref_tranformation.t
+    tranformation_const = self.get_transformation(
+      pdb_hierarchy_fixed=pdb_const_H,
+      pdb_hierarchy_moving=pdb_const_L)
+
+    tranformation_var = self.get_transformation(
+      pdb_hierarchy_fixed=pdb_var_H,
+      pdb_hierarchy_moving=pdb_var_L)
+
+    tranformation_ref_const = self.get_transformation(
+      pdb_hierarchy_fixed=pdb_ref_const_H,
+      pdb_hierarchy_moving=test_const_H)
+
     # Apply transformation on the variable portion of the tesed protein
-    new_sites = ref_tranformation.r.elems*test_var_H.atoms().extract_xyz() + ref_tranformation.t
+    new_sites = tranformation_ref_const.r.elems*test_var_H.atoms().extract_xyz() + tranformation_ref_const.t
     test_var_H.atoms().set_xyz(new_sites)
+
     # get rotation and translation
-    ref_tranformation_var = self.get_transformation(
-      fixed_selection=ref_var_H,
-      moving_selection=test_var_H)
-    self.ref_rotation_var = ref_tranformation_var.r
-    # Get the angle and eigenvalues for reference protein
-    eigen_ref = eigensystem.real_symmetric(ref_tranformation_var.r.as_sym_mat3())
+    tranformation_ref_var = self.get_transformation(
+      pdb_hierarchy_fixed=pdb_ref_var_H,
+      pdb_hierarchy_moving=test_var_H)
+
+    # Get the angle and eigenvalues
+    eigen_const = eigensystem.real_symmetric(tranformation_const.r.as_sym_mat3())
+    eigen_var = eigensystem.real_symmetric(tranformation_var.r.as_sym_mat3())
+    eigen_ref = eigensystem.real_symmetric(tranformation_ref_var.r.as_sym_mat3())
+    #
     eigen_vectors_const = self.get_eigenvector(eigen_const)
     eigen_vectors_var = self.get_eigenvector(eigen_var)
     eigen_vectors_var_ref = self.get_eigenvector(eigen_ref)
+    #
     angle = self.get_angle(vec1=eigen_vectors_const, vec2=eigen_vectors_var)
+    print '+'*30
     ref_angle = self.get_angle(vec1=eigen_vectors_var_ref, vec2=eigen_vectors_var,larger=False)
     # Resolve ambiguity with angle
     if ref_angle > 90: ref_angle = 180 - ref_angle
@@ -157,10 +161,12 @@ class FAB_elbow_angle(object):
     if vec1 and vec1:
       angle_cos = vec1.dot(vec2)
       angle = 180/pi*acos(angle_cos)
+      print angle
     else:
       angle = 0
     if (angle < 90) and larger: angle = 180 - angle
     if (angle > 90) and not larger: angle = 180 - angle
+    print angle
     return angle
 
   def cross_prod(self,a,b):
@@ -193,7 +199,7 @@ class FAB_elbow_angle(object):
 
     return eigenvector
 
-  def get_transformation(self,fixed_selection,moving_selection):
+  def get_transformation(self,pdb_hierarchy_fixed,pdb_hierarchy_moving):
     '''
     Create a superpose_pdbs manager object, by alinning the fix and moving chains,
     being compared, and calculating transoformation needed to align the moving hierarchy
@@ -203,21 +209,21 @@ class FAB_elbow_angle(object):
 
     Arguments:
     ----------
-    fixed_selection : pdb_hierarchy of a portion of a protein that will stay fix in place
-    moving_selection
+    pdb_hierarchy_fixed : pdb_hierarchy of a portion of a protein that will stay fix in place
+    pdb_hierarchy_moving
 
     Retrun:
     -------
     lsq_fit_obj : least-squre-fit object that contians the transformation information
     '''
     params = superpose_pdbs.master_params.extract()
-    params.selection_default_fixed = pdb_hierarchy_fixed
-    params.selection_default_moving = moving_selection
     x = superpose_pdbs.manager(
       params,
       log=null_out(),
       write_output=False,
-      save_lsq_fit_obj=True)
+      save_lsq_fit_obj=True,
+      pdb_hierarchy_fixed=pdb_hierarchy_fixed,
+      pdb_hierarchy_moving=pdb_hierarchy_moving)
     return x.lsq_fit_obj
 
   def get_pdb_protions(self,pdb_file_name,chain_ID,limit,write_to_file=False):
@@ -250,33 +256,87 @@ class FAB_elbow_angle(object):
     pdb_hierarchy1: 0 to limit atoms from  pdb_file_name
     pdb_hierarchy2: limit to end atoms from pdb_file_name
     '''
-    pdb_hierarchy = pdb.hierarchy.input(file_name=pdb_file_name).hierarchy
+    fn = os.path.splitext(os.path.basename(pdb_file_name))[0]
+    pdb_obj = pdb.hierarchy.input(file_name=pdb_file_name)
+    chains = pdb_obj.hierarchy.models()[0].chains()
+    chain_names = [x.id for x in chains]
+    # check if correct name is given and find the correct chain
+    # Note that there could be several chains with the smae ID
+    # and that we use the first
+    if chain_ID in chain_names:
+      indx = chain_names.index(chain_ID)
+      chain_to_split = pdb_obj.hierarchy.models()[0].chains()[indx]
+      # create copies for the variable and the constant
+      pdb_limit_to_end_const = self.creat_new_pdb_from_chain(
+        chain=chain_to_split,
+        limit=limit,
+        new_file_name='{0}_{1}_Const.pdb'.format(fn,chain_ID),
+        to_end=True,
+        write_to_file=write_to_file)
+      pdb_start_to_limit_var = self.creat_new_pdb_from_chain(
+        chain=chain_to_split,
+        limit=limit,
+        new_file_name='{0}_{1}_Var.pdb'.format(fn,chain_ID),
+        to_end=False,
+        write_to_file=write_to_file)
+    else:
+      raise Sorry('The is not chain with {0} name in {1}'.format(chain_ID,fn))
+    return pdb_start_to_limit_var,pdb_limit_to_end_const
 
-    ss = 'pepnames and (name ca or name n or name c) and altloc " "'
+  def creat_new_pdb_from_chain(self,chain,new_file_name,limit=117,to_end=True,write_to_file=False):
+    '''(pdb_object,int,bool,bool) -> pdb_hierarchy
 
-    select_var_str = 'chain {0} and resseq {1}:{2} and {3}'.format(chain_ID,1,limit,ss)
-    select_const_str = 'chain {0} and resseq {1}:end and {2}'.format(chain_ID,limit+1,ss)
-    selection_var = pdb_hierarchy.atom_selection_cache().selection(select_var_str)
-    selection_const = pdb_hierarchy.atom_selection_cache().selection(select_const_str)
+    Creates new pdb hierarchy from a portion of chain
 
-    pdb_var = pdb_hierarchy.select(selection_var)
-    pdb_const = pdb_hierarchy.select(selection_const)
+    Arguments:
+    ----------
+    pdb_object : a chain from a pdb file
+    limit : the cutoff between the Variable and the Constant FAB domains
+    to_end : if False take portion before limit, if true, the protion after
+    write_to_file : if True, will create files such as 1bbd_H_Var.pdb, 1bbd_H_Const.pdb
 
+    Returns:
+    --------
+    pdb_hierarchy1, pdb_hierarchy2
+    pdb_hierarchy1: 0 to limit atoms from  pdb_file_name
+    pdb_hierarchy2: limit to end atoms from pdb_file_name
+
+    '''
+    chain = chain.detached_copy()
+    # find the residue group number corespond to
+    # the limit residues ID
+    for i,res in enumerate(chain.residue_groups()):
+      try:
+        # some resid have letters
+        resid = int(chain.residue_groups()[i].resid())
+      except: pass
+      if limit <= resid:
+        limit = i
+        break
+
+    if to_end:
+      # Constant
+      i_start = limit + 1
+      i_end = len(chain.residue_groups())
+    else:
+      # Variable
+      i_start = 0
+      i_end = limit + 1
+
+    # Create a new hierarchy, keep chain ID
+    new_chain = pdb.hierarchy.chain()
+    new_model = pdb.hierarchy.model()
+    new_root = pdb.hierarchy.root()
+    new_chain.id = chain.id
+    for i in range(i_start,i_end):
+      residue_group = chain.residue_groups()[i]
+      residue_group_copy = residue_group.detached_copy()
+      new_chain.append_residue_group(residue_group_copy)
+    new_model.append_chain(new_chain)
+    new_root.append_model(new_model)
     if write_to_file:
-      fn = os.path.splitext(os.path.basename(pdb_file_name))[0]
-      var_file_name='{0}_{1}_Var.pdb'.format(fn,chain_ID)
-      pdb_const='{0}_{1}_Const.pdb'.format(fn,chain_ID)
-      pdb_var.write_pdb_file(file_name=var_file_name)
-      pdb_const.write_pdb_file(file_name=pdb_const)
-
-    return pdb_var,pdb_const
-
-  def select_str(chain_ID,limit):
-    ss = 'pepnames and (name ca or name n or name c) and altloc " "'
-    select_var_str = 'chain {0} and resseq {1}:{2} and {3}'.format(chain_ID,1,limit,ss)
-    select_const_str = 'chain {0} and resseq {1}:end and {2}'.format(chain_ID,limit+1,ss)
-    return select_var_str,select_const_str
-
+      new_root.write_pdb_file(file_name=new_file_name)
+    return new_root
 
   def get_pdb_file_name_and_path(self,file_name):
     tmp = os.path.basename(file_name)

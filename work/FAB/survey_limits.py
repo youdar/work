@@ -26,7 +26,7 @@ class explor_fab(object):
     else:
         os.chdir('/net/cci-filer2/raid1/home/youval/Work/work/FAB/junk')
     if not os.path.isfile(file_name):
-      fn = fetch.get_pdb ('1bbd',data_type='pdb',mirror='rcsb',log=null_out())
+      fn = fetch.get_pdb (file_name,data_type='pdb',mirror='rcsb',log=null_out())
     self.limits_delta = []
     self.file_name = fn
     tmp = os.path.basename(file_name)
@@ -56,12 +56,26 @@ class explor_fab(object):
     print '------------------------------------------'
     pprint(self.fab_angles)
 
+  def write_to_file(self,file_name='survey_out.txt'):
+    '''
+    '''
+    f = open(file_name,'w')
+    f.write('PDB code {0}, limits survey results'.format(self.pdb_code))
+    f.write('-'*30)
+    for rec in self.fab_angles:
+      f.write(rec)
+    f.close()
 
 
-if __name__=='__main__':
-
-  for name in ['1bbd','7fab','1dba','1plg','1nl0']:
-    t = explor_fab(file_name='1bbd')
+def run(FAB_list):
+  for name in FAB_list:
+    t = explor_fab(file_name=name)
     t.calc_fab(range=2)
     t.fab_angle_print()
-    t.fab_angle_print()
+
+if __name__=='__main__':
+  FAB_list = sys.argv[1:]
+  if not FAB_list:
+    FAB_list = ['1bbd','7fab','1dba','1plg','1nl0']
+  run(FAB_list)
+

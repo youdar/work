@@ -1,5 +1,5 @@
 from __future__ import division
-from FAB.FAB_elbow_angle import FAB_elbow_angle
+from FAB.fab_elbow_angle_cross import fab_elbow_angle
 from libtbx.utils import null_out
 from iotbx.pdb import fetch
 import libtbx.load_env
@@ -46,10 +46,10 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '1bbd'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=null_out())
-    #fab = FAB_elbow_angle(pdb_file_name=fn,limit_light=114,limit_heavy=118)
-    fab = FAB_elbow_angle(pdb_file_name=fn)
+    #fab = fab_elbow_angle(pdb_file_name=fn,limit_light=114,limit_heavy=118)
+    fab = fab_elbow_angle(pdb_file_name=fn)
 
-    calculated = fab.FAB_elbow_angle
+    calculated = fab.fab_elbow_angle
     expected = 127
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
@@ -59,10 +59,10 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '7fab'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=null_out())
-    fab = FAB_elbow_angle(pdb_file_name=fn,limit_light=104,limit_heavy=117)
-    #fab = FAB_elbow_angle(pdb_file_name=fn)
+    fab = fab_elbow_angle(pdb_file_name=fn,limit_light=104,limit_heavy=117)
+    #fab = fab_elbow_angle(pdb_file_name=fn)
 
-    calculated = fab.FAB_elbow_angle
+    calculated = fab.fab_elbow_angle
     expected = 132
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
@@ -72,8 +72,8 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '1dba'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=null_out())
-    fab = FAB_elbow_angle(pdb_file_name=fn)
-    calculated = fab.FAB_elbow_angle
+    fab = fab_elbow_angle(pdb_file_name=fn)
+    calculated = fab.fab_elbow_angle
     expected = 183
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
@@ -83,10 +83,10 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '1plg'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=null_out())
-    #fab = FAB_elbow_angle(pdb_file_name=fn,limit_light=112,limit_heavy=117)
-    fab = FAB_elbow_angle(pdb_file_name=fn)
+    #fab = fab_elbow_angle(pdb_file_name=fn,limit_light=112,limit_heavy=117)
+    fab = fab_elbow_angle(pdb_file_name=fn)
 
-    calculated = fab.FAB_elbow_angle
+    calculated = fab.fab_elbow_angle
     expected = 190
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)
@@ -96,8 +96,8 @@ class TestFabElbowAngle(unittest.TestCase):
     '''Compare to published value'''
     fn = '1nl0'
     pdb_fn = fetch.get_pdb (fn,data_type='pdb',mirror='rcsb',log=null_out())
-    fab = FAB_elbow_angle(pdb_file_name=fn)
-    calculated = fab.FAB_elbow_angle
+    fab = fab_elbow_angle(pdb_file_name=fn)
+    calculated = fab.fab_elbow_angle
     expected = 220
     msg = 'FAB angle for {0} is {1:3.0f} instead of {2}'.format(fn,calculated,expected)
     self.assertAlmostEqual(calculated,expected,delta=self.delta,msg=msg)

@@ -1,8 +1,9 @@
 from __future__ import division
-#from mmtbx.utils.fab_elbow_angle import fab_elbow_angle
-from FAB.fab_elbow_angle_cross import fab_elbow_angle
+from mmtbx.utils.fab_elbow_angle import fab_elbow_angle
+#from FAB.fab_elbow_angle_cross import fab_elbow_angle
 from libtbx.utils import null_out
 from iotbx.pdb import fetch
+from iotbx import pdb
 import itertools
 from pprint import pprint
 import os,sys
@@ -42,7 +43,8 @@ class explor_fab(object):
   def get_fab_angle(self,limit_light=None,limit_heavy=None):
     if not limit_light: limit_light=self.limit_L
     if not limit_heavy: limit_heavy=self.limit_H
-    fab = fab_elbow_angle(pdb_file_name=self.file_name,limit_light=limit_light,limit_heavy=limit_heavy)
+    ph = pdb.input(file_name=self.file_name).construct_hierarchy()
+    fab = fab_elbow_angle(pdb_hierarchy=ph,limit_light=limit_light,limit_heavy=limit_heavy)
     return fab.fab_elbow_angle
 
   def calc_fab(self,range=0,limit_light=107,limit_heavy=113):
@@ -82,6 +84,6 @@ def run(fab_list):
 if __name__=='__main__':
   fab_list = sys.argv[1:]
   if not fab_list:
-    fab_list = [('1bbd',107,113),('7fab',104,117),('1dba',107,113),('1plg',112,117),('1nl0',107,113)]
+    fab_list = [('1bbd',114,118),('7fab',104,117),('1dba',107,113),('1plg',112,117),('1nl0',107,113)]
   run(fab_list)
 

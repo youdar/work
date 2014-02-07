@@ -1,6 +1,6 @@
 from __future__ import division
-from FAB.fab_elbow_angle_cross import fab_elbow_angle
-#from mmtbx.utils.fab_elbow_angle import fab_elbow_angle
+#from FAB.fab_elbow_angle_cross import fab_elbow_angle
+from mmtbx.utils.fab_elbow_angle import fab_elbow_angle
 from libtbx.utils import null_out
 from iotbx.pdb import fetch
 from iotbx import pdb
@@ -38,7 +38,7 @@ class TestFabElbowAngle(unittest.TestCase):
     self.tempdir = tempfile.mkdtemp('tempdir')
     os.chdir(self.tempdir)
     # Set delta for testing angles (degrees)
-    self.delta = 0
+    self.delta = 20
 
     # Remove this os.chdir when test is working
     #os.chdir(r'C:\Phenix\Dev\Work\work\FAB')

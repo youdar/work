@@ -80,7 +80,7 @@ class TestStrictNCS(object):
     assert r_factor > delta_r_factor, msg
     print 'r-factor of shaken structure is: {0:.3f}'.format(r_factor)
 
-  def test_refinement(self):
+  def test_refinement(self,number_of_macro_cycles=3):
     '''
     Test that refining asu1.pdb, build from the perturbed NCS, converge to asu0.pdb
     Use asu0.pdb to create x-ray structure (xrs)
@@ -92,6 +92,7 @@ class TestStrictNCS(object):
     self.call_refine(
       pdb_file=self.asu1_filename,
       mtz_file=self.file_name_mtz,
+      number_of_macro_cycles=number_of_macro_cycles,
       output_file_name='refine_output')
       #pdb_file_symmetry_target=self.asu0_filename)
     # Process refinement resaults
@@ -100,11 +101,9 @@ class TestStrictNCS(object):
            'No {} refined pdb file'.format(file_name_refined)
     f_calc = self.get_f_calc(file_name=file_name_refined)
     r_factor_refined = self.get_r_factor(f_obs=self.f_obs,f_calc=f_calc)
-    msg1='r_factor is {0:.5f}. very small before refinement.'.format(r_factor)
-    #self.assertTrue(r_factor>0.3,msg1)
-    msg2='Refinement did not work well, r_factor before {0:.5f}  after {1:.5f}'\
+    msg='Refinement did not work well, r_factor before {0:.5f}  after {1:.5f}'\
       .format(r_factor,r_factor_refined)
-    assert r_factor_refined<0.05,msg2
+    assert r_factor_refined<0.05,msg
     print 'r_factor of shaken structure after ASU refiinment is: {0:.3f}'\
           .format(r_factor_refined)
 
@@ -135,9 +134,9 @@ class TestStrictNCS(object):
     crystal_symmetry
     '''
     m = multimer(ncs_filename,'cau',error_handle=True,eps=1e-2)
-    assert m.number_of_transforms == 2
-    if m.number_of_transforms == 0:
-      print 'Number of transforms is zero'
+    msg = 'Number of transforms is {0} instead of {1}'\
+      .format(m.number_of_transforms,2)
+    assert m.number_of_transforms == 2, msg
     m.write(asu_filename)
     pdb_inp = pdb.input(file_name = asu_filename)
     xrs = pdb_inp.xray_structure_simple()
@@ -183,7 +182,12 @@ class TestStrictNCS(object):
     ncs_pdb = '\n'.join(ncs_pdb)
     open(pdb_fn,'w').write(ncs_pdb)
 
-  def call_refine(self,pdb_file,mtz_file,output_file_name,pdb_file_symmetry_target=None):
+  def call_refine(self,
+                  pdb_file,
+                  mtz_file,
+                  output_file_name,
+                  number_of_macro_cycles=3,
+                  pdb_file_symmetry_target=None):
     '''
     Run refinement and produce refined pdb file in current directory
 
@@ -205,7 +209,7 @@ class TestStrictNCS(object):
       "phenix.refine",
       "{0} {1}".format(pdb_file,mtz_file),
       "strategy=individual_sites",
-      "main.number_of_macro_cycles=3",
+      "main.number_of_macro_cycles={}".format(number_of_macro_cycles),
       "output.prefix={}".format(output_file_name),
       "--overwrite",
       "--quiet"])
@@ -317,12 +321,13 @@ TER
 
 if __name__ == "__main__":
   st_ncs = TestStrictNCS()
-  # For Youval (Commnet out for Pavel - )
+  # For Youval (Commnet out for Pavel)
   st_ncs.set_folder_and_files()
+  #
   # Make sure the shaken structure is shaken enough
   st_ncs.test_pertubed_ncs(delta_r_factor=0.15)
   # Test that Refining shaken ASU gives the original one
-  st_ncs.test_refinement()
+  st_ncs.test_refinement(number_of_macro_cycles=1)
   # Test refinment using strict NCS
   st_ncs.test_ncs_refinement()
   print 'Done'

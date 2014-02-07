@@ -5,7 +5,6 @@ from mmtbx.utils import flex
 from libtbx import easy_run
 from iotbx import pdb
 from mmtbx import f_model
-import unittest
 import cProfile
 import shutil
 import tempfile
@@ -114,10 +113,11 @@ class TestStrictNCS(object):
     Refinement using the gradient of only one NCS copy'''
     pass
 
-  def tearDown(self):
+  def clean_working_files(self):
     '''remove temp files and folder'''
     #os.chdir(self.currnet_dir)
     #shutil.rmtree(self.tempdir)
+    pass
 
   def create_asu(self,ncs_filename,asu_filename,crystal_symmetry=None):
     ''' (str,str) -> crystal_symmetry object
@@ -279,19 +279,20 @@ class TestStrictNCS(object):
     else:
       print "Toc: start time not set"
 
-  def set_folder_and_files(self,work_dir=None):
+  def set_folder_and_files(self):
     ''''''
     #self.currnet_dir = os.getcwd()
     #self.tempdir = tempfile.mkdtemp('tempdir')
+
+
     # for testing use junk folder insted of real temp directory
     # remember to change back the clean up when going back to real temp dir
-    if work_dir:
-      osType = sys.platform
-      if osType.startswith('win'):
-        self.tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk')
-      else:
-        self.tempdir = ('/net/cci/youval/Work/work/NCS/junk')
-      os.chdir(self.tempdir)
+    osType = sys.platform
+    if osType.startswith('win'):
+      self.tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk')
+    else:
+      self.tempdir = ('/net/cci/youval/Work/work/NCS/junk')
+    os.chdir(self.tempdir)
 
 # Raw data used to build test cases
 ncs_0_copy="""\
@@ -315,8 +316,9 @@ TER
 """
 
 if __name__ == "__main__":
-  self.set_folder_and_files()
   st_ncs = TestStrictNCS()
+  # For Youval (Commnet out for Pavel - )
+  st_ncs.set_folder_and_files()
   # Make sure the shaken structure is shaken enough
   st_ncs.test_pertubed_ncs(delta_r_factor=0.15)
   # Test that Refining shaken ASU gives the original one
@@ -324,4 +326,5 @@ if __name__ == "__main__":
   # Test refinment using strict NCS
   st_ncs.test_ncs_refinement()
   print 'Done'
+  st_ncs.clean_working_files()
 

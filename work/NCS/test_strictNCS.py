@@ -1,5 +1,6 @@
 from __future__ import division
 from iotbx.pdb.multimer_reconstruction import multimer
+from NCS import refinement_strict_ncs
 from iotbx import reflection_file_reader
 from mmtbx.utils import flex
 from libtbx import easy_run
@@ -32,10 +33,7 @@ class TestStrictNCS(object):
     3) Create asu0.pdb, A complete ASU produced form ncs0 (The target ASU)
     4) Create asu1.pdb, A complete ASU produced form ncs1
     '''
-    self.ncs0_filename = 'ncs0.pdb'          # the global variable ncs_0_copy
-    self.ncs1_filename = 'ncs1_shaken.pdb'
-    self.asu0_filename = 'asu0.pdb'          # Target ASU
-    self.asu1_filename = 'asu1_shaken.pdb'
+    self.set_folder_and_files()
     # Write NCS file with MTRIX record and generate ASU.
     # This is the answer-strucure
     open(self.ncs0_filename,'w').write(ncs_0_copy)
@@ -107,9 +105,13 @@ class TestStrictNCS(object):
     print 'r_factor of shaken structure after ASU refiinment is: {0:.3f}'\
           .format(r_factor_refined)
 
-  def test_ncs_refinement(self):
+  def test_ncs_refinement(self,number_of_macro_cycles=3):
     '''Test refinement using strict NCS.
     Refinement using the gradient of only one NCS copy'''
+    refinement_strict_ncs.run(
+      file_to_refine=self.asu1_filename,
+      mtz_file=self.file_name_mtz,
+      number_of_macro_cycles=number_of_macro_cycles)
     pass
 
   def clean_working_files(self):
@@ -297,6 +299,11 @@ class TestStrictNCS(object):
     else:
       self.tempdir = ('/net/cci/youval/Work/work/NCS/junk')
     os.chdir(self.tempdir)
+    # set file names
+    self.ncs0_filename = 'ncs0.pdb'          # the global variable ncs_0_copy
+    self.ncs1_filename = 'ncs1_shaken.pdb'
+    self.asu0_filename = 'asu0.pdb'          # Target ASU
+    self.asu1_filename = 'asu1_shaken.pdb'
 
 # Raw data used to build test cases
 ncs_0_copy="""\
@@ -321,15 +328,12 @@ TER
 
 if __name__ == "__main__":
   st_ncs = TestStrictNCS()
-  # For Youval (Commnet out for Pavel)
-  st_ncs.set_folder_and_files()
-  #
   # Make sure the shaken structure is shaken enough
   st_ncs.test_pertubed_ncs(delta_r_factor=0.15)
   # Test that Refining shaken ASU gives the original one
   st_ncs.test_refinement(number_of_macro_cycles=1)
   # Test refinment using strict NCS
-  st_ncs.test_ncs_refinement()
+  st_ncs.test_ncs_refinement(number_of_macro_cycles=1)
   print 'Done'
   st_ncs.clean_working_files()
 

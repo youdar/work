@@ -10,6 +10,7 @@ from cctbx import xray
 import scitbx.lbfgs
 from cctbx import adptbx
 
+
 pdb_str = """
 CRYST1    5.827    9.541    6.239  90.00  90.00  90.00 P 1
 ATOM      1 OH   TYR     1       3.566   1.332   4.100  1.00 10.00           O
@@ -109,6 +110,8 @@ def get_inputs():
   return group_args(
     pdb_hierarchy  = pdb_inp.construct_hierarchy(),
     xray_structure = pdb_inp.xray_structure_simple())
+
+
 
 def run():
   # get xray_structure from PDB file

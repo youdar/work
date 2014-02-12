@@ -15,27 +15,25 @@ import time
 '''
 Test strict Non-crystallographic symmetry (NCS)
 application in refinement
-
-@author Youval Dar (LBL 2014)
 '''
-
+__author__ = 'Youval Dar'
 
 class TestStrictNCS(object):
 
   def __init__(self):
-    '''
+    """
     create a temporary folder with files for testing, based
     on ncs_0_copy (see below)
 
     1) Create ncs0.pdb, with complete Asymmetric Unit (ASU)
-    2) Create ncs1.pdb, pertubed (shaken) version of ncs0_pdb,
+    2) Create ncs1.pdb, perturbed (shaken) version of ncs0_pdb,
        with a single NCS and MTRIX info
     3) Create asu0.pdb, A complete ASU produced form ncs0 (The target ASU)
     4) Create asu1.pdb, A complete ASU produced form ncs1
-    '''
+    """
     self.set_folder_and_files()
     # Write NCS file with MTRIX record and generate ASU.
-    # This is the answer-strucure
+    # This is the answer-structure
     open(self.ncs0_filename,'w').write(ncs_0_copy)
     crystal_symmetry = self.write_ncs_asu(
       ncs_filename = self.ncs0_filename,
@@ -50,28 +48,28 @@ class TestStrictNCS(object):
     xrs_shaken.shake_sites_in_place(mean_distance=0.3)
     ph.adopt_xray_structure(xrs_shaken)
     ph.write_pdb_file(file_name=self.ncs1_filename,crystal_symmetry=crystal_symmetry)
-    self.add_MTRIX_to_pdb(self.ncs1_filename, record=ncs_0_copy)
+    add_MTRIX_to_pdb(self.ncs1_filename, record=ncs_0_copy)
     # use the crystal_symmetry from the answer-structure
     self.write_ncs_asu(
       ncs_filename = self.ncs1_filename,
       asu_filename=self.asu1_filename,
       crystal_symmetry=crystal_symmetry)
     # Generate Fobs from answer structure
-    self.f_obs = abs(self.get_f_calc(file_name=self.asu0_filename))
+    self.f_obs = abs(get_f_calc(file_name=self.asu0_filename))
     self.r_free_flags = self.f_obs.generate_r_free_flags()
     # create MTZ file
     self.file_name_mtz = self.asu0_filename.split('.')[0] + '_map.mtz'
-    self.make_mtz_file(f_obs=self.f_obs, file_name_mtz=self.file_name_mtz)
+    make_mtz_file(f_obs=self.f_obs, file_name_mtz=self.file_name_mtz)
 
 
   def test_pertubed_ncs(self,delta_r_factor=0.1):
-    '''
+    """
     Compare f_obs from asu0.pdb to f_calc from asu1.pdb
     Test that the perturbed NCS (ncs1.pdb) is different than the original
     one (ncs0_pdb) by checking that R-work > delta_r_factor
-    '''
-    # Reconstruct ncs1 and retrive f_obs
-    f_calc = self.get_f_calc(file_name=self.asu1_filename)
+    """
+    # Reconstruct ncs1 and retrieve f_obs
+    f_calc = get_f_calc(file_name=self.asu1_filename)
     r_factor = self.calc_r_factor(self.f_obs,f_calc)
     msg='''\
     Problem with test data, r_factor is only {}'''.format(r_factor)
@@ -80,15 +78,15 @@ class TestStrictNCS(object):
     print 'r-factor of shaken structure is: {0:.3f}'.format(r_factor)
 
   def test_refinement(self,number_of_macro_cycles=3):
-    '''
+    """
     Test that refining asu1.pdb, build from the perturbed NCS, converge to asu0.pdb
     Use asu0.pdb to create x-ray structure (xrs)
-    and from it produce F_obs (observed structure factors)'''
-    f_calc = self.get_f_calc(file_name=self.asu1_filename)
+    and from it produce F_obs (observed structure factors)"""
+    f_calc = get_f_calc(file_name=self.asu1_filename)
     # r_factor at start
     r_factor = self.calc_r_factor(self.f_obs,f_calc)
     # Refine
-    self.call_refine(
+    call_refine(
       pdb_file=self.asu1_filename,
       mtz_file=self.file_name_mtz,
       number_of_macro_cycles=number_of_macro_cycles,
@@ -98,7 +96,7 @@ class TestStrictNCS(object):
     file_name_refined = 'refine_output_001.pdb'
     assert os.path.isfile(file_name_refined),\
            'No {} refined pdb file'.format(file_name_refined)
-    f_calc = self.get_f_calc(file_name=file_name_refined)
+    f_calc = get_f_calc(file_name=file_name_refined)
     r_factor_refined = self.get_r_factor(f_obs=self.f_obs,f_calc=f_calc)
     msg='Refinement did not work well, r_factor before {0:.5f}  after {1:.5f}'\
       .format(r_factor,r_factor_refined)
@@ -107,11 +105,11 @@ class TestStrictNCS(object):
           .format(r_factor_refined)
 
   def test_ncs1_only_refinement(self,number_of_macro_cycles=3):
-    '''
-    Refining ncs1 as is, without creating the ASU'''
-    f_calc = self.get_f_calc(file_name=self.ncs1_filename)
+    """
+    Refining ncs1 as is, without creating the ASU"""
+    f_calc = get_f_calc(file_name=self.ncs1_filename)
     # Refine
-    self.call_refine(
+    call_refine(
       pdb_file=self.ncs1_filename,
       mtz_file=self.file_name_mtz,
       number_of_macro_cycles=number_of_macro_cycles,
@@ -128,8 +126,8 @@ class TestStrictNCS(object):
     print 'r-factor of shaken structure is: {0:.3f}'.format(r_factor)
 
   def test_ncs_refinement(self,number_of_macro_cycles=3):
-    '''Test refinement using strict NCS.
-    Refinement using the gradient of only one NCS copy'''
+    """Test refinement using strict NCS.
+    Refinement using the gradient of only one NCS copy"""
     refinement_strict_ncs.run(
       file_to_refine=self.asu1_filename,
       f_obs=self.f_obs,
@@ -139,13 +137,14 @@ class TestStrictNCS(object):
 
 
   def clean_working_files(self):
-    '''remove temp files and folder'''
+    """remove temp files and folder"""
     #os.chdir(self.currnet_dir)
     #shutil.rmtree(self.tempdir)
     pass
 
-  def create_asu(self,ncs_filename,asu_filename,crystal_symmetry=None):
-    ''' (str,str) -> crystal_symmetry object
+  @staticmethod
+  def create_asu(ncs_filename,asu_filename,crystal_symmetry=None):
+    """ (str,str) -> crystal_symmetry object
     Create P1 crystal_symmetry that fit the ASU.
     Create ASU from NCS and save the new pdb file
     with CRYST1 and SCALE records in local directory
@@ -159,7 +158,7 @@ class TestStrictNCS(object):
     Returns:
     --------
     crystal_symmetry
-    '''
+    """
     m = multimer(ncs_filename,'cau',error_handle=True,eps=1e-2)
     msg = 'Number of transforms is {0} instead of {1}'\
       .format(m.number_of_transforms,2)
@@ -175,27 +174,28 @@ class TestStrictNCS(object):
     return crystal_symmetry
 
   def write_ncs_asu(self,ncs_filename,asu_filename,crystal_symmetry=None):
-    '''
+    """
     write ASU with CRYST1 records
     write NCS with the same CRYST1 and the MTRIX records
-    '''
+    """
     pdb_inp_ncs = pdb.input(file_name=ncs_filename)
     pdb_inp_ncs.write_pdb_file(
       file_name=ncs_filename,
       crystal_symmetry = crystal_symmetry)
-    self.add_MTRIX_to_pdb(ncs_filename, record=ncs_0_copy)
-    crystal_symmetry = self.create_asu(
+    add_MTRIX_to_pdb(ncs_filename, record=ncs_0_copy)
+    crystal_symmetry = create_asu(
       ncs_filename=ncs_filename,
       asu_filename=asu_filename,
       crystal_symmetry=crystal_symmetry)
     return crystal_symmetry
 
-  def add_MTRIX_to_pdb(self,pdb_fn, record):
-    '''(str,ste) -> None
+  @staticmethod
+  def add_MTRIX_to_pdb(pdb_fn, record):
+    """(str,ste) -> None
     Add MTRIX records from the string record
     to the file pdb_fn and write the modified pdb file, with
     the MTRIX records, in the current directory
-    '''
+    """
     ncs_pdb = open(pdb_fn,'r').read().splitlines()
     record = record.splitlines()
     for i,x in enumerate(ncs_pdb):
@@ -208,13 +208,13 @@ class TestStrictNCS(object):
     ncs_pdb = '\n'.join(ncs_pdb)
     open(pdb_fn,'w').write(ncs_pdb)
 
-  def call_refine(self,
-                  pdb_file,
+  @staticmethod
+  def call_refine(pdb_file,
                   mtz_file,
                   output_file_name,
                   number_of_macro_cycles=3,
                   pdb_file_symmetry_target=None):
-    '''
+    """
     Run refinement and produce refined pdb file in current directory
 
     To set the number of refinement cycles change main.number_of_macro_cycles
@@ -230,7 +230,7 @@ class TestStrictNCS(object):
     -------
     writing out refined model, complete refinement statistics and
     electron density maps in various formats.
-    '''
+    """
     cmd = " ".join([
       "phenix.refine",
       "{0} {1}".format(pdb_file,mtz_file),
@@ -243,11 +243,12 @@ class TestStrictNCS(object):
       cmd = ' '.join([cmd,"--symmetry={}".format(pdb_file_symmetry_target)])
     easy_run.call(cmd)
 
-  def make_mtz_file(self,f_obs,file_name_mtz):
-    '''
+  @staticmethod
+  def make_mtz_file(f_obs,file_name_mtz):
+    """
     Create mtz file, from f_obs or f_calc, in the current directory
     file_name_mtz need to have the format name.mtz
-    '''
+    """
     mtz_dataset = abs(f_obs).as_mtz_dataset(column_root_label="F-obs")
     mtz_dataset.add_miller_array(
       miller_array=f_obs.generate_r_free_flags(),
@@ -255,8 +256,9 @@ class TestStrictNCS(object):
     mtz_object = mtz_dataset.mtz_object()
     mtz_object.write(file_name=file_name_mtz)
 
-  def get_f_calc(self,file_name):
-    '''Calculate f_calc (diffraction image frequencies) from a pdb file'''
+  @staticmethod
+  def get_f_calc(file_name):
+    """Calculate f_calc (diffraction image frequencies) from a pdb file"""
     pdb_inp = pdb.input(file_name=file_name)
     xrs = pdb_inp.xray_structure_simple()
     f_calc = xrs.structure_factors(d_min=2, algorithm="direct").f_calc()
@@ -317,7 +319,7 @@ class TestStrictNCS(object):
     #self.tempdir = tempfile.mkdtemp('tempdir')
 
 
-    # for testing use junk folder insted of real temp directory
+    # for testing use junk folder instead of real temp directory
     # remember to change back the clean up when going back to real temp dir
     osType = sys.platform
     if osType.startswith('win'):
@@ -360,7 +362,7 @@ if __name__ == "__main__":
   st_ncs.test_ncs1_only_refinement(number_of_macro_cycles=1)
   # Test that Refining shaken ASU gives the original one
   st_ncs.test_refinement(number_of_macro_cycles=3)
-  # Test refinment using strict NCS
+  # Test refinement using strict NCS
   st_ncs.test_ncs_refinement(number_of_macro_cycles=13)
   print 'Done'
   st_ncs.clean_working_files()

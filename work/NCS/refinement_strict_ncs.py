@@ -4,13 +4,9 @@ from scitbx.array_family import flex
 from libtbx import group_args
 import mmtbx.f_model
 import scitbx.lbfgs
-import mmtbx.f_model
-import libtbx.load_env
 from iotbx import pdb
-from cctbx import adptbx
 from cctbx import xray
 import sys,os
-
 
 class minimizer(object):
   def __init__(self,
@@ -106,16 +102,16 @@ def get_inputs(file_name):
     xray_structure = pdb_inp.xray_structure_simple())
 
 def run(file_to_refine,f_obs,r_free_flags,n_macro_cycle=10,r_work_target=0.0):
-  '''
-  Argumnts:
+  """
+  Arguments:
   ---------
   file_to_refine: a shaken copy of one NCS copy
                   used to produce the reference ASU
   f_obs: observed frequency
   r_free_flags: R-free-flags, flags for cross-validation data
   n_macro_cycle: Number of refinement cycles
-  r_work_target: Refinement will stom when r_work <= r_work_target
-  '''
+  r_work_target: Refinement will stop when r_work <= r_work_target
+  """
   crystal_symmetry = f_obs.crystal_symmetry()
   # Data to refine
   m = multimer(
@@ -154,9 +150,9 @@ def run(file_to_refine,f_obs,r_free_flags,n_macro_cycle=10,r_work_target=0.0):
 if __name__=='__main__':
   osType = sys.platform
   if osType.startswith('win'):
-    tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk')
+    tempdir = r'C:\Phenix\Dev\Work\work\NCS\junk'
   else:
-    tempdir = ('/net/cci/youval/Work/work/NCS/junk')
+    tempdir = '/net/cci/youval/Work/work/NCS/junk'
   os.chdir(tempdir)
   # Test files
   file_to_refine = 'ncs1_shaken.pdb'
@@ -168,7 +164,8 @@ if __name__=='__main__':
   f_obs = abs(xrs.structure_factors(d_min=1.0, algorithm="direct").f_calc())
   r_free_flags = f_obs.generate_r_free_flags()
   # Start refinement
-  run(file_to_refine=file_to_refine
-      ,f_obs=f_obs,
+  run(file_to_refine=file_to_refine,
+      n_macro_cycle=3,
+      f_obs=f_obs,
       r_free_flags=r_free_flags)
 

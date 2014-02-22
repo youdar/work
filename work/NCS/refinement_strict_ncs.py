@@ -53,38 +53,40 @@ class minimizer(object):
       update_f_calc  = True)
 
   def compute_functional_and_gradients(self):
-    '''() -> float,flex.double array
+    """() -> float,flex.double array
 
     This methode is called from:
     phenix_sources\cctbx_project\scitbx\lbfgs\__init__.py
 
     It returns the target_work and gradients to lbfgs
-    '''
-    if(self.sites):
+    """
+    print '='*80
+    if self.sites:
       self.fmodel.xray_structure.set_sites_cart(
         sites_cart = flex.vec3_double(self.x))
-    if(self.u_iso):
+      print len(flex.vec3_double(self.x))
+    if self.u_iso:
       self.fmodel.xray_structure.set_u_iso(values = self.x)
     self.fmodel.update_xray_structure(
       xray_structure = self.fmodel.xray_structure,
       update_f_calc  = True)
     tgx = self.x_target_functor(compute_gradients=True)
-    if(self.sites):
+    if self.sites:
       tx = tgx.target_work()
       gx = flex.vec3_double(tgx.\
         gradients_wrt_atomic_parameters(site=True).packed())
       f = tx
       g = gx
-    if(self.u_iso):
+    if self.u_iso:
       tx = tgx.target_work()
       gx = tgx.gradients_wrt_atomic_parameters(u_iso=True)
       f = tx
       g = gx
     # When we have MTRIX records, use only the
     # gradients of the first NCS copy
-    ncs_end = len(g)//(self.n_ncs_mtrix+1)
-    assert ncs_end*(self.n_ncs_mtrix+1)==len(g)
-    g[:ncs_end]
+    # ncs_end = len(g)//(self.n_ncs_mtrix+1)
+    # assert ncs_end*(self.n_ncs_mtrix+1)==len(g)
+    # g = g[:ncs_end]
     return f, g.as_double()
 
 def get_inputs(file_name):
@@ -132,17 +134,21 @@ def run(file_to_refine,f_obs,r_free_flags,n_macro_cycle=10,r_work_target=0.0):
   # refinement loop
   print "start r_factor: %6.4f" % fmodel.r_work()
   for macro_cycle in xrange(n_macro_cycle):
-    # refine coordinates
-    minimized = minimizer(fmodel = fmodel,
-                          n_ncs_mtrix = m.number_of_transforms,
-                          sites = True)
-    print "  macro_cycle %3d (sites) r_factor: %6.4f"%(macro_cycle, fmodel.r_work())
-    # refine ADPs (atomic displacement parameter)
-    minimized = minimizer(fmodel = fmodel,
-                          n_ncs_mtrix = m.number_of_transforms,
-                          u_iso = True)
-    print "  macro_cycle %3d (adp)   r_factor: %6.4f"%(macro_cycle, fmodel.r_work())
-    if fmodel.r_work() <= r_work_target: break
+    if(1):
+      # refine coordinates
+      minimized = minimizer(
+        fmodel = fmodel,
+        n_ncs_mtrix = m.number_of_transforms,
+        sites = True)
+      print "  macro_cycle %3d (sites) r_factor: %6.4f"%(macro_cycle, fmodel.r_work())
+    if(0):
+      # refine ADPs (atomic displacement parameter)
+      minimized = minimizer(
+        fmodel = fmodel,
+        n_ncs_mtrix = m.number_of_transforms,
+        u_iso = True)
+      print "  macro_cycle %3d (adp)   r_factor: %6.4f"%(macro_cycle, fmodel.r_work())
+      if fmodel.r_work() <= r_work_target: break
   if(1):
     m.assembled_multimer.adopt_xray_structure(fmodel.xray_structure)
     m.write(pdb_output_file_name="refined.pdb")
@@ -165,7 +171,7 @@ if __name__=='__main__':
   r_free_flags = f_obs.generate_r_free_flags()
   # Start refinement
   run(file_to_refine=file_to_refine,
-      n_macro_cycle=3,
+      n_macro_cycle=2,
       f_obs=f_obs,
       r_free_flags=r_free_flags)
 

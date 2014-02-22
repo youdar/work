@@ -12,10 +12,10 @@ import tempfile
 import sys,os
 import time
 
-'''
+"""
 Test strict Non-crystallographic symmetry (NCS)
 application in refinement
-'''
+"""
 __author__ = 'Youval Dar'
 
 class TestStrictNCS(object):
@@ -142,8 +142,7 @@ class TestStrictNCS(object):
     #shutil.rmtree(self.tempdir)
     pass
 
-  @staticmethod
-  def create_asu(ncs_filename,asu_filename,crystal_symmetry=None):
+  def create_asu(self,ncs_filename,asu_filename,crystal_symmetry=None):
     """ (str,str) -> crystal_symmetry object
     Create P1 crystal_symmetry that fit the ASU.
     Create ASU from NCS and save the new pdb file
@@ -189,8 +188,7 @@ class TestStrictNCS(object):
       crystal_symmetry=crystal_symmetry)
     return crystal_symmetry
 
-  @staticmethod
-  def add_MTRIX_to_pdb(pdb_fn, record):
+  def add_MTRIX_to_pdb(self,pdb_fn, record):
     """(str,ste) -> None
     Add MTRIX records from the string record
     to the file pdb_fn and write the modified pdb file, with
@@ -208,8 +206,8 @@ class TestStrictNCS(object):
     ncs_pdb = '\n'.join(ncs_pdb)
     open(pdb_fn,'w').write(ncs_pdb)
 
-  @staticmethod
-  def call_refine(pdb_file,
+  def call_refine(self,
+                  pdb_file,
                   mtz_file,
                   output_file_name,
                   number_of_macro_cycles=3,
@@ -243,8 +241,7 @@ class TestStrictNCS(object):
       cmd = ' '.join([cmd,"--symmetry={}".format(pdb_file_symmetry_target)])
     easy_run.call(cmd)
 
-  @staticmethod
-  def make_mtz_file(f_obs,file_name_mtz):
+  def make_mtz_file(self,f_obs,file_name_mtz):
     """
     Create mtz file, from f_obs or f_calc, in the current directory
     file_name_mtz need to have the format name.mtz
@@ -256,8 +253,7 @@ class TestStrictNCS(object):
     mtz_object = mtz_dataset.mtz_object()
     mtz_object.write(file_name=file_name_mtz)
 
-  @staticmethod
-  def get_f_calc(file_name):
+  def get_f_calc(self,file_name):
     """Calculate f_calc (diffraction image frequencies) from a pdb file"""
     pdb_inp = pdb.input(file_name=file_name)
     xrs = pdb_inp.xray_structure_simple()
@@ -265,7 +261,7 @@ class TestStrictNCS(object):
     return f_calc
 
   def build_asu(self,file_name_ncs,file_name_asu):
-    '''Build ASU from NCS and save the new pdb file in local directory'''
+    """Build ASU from NCS and save the new pdb file in local directory"""
     m = multimer(
       pdb_input_file_name=file_name_ncs,
       reconstruction_type='cau',
@@ -275,7 +271,7 @@ class TestStrictNCS(object):
     return m
 
   def calc_r_factor(self,f_obs,f_calc):
-    ''' Both f_obs and f_calc need to be real'''
+    """ Both f_obs and f_calc need to be real"""
     f1 = abs(f_obs).data()
     f2 = abs(f_calc).data()
     scale = flex.sum( f1 * f2 )/ flex.sum(f2*f2)
@@ -283,13 +279,13 @@ class TestStrictNCS(object):
     return r_factor
 
   def get_r_factor(self,f_obs,f_calc):
-    '''
+    """
     When using f_model to get r_factor,
     Note that f_model requires that
     f_obs is real and that f_calc is complex
 
     retruns r_work
-    '''
+    """
     fmodel = f_model.manager(
       f_obs = f_obs,
       f_calc = f_calc,
@@ -314,7 +310,7 @@ class TestStrictNCS(object):
       print "Toc: start time not set"
 
   def set_folder_and_files(self):
-    ''''''
+    """"""
     #self.currnet_dir = os.getcwd()
     #self.tempdir = tempfile.mkdtemp('tempdir')
 

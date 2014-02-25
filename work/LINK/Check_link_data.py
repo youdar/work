@@ -6,8 +6,8 @@ import cPickle as pickle
 import numpy as nm
 import os,sys
 
-'''
-Exploring the contant of the LINK records in PDB files
+"""
+Exploring the content of the LINK records in PDB files
 
 LINK Record Format
 http://www.wwpdb.org/documentation/format33/sect6.html#LINK
@@ -29,10 +29,10 @@ COLUMNS         DATA TYPE      FIELD           DEFINITION
 57              AChar          iCode2          Insertion code.
 60 - 65         SymOP          sym1            Symmetry operator atom 1.
 67 - 72         SymOP          sym2            Symmetry operator atom 2.
-74 � 78         Real(5.2)      Length          Link distance
+74 - 78         Real(5.2)      Length          Link distance
 
 @author: Youval Dar
-'''
+"""
 
 ########################################################################
 class Link_records(object):
@@ -41,6 +41,7 @@ class Link_records(object):
     """
     def __init__(self):
         self.data = []
+        # Record position in PDB file
         self.poslist = [[0,6],[12,16],[16,17],[17,20],[21,22],[22,26],[26,27],[42,46],
                         [46,47],[47,50],[51,52],[52,56],[56,57],[59,65],[66,72],[74,78]]
         self.posName = ['LINK','name1','altLoc1','resName1','chainID1','resSeq1','iCode1',
@@ -50,11 +51,11 @@ class Link_records(object):
 
 
 def records_process(record_items):
-    '''(list of list of strings) -> sets
+    """(list of list of strings) -> sets
 
     check the unique data options for each column
     in the LINK record
-    '''
+    """
     record_length = len(record_items.data[0]) - 1
     print 'There are {0} Records with {1} components'.format(len(record_items.data),(record_length-1))
     print '*'*50
@@ -71,10 +72,14 @@ def records_process(record_items):
             print '-'*50
 
 def process_links(record_items):
-    # Collect link types dictinaries
+    """
+    Print records information
+    """
+    # Collect link types dictionaries
     link_file_dict = {}		# dictionary to files containing the LINK type
     link_type_dict = {}		# dictionary to the number of LINKs of particular type
     link_length_dict = {}	# dictionary to the length of LINKs of particular type
+    link_data_dict = {}   # Dictionary to collect some raw data for print out
     # Open dictionary with number of models for each file
     file_name_to_model_number_dict = pickle.load(open('file_name_to_model_number_dict','r'))
     # Name locations
@@ -87,7 +92,9 @@ def process_links(record_items):
         # get the name of the file containing the current link
         file_name = x[-1]
         link_length = x[n3]
-        # Sort to ignor order
+        # collect some of the raw data to display in report
+        data = ' '.join(x[1:13]).strip()
+        # Sort to ignore order when looking on link types
         names.sort()
         Res_type = map(get_res_type,names)
         # Process cases where get_type returns None
@@ -98,48 +105,52 @@ def process_links(record_items):
         if link_type_dict.has_key(link_type):
             link_type_dict[link_type] += 1
             link_file_dict[link_type] += [file_name]
+            link_data_dict[link_type] += [data]
             if link_length != ' ':
                 link_length_dict[link_type] += [float(link_length)]
         else:
             link_type_dict[link_type] = 1
             link_file_dict[link_type] = [file_name]
+            link_data_dict[link_type] = [data]
             link_length_dict[link_type] = [float(link_length)]
     # print LINK type results
     print ' '*35 + 'Link type list'
     print ' '*35 + 'Number of unique links {}'.format(len(link_type_dict))
-    print '{0:<69}{1:<9}{2:>6}{3:>9}'.format('Link Type','LINKS Number','  Length','File')
-    print '_'*99
+    print '{0:<69}{1:<9}{2:>6}{3:>9}{4:>26}'.format('Link Type','LINKS Number','  Length','File',' Data')
+    print '_'*150
     for link_type,count in sorted(link_type_dict.items()):
-        # look for first file with 1 model
-        link_file_dict[link_type][0]
+        # look for first file with a single model
         n_models = 1000
-        for rec in link_file_dict[link_type]:
-            key = rec[3:7]	# take only the 4 letter pdb file name
+        for i,full_file_path in enumerate(link_file_dict[link_type]):
+            key = full_file_path[3:7]	# take only the 4 letter pdb file name
             if key in file_name_to_model_number_dict:
                 n_models_tmp = file_name_to_model_number_dict[key]
             else:
-                n_models_tmp = 1000
+                n_models_tmp = None
             if n_models_tmp == 1:
-                first_file = rec
+                first_file = full_file_path
+                first_file_data = link_data_dict[link_type][i]
                 break
-            elif (n_models_tmp > 0) and (n_models > n_models_tmp):
+            elif n_models_tmp and (n_models > n_models_tmp):
+                # if we have more than one model, choose the one with the least number of models
                 n_models = n_models_tmp
-                first_file = rec
+                first_file = full_file_path
+                first_file_data = link_data_dict[link_type][i]
 
         mean = sum(link_length_dict[link_type])/len(link_length_dict[link_type])
-        print '{0:<76}{1:<9}{2:<6.2f}{3:>15}'.format(link_type,count,mean,first_file)
+        print '{0:<76}{1:<9}{2:<6.2f}{3:>20}    "{4}"'.format(link_type,count,mean,first_file,first_file_data)
     # Save results dictionaries
     #pickle.dump(link_file_dict,open('LINK_type_to_file_dict','w'))
     #pickle.dump(link_type_dict,open('LINK_type_to_num_dict','w'))
     #pickle.dump(link_length_dict,open('LINK_type_to_length','w'))
     #pickle.dump(sorted(link_type_dict.iterkeys()),open('LINK_type_keys','w'))
-    # To retrive the pickled data use
+    # To retrieve the pickled data use
     # data = pickle.load(open('file_name','r'))
 
 def get_res_type(res_name):
-    '''(string) -> string
+    """(string) -> string
     process residue type by the residue name
-    '''
+    """
     res_type = common_residue_names_get_class(res_name)
     if res_type == 'other':
         res_type = get_type(res_name)
@@ -149,9 +160,9 @@ def get_res_type(res_name):
 
 
 def print_set(s):
-    '''
+    """
     Print s in a table with 8 columns
-    '''
+    """
     s = list(s)
     l = len(s)
     # pad s with empty string to make the length devisible by 8
@@ -161,14 +172,15 @@ def print_set(s):
         # the * in the format is for unpacking the list
 
 def run(raw_link_data):
-    '''(list of strings) -> print info to screen
+    """(list of strings) -> print info to screen
 
+    Print information summery of the data in raw_link_data
 
     poslist is the location of the records in LINK accroding to
     http://www.bmsc.washington.edu/CrystaLinks/man/pdb/part_48.html  (see remarks at the beginning
     of this file
-    '''
-    data_split = Link_records()
+    """
+    data_split = Link_records()   # Data records format
     num_of_links_in_file = []
     data_split.data = []
     record_counter = 0
@@ -194,7 +206,7 @@ def run(raw_link_data):
     print 'max number of records: {}'.format(nm.max(num_of_links_in_file))
     print 'min number of records: {}'.format(nm.min(num_of_links_in_file))
     print '='*50
-    process_links(data_split)
+    process_links(record_items=data_split)
     print '='*50
     records_process(data_split)
     print '='*50
@@ -202,7 +214,7 @@ def run(raw_link_data):
 
 
 if __name__=='__main__':
-    # work in my working directory
+    # Change to my working directory
     osType = sys.platform
     if osType.startswith('win'):
         os.chdir('c:\Phenix\Dev\Work\work\LINK')

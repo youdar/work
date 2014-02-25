@@ -1,6 +1,7 @@
 from __future__ import division
 from iotbx import pdb
 import os
+import sys
 
 '''
 This function collects LINK data from all
@@ -24,7 +25,6 @@ def full_pdb_file_paths():
 
 def raw_LINK_data(PDB_files_paths,write_to_file=False):
   '''(list) -> list
-
   Collect raw info from all PDB files containing LINK info
   add file name to raw data
 
@@ -69,7 +69,12 @@ def run(PDB_files_paths):
 
 
 if __name__=='__main__':
-  os.chdir('/net/cci-filer2/raid1/home/youval/Work/work')
+  osType = sys.platform
+  if osType.startswith('win'):
+    tempdir = (r'C:\Phenix\Dev\Work/work/LINK')
+  else:
+    tempdir = ('/net/cci/youval/Work/work/LINK')
+  os.chdir(tempdir)
   PDB_files_paths = full_pdb_file_paths()
   #pdb_inp = pdb.input(file_name='1W3M.pdb')
   #link_data = pdb_inp.extract_LINK_records()

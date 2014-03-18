@@ -1,0 +1,1242 @@
+Running the following 946 tests on 48 processors:
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/omptbx/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_omit_selection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_ind2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_adp_aniso_ind_isolated_atom.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_3.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_map_next_to_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_rigid_body_refine_duplicate_sel.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_watpick_to_model_with_and_without_H.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_adp_iso_ind.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_adp_group_given_mix_ind.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_phenixrefine_logvspdb_consistency.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_of_h4.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_7.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_nqh_flips.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_iso_aniso_def_selections.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_gui_phil_file.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_bfactor_selection.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_phenix_html_refinement.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ionic_radius.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_example_5a.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_consecutive_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_add_h_to_water_and_refine.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_bss_jc.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_aniso_hydrogens.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_solvent_adp_flags.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_parallel.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_link_hem_twice.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_torsion_ncs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_sec_str_restraint_outliers.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_crossprogram_rmsd_check.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_anom_phsmap.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_asu_masks.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_4.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_two_unconnected_sites.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_adp_mix_ind.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_write_refined_fmodel_pickle_file.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_of_h2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_outliers_rejection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_group_b_iso.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_adp_tls.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_of_h.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_2.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_one_special_position.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_missing_r_free_flags.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_rigid_body_refinement.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_group_biso.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_comprehensive.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_of_h5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_ordered_solvent.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_zero_fobs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_torsion_ncs_solvent.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_hierarchy_consistent_with_xrs.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_phil_io.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_reference_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_callbacks_trajectory.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_scalepack_input.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_5.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_rigid_body_refinement_mz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res_2.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_1.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_6.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_apply_back_biso.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_TLSplusANISOind.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ias.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_mmtbx_tls.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_def_sa_rbr_tls_real_data.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_water_special_position.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_00.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_xh_distances_xn.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refine_twin_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_occ_of_h3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_optimize_mask.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_extract_symmetry.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_gbr_with_anisou.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ias_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_cartesian_dynamics_no_cm_motion.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_harmonic_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_xyz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_callbacks.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_fmodel_with_freeRflags.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_keep_aniso_in_xyz_refinement.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_watpick_some_hoh_with_h.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/carbs/tst001.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/carbs/tst002.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/carbs/tst003.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/anom_diff_map/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/optimize_adp/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/map_to_asu/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning2/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/rsfit_of_hd_neutron/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_misc_01/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_04.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_10.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_07.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_11.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_03.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_05.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_00.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_06.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_02.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/tst_01.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/00/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/01/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/eric_ennifar_ias/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/group_anomalous/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/group_anomalous/tst_find_automatically.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/bond_slack/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning3/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_8.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst8.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst7.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst6.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_6.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_9.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_7.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_00/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tls_and_water_update/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_calcium_simple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/apply_cif_modification/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/grow_density/tst_grow_density.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ignore_f000/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/f_hydrogen_contribution/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/apply_cif_link/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/autobuild/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_6.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_0.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_7.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_average.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/phenix_refine_mtz_output/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/phenix_refine_mtz_output/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/phenix_refine_mtz_output/tst5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/phenix_refine_mtz_output/tst4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/phenix_refine_mtz_output/tst3.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tls/tst_tls_simple.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tls/tst_auto_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/high_res_with_rotatable_h/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tls_in_pdb_header/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs2/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/model_cif_output/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/remark3_min_f_over_sigma/tst.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/libtbx/tst_phil_examples.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/libtbx/tst_libtbx_clear_paths.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/libtbx/tst_smart_open.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/libtbx/tst_basic.sh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/scitbx/tst_math_erf.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/scitbx/tst_histogram.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/scitbx/tst_basic.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_development.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_form_factor_query.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_misc.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_web.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_space_groups.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_sgtbx_misc.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_examples.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_wavelength_units.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/tst_positivity_constrained_density_modification.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cctbx/map_rot_trans/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_pdb.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_r_free.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_emma.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_reflection_file_reader.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_reflection_file.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_reflection_statistics.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_pdb.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_show_distances.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_explore_metric_symmetry.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_crystal_symmetry_from_any.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_mtz_ext.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_examples.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_iotbx_xds_unmerged.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_french_wilson.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_cns.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_cif.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_pdb_hierarchy.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_model_model_distances.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_cc_star_pre_calculated_fmodel.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_prepare_pdb_deposition.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_xtriage_unmerged_data.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_msa.sh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_mmtbx_simulate_low_res_data.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_pdb_atom_selection.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_xtriage_basic.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_pdbtools.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_cc_star_basic.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_xmanip.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_mon_lib_misc.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_cc_star_in_model_vs_data.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_r_factor_statistics.sh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_pdb_interpretation.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_polygon.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_examples.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_pdbtools_html.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_super.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_secondary_structure.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/tst_all_cif_files.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_04.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_08.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_07.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_geo_min_rotamer_and_selections.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_03.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_05.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_ready_set_geo_min.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_09.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_00.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_06.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_01.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/update_f_part1/tst_01.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/fake_f_obs/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/double_step_filtration/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/reciprocal_space_arrays/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/fo_minus_fo_map/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/map_value_at_point/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/apply_overall_b_iso_back_to_atoms/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/apply_overall_b_iso_back_to_atoms/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/bulk_solvent_and_scaling/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/extract_box_around_model_and_map/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/extract_box_around_model_and_map/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/extract_box_around_model_and_map/tst3_phenix_map_box.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/extract_box_around_model_and_map/tst4_phenix_map_box.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/anisotropy_removal_from_maps/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/bulk_sol_and_scaling_fast/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/fmodel_cmd/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/fem/tst.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_python_streambuf.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_symmetry_search.sh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_ligand_pipeline.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_rstbx.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_superpose_maps.sh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_pdb2xplor.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_usage.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_flip_peptides.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_boost_adaptbx_basic.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_strudat_as_fis.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_poscar.sh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_kinemage.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_comprehensive.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_summary.sh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_structure_comparison.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_molprobity_rna.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_clashscore.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_geometry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_reduce.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_molprobity_protein.py"
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/tardy_action/tst.csh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/lockit/tst.sh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/rna_puckers/tst.sh
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/pdb_mining/tst.csh
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_xtriage_results.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_pickle_files.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_refine.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_params.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_import.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/gui/tst_hyss_gui.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst_twin_maps.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst_apply_scale_to_fobs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst8.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst_composite_omit_map_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst7.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst_composite_omit_map.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst6.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst_phaser_sad_llg.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/real_space_refinement/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst0.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst_fit_residues_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1b.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1d.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1e.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1a.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1c.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/den_restraints/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cif_as_mtz/tst_phil.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cif_as_mtz/tst_extend_flags.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/cif_as_mtz/tst_cif_as_mtz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/phenix_masks/tst2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/phenix_masks/tst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/phenix_masks/tst3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/tst_00.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/tst_01.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/phenix_tls/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/newsletters/tst_no_5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/ensemble_refinement/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/ensemble_refinement/tst_custom_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/ensemble_refinement/tst_mlhl.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/real_space_refine/tst_00.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/real_space_refine/tst_02.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/real_space_refine/tst_01.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/ligand/tst_glr.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_nqh_flips.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_xyz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 11
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_reference_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_6.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1c.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ias.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_comprehensive.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_watpick_some_hoh_with_h.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/f_hydrogen_contribution/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 15
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_consecutive_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/den_restraints/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_ordered_solvent.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/utilities/tst_phil_as_html.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/regression/tst_heavy_search.py" C2
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/regression/tst_xmanip.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/regression/tst_superpose_pdbs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/regression/tst_cdl_geom_min.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/regression/tst_cdl_refine.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/command_line/simple_ncs_from_pdb.py" exercise
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix/phenix/utilities/citations.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 1
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 2
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 4
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 5
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 6
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 7
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 8
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 9
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 10
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 11
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 12
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 13
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 14
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 15
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 16
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 17
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 18
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 19
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 20
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 21
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 22
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 23
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 24
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 25
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 26
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 27
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 28
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 29
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 30
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 32
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 33
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 34
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 35
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 36
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 37
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 38
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 39
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 40
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 41
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 42
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 43
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 44
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 45
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 46
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 47
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 48
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 49
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 50
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 51
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 52
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 53
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 54
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 55
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 56
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 57
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 58
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 59
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 60
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 61
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 62
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 63
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/run_all_strategies.py" 64
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 0
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 1
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 2
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 4
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 5
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 6
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 7
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 8
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 9
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 10
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 11
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 12
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 13
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 14
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 15
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 16
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 17
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 18
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 19
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 20
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 1
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 2
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 4
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 5
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 6
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 7
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 8
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 9
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 10
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 11
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 12
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 13
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 14
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 15
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 16
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 17
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 18
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/misc_tests.py" 19
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 1
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 2
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 4
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 5
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 6
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 7
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 8
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 9
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 10
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 11
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/metric_prefixes.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/test_utils/__init__.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/queuing_system_utils/pbs_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/queuing_system_utils/sge_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/introspection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_thread_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_easy_mp.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_easy_pickle.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/easy_run.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_containers.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_path.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_math_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/assert_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_str_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/table_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_dlite.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/phil/tst_tokenizer.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/phil/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/phil/tst_experimental.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/phil/tst_interface.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_object_oriented_patterns.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/find_reference_cycles.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_binary_search.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_topological_sort.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/clusterTests.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/libtbx/tst_lzw.py"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/boost_adaptbx/tests/tst_optional_copy"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_libc_backtrace.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_rational.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_rational_truediv.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_optional.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_std_pair.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_tuple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_python_streambuf.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_stdout.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/boost_adaptbx/tests/tst_stderr_stdout.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/tst_smoothing.py"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_af_1"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_af_2"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_af_3"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_af_4"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_af_5"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_vec3"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_unsigned_float_arithmetic"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_mat3"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_sym_mat3"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_ref_matrix_facet"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_accessors"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/array_family/tst_optional_copy"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/serialization/tst_base_256"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_minimum_covering_ellipsoid.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_gaussian_fit_1d_analytical.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_cubic_equation.py"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/math/tests/tst"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/matrix/tests/tst_givens"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/matrix/tests/tst_householder"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/matrix/tests/tst_svd"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/matrix/tests/tst_cholesky"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_matrix.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_cholesky.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_svd.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_eigensystem.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_lapack_svd.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/linalg/tests/tst_lapack_dsyev.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/error/tst_error.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/stl/tst_map.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/stl/tst_set.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/stl/tst_vector.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/regression_test.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_flex.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_numpy_bridge.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_smart_selection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_shared.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_integer_offsets_vs_pointers.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/array_family/boost_python/tst_cost_of_m_handle_in_af_shared.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/tst_cubicle_neighbors.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/tst_r3_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/matrix/__init__.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/python_utils/tst_random_transform.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/python_utils/tst_graph.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/superpose.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/spe.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_curve_fitting.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_weighted_correlation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_exp_functions.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_fit_quadratic_function.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_gcd.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_math.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_r3_rotation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_resample.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_line_search.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_gaussian.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_quadrature.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_bessel.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_halton.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_euler_angles.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_superpose.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_uniform_rotation_matrix.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tst_zernike.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tst_zernike_mom.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/sieve_of_eratosthenes.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/besselk.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/scale_curves.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_fit_peak.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_clustering.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/math/tests/tst_orthonormal_basis.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/minpack/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/lbfgs/tst_ext.py" 
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/lbfgs/tst_curvatures.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/lbfgs/tst_lbfgs_fem.py"
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/scitbx/lbfgs/tst_lbfgs"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/lbfgsb/boost_python/tst_lbfgsb.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/fftpack/boost_python/tst_fftpack.py" 
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/flex_grid.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/flex_array_loops.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/principal_axes_of_inertia.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/lbfgs_recipe.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/lbfgs_linear_least_squares_fit.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/chebyshev_lsq_example.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/immoptibox_ports.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/rigid_body_refinement_core.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/integrating_a_weighted_sinc_function.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/examples/minimizer_comparisons.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/tst_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/rigidity.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/tst_rigidity.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/rigidity_matrix_symbolic.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/tst_tardy_tree_find_paths.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/graph/tst_tardy_tree.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/essence/tst_basic.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/essence/tst_tardy.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/essence/tst_energy_plots.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/free_motion_reference_impl.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_featherstone.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_free_motion.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_free_motion_hard.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_joint_lib.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_singular.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_spherical_refinement.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/rigid_body/proto/tst_molecules.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/sparse/tests/tst_sparse.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/sparse/tests/tst_lu_factorization.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/iso_surface/tst_iso_surface.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/simplex.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/differential_evolution.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/golden_section_search.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/direct_search_simulated_annealing.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/random/tests/tst_random.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/scitbx/lstbx/tests/tst_normal_equations.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_double_step_filtration.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/miller/tst_reindexing.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/miller/tst_map_to_asu_isym.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_ellipsoidal_truncation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/omz/tst_bfgs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/omz/tst_dev.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/geometry/tests/tst_geometry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/covariance/tests/tst_covariance.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/symmetry_search/tests/tst_goodness_of_symmetry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/symmetry_search/tests/tst_from_map.py" P312
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_adp_aniso_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/math/boost_python/tst_math.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/boost_python/tst_xray.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/boost_python/tst_targets_fd.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/targets/tst_r1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/targets/tst_shelxl_wght_ls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/boost_python/tst_f_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/array_family/boost_python/tst_flex.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/uctbx/boost_python/tst_uctbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/uctbx/boost_python/tst_crystal_orientation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/boost_python/tst_sgtbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/boost_python/tst_N_fold_rot.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/crystal/tst_ext.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/crystal/tst_distance_based_connectivity.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/adptbx/boost_python/tst_adptbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/miller/boost_python/tst_miller.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_chemical_elements.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_xray_scattering.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_henke.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_icsd_radii.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_covalent_radii.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_neutron.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_sasaki.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_tiny_pse.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_wavelengths.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_formula.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/eltbx/tests/tst_attenuation_coefficient.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/boost_python/tst_maptbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/dmtbx/boost_python/tst_dmtbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/translation_search/boost_python/tst_translation_search.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/geometry_restraints/tst_ext.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/geometry_restraints/tst_proxy_registry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/geometry_restraints/tst_nb_clashscore.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/adp_restraints/tst_ext.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_crystal_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_crystal_model_serialize.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_math_module.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_krivy_gruber.py" --Quick
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_itvb_2001_table_a1427_hall_symbols.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_space_group_type_tidy_cb_op_t.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_denominators.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_subgroups.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_lattice_symmetry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_adp_constraints.py" P3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_adp_constraints_cartesian.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_site_constraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_reflection_statistics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_harker.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sgtbx_special_op_simplifier.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_twin_target.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/symbol_confidence.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/bravais_types.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_lookup_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_crystal.py" I41/acd
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_direct_space_asu.py" I41/acd
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_pair_asu_table.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_crystal_asu_clusters.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_coordination_sequences.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_crystal_close_packing.py" R-3mr
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_xray.py" I41/acd
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_fourier_transform_real_part_at_x.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_mem.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_reciprocal_space_asu.py" P312
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_triplet_generator.py" P41
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_emma.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_expand_to_p1.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_change_basis.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_wilson_plot.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_xray_derivatives.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_xray_fast_gradients.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_xray_minimization.py" --F P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_xray_minimization.py" --F_sq P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_real_space_refinement.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_maptbx_structure_factors.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_map_weights_for_symmetry_summation.py" Pmmm
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_real_space_refinement_simple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_real_space_target_and_gradients.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_merge_equivalents.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_grouped_data.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_fft_map.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sampled_model_density.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_fast_nv1995.py" F222
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_geometry_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_geometry_restraints_lbfgs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_geometry_restraints_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/development/make_cns_input.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/development/tst_cns_epsilon.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/development/tst_cns_hl.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/development/run_shelx.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/development/run_shelx76.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_pointgroup_tools.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/sub_lattice_tools.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/rational_matrices_point_groups.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/cosets.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/reticular_pg_tools.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/reticular_twin_laws.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_find_best_cell.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_amplitude_normalisation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_statistics_graphs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_web_change_basis.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/sgtbx/direct_space_asu/proto/tst_asu.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/masks/tests/tst_flood_fill.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/r_free_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/xray/observations/tst_observations.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_ccp.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_mask.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_map_peak_3d_as_2d.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/maptbx/tst_get_percentile_cutoffs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_sphericity.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/regression/tst_miller_statistics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/cctbx/merging/brehm_diederichs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_wildcard.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_simple_parser.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_phil.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/ranges.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_crystal_symmetry_from_any.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_poscar.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/kriber/tst_strudat.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_geometry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_lex_parse_build.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_validation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cif/tests/tst_ucif_examples_compilation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/shelx/tst_lex_parse_build.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/shelx/tst_hklf.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/shelx/tst_writer.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/shelx/tst_fvar_encoding.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_mmcif_hierarchy.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/hybrid_36.py" exercise
+  "/net/marbles/raid1/youval/phenix_work/phenix_build/iotbx/pdb/hybrid_36_fem"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_hierarchy.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_ext.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_atom_selection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_rna_dna_atom_names.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_atom_name_interpretation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_extract_rfactors_resolutions_sigma.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_pdb.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/tst_pdb_manipulation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/pdb/secondary_structure.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/examples/iotbx_cif.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/examples/pdb_to_map_simple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/examples/pdb_truncate_to_ala/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/examples/pdb_tardy_conf_sampling_simple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cns/space_group_symbols.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/cns/tst_cns.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/scalepack/tst_merge.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/scalepack/no_merge_original_index.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/ccp4_map/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/mtz/tst_ext.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/mtz/tst_extract_from_symmetry_lib.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/mtz/tst_dano.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/mtz/tst.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/examples/tst_mtz_free_flipper.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_reflection_file_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/detectors/tst_adsc.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/detectors/tst_debug_write.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/detectors/tst_detectors.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/xplor/tst_xplormap.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_phases.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_pdbx_mmcif_tutorial.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_lattice_symmetry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_reflection_statistics.py" Fdd2 P31m
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_data_plots.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_csv_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_file_reader.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/tst_bioinformatics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_mtz_as_cif.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_add_conformations.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_symmetry.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_reindex.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_reflection_file_editor.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_split_models.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_expand_ncs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_merging_statistics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_simple_map_coefficients.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/xds/tests/tst_xparm.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/xds/tests/tst_xds_inp.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/xds/tests/tst_integrate_hkl.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/xds/tests/tst_spots_xds.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_pdb_as_cif.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/scalepack/tst_no_merge_original_index.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/iotbx/regression/tst_export_scalepack_unmerged.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/rotamer/tst_rotamer_eval.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_idealized_aa.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_ml_estimate.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/density_modification/tst_density_modification.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/geometry_restraints/tst_ramachandran.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_map_type_parser.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/rsr/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/polygon/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/polygon/tst_gui.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/chemical_components/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_add_h_to_water.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/rotamer/rotamer_eval.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/wwpdb/tst_standard_geometry_cif.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_pdbtools.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/real_space/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ias/tst_ias.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_fit_rotamers.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_anomalous_scatterer_groups.py" P3
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_rigid_body.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_rigid_body_groups_from_pdb_chains.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_refinement_flags.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/torsion_restraints/tst_reference_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_fmodel.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_alignment.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_fmodel_fd.py" P31
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/maps/tst_composite_omit_map.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/maps/tst_composite_omit_map_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ncs/tst_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ncs/tst_restraints_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ncs/ncs.py" exercise
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_adp_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/scaling/tst_scaling.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/scaling/tst_outlier.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/scaling/matthews.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/scaling/absence_likelihood.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/scaling/thorough_outlier_test.py" P21
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/twinning/probabalistic_detwinning.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_rna_sugar_pucker_analysis.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_cif_types.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_motif.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_cif_triage.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_rotamer_utils.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_selection.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_tyr_from_gly_and_bnz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_pdb_interpretation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_rna_dna_interpretation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_protein_interpretation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_geo_reduce_for_tardy.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_linking.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_chg.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_neutron_distance.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_altloc_remediate.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_altloc_chain_break.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/hydrogens/build_hydrogens.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/hydrogens/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/max_lik/tst_maxlik.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/masks/tst_masks.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/masks/tst_asu_mask.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/max_lik/tst_max_lik.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/dynamics/tst_cartesian_dynamics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/dynamics/tst_sa.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls_as_xyz.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_get_t_scheme.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls_refinement_fft.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/examples/f_model_manager.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/bulk_solvent/tst_bulk_solvent_and_scaling.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/bulk_solvent/tst_fit_kexpb_to_ktotal.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/bulk_solvent/tst_scaler.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/alignment.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/invariant_domain.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/secondary_structure/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/geometry_restraints/tst_hbond.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/geometry_restraints/tst_reference_coordinate.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/conformation_dependent_library/test_cdl.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/sequence.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_prune_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_real_space_correlation.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_examples.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_sort_hetatms.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residue_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residue_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residue_3.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residue_4.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residue_5.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residues_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_residues_2.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_individual_sites_1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_monitor.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_rigid_body.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/real_space/tst_fit_water.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_dssp.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/building/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/building/disorder/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_validation_summary.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_maps_misc.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_cablam.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_anomalous_substructure.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_map_coeffs_simple.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_parameters.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_pick_ca.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_pick_mg.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_pick_approx_zn.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_validate_ca.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_validate_mg.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ions/tst_symmetry_axis.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_ringer.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_fmodel_no_cryst1.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_fmodel_misc.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_isomorphous_difference_misc.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_b_factor_statistics.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_geo_min_restraints_phil.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_dynamics_cli.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/ligands/tst_xtal_screens.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_mtz2map.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_waters.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_nqh_minimize.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_mp_geo.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rotalyze.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_ramalyze.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_cbetadev.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_clashscore.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_restraints.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_molprobity.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_select_best_starting_model.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_refine_anomalous_substructure.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_command_line_input.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_cif_as_mtz_wavelengths.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/building/tst_extend_sidechains.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_build_alt_confs.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/refinement/tst_group.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/secondary_structure/build/tst.py"
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/utils/tst_switch_rotamers.py"
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_nqh_flips.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_1.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_xyz.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_2.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_reference_model.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_5.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_4.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_6.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_3.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1c.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ias.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_comprehensive.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_watpick_some_hoh_with_h.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/f_hydrogen_contribution/tst.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_consecutive_tls.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/den_restraints/tst.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_ordered_solvent.py" repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 11 repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 15 repeated, skipping
+  test libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls.py" repeated, skipping
+
+  Starting command list
+    NProcs : 48
+    Cmds   : 925
+________________________________________________________________________________
+
+command : "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_explore_metric_symmetry.csh"
+return_code : 0
+Found 1 "OK"
+stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-
+Traceback (most recent call last):
+  File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 357, in <module>
+    run(args=sys.argv[1:])
+  File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 258, in run
+    log)
+  File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 90, in make_graph_of_graph
+    "\n".join(rc.stderr_lines)))
+RuntimeError: Fatal error running /usr/bin/dot:
+Fontconfig error: Cannot load default config file
+
+(process:5676): Pango-WARNING **: No builtin or dynamically
+loaded modules were found. Pango will not work correctly.
+This probably means there was an error in the creation of:
+  '/net/chevy/raid1/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/etc/pango/pango.modules'
+You should create this file by running pango-querymodules.
+
+(process:5676): Pango-WARNING **: pango_shape called with bad font, expect ugly output
+
+(process:5676): Pango-WARNING **: pango_font_get_glyph_extents called with null font argument, expect ugly output
+/bin/sh: line 1:  5676 Segmentation fault      (core dumped) "/usr/bin/dot" -Tpng > "graph.png"
+possible errors:
+Traceback (most recent call last):
+RuntimeError: Fatal error running /usr/bin/dot:
+Fontconfig error: Cannot load default config file
+This probably means there was an error in the creation of:
+/bin/sh: line 1:  5676 Segmentation fault      (core dumped) "/usr/bin/dot" -Tpng > "graph.png"
+time :  9.45s
+________________________________________________________________________________
+
+command : "libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py""
+return_code : 1
+Found 0 "OK"
+stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-
+Traceback (most recent call last):
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py", line 24, in <module>
+    exercise_suitename()
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py", line 19, in exercise_suitename
+    assert suitename_out[0] == '1u8d.pdb:1:A:  15: :  G inc  __ 0.000'
+IndexError: list index out of range
+possible errors:
+Traceback (most recent call last):
+IndexError: list index out of range
+time :  0.14s
+________________________________________________________________________________
+
+command : "libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py""
+return_code : 1
+Found 0 "OK"
+stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-
+Traceback (most recent call last):
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py", line 52, in <module>
+    exercise()
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py", line 48, in exercise
+    assert (n_cd == 1) #n_cl == 1)
+AssertionError
+possible errors:
+Traceback (most recent call last):
+AssertionError
+time : 459.71s
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING  !!
+!!  TEST TAKES MORE THAN A MINUTE                                           !!
+!! WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING  !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+________________________________________________________________________________
+
+command : "libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py""
+return_code : 1
+Found 0 "OK"
+stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-
+Traceback (most recent call last):
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 36, in <module>
+    run()
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 32, in run
+    exercise_rna_validate()
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 23, in exercise_rna_validate
+    assert len(rv.suite_validation) == 4
+AssertionError
+possible errors:
+Traceback (most recent call last):
+AssertionError
+time :  5.04s
+________________________________________________________________________________
+
+command : "libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py""
+return_code : 1
+Found 0 "OK"
+stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-stderr-
+/bin/sh: phenix.angle: command not found
+Traceback (most recent call last):
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 548, in <module>
+    exercise_00()
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 526, in exercise_00
+    r = run_cmd(fn=fn, log=log, s1="chain A", s2="chain B")
+  File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 516, in run_cmd
+    command="grep 'Angle :' "+log).stdout_lines[0].split()[2])
+IndexError: list index out of range
+possible errors:
+Traceback (most recent call last):
+IndexError: list index out of range
+time :  0.33s
+
+Processes have joined : 925
+
+
+Elapsed time: 1068.68s
+
+Distribution of test runtimes:
+  0.0s - 23.7s: 614
+  23.7s - 47.4s: 133
+  47.4s - 71.1s: 54
+  71.1s - 94.8s: 24
+  94.8s - 118.6s: 18
+  118.6s - 142.3s: 15
+  142.3s - 166.0s: 16
+  166.0s - 189.7s: 10
+  189.7s - 213.4s: 5
+  213.4s - 237.1s: 5
+  237.1s - 260.8s: 5
+  260.8s - 284.5s: 5
+  284.5s - 308.2s: 2
+  308.2s - 331.9s: 7
+  331.9s - 355.7s: 3
+  355.7s - 379.4s: 1
+  379.4s - 403.1s: 1
+  403.1s - 426.8s: 1
+  426.8s - 450.5s: 1
+  450.5s - 474.2s: 5
+
+
+WARNING: the following jobs took at least 200 seconds:
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_example_5a.csh : 200.1s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/update_f_part1/tst_01.py" : 202.2s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 8 : 202.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst1.py" : 208.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_5.py" : 227.7s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_crossprogram_rmsd_check.py" : 228.2s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/maps/tst8.py" : 231.9s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_6.py" : 234.8s
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_gbr_with_anisou.csh : 235.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/twinning/all_tests.py" 7 : 239.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_3.py" : 240.0s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_bss_jc.py" : 245.9s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/geometry_minimization/tst_06.py" : 253.7s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/neutron/01/tst.py" : 253.8s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res_2.py" : 262.8s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/f_hydrogen_contribution/tst.py" : 271.0s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/occupancies/tst_refinement_occ_ind_7.py" : 273.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/mmtbx/fem/tst.py" : 274.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refine_twin_1.py" : 283.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/autobuild/tst.py" : 295.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/model_vs_data/run_tests.py" 7 : 296.6s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_5.py" : 317.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_add_h_to_water_and_refine.py" : 319.1s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_1.py" : 324.2s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/fit_side_chains/tst1c.py" : 325.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/tls/tst_tls.py" : 326.5s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_6.py" : 329.9s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_2.py" : 331.8s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/elbow/tst3.py" : 339.9s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_4.py" : 344.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ncs/tst_ncs_3.py" : 351.3s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_ias.py" : 375.8s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/misc/tst_ligand_pipeline.py" : 389.7s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_comprehensive.py" : 412.9s
+  /net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_misc_6.csh : 431.2s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py" : 459.7s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/monomer_library/tst_linking.py" : 460.3s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_nqh_flips.py" : 462.2s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_xyz.py" : 467.4s
+  libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/tst_refinement_default_with_H_high_res.py" : 474.2s
+Please try to reduce overall runtime - consider splitting up these tests.
+
+ERROR: the following jobs returned non-zero exit codes or suspicious stderr output:
+
+/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/iotbx/tst_explore_metric_symmetry.csh(exit code 0):
+  Traceback (most recent call last):
+    File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 357, in <module>
+      run(args=sys.argv[1:])
+    File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 258, in run
+      log)
+    File "/net/marbles/raid1/youval/phenix_work/phenix_build/../phenix_sources/cctbx_project/iotbx/command_line/explore_metric_symmetry.py", line 90, in make_graph_of_graph
+      "\n".join(rc.stderr_lines)))
+  RuntimeError: Fatal error running /usr/bin/dot:
+  Fontconfig error: Cannot load default config file
+  
+  (process:5676): Pango-WARNING **: No builtin or dynamically
+  loaded modules were found. Pango will not work correctly.
+  This probably means there was an error in the creation of:
+    '/net/chevy/raid1/phenix/phenix-dev-1345/build/intel-linux-2.6-x86_64/base/etc/pango/pango.modules'
+  You should create this file by running pango-querymodules.
+  
+  (process:5676): Pango-WARNING **: pango_shape called with bad font, expect ugly output
+  
+  (process:5676): Pango-WARNING **: pango_font_get_glyph_extents called with null font argument, expect ugly output
+  /bin/sh: line 1:  5676 Segmentation fault      (core dumped) "/usr/bin/dot" -Tpng > "graph.png"
+  Traceback (most recent call last):
+  RuntimeError: Fatal error running /usr/bin/dot:
+  Fontconfig error: Cannot load default config file
+  This probably means there was an error in the creation of:
+  /bin/sh: line 1:  5676 Segmentation fault      (core dumped) "/usr/bin/dot" -Tpng > "graph.png"
+
+
+libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py"(exit code 1):
+  Traceback (most recent call last):
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py", line 24, in <module>
+      exercise_suitename()
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/validation/tst_suitename.py", line 19, in exercise_suitename
+      assert suitename_out[0] == '1u8d.pdb:1:A:  15: :  G inc  __ 0.000'
+  IndexError: list index out of range
+  Traceback (most recent call last):
+  IndexError: list index out of range
+
+
+libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py"(exit code 1):
+  Traceback (most recent call last):
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py", line 52, in <module>
+      exercise()
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/phenix_regression/refinement/ion_placement/tst_refine_cadmium_chloride.py", line 48, in exercise
+      assert (n_cd == 1) #n_cl == 1)
+  AssertionError
+  Traceback (most recent call last):
+  AssertionError
+
+
+libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py"(exit code 1):
+  Traceback (most recent call last):
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 36, in <module>
+      run()
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 32, in run
+      exercise_rna_validate()
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/validation/regression/tst_rna_validate.py", line 23, in exercise_rna_validate
+      assert len(rv.suite_validation) == 4
+  AssertionError
+  Traceback (most recent call last):
+  AssertionError
+
+
+libtbx.python "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py"(exit code 1):
+  /bin/sh: phenix.angle: command not found
+  Traceback (most recent call last):
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 548, in <module>
+      exercise_00()
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 526, in exercise_00
+      r = run_cmd(fn=fn, log=log, s1="chain A", s2="chain B")
+    File "/net/marbles/raid1/youval/phenix_work/phenix_sources/cctbx_project/mmtbx/regression/tst_phenix_angle.py", line 516, in run_cmd
+      command="grep 'Angle :' "+log).stdout_lines[0].split()[2])
+  IndexError: list index out of range
+  Traceback (most recent call last):
+  IndexError: list index out of range
+
+Please verify these tests manually.
+
+Summary:
+  Tests run                    : 925
+  Failures                     : 4
+  Warnings (possible failures) : 1
+  Stderr output (discouraged)  : 49
+
+============================================================================
+Reminder: Please do not forget: libtbx.find_clutter
+          See also: cctbx_project/libtbx/development/dev_guidelines.txt
+============================================================================
+

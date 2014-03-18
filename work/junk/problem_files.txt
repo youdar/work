@@ -1,0 +1,300 @@
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/m8/r3m8lsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3m8l-sf.cif
+Results for file: 3m8l
+------------------------------------------------------------
+CifBuilderError: Invalid floating-point value for _refln.F_meas_sigma_au: "******"
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/bt/r2btvsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2btv-sf.cif
+Results for file: 2btv
+------------------------------------------------------------
+CifBuilderError: Invalid floating-point value for _refln.F_meas_sigma_au: "******"
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/ei/r1ei7sf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1ei7-sf.cif
+Results for file: 1ei7
+------------------------------------------------------------
+Can't determine output label for r1ei7sf,_refln.crystal_id - skipping.
+Can't determine output label for r1ei7sf,_refln.scale_group_code - skipping.
+Can't determine output label for r1ei7sf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/ll/r1llcsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1llc-sf.cif
+Results for file: 1llc
+------------------------------------------------------------
+Can't determine output label for r1llcsf,_refln.crystal_id - skipping.
+Can't determine output label for r1llcsf,_refln.scale_group_code - skipping.
+Can't determine output label for r1llcsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/dp/r3dprsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3dpr-sf.cif
+Results for file: 3dpr
+------------------------------------------------------------
+CifBuilderError: Invalid floating-point value for _refln.F_meas_sigma_au: "******"
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/da/r3darsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3dar-sf.cif
+Results for file: 3dar
+------------------------------------------------------------
+Can't determine output label for r3darsf,_refln.crystal_id - skipping.
+Can't determine output label for r3darsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.051
+R-free-flags: missing 308 reflections
+Can't determine output label for r3darsf,_refln.wavelength_id - skipping.
+Warning: merging non-unique data
+Warning: merging non-unique data
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/w4/r2w4ysf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2w4y-sf.cif
+Results for file: 2w4y
+------------------------------------------------------------
+Can't determine output label for r2w4ysf,_refln.crystal_id - skipping.
+Can't determine output label for r2w4ysf,_refln.scale_group_code - skipping.
+Can't determine output label for r2w4ysf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/za/r2zahsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2zah-sf.cif
+Results for file: 2zah
+------------------------------------------------------------
+Can't determine output label for r2zahsf,_refln.crystal_id - skipping.
+Can't determine output label for r2zahsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 1690 reflections
+Can't determine output label for r2zahsf,_refln.wavelength_id - skipping.
+Warning: merging non-unique data
+Warning: merging non-unique data
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/tn/r1tnvsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1tnv-sf.cif
+Results for file: 1tnv
+------------------------------------------------------------
+Can't determine output label for r1tnvsf,_refln.crystal_id - skipping.
+Can't determine output label for r1tnvsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.000
+WARNING: R-free flags in R-free-flags do not appear to contain a valid test, so they can't be extended to higher resolution.
+Can't determine output label for r1tnvsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/dw/r1dwnsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1dwn-sf.cif
+Results for file: 1dwn
+------------------------------------------------------------
+Can't determine output label for r1dwnsf,_refln.crystal_id - skipping.
+Can't determine output label for r1dwnsf,_refln.scale_group_code - skipping.
+Can't determine output label for r1dwnsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/w0/r2w0csf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2w0c-sf.cif
+Results for file: 2w0c
+------------------------------------------------------------
+CifBuilderError: Invalid floating-point value for _refln.F_meas_sigma_au: "******"
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/w3/r1w39sf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1w39-sf.cif
+Results for file: 1w39
+------------------------------------------------------------
+Can't determine output label for r1w39sf,_refln.crystal_id - skipping.
+Can't determine output label for r1w39sf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.051
+R-free-flags: missing 69800 reflections
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_build/../phenix_sources/cctbx_project/mmtbx/command_line/cif_as_mtz.py", line 711, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_build/../phenix_sources/cctbx_project/mmtbx/command_line/cif_as_mtz.py", line 147, in run
+    log=out)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_build/../phenix_sources/cctbx_project/mmtbx/command_line/cif_as_mtz.py", line 182, in process_files
+    log                             = log)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_build/../phenix_sources/cctbx_project/mmtbx/command_line/cif_as_mtz.py", line 474, in extract
+    log=sys.stdout)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/r_free_utils.py", line 243, in extend_flags
+    use_lattice_symmetry=True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/miller/__init__.py", line 1001, in generate_r_free_flags
+    format=format)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/miller/__init__.py", line 1086, in generate_r_free_flags_on_lattice_symmetry
+    tmp_ma = self.change_basis( cb_op_to_niggli )
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/miller/__init__.py", line 1256, in change_basis
+    indices=cb_op.apply(self.indices()))
+RuntimeError: cctbx Error: Change of basis yields non-integral Miller index.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/x3/r1x33sf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1x33-sf.cif
+Results for file: 1x33
+------------------------------------------------------------
+CifBuilderError: Space group is incompatible with unit cell parameters
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/iz/r2izwsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2izw-sf.cif
+Results for file: 2izw
+------------------------------------------------------------
+Can't determine output label for r2izwsf,_refln.crystal_id - skipping.
+Can't determine output label for r2izwsf,_refln.scale_group_code - skipping.
+Can't determine output label for r2izwsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/x3/r1x35sf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1x35-sf.cif
+Results for file: 1x35
+------------------------------------------------------------
+Can't determine output label for r1x35sf,_refln.crystal_id - skipping.
+Can't determine output label for r1x35sf,_refln.scale_group_code - skipping.
+Can't determine output label for r1x35sf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/no/r3nopsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3nop-sf.cif
+Results for file: 3nop
+------------------------------------------------------------
+Can't determine output label for r3nopsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nopsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 6909 reflections
+Can't determine output label for r3nopsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nopAsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nopAsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 3731 reflections
+Can't determine output label for r3nopAsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nopBsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nopBsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 95843 reflections
+Can't determine output label for r3nopBsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nopCsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nopCsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 48500 reflections
+Can't determine output label for r3nopCsf,_refln.wavelength_id - skipping.
+Warning: merging non-unique data
+Can't determine output label for r3nopDsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nopDsf,_refln.scale_group_code - skipping.
+Warning: merging non-unique data
+Sorry: cctbx Error: merge_equivalents_exact: incompatible flags for hkl = (1, 1, 16) (mismatch between Friedel mates) for _refln.status
+Add --incompatible_flags_to_work_set to command line arguments to place incompatible flags to working set.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/bn/r2bnysf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/2bny-sf.cif
+Results for file: 2bny
+------------------------------------------------------------
+CifBuilderError: Space group is incompatible with unit cell parameters
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/vc/r1vcrsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1vcr-sf.cif
+Results for file: 1vcr
+------------------------------------------------------------
+Can't determine output label for r1vcrsf,_refln.crystal_id - skipping.
+Can't determine output label for r1vcrsf,_refln.scale_group_code - skipping.
+Can't determine output label for r1vcrsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/no/r3notsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3not-sf.cif
+Results for file: 3not
+------------------------------------------------------------
+Can't determine output label for r3notsf,_refln.crystal_id - skipping.
+Can't determine output label for r3notsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 6909 reflections
+Can't determine output label for r3notsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3notAsf,_refln.crystal_id - skipping.
+Can't determine output label for r3notAsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 3731 reflections
+Can't determine output label for r3notAsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3notBsf,_refln.crystal_id - skipping.
+Can't determine output label for r3notBsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 95843 reflections
+Can't determine output label for r3notBsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3notCsf,_refln.crystal_id - skipping.
+Can't determine output label for r3notCsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 48500 reflections
+Can't determine output label for r3notCsf,_refln.wavelength_id - skipping.
+Warning: merging non-unique data
+Can't determine output label for r3notDsf,_refln.crystal_id - skipping.
+Can't determine output label for r3notDsf,_refln.scale_group_code - skipping.
+Warning: merging non-unique data
+Sorry: cctbx Error: merge_equivalents_exact: incompatible flags for hkl = (1, 1, 16) (mismatch between Friedel mates) for _refln.status
+Add --incompatible_flags_to_work_set to command line arguments to place incompatible flags to working set.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/no/r3nousf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3nou-sf.cif
+Results for file: 3nou
+------------------------------------------------------------
+Can't determine output label for r3nousf,_refln.crystal_id - skipping.
+Can't determine output label for r3nousf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 6909 reflections
+Can't determine output label for r3nousf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nouAsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nouAsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 3731 reflections
+Can't determine output label for r3nouAsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nouBsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nouBsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 95843 reflections
+Can't determine output label for r3nouBsf,_refln.wavelength_id - skipping.
+Can't determine output label for r3nouCsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nouCsf,_refln.scale_group_code - skipping.
+R-free-flags: fraction_free=0.050
+R-free-flags: missing 48500 reflections
+Can't determine output label for r3nouCsf,_refln.wavelength_id - skipping.
+Warning: merging non-unique data
+Can't determine output label for r3nouDsf,_refln.crystal_id - skipping.
+Can't determine output label for r3nouDsf,_refln.scale_group_code - skipping.
+Warning: merging non-unique data
+Sorry: cctbx Error: merge_equivalents_exact: incompatible flags for hkl = (1, 1, 16) (mismatch between Friedel mates) for _refln.status
+Add --incompatible_flags_to_work_set to command line arguments to place incompatible flags to working set.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/dz/r1dzlsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1dzl-sf.cif
+Results for file: 1dzl
+------------------------------------------------------------
+Can't determine output label for r1dzlsf,_refln.crystal_id - skipping.
+Can't determine output label for r1dzlsf,_refln.scale_group_code - skipping.
+Can't determine output label for r1dzlsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/lo/r3lobsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3lob-sf.cif
+Results for file: 3lob
+------------------------------------------------------------
+Can't determine output label for r3lobsf,_refln.crystal_id - skipping.
+Can't determine output label for r3lobsf,_refln.scale_group_code - skipping.
+Can't determine output label for r3lobsf,_refln.wavelength_id - skipping.
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/na/r3napsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/3nap-sf.cif
+Results for file: 3nap
+------------------------------------------------------------
+CifBuilderError: Miller arrays '_refln.F_meas_au_1' and '_refln.F_meas_sigma_au' are of different sizes
+============================================================
+Reading from local mirror:
+  /net/cci/pdb_mirror/structure_factors/vs/r1vszsf.ent.gz
+Structure factors saved to /net/cci-filer2/raid1/home/youval/Work/work/junk/1vsz-sf.cif
+Results for file: 1vsz
+------------------------------------------------------------
+Can't determine output label for r1vszsf,_refln.crystal_id - skipping.
+Can't determine output label for r1vszsf,_refln.scale_group_code - skipping.
+Can't determine output label for r1vszsf,_refln.wavelength_id - skipping.
+============================================================

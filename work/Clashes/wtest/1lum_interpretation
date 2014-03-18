@@ -1,0 +1,442 @@
+atom_selection = None
+strict_processing = False
+build_geometry_restraints_manager = True
+build_xray_structure = True
+max_atoms = None
+write_geo_files = False
+write_tardy_geo_files = False
+pdb_interpretation {
+  altloc_weighting {
+    weight = False
+    bonds = True
+    angles = True
+    factor = 1
+    sqrt = False
+    min_occupancy = 0.5
+  }
+  cdl = False
+  correct_hydrogens = True
+  automatic_linking {
+    intra_chain = False
+    amino_acid_bond_cutoff = 1.9
+    rna_dna_bond_cutoff = 3.5
+    intra_residue_bond_cutoff = 1.99
+  }
+  apply_cif_modification {
+    data_mod = None
+    residue_selection = None
+  }
+  apply_cif_link {
+    data_link = None
+    residue_selection_1 = None
+    residue_selection_2 = None
+  }
+  disulfide_bond_exclusions_selection_string = None
+  exclusion_distance_cutoff = 3
+  link_distance_cutoff = 3
+  disulfide_distance_cutoff = 3
+  peptide_nucleotide_distance_cutoff = 3
+  dihedral_function_type = *determined_by_sign_of_periodicity all_sinusoidal \
+                           all_harmonic
+  chir_volume_esd = 0.2
+  peptide_link {
+    ramachandran_restraints = False
+    cis_threshold = 45
+    discard_omega = False
+    discard_psi_phi = True
+    omega_esd_override_value = None
+    rama_weight = 1.0
+    scale_allowed = 1.0
+    rama_potential = *oldfield emsley
+    oldfield {
+      esd = 10.0
+      weight_scale = 1.0
+      dist_weight_max = 10.0
+      weight = None
+    }
+    rama_selection = None
+    rama_exclude_sec_str = False
+  }
+  max_reasonable_bond_distance = 50.0
+  nonbonded_distance_cutoff = None
+  default_vdw_distance = 1
+  min_vdw_distance = 1
+  nonbonded_buffer = 1
+  nonbonded_weight = None
+  const_shrink_donor_acceptor = 0.6
+  vdw_1_4_factor = 0.8
+  min_distance_sym_equiv = 0.5
+  custom_nonbonded_symmetry_exclusions = None
+  translate_cns_dna_rna_residue_names = None
+  proceed_with_excessive_length_bonds = False
+  rna_sugar_pucker_analysis {
+    bond_min_distance = 1.2
+    bond_max_distance = 1.8
+    epsilon_range_min = 155.0
+    epsilon_range_max = 310.0
+    delta_range_2p_min = 129.0
+    delta_range_2p_max = 162.0
+    delta_range_3p_min = 65.0
+    delta_range_3p_max = 104.0
+    p_distance_c1p_outbound_line_2p_max = 2.9
+    o3p_distance_c1p_outbound_line_2p_max = 2.4
+    bond_detection_distance_tolerance = 0.5
+  }
+  show_histogram_slots {
+    bond_lengths = 5
+    nonbonded_interaction_distances = 5
+    bond_angle_deviations_from_ideal = 5
+    dihedral_angle_deviations_from_ideal = 5
+    chiral_volume_deviations_from_ideal = 5
+  }
+  show_max_items {
+    not_linked = 5
+    bond_restraints_sorted_by_residual = 5
+    nonbonded_interactions_sorted_by_model_distance = 5
+    bond_angle_restraints_sorted_by_residual = 5
+    dihedral_angle_restraints_sorted_by_residual = 3
+    chirality_restraints_sorted_by_residual = 3
+    planarity_restraints_sorted_by_residual = 3
+    residues_with_excluded_nonbonded_symmetry_interactions = 12
+    fatal_problem_max_lines = 10
+  }
+  clash_guard {
+    nonbonded_distance_threshold = 0.5
+    max_number_of_distances_below_threshold = 100
+    max_fraction_of_distances_below_threshold = 0.1
+  }
+}
+geometry_restraints {
+  edits {
+    excessive_bond_distance_limit = 10
+    bond {
+      action = *add delete change
+      atom_selection_1 = None
+      atom_selection_2 = None
+      symmetry_operation = None
+      distance_ideal = None
+      sigma = None
+      slack = None
+    }
+    angle {
+      action = *add delete change
+      atom_selection_1 = None
+      atom_selection_2 = None
+      atom_selection_3 = None
+      angle_ideal = None
+      sigma = None
+    }
+    planarity {
+      action = *add delete change
+      atom_selection = None
+      sigma = None
+    }
+    scale_restraints {
+      atom_selection = None
+      scale = 1.0
+      apply_to = *bond *angle *dihedral *chirality
+    }
+  }
+  remove {
+    angles = None
+    dihedrals = None
+    chiralities = None
+    planarities = None
+  }
+}
+
+1lum.pdb
+  Monomer Library directory:
+    "/net/chevy/raid1/youval/Work_chevy/phenix_sources/chem_data/mon_lib"
+  Total number of atoms: 35280
+  Number of models: 20
+  Model: "   1"
+    Number of chains: 1
+    Chain: "A"
+      Number of atoms: 1764
+      Number of conformers: 1
+      Conformer: ""
+        Number of residues, atoms: 110, 1764
+          Unusual residues: {'ACE': 1, 'NH2': 1}
+          Classifications: {'undetermined': 2, 'peptide': 108}
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   2"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   3"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   4"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   5"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   6"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   7"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   8"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "   9"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  10"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  11"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  12"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  13"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  14"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  15"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  16"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  17"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  18"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  19"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Model: "  20"
+    Same as model    1
+          Link IDs: {'PTRANS': 4, 'NH2_CTERM': 1, 'TRANS': 102, 'ACE_C-N': 1, 'PCIS': 1}
+  Time building chain proxies: 15.98, per 1000 atoms: 0.45
+  Number of disulfides: simple=0, symmetry=0
+  Time building geometry restraints manager: 1.54 seconds
+
+  NOTE: a complete listing of the restraints can be obtained by requesting
+        output of .geo file.
+
+  Histogram of bond lengths:
+        0.96 -     1.13: 17540
+        1.13 -     1.30: 2820
+        1.30 -     1.47: 7563
+        1.47 -     1.64: 7717
+        1.64 -     1.81: 80
+  Bond restraints: 35720
+  Sorted by residual:
+  bond model="   7" pdb=" SG  CYS A  60 "
+       model="   7" pdb=" HG  CYS A  60 "
+    ideal  model  delta    sigma   weight residual
+    1.200  0.959  0.241 2.00e-02 2.50e+03 1.46e+02
+  bond model="  18" pdb=" SG  CYS A 110 "
+       model="  18" pdb=" HG  CYS A 110 "
+    ideal  model  delta    sigma   weight residual
+    1.200  0.959  0.241 2.00e-02 2.50e+03 1.45e+02
+  bond model="  12" pdb=" SG  CYS A  60 "
+       model="  12" pdb=" HG  CYS A  60 "
+    ideal  model  delta    sigma   weight residual
+    1.200  0.959  0.241 2.00e-02 2.50e+03 1.45e+02
+  bond model="  20" pdb=" SG  CYS A  60 "
+       model="  20" pdb=" HG  CYS A  60 "
+    ideal  model  delta    sigma   weight residual
+    1.200  0.959  0.241 2.00e-02 2.50e+03 1.45e+02
+  bond model="  14" pdb=" SG  CYS A 110 "
+       model="  14" pdb=" HG  CYS A 110 "
+    ideal  model  delta    sigma   weight residual
+    1.200  0.959  0.241 2.00e-02 2.50e+03 1.45e+02
+  ... (remaining 35715 not shown)
+
+  Histogram of bond angle deviations from ideal:
+        0.00 -     1.33: 54697
+        1.33 -     2.65: 4853
+        2.65 -     3.98: 607
+        3.98 -     5.30: 2958
+        5.30 -     6.63: 1185
+  Bond angle restraints: 64300
+  Sorted by residual:
+  angle model="   2" pdb=" CD2 HIS A  65 "
+        model="   2" pdb=" NE2 HIS A  65 "
+        model="   2" pdb=" CE1 HIS A  65 "
+      ideal   model   delta    sigma   weight residual
+     109.00  105.36    3.64 1.00e+00 1.00e+00 1.32e+01
+  angle model="   8" pdb=" CD2 HIS A  65 "
+        model="   8" pdb=" NE2 HIS A  65 "
+        model="   8" pdb=" CE1 HIS A  65 "
+      ideal   model   delta    sigma   weight residual
+     109.00  105.38    3.62 1.00e+00 1.00e+00 1.31e+01
+  angle model="   1" pdb=" CD2 HIS A  65 "
+        model="   1" pdb=" NE2 HIS A  65 "
+        model="   1" pdb=" CE1 HIS A  65 "
+      ideal   model   delta    sigma   weight residual
+     109.00  105.42    3.58 1.00e+00 1.00e+00 1.28e+01
+  angle model="  17" pdb=" CD2 HIS A  65 "
+        model="  17" pdb=" NE2 HIS A  65 "
+        model="  17" pdb=" CE1 HIS A  65 "
+      ideal   model   delta    sigma   weight residual
+     109.00  105.42    3.58 1.00e+00 1.00e+00 1.28e+01
+  angle model="  19" pdb=" CD2 HIS A  65 "
+        model="  19" pdb=" NE2 HIS A  65 "
+        model="  19" pdb=" CE1 HIS A  65 "
+      ideal   model   delta    sigma   weight residual
+     109.00  105.43    3.57 1.00e+00 1.00e+00 1.28e+01
+  ... (remaining 64295 not shown)
+
+  Histogram of dihedral angle deviations from ideal:
+        0.00 -    17.97: 6717
+       17.97 -    35.94: 1877
+       35.94 -    53.91: 1283
+       53.91 -    71.88: 463
+       71.88 -    89.85: 140
+  Dihedral angle restraints: 10480
+    sinusoidal: 6720
+      harmonic: 3760
+  Sorted by residual:
+  dihedral model="  15" pdb=" CA  ASN A  58 "
+           model="  15" pdb=" CB  ASN A  58 "
+           model="  15" pdb=" CG  ASN A  58 "
+           model="  15" pdb=" OD1 ASN A  58 "
+      ideal   model   delta sinusoidal    sigma   weight residual
+      90.00 -161.38   71.38     2      2.00e+01 2.50e-03 1.08e+01
+  dihedral model="   5" pdb=" CA  ASN A  58 "
+           model="   5" pdb=" CB  ASN A  58 "
+           model="   5" pdb=" CG  ASN A  58 "
+           model="   5" pdb=" OD1 ASN A  58 "
+      ideal   model   delta sinusoidal    sigma   weight residual
+      90.00 -160.74   70.74     2      2.00e+01 2.50e-03 1.07e+01
+  dihedral model="  10" pdb=" CA  ASN A  58 "
+           model="  10" pdb=" CB  ASN A  58 "
+           model="  10" pdb=" CG  ASN A  58 "
+           model="  10" pdb=" OD1 ASN A  58 "
+      ideal   model   delta sinusoidal    sigma   weight residual
+      90.00 -160.53   70.53     2      2.00e+01 2.50e-03 1.07e+01
+  ... (remaining 10477 not shown)
+
+  Histogram of chiral volume deviations from ideal:
+       0.000 -    0.040: 1785
+       0.040 -    0.080: 590
+       0.080 -    0.119: 78
+       0.119 -    0.159: 139
+       0.159 -    0.199: 28
+  Chirality restraints: 2620
+  Sorted by residual:
+  chirality model="  13" pdb=" CB  THR A  28 "
+            model="  13" pdb=" CA  THR A  28 "
+            model="  13" pdb=" OG1 THR A  28 "
+            model="  13" pdb=" CG2 THR A  28 "
+    both_signs  ideal   model   delta    sigma   weight residual
+      False      2.55    2.35    0.20 2.00e-01 2.50e+01 9.89e-01
+  chirality model="   6" pdb=" CB  THR A  41 "
+            model="   6" pdb=" CA  THR A  41 "
+            model="   6" pdb=" OG1 THR A  41 "
+            model="   6" pdb=" CG2 THR A  41 "
+    both_signs  ideal   model   delta    sigma   weight residual
+      False      2.55    2.36    0.19 2.00e-01 2.50e+01 8.96e-01
+  chirality model="   1" pdb=" CB  THR A  41 "
+            model="   1" pdb=" CA  THR A  41 "
+            model="   1" pdb=" OG1 THR A  41 "
+            model="   1" pdb=" CG2 THR A  41 "
+    both_signs  ideal   model   delta    sigma   weight residual
+      False      2.55    2.37    0.19 2.00e-01 2.50e+01 8.71e-01
+  ... (remaining 2617 not shown)
+
+  Planarity restraints: 5320
+  Sorted by residual:
+                                              delta    sigma   weight rms_deltas residual
+  plane model="  20" pdb=" CB  HIS A  94 "   -0.021 2.00e-02 2.50e+03   4.36e-02 4.76e+01
+        model="  20" pdb=" CG  HIS A  94 "   -0.009 2.00e-02 2.50e+03
+        model="  20" pdb=" ND1 HIS A  94 "   -0.007 2.00e-02 2.50e+03
+        model="  20" pdb=" CD2 HIS A  94 "    0.024 2.00e-02 2.50e+03
+        model="  20" pdb=" CE1 HIS A  94 "    0.030 2.00e-02 2.50e+03
+        model="  20" pdb=" NE2 HIS A  94 "    0.048 2.00e-02 2.50e+03
+        model="  20" pdb=" HD1 HIS A  94 "   -0.026 2.00e-02 2.50e+03
+        model="  20" pdb=" HD2 HIS A  94 "    0.035 2.00e-02 2.50e+03
+        model="  20" pdb=" HE1 HIS A  94 "    0.034 2.00e-02 2.50e+03
+        model="  20" pdb=" HE2 HIS A  94 "   -0.108 2.00e-02 2.50e+03
+                                              delta    sigma   weight rms_deltas residual
+  plane model="  10" pdb=" CB  HIS A  94 "   -0.020 2.00e-02 2.50e+03   3.74e-02 3.50e+01
+        model="  10" pdb=" CG  HIS A  94 "   -0.008 2.00e-02 2.50e+03
+        model="  10" pdb=" ND1 HIS A  94 "   -0.006 2.00e-02 2.50e+03
+        model="  10" pdb=" CD2 HIS A  94 "    0.019 2.00e-02 2.50e+03
+        model="  10" pdb=" CE1 HIS A  94 "    0.024 2.00e-02 2.50e+03
+        model="  10" pdb=" NE2 HIS A  94 "    0.039 2.00e-02 2.50e+03
+        model="  10" pdb=" HD1 HIS A  94 "   -0.021 2.00e-02 2.50e+03
+        model="  10" pdb=" HD2 HIS A  94 "    0.033 2.00e-02 2.50e+03
+        model="  10" pdb=" HE1 HIS A  94 "    0.030 2.00e-02 2.50e+03
+        model="  10" pdb=" HE2 HIS A  94 "   -0.092 2.00e-02 2.50e+03
+                                              delta    sigma   weight rms_deltas residual
+  plane model="  18" pdb=" CB  HIS A  94 "   -0.007 2.00e-02 2.50e+03   3.45e-02 2.98e+01
+        model="  18" pdb=" CG  HIS A  94 "   -0.009 2.00e-02 2.50e+03
+        model="  18" pdb=" ND1 HIS A  94 "   -0.006 2.00e-02 2.50e+03
+        model="  18" pdb=" CD2 HIS A  94 "    0.020 2.00e-02 2.50e+03
+        model="  18" pdb=" CE1 HIS A  94 "    0.029 2.00e-02 2.50e+03
+        model="  18" pdb=" NE2 HIS A  94 "    0.046 2.00e-02 2.50e+03
+        model="  18" pdb=" HD1 HIS A  94 "   -0.028 2.00e-02 2.50e+03
+        model="  18" pdb=" HD2 HIS A  94 "    0.015 2.00e-02 2.50e+03
+        model="  18" pdb=" HE1 HIS A  94 "    0.023 2.00e-02 2.50e+03
+        model="  18" pdb=" HE2 HIS A  94 "   -0.082 2.00e-02 2.50e+03
+  ... (remaining 5317 not shown)
+
+  Histogram of nonbonded interaction distances:
+        0.97 -     1.76: 3949
+        1.76 -     2.54: 54211
+        2.54 -     3.33: 156426
+        3.33 -     4.11: 231220
+        4.11 -     4.90: 349865
+  Warning: very small nonbonded interaction distances.
+  Nonbonded interactions: 795671
+  Sorted by model distance:
+  nonbonded model="  17" pdb=" O   PHE A  34 "
+            model="  17" pdb=" H   VAL A 109 "
+     model   vdw
+     0.970 1.970
+  nonbonded model="  12" pdb=" H   ASN A  13 "
+            model="  12" pdb=" O   VAL A  36 "
+     model   vdw
+     1.059 1.970
+  nonbonded model="  15" pdb=" O   PHE A  34 "
+            model="  15" pdb=" H   VAL A 109 "
+     model   vdw
+     1.093 1.970
+  nonbonded model="   3" pdb=" O   PHE A  34 "
+            model="   3" pdb=" H   VAL A 109 "
+     model   vdw
+     1.114 1.970
+  nonbonded model="   1" pdb=" O   PHE A  34 "
+            model="   1" pdb=" H   VAL A 109 "
+     model   vdw
+     1.140 1.970
+  ... (remaining 795666 not shown)
+
+  NOTE: a complete listing of the restraints can be obtained by requesting
+        output of .geo file.
+
+  target: 1.78505e+06
+    bond_residual_sum (n=35720): 605180
+    nonbonded_residual_sum (n=795671): 1.14193e+06
+    angle_residual_sum (n=64300): 19353.6
+    dihedral_residual_sum (n=10480): 17223.8
+    chirality_residual_sum (n=2620): 174.732
+    planarity_residual_sum (n=5320): 1185.33
+  Time first energy calculation (mainly nonbonded setup): 0.07
+  Number of scatterers: 35280
+  At special positions: 0
+  Unit cell: (151.701, 135.356, 130.959, 90, 90, 90)
+  Space group: P 1 (No. 1)
+  Number of sites at special positions: 0
+  Number of scattering types: 5
+    Type Number    sf(0)
+     S      60     16.00
+     O    3320      8.00
+     N    3020      7.00
+     C   11340      6.00
+     H   17540      1.00
+    sf(0) = scattering factor at diffraction angle 0.
+

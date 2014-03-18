@@ -1,0 +1,37 @@
+# Ignored Mathematica files shall be prefixed by _
+_*.nb
+*.fdb_latexmk
+*.gz
+*.pdf
+*.pyc
+*.DS_Store
+*~
+.olex
+*.pdb
+*.mtz
+*.ent
+*.wpr
+*.wpu
+*.cif
+*.log
+*.geo
+*.def
+*.xy
+*.eff
+*.svn
+*.project
+*.pydevproject
+*.png
+
+/work/Clashes/Data
+/work/Clashes/junk
+/work/LINK/Data
+/work/MTRIX/Data
+/work/NCS/junk
+/work/FAB/junk
+/pdb files
+/coot-download
+/obj
+/SugarSyncTemp
+/work/testdocs
+

@@ -1,0 +1,52 @@
+close all
+clc
+f = figure();
+hold('on')
+c_h = 1.2;
+c1 = 1.7;
+c2 = 1.7;
+h = 1.22;
+x = 2;
+y = 2;
+
+% draw C-H
+DrawCircle(x, y, c1, 60,'b');
+DrawCircle(x, y, c1-0.4, 20,'--b');
+DrawCircle(x, y+c_h, h, 60,'b');
+DrawCircle(x, y+c_h, h-0.4, 20,'--b');
+
+theta = pi*37.4/144;
+% Draw second C
+r2 = c1 + c2 - 0.4;
+% new circle center
+c_x = r2 * cos(theta) + x;
+c_y = r2 * sin(theta) + y;
+DrawCircle(c_x, c_y, c2, 60,'r');
+DrawCircle(c_x, c_y, c2-0.4, 20,'--r');
+%
+% plot center lines
+plot([x,x],[y,y+c_h],'-b')
+plot([x,c_x],[y,c_y],'-b')
+plot([x,c_x],[y+c_h,c_y],'-b')
+% mid point line
+plot([x,c_x],[y+c_h/2,c_y],'-k')
+% Calc inline angle
+vec1 = [0,c_h];
+vec2 = [c_x-x,c_y-c_h/2];
+cos_alpha = vec1*vec2'/sqrt((vec1*vec1')*(vec2*vec2'));
+disp('The cos')
+disp(cos_alpha)
+
+% plot the angle
+r = 0.3;
+x = 2;
+y = 2;
+start = ;
+
+
+
+
+
+
+hold('off')
+axis([0 7 0 7]);

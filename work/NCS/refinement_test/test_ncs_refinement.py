@@ -15,42 +15,23 @@ import mmtbx.utils
 import iotbx.cif
 import iotbx.pdb
 import getpass
+import time
 import os
 import sys
 
 __author__ = 'Youval Dar'
 
 class ncs_refine_test(object):
-  def __init__(self,
-               n_macro_cycle = 1,
-               sites = True,
-               u_iso = False,
-               alternate_refinement = True,
-               finite_grad_differences_test = False,
-               use_geometry_restraints = True,
-               r_work_target = 0.01,
-               d_min = 0.2):
+  def __init__(self, use_geometry_restraints=True, real_data=True):
     """
-    Arguments:
-    n_macro_cycle: (int) number of refinement cycles
-    sites: (bool) refinement using sites
-    u_iso: (bool) refinement using b-factors (ADP)
-    alternate_refinement: (bool) when True, each refinement cycle will run
-                          site refinement and u_iso (ADP) refinement
-    finite_grad_differences_test: (bool) Compare calculated gradient to
-                                  estimated one
-    use_geometry_restraints: (bool) Use geometry restraints in refinement
-    r_work_target: (float) stop refinement when r_work <= r_work_target
-    d_min: (float)
+    Initialize environment parameters
 
+    Argument:
+    use_geometry_restraints: (bool) Use geometry restraints in refinement
+    real_data: (bool) False for testing, True for real data
     """
     # creates self.xxx for all arguments
     adopt_init_args(self, locals())
-    # Check for invalid input parameters
-    if [sites, u_iso].count(True) != 1:
-      raise IOError('Refinement method error')
-    if n_macro_cycle > 100:
-      raise IOError('To many refinement cycles')
     # check if working at LBL local machine
     osType = sys.platform
     self.pdb_dir = ''
@@ -63,6 +44,7 @@ class ncs_refine_test(object):
         self.work_env = 'lbl'
       except KeyError:
         self.work_env = 'other'
+
 
   def process_pdb_and_cif_files(self, args):
     """
@@ -97,7 +79,7 @@ class ncs_refine_test(object):
     # Process PDB file
     self.process_pdb_file()
 
-  def process_pdb_file(self, build_unit_cell=False):
+  def process_pdb_file(self):
     """
     Process file
     - Check if it contains a single NCS copy
@@ -117,28 +99,25 @@ class ncs_refine_test(object):
       round_coordinates=False,
       reconstruction_type='cau',
       error_handle=True,eps=1e-2)
-    self.is_single_ncs = (m.number_of_transforms > 0)
     #
+    crystal_symmetry = self.f_obs.crystal_symmetry()
     pdb_inp = iotbx.pdb.input(file_name=self.full_path_pdb)
     ph_ncs = pdb_inp.construct_hierarchy()
     xrs_ncs = pdb_inp.xray_structure_simple()
-    crystal_symmetry = xrs_ncs.crystal_symmetry()
-    # Collect r-work for the single NCS copy
-    self.get_pdb_ncs_r_work_values(pdb_inp=pdb_inp,xrs=xrs_ncs)
+    crystal_sym_test = crystal_symmetry.\
+      is_similar_symmetry(xrs_ncs.crystal_symmetry())
+    if not crystal_sym_test:
+      print 'Warning :crystal_symmetry of PDB is different than the one from ' \
+            'Fobs'
+      xrs_ncs = pdb_inp.xray_structure_simple(crystal_symmetry=crystal_symmetry)
     xrs_asu = m.assembled_multimer.extract_xray_structure(
       crystal_symmetry = crystal_symmetry)
-    # If needed, construct unit cell
-    if build_unit_cell:
-      xrs_unit_cell = xrs_asu.orthorhombic_unit_cell_around_centered_scatterers(
-        buffer_size=2)
-      crystal_symmetry = xrs_unit_cell.crystal_symmetry()
-      xrs_ncs = pdb_inp.xray_structure_simple(
-        crystal_symmetry=crystal_symmetry)
-      xrs_asu = m.assembled_multimer.extract_xray_structure(
-        crystal_symmetry = crystal_symmetry)
-      ph_ncs.adopt_xray_structure(xrs_ncs)
-    assert xrs_ncs.crystal_symmetry().\
-      is_similar_symmetry(xrs_asu.crystal_symmetry())
+    # force ASU none-rounded coordinates into xray structure
+    xrs_asu.set_sites_cart(m.sites_cart())
+    assert crystal_symmetry.is_similar_symmetry(xrs_asu.crystal_symmetry())
+    # Collect r-work for the single NCS copy
+    self.get_pdb_ncs_r_work_values(pdb_inp=pdb_inp,xrs_pdb=xrs_ncs)
+    # Set attributes
     self.ncs_hierarchy = ph_ncs
     self.crystal_symmetry = crystal_symmetry
     self.rotation_matrices = m.rotation_matrices
@@ -148,25 +127,33 @@ class ncs_refine_test(object):
       atom_selection_cache().selection(selection_str)
     # Get geometry restraints manager (grm)
     self.grm = None
-    pdb_str = m.assembled_multimer.as_pdb_string(
-      crystal_symmetry=crystal_symmetry)
     if self.use_geometry_restraints:
+      pdb_str = m.assembled_multimer.as_pdb_string(
+        crystal_symmetry=crystal_symmetry)
       self.grm = get_restraints_manager(pdb_string=pdb_str)
     # Get f_model and initial r_work
-    self.fmodel, self.initial_r_work = self.get_f_model(xrs=xrs_asu)
+    self.fmodel, self.initial_r_work, self.initial_r_free = \
+      self.get_f_model(xrs=xrs_asu)
 
-  def get_pdb_ncs_r_work_values(self,pdb_inp, xrs):
+  def get_pdb_ncs_r_work_values(self,pdb_inp, xrs_pdb):
     """
     Get the r-work value reported in PDB
     Calculate r-work from a single NCS copy (from f-model)
 
     Arguments:
     pdb_inp: PDB input object of the single NCS
-    xrs: x-ray structure object for a single NCE
+    xrs_pdb: x-ray structure object for a single NCE
     """
     pio = pdb_inp.get_r_rfree_sigma()
     self.r_work_reported_pdb_ncs = pio.r_work
-    _,self.r_work_calc_pdb_ncs = self.get_f_model(xrs)
+    self.r_free_reported_pdb_ncs = pio.r_free
+    if not self.r_work_reported_pdb_ncs:
+      # -1 when not reported in PDB
+      self.r_work_reported_pdb_ncs = -1.0
+      self.r_free_reported_pdb_ncs = -1.0
+    # calculate r-work, r-free from pdb
+    _,self.r_work_calc_pdb_ncs,self.r_free_calc_pdb_ncs = \
+      self.get_f_model(xrs_pdb)
 
   def get_structure_factors(self):
     """
@@ -191,14 +178,6 @@ class ncs_refine_test(object):
     if self.f_obs:
       self.r_free_flags = self.f_obs.generate_r_free_flags()
       # self.f_obs.show_summary()
-      # generate mtz file - Un-comment if needed
-      # mtz_dataset = self.f_obs.as_mtz_dataset(column_root_label="F-obs")
-      # mtz_dataset.add_miller_array(
-      #   miller_array=self.r_free_flags,
-      #   column_root_label="R-free-flags")
-      # mtz_object = mtz_dataset.mtz_object()
-      # mtz_object.write(file_name = 'data_{}.mtz'.format(self.pdb_code))
-      # del mtz_object,mtz_dataset
     else:
       raise RuntimeError("Missing amplitude array.")
 
@@ -220,18 +199,48 @@ class ncs_refine_test(object):
       sf_and_grads_accuracy_params = params,
       target_name                  = "ls_wunit_k1")
     # Update model for Bulk-solvent and overall scaling
-    fmodel.update_all_scales(update_f_part1_for=None)
+    # when working with real data
+    if self.real_data:
+      fmodel.update_all_scales(update_f_part1_for=None)
     r_work = fmodel.r_work()
-    return fmodel, r_work
+    r_free = fmodel.r_free()
+    return fmodel.deep_copy(), r_work, r_free
 
-  def refine_using_complete_asu(self):
+  def refine_using_complete_asu(self,
+                                n_macro_cycle = 1,
+                                sites = True,
+                                u_iso = False,
+                                alternate_refinement = True,
+                                finite_grad_differences_test = False,
+                                r_work_target = 0.01,
+                                use_strict_ncs = True,
+                                print_during_refinement=True):
     """
     Refine the complete ASU using strict-NCS refinement
+
+    Arguments:
+    n_macro_cycle: (int) number of refinement cycles
+    sites: (bool) refinement using sites
+    u_iso: (bool) refinement using b-factors (ADP)
+    alternate_refinement: (bool) when True, each refinement cycle will run
+                          site refinement and u_iso (ADP) refinement
+    finite_grad_differences_test: (bool) Compare calculated gradient to
+                                  estimated one
+    r_work_target: (float) stop refinement when r_work <= r_work_target
+    use_strict_ncs: (bool) When True, use strict NCS refinement
+
     """
+    # creates self.xxx for all arguments
+    adopt_init_args(self, locals())
+    # Check for invalid input parameters
+    if [sites, u_iso].count(True) != 1:
+      raise IOError('Refinement method error')
+    if n_macro_cycle > 100:
+      raise IOError('To many refinement cycles')
     if self.alternate_refinement:
       self.n_macro_cycle *= 2
     for macro_cycle in xrange(self.n_macro_cycle):
-      if self.alternate_refinement and macro_cycle%2==1:
+      if self.alternate_refinement:
         # alternate refinement type
         self.sites = not self.sites
         self.u_iso = not self.u_iso
@@ -245,18 +254,24 @@ class ncs_refine_test(object):
         ncs_atom_selection           = self.ncs_selection,
         finite_grad_differences_test = self.finite_grad_differences_test,
         geometry_restraints_manager  = self.grm,
-        data_weight                  = self.get_weight(),
+        data_weight                  = data_weight,
         refine_sites                 = self.sites,
-        refine_u_iso                 = self.u_iso)
-      refine_type = 'adp'*self.u_iso + 'sites'*self.sites
-      print "  macro_cycle %3d (%s)   r_factor: %6.4f   " \
-            "finite_grad_difference_val: %.4f"%(
-        macro_cycle, refine_type,
-        self.fmodel.r_work(),
-        minimized.finite_grad_difference_val)
-      if self.fmodel.r_work()<=self.r_work_target: break
+        refine_u_iso                 = self.u_iso,
+        use_strict_ncs               = self.use_strict_ncs)
 
-    self.fmodel = self.get_f_model()
+      if self.print_during_refinement:
+        refine_type = 'adp'*self.u_iso + 'sites'*self.sites
+        outstr = "  macro_cycle {0:3} ({1:6})   r_factor: {2:6.4f}   " + \
+              self.finite_grad_differences_test * \
+              "finite_grad_difference_val:{3:.4f}"
+        print outstr.format(
+          macro_cycle, refine_type,self.fmodel.r_work(),
+          minimized.finite_grad_difference_val)
+      if self.fmodel.r_work()<=self.r_work_target: break
+    self.r_work_final = self.fmodel.r_work()
+    self.r_free_final = self.fmodel.r_free()
+
+
   def get_weight(self):
     fmdc = self.fmodel.deep_copy()
     fmdc.xray_structure.shake_sites_in_place(mean_distance=0.3)
@@ -326,19 +341,42 @@ class ncs_refine_test(object):
       full_path = os.path.realpath(fetched_file)
     return full_path
 
-  def set_working_path(self):
+  def set_working_path(self,path=None):
     """
     Change working directory to avoid littering
     """
     self.current_folder = os.getcwd()
     username = getpass.getuser()
     if username.lower() == 'youval':
-      osType = sys.platform
-      if osType.startswith('win'):
-        self.tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk\pdb_test')
+      if path:
+        self.tempdir = path
       else:
-        self.tempdir = ('/net/cci/youval/Work/work/NCS/junk/pdb_test')
+        osType = sys.platform
+        if osType.startswith('win'):
+          self.tempdir = (r'C:\Phenix\Dev\Work\work\NCS\junk\pdb_test')
+        else:
+          self.tempdir = ('/net/cci/youval/Work/work/NCS/junk/pdb_test')
       os.chdir(self.tempdir)
+
+  def __repr__(self):
+    """
+    When printing to log, print only r-factor values in a string
+
+    (r_work
+    """
+    outdata = [self.pdb_code,
+               self.r_work_reported_pdb_ncs,
+               self.r_free_reported_pdb_ncs,
+               self.r_work_calc_pdb_ncs,
+               self.r_free_calc_pdb_ncs,
+               self.initial_r_work,
+               self.initial_r_free,
+               self.r_work_final,
+               self.r_free_final ]
+    s1 = '  {0:^10}|{1:^8.2f}|{2:^8.2f}|{3:^8.2f}|{4:^8.2f}|'
+    s2 = '{5:^8.2f}|{6:^8.2f}|{7:^8.2f}|{8:^8.2f}'
+    s = s1 + s2
+    return  s.format(*outdata)
 
 def get_restraints_manager(pdb_file_name=None,pdb_string=None):
   assert [pdb_file_name,pdb_string].count(None)==1
@@ -357,21 +395,83 @@ def get_restraints_manager(pdb_file_name=None,pdb_string=None):
   return mmtbx.restraints.manager(
     geometry = geometry, normalization = False)
 
-def run (args, out=sys.stdout):
+def tic():
+    global startTime_for_tictoc
+    startTime_for_tictoc = time.time()
+
+def toc(msg='',print_time=False):
+    if 'startTime_for_tictoc' in globals():
+        if print_time:
+            outstr = '{0}: Elapsed time is: {1:.4f} seconds\n'.format(msg,time.time() - startTime_for_tictoc)
+            print outstr
+        else:
+            return time.time() - startTime_for_tictoc
+    else:
+        print "Toc: start time not set"
+
+def run (args):
   """
   run tests
   """
-  test_obj = ncs_refine_test()
-  test_obj.set_working_path()
-  test_obj.process_pdb_and_cif_files(args)
-  outstr = 'r-factors: reported in pdb: {0:<10.5f}from ncs fmodel: {1:<10' \
-           '.5f}initial value for ASU fmodel: {2:<10.5f}'
-  outstr.format(test_obj.r_work_reported_pdb_ncs, test_obj
-                .r_work_calc_pdb_ncs,test_obj.initial_r_work)
-  print outstr
+  class print_refinement_data(object):
+    def __init__(
+            self,
+            refinement_time,
+            ref_obj,
+           ):
+      """
+      Print refinement results
+      """
+      column1 = ['PDB code','Reorted in PDB','Calc from NCS',
+                 'ASU initial','ASU final','time (sec)']
+      column2 = [''] + ['r-work','r-free']*4 + ['']
+      title1 = '# {0:^10}|{1:^16} |{2:^16} |{3:^16} |{4:^16} |{5:^12}'.\
+        format(*column1)
+      s1 = '# {0:^10}|{1:^8}|{2:^8}|{3:^8}|{4:^8}|'
+      s2 = '{5:^8}|{6:^8}|{7:^8}|{8:^8}|{9:^6}'
+      s = s1 + s2
+      title2 = s.format(*column2)
+      print title1
+      print title2
+      print '-'*99
+      print ref_obj.__repr__() + '|{0:^12.4f}'.format(refinement_time)
+
+  # process args
+
+  # Run tests with strict NCS
+  tic()
+  test_obj1 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
+  test_obj1.set_working_path()
+  test_obj1.process_pdb_and_cif_files(args)
   # Run refinement
-  test_obj.refine_using_complete_asu()
-  print 'Done'
+  test_obj1.refine_using_complete_asu(
+    n_macro_cycle=3,
+    r_work_target=0.00001,
+    sites=False,
+    u_iso=True,
+    alternate_refinement=True,
+    use_strict_ncs=True,
+    print_during_refinement=False)
+  time_strict_ncs = toc()
+  print_refinement_data(time_strict_ncs,test_obj1)
+  del test_obj1
+  # Run tests with without NCS
+  tic()
+  test_obj2 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
+  test_obj2.set_working_path()
+  test_obj2.process_pdb_and_cif_files(args)
+  # Run refinement
+  test_obj2.refine_using_complete_asu(
+    n_macro_cycle=3,
+    r_work_target=0.00001,
+    sites=False,
+    u_iso=True,
+    alternate_refinement=True,
+    use_strict_ncs=False,
+    print_during_refinement=False)
+  time_asu = toc()
+  print_refinement_data(time_asu,test_obj2)
+  del test_obj2
 
 if __name__=='__main__':
   """
@@ -379,14 +479,16 @@ if __name__=='__main__':
 
   3p0s, 2wws, 2e0z
   1b35, 1za7, 2buk
-
   """
-  run('3p0s')
-  # run(sys.argv[1:])
+  run(sys.argv[1:])
 
+
+
+  # run('yyyy')
+  # run('1b35')
   # Analyze code
   # import cProfile
   # import pstats
-  # cProfile.run("run('3p0s')",filename='cProfile_log')
+  # cProfile.run("run('xxxx')",filename='cProfile_log')
   # p = pstats.Stats('cProfile_log')
   # p.sort_stats('time').print_stats(15)

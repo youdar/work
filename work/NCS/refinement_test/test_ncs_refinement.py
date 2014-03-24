@@ -44,6 +44,14 @@ class ncs_refine_test(object):
         self.work_env = 'lbl'
       except KeyError:
         self.work_env = 'other'
+    # set default values
+    self.r_work_calc_pdb_ncs = self.r_free_calc_pdb_ncs = -1
+    self.initial_r_work = self.initial_r_free = -1
+    self.r_work_final = self.r_free_final = -1
+    self.pdb_code = '____'
+    self.r_work_reported_pdb_ncs = -1
+    self.r_free_reported_pdb_ncs = -1
+
 
 
   def process_pdb_and_cif_files(self, args):
@@ -107,8 +115,8 @@ class ncs_refine_test(object):
     crystal_sym_test = crystal_symmetry.\
       is_similar_symmetry(xrs_ncs.crystal_symmetry())
     if not crystal_sym_test:
-      print 'Warning :crystal_symmetry of PDB is different than the one from ' \
-            'Fobs'
+      print 'Warning :crystal_symmetry of PDB is different than the one from' \
+            'Fobs. Using crystal_symmetry from Fobs.'
       xrs_ncs = pdb_inp.xray_structure_simple(crystal_symmetry=crystal_symmetry)
     xrs_asu = m.assembled_multimer.extract_xray_structure(
       crystal_symmetry = crystal_symmetry)
@@ -122,9 +130,11 @@ class ncs_refine_test(object):
     self.crystal_symmetry = crystal_symmetry
     self.rotation_matrices = m.rotation_matrices
     self.translation_vectors = m.translation_vectors
-    selection_str = 'chain ' + ' and chain '.join(m.ncs_chains_ids)
+    selection_str = 'chain ' + ' or chain '.join(m.ncs_chains_ids)
     self.ncs_selection = m.assembled_multimer.\
       atom_selection_cache().selection(selection_str)
+    if self.ncs_selection.count(True) == 0:
+      print 'Atom selection issues'
     # Get geometry restraints manager (grm)
     self.grm = None
     if self.use_geometry_restraints:
@@ -147,9 +157,10 @@ class ncs_refine_test(object):
     pio = pdb_inp.get_r_rfree_sigma()
     self.r_work_reported_pdb_ncs = pio.r_work
     self.r_free_reported_pdb_ncs = pio.r_free
+    # -1 when not reported in PDB
     if not self.r_work_reported_pdb_ncs:
-      # -1 when not reported in PDB
       self.r_work_reported_pdb_ncs = -1.0
+    if not self.r_free_reported_pdb_ncs:
       self.r_free_reported_pdb_ncs = -1.0
     # calculate r-work, r-free from pdb
     _,self.r_work_calc_pdb_ncs,self.r_free_calc_pdb_ncs = \
@@ -162,14 +173,21 @@ class ncs_refine_test(object):
     """
     self.f_obs = self.r_free_flags = None
     if self.full_path_cif:
-      miller_arrays = iotbx.cif.reader(file_path=self.full_path_cif).as_miller_arrays()
+      miller_arrays = iotbx.cif.reader(
+        file_path=self.full_path_cif).\
+        as_miller_arrays(force_symmetry=True)
+      # print miller_arrays[0].completeness()
       for ma in miller_arrays:
-        # Consider using Bijvoet mates
-        ma = ma.average_bijvoet_mates()
+        # # Consider using Bijvoet mates
+        # ma = ma.average_bijvoet_mates()
         if ma.is_xray_amplitude_array():
+          # Consider using Bijvoet mates
+          ma = ma.average_bijvoet_mates()
           self.f_obs = abs(ma)
           break
-        elif ma.is_xray_intensity_array():
+        elif not self.f_obs and ma.is_xray_intensity_array():
+          # Consider using Bijvoet mates
+          ma = ma.average_bijvoet_mates()
           # convert i_obs to f_obs
           self.f_obs = abs(ma.french_wilson(log=null_out()))
     else:
@@ -207,7 +225,7 @@ class ncs_refine_test(object):
     return fmodel.deep_copy(), r_work, r_free
 
   def refine_using_complete_asu(self,
-                                n_macro_cycle = 1,
+                                n_macro_cycle = 10,
                                 sites = True,
                                 u_iso = False,
                                 alternate_refinement = True,
@@ -318,21 +336,21 @@ class ncs_refine_test(object):
     full_path = ''
     if self.work_env == 'lbl':
       # Use file directly from LBL MIRRORs
-      if file_type=='pdb':
+      if data_type=='pdb':
         mirror_dir = self.pdb_dir
         s=-12; e=-8  # start and end of 4 letter pdb code in record
-      elif file_type=='cif':
+      elif data_type=='xray':
         mirror_dir = self.cif_dir
         s=-14; e=-10  # start and end of 4 letter pdb code in record
       else: raise IOError('Wrong file format')
       pdb_files = open(os.path.join(mirror_dir, "INDEX"), "r").readlines()
       # assuming that the 4 letter PDB code is in [s:e] of the records
-      files = [x for x in pdb_files if x[s:e]==self.pdb_code]
+      files = [x.strip() for x in pdb_files if x[s:e]==self.pdb_code]
       if len(files)!=1:
         outstr = 'Found {0} number of {1} in PDB_MIRROR_PDB index'
         print outstr.format(len(files),self.pdb_code)
       else:
-        full_path = os.path.join(self.tempdir,files[0]).strip()
+        full_path = os.path.join(mirror_dir,files[0])
     else:
       # Fetch file to local current folder
       fetched_file = fetch.get_pdb (
@@ -372,7 +390,7 @@ class ncs_refine_test(object):
                self.initial_r_work,
                self.initial_r_free,
                self.r_work_final,
-               self.r_free_final ]
+               self.r_free_final]
     s1 = '  {0:^10}|{1:^8.2f}|{2:^8.2f}|{3:^8.2f}|{4:^8.2f}|'
     s2 = '{5:^8.2f}|{6:^8.2f}|{7:^8.2f}|{8:^8.2f}'
     s = s1 + s2
@@ -418,10 +436,15 @@ def run (args):
             self,
             refinement_time,
             ref_obj,
-           ):
+            print_title=False):
       """
       Print refinement results
       """
+      if not refinement_time:
+        refinement_time = -1.0
+      elif type(refinement_time) is not float:
+        print '!!!!!!!!!!!!! Refinement time is not a float !!!!!!!!!!!!!!'
+        print refinement_time
       column1 = ['PDB code','Reorted in PDB','Calc from NCS',
                  'ASU initial','ASU final','time (sec)']
       column2 = [''] + ['r-work','r-free']*4 + ['']
@@ -431,8 +454,9 @@ def run (args):
       s2 = '{5:^8}|{6:^8}|{7:^8}|{8:^8}|{9:^6}'
       s = s1 + s2
       title2 = s.format(*column2)
-      print title1
-      print title2
+      if print_title:
+        print title1
+        print title2
       print '-'*99
       print ref_obj.__repr__() + '|{0:^12.4f}'.format(refinement_time)
 
@@ -440,43 +464,47 @@ def run (args):
 
   # Run tests with strict NCS
   tic()
-  test_obj1 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
+  test_obj1 = ncs_refine_test(use_geometry_restraints=False,real_data=True)
   test_obj1.set_working_path()
   test_obj1.process_pdb_and_cif_files(args)
   # Run refinement
   test_obj1.refine_using_complete_asu(
-    n_macro_cycle=3,
-    r_work_target=0.00001,
+    n_macro_cycle=5,
+    r_work_target=0.1,
     sites=False,
     u_iso=True,
     alternate_refinement=True,
     use_strict_ncs=True,
     print_during_refinement=False)
-  time_strict_ncs = toc()
-  print_refinement_data(time_strict_ncs,test_obj1)
+  print_refinement_data(toc(),test_obj1,print_title=True)
   del test_obj1
   # Run tests with without NCS
   tic()
-  test_obj2 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
+  test_obj2 = ncs_refine_test(use_geometry_restraints=False,real_data=True)
   test_obj2.set_working_path()
   test_obj2.process_pdb_and_cif_files(args)
   # Run refinement
   test_obj2.refine_using_complete_asu(
-    n_macro_cycle=3,
-    r_work_target=0.00001,
+    n_macro_cycle=5,
+    r_work_target=0.1,
     sites=False,
     u_iso=True,
     alternate_refinement=True,
     use_strict_ncs=False,
     print_during_refinement=False)
-  time_asu = toc()
-  print_refinement_data(time_asu,test_obj2)
+  print_refinement_data(toc(),test_obj2)
   del test_obj2
 
 if __name__=='__main__':
   """
-  List of files to try
+  List of files to try:
+  Smallest: (number of atoms,PDB code)
+  [3334, '3dar']
+  [3812, '1rhq'] (All MTRIX are present in PDB)
+  [3980, '1vcr']
+  [5578, '1r2j']
 
+  Other:
   3p0s, 2wws, 2e0z
   1b35, 1za7, 2buk
   """
@@ -484,8 +512,11 @@ if __name__=='__main__':
 
 
 
-  # run('yyyy')
-  # run('1b35')
+  # run('tttt')
+  # run('1llc')
+  # run('1vcr')
+
+
   # Analyze code
   # import cProfile
   # import pstats

@@ -1,5 +1,6 @@
 from __future__ import division
 import matplotlib.pyplot as plt
+from pprint import pprint
 import cPickle as pickle
 import numpy as np
 import os
@@ -22,6 +23,7 @@ class results_collection(object):
   def __init__(self):
     self.data_records = []
     self.data_records_strict_ncs_dict = {}
+    self.data_records_without_strict_ncs_dict = {}
     self.data_records_dict = {}
     self.cols_names = [
       'pdb_code','r_work_pdb_reported','r_free_pdb_reported',
@@ -38,6 +40,11 @@ class results_collection(object):
       'r-work asu final','r-free asu final',
       'resolution','year ','use strict ncs',
       'use geometry restraints','time']
+    class sort_by():
+      def __init__(self):
+        """ Parameter number to sort by"""
+    sort_by.__dict__.update(zip(self.cols_names, range(len(self.cols_names))))
+    self.sort_by = sort_by
 
 
   def read_filenames(self):
@@ -71,81 +78,152 @@ class results_collection(object):
           data[13] = round(float(data[13]))
           # print data
           self.data_records.append(data)
+          self.data_records_dict[data[0]] = data
           if data[sort_by.use_strict_ncs] == 'True':
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
-            self.data_records_dict[data[0]] = data
+            self.data_records_without_strict_ncs_dict[data[0]] = data
     print 'There are {} good data records'.format(len(self.data_records))
     # Sort records
     # self.data_records.sort(key=lambda x:x[sort_by.time])
     print 'done with collection'
+    pickle.dump(self.data_records,open('data_records','w'))
+    pickle.dump(self.data_records_dict,open('data_records_dict','w'))
+    pickle.dump(
+      self.data_records_strict_ncs_dict,open('data_records_strict_ncs_dict','w'))
+    pickle.dump(
+      self.data_records_without_strict_ncs_dict,
+      open('data_records_without_strict_ncs_dict','w'))
 
+  def get_data_from_files(self):
+    """  Read data from files    """
+    self.data_records = pickle.load(open('data_records','r'))
+    self.data_records_dict = pickle.load(open('data_records_dict','r'))
+    self.data_records_strict_ncs_dict = pickle.load(
+      open('data_records_strict_ncs_dict','r'))
+    self.data_records_without_strict_ncs_dict = pickle.load(
+      open('data_records_without_strict_ncs_dict','r'))
+    print 'Got the data from files'
 
   def plot_results_1(self):
     """
     Plot a result summery:
-    (error bars reference:
-    http://matplotlib.org/1.2.1/examples/pylab_examples/errorbar_demo.html)
+    r-work (refined using strict-ncs) vs. r-work (refined without strict-ncs)
 
-    Reported r-work vs. (r-work of ASU,  with (blue) and without (red)
-    strict_ncs)
+    xerr , yerr are the difference between r-work and r-free for the two
+    refinement methods
 
-    plot error bars that represent (r_work - r_free). Horizontal error bar for
-    published values, vertical for values after refinement.
+    The size of the circles indicate the size of (xerr - yerr). It is blue
+    when the strict_ncs refinement make the (r_work - r_free) smaller.
     """
-    # example data
-    x = np.arange(0.1, 4, 0.5)
-    y = np.exp(-x)
+    # Collect data points that have results with and without strict_ncs
+    x_ncs = []; y_no_ncs =[]
+    x2 = []; y2 = []
+    time_ncs = []; time_no_ncs = []
+    pdb_code = []
+    for x in self.data_records_strict_ncs_dict:
+      if self.data_records_without_strict_ncs_dict.has_key(x):
+        x_ncs.append(self.data_records_strict_ncs_dict[x]
+                           [self.sort_by.r_work_asu_final])
+        y_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
+                                  [self.sort_by.r_work_asu_final])
+        x2.append(self.data_records_strict_ncs_dict[x]
+                      [self.sort_by.r_free_asu_final])
+        y2.append(self.data_records_without_strict_ncs_dict[x]
+                      [self.sort_by.r_free_asu_final])
+        time_ncs.append(self.data_records_strict_ncs_dict[x]
+                      [self.sort_by.time])
+        time_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
+                      [self.sort_by.time])
+        pdb_code.append(x)
 
-    # example variable error bar values
-    yerr = 0.1 + 0.2*np.sqrt(x)
-    xerr = 0.1 + yerr
+    # variable error bar values
+    xerr = [x-y for (x,y) in zip(x_ncs,x2)]
+    yerr = [x-y for (x,y) in zip(y_no_ncs,y2)]
+    # all_data = zip(x_ncs,y_no_ncs,xerr,yerr)
+    # all_data.sort(key=lambda x:x[0])
+    # plot_data = np.array(all_data)
+
+    # get larges r-values for the 45 degrees line
+    maxval = max(x_ncs + y_no_ncs) *1.05
+
+    # Convert lists to numpy arrays
+    x_ncs = np.array(x_ncs)
+    y_no_ncs = np.array(y_no_ncs)
+    xerr = np.array(xerr)
+    yerr = np.array(yerr)
+    # x_ncs = plot_data[:,0]
+    # y_no_ncs = plot_data[:,1]
+    # xerr = plot_data[:,2]
+    # yerr = plot_data[:,3]
 
     # First illustrate basic pyplot interface, using defaults where possible.
     plt.figure()
-    plt.errorbar(x, y, xerr=0.2, yerr=0.4)
-    plt.title("Simplest errorbars, 0.2 in x, 0.4 in y")
+    colors = []
+    delta_err = [(x-y) for (x,y) in zip (x_ncs,y_no_ncs)]
+    s = [5+1000*abs(x) for x in delta_err]
+    for i,x in enumerate(delta_err):
+      if x > 0:
+        colors.append('b')
+      else:
+        colors.append('y')
+        print 'Better r-free without NCS: ',pdb_code[i]
+    # add points for size reference : Difference of 0, 0.05, 0.1
+    s.extend([105,55,5])
+    colors.extend(['g','g','g'])
+    x_ncs = np.append(x_ncs,[.02,.02,.02])
+    y_no_ncs = np.append(y_no_ncs,[.4,.45,.5])
+    plt.scatter(x_ncs,y_no_ncs,s,c=colors)
+    plt.plot([0,maxval],[0,maxval])
+    plt.xlabel('r-work Refinement using strict-ncs')
+    plt.ylabel('r-work Refinement without strict-ncs')
+    plt.title('Compare r-work values and stric-ncs influence on r-free')
+    # plot reference point, to indicate the meaning of size
+    plt.text(0.035,0.49, 'The same r_work - r_free value',fontsize=14)
+    plt.text(0.035,0.44, '0.05 difference',fontsize=14)
+    plt.text(0.035,0.39, '0.1 difference',fontsize=14)
 
-    # Now switch to a more OO interface to exercise more features.
-    fig, axs = plt.subplots(nrows=2, ncols=2, sharex=True)
-    ax = axs[0,0]
-    ax.errorbar(x, y, yerr=yerr, fmt='o')
-    ax.set_title('Vert. symmetric')
-
-    # With 4 subplots, reduce the number of axis ticks to avoid crowding.
-    ax.locator_params(nbins=4)
-
-    ax = axs[0,1]
-    ax.errorbar(x, y, xerr=xerr, fmt='o')
-    ax.set_title('Hor. symmetric')
-
-    ax = axs[1,0]
-    ax.errorbar(x, y, yerr=[yerr, 2*yerr], xerr=[xerr, 2*xerr], fmt='--o')
-    ax.set_title('H, V asymmetric')
-
-    ax = axs[1,1]
-    ax.set_yscale('log')
-    # Here we have to be careful to keep all y values positive:
-    ylower = np.maximum(1e-2, y - yerr)
-    yerr_lower = y - ylower
-
-    ax.errorbar(x, y, yerr=[yerr_lower, 2*yerr], xerr=xerr,
-                fmt='o', ecolor='g', capthick=2)
-    ax.set_title('Mixed sym., log y')
-
-    fig.suptitle('Variable errorbars')
-
+    plt.xlim(0,maxval)
+    plt.ylim(0,maxval)
     plt.show()
 
   def plot_results_2(self):
     """
     Plot a result summery:
-
-    r-work of ASU,  with  vs. without strict_ncs
-
-    plot error bars that represent (r_work - r_free). Horizontal/Vertical
-    error bars correspond to refinement with and without strict_ncs
+    time for refinement with strict ncs vs. without
     """
+     # Collect data points that have results with and without strict_ncs
+    time_ncs = []; time_no_ncs = []
+    pdb_code = []
+    for x in self.data_records_strict_ncs_dict:
+      if self.data_records_without_strict_ncs_dict.has_key(x):
+        time_ncs.append(self.data_records_strict_ncs_dict[x]
+                      [self.sort_by.time])
+        time_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
+                      [self.sort_by.time])
+        pdb_code.append(x)
+
+    # print outliers
+    d = 0.1
+    for (x,y,code) in zip(time_ncs,time_no_ncs,pdb_code):
+      if abs(x-y)/x > d:
+        print 'Time difference is {0:.0f}% for {1}'.format(100*(x-y)/x,code)
+    # get larges r-values for the 45 degrees line
+    maxval = max(time_ncs + time_no_ncs) *1.05
+
+    # Convert lists to numpy arrays
+    x_ncs = np.array(time_ncs)
+    y_no_ncs = np.array(time_no_ncs)
+    # plot
+    plt.figure()
+    plt.plot(x_ncs,y_no_ncs,'o',[0,maxval],[0,maxval])
+    plt.xlabel('Time[sec] Refinement using strict-ncs')
+    plt.ylabel('Time[sec] Refinement without strict-ncs')
+    plt.title('Looking at refinement time when using stric_ncs')
+    plt.xlim(0,maxval)
+    plt.ylim(0,maxval)
+    plt.show()
+
 
   def save_csv_table_to_file(self):
     """
@@ -168,6 +246,45 @@ class results_collection(object):
     f.close()
     print 'data was saved to: ',file_name
 
+  def get_list_of_unprocessed_files(self):
+    """
+    Check which of the PDB files, from our initial list, are not included in
+    the results
+    """
+    pdb_code_set = {
+      '3dar', '1vcr', '1r2j', '1a37', '1llc', '1tnv', '1tdi', '1w39', '1ny7',
+      '1ddl', '1c8n', '2bfu', '4gmp', '3vbr', '3vbu', '3vbo', '4jgy', '3es5',
+      '3nop', '3not', '3nou', '3bcc', '1bcc', '1z7s', '6msf', '2iz8', '7msf',
+      '2izn', '2c50', '2c51', '2iz9', '2c4y', '2c4z', '5msf', '2c4q', '2bu1',
+      '3raa', '3oah', '3ra2', '3ra9', '3ra8', '3ra4', '3qpr', '1ei7', '1a34',
+      '3chx', '2wbh', '2fz1', '2fz2', '2gh8', '1wcd', '3fbm', '4gb3', '1laj',
+      '3vbh', '1dzl', '3hag', '4iv3', '1js9', '3n7x', '4gh4', '4jgz', '3tn9',
+      '4iv1', '1vb2', '1vb4', '1vak', '3s4g', '2buk', '1x36', '4bcu', '1b35',
+      '2wzr', '1k5m', '2bq5', '1zba', '1pgw', '3vbs', '1x35', '3vbf', '1pgl',
+      '4fsj', '4fte', '4fts', '2e0z', '4ftb', '2w4y', '2w4z', '2qzv', '3vdd',
+      '3p0s', '1qjx', '1qjy', '1qju', '3r0r', '2bs1', '2ztn', '1x9t', '2zzq',
+      '1x9p', '4aqq', '1za7', '4ar2', '2wws', '2xpj', '4hl8', '3ntt', '2vf1',
+      '3ux1', '2xgk', '2izw', '3cji', '4gbt', '2vq0', '4g93', '2g34', '2qij',
+      '2g33', '1f2n', '4g0r', '1ng0', '2ws9', '2xbo', '2wff', '1wce', '1dwn',
+      '2vf9', '3zfe', '3zff', '3zfg', '2x5i', '1h8t', '3lob', '4ang', '2gtl',
+      '2qqp', '1f8v', '1m1c', '1lp3', '4aed', '3e8k', '1uf2', '1ohg', '1ohf',
+      '3s6p', '3kz4', '4f5x', '1vsz'}
+
+    without_strict_ncs_set=set(self.data_records_without_strict_ncs_dict.keys())
+    with_strict_ncs_set=set(self.data_records_strict_ncs_dict.keys())
+    print ''
+    print 'files with missing records'
+    print '--------------------------'
+    outdata = list(pdb_code_set - without_strict_ncs_set - with_strict_ncs_set)
+    n = 5
+    l = len(outdata)
+    for i in range(0,l,n):
+      e = min((i+1)*n,l)
+      s = '{} '*(e-i)
+      print s.format(*outdata[i:e])
+
+
+
 
 if __name__=='__main__':
   # path_to_log_files = "/net/cci/youval/Work/work/NCS/junk/pdb_test/queue_job"
@@ -175,8 +292,11 @@ if __name__=='__main__':
   current_path = os.getcwd()
   os.chdir(path_to_log_files)
   process_results = results_collection()
-  process_results.read_filenames()
+  # process_results.read_filenames()
+  process_results.get_data_from_files()
   # process_results.save_csv_table_to_file()
-  process_results.plot_results_1()
+  # process_results.plot_results_1()
+  # process_results.plot_results_2()
+  process_results.get_list_of_unprocessed_files()
   os.chdir(current_path)
   print 'Done...'

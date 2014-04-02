@@ -51,6 +51,7 @@ class ncs_refine_test(object):
     self.pdb_code = '____'
     self.r_work_reported_pdb_ncs = -1
     self.r_free_reported_pdb_ncs = -1
+    self.use_strict_ncs = None
 
 
 
@@ -118,7 +119,8 @@ class ncs_refine_test(object):
       print 'Warning :crystal_symmetry of PDB is different than the one from' \
             'Fobs. Using crystal_symmetry from Fobs.'
       xrs_ncs = pdb_inp.xray_structure_simple(crystal_symmetry=crystal_symmetry)
-    xrs_asu = m.assembled_multimer.extract_xray_structure(
+    pdb_inp_asu = m.assembled_multimer.as_pdb_input()
+    xrs_asu = pdb_inp_asu.xray_structure_simple(
       crystal_symmetry = crystal_symmetry)
     # force ASU none-rounded coordinates into xray structure
     xrs_asu.set_sites_cart(m.sites_cart())
@@ -224,17 +226,17 @@ class ncs_refine_test(object):
     r_free = fmodel.r_free()
     return fmodel.deep_copy(), r_work, r_free
 
-  def refine_using_complete_asu(self,
-                                n_macro_cycle = 10,
-                                sites = True,
-                                u_iso = False,
-                                alternate_refinement = True,
-                                finite_grad_differences_test = False,
-                                r_work_target = 0.01,
-                                use_strict_ncs = True,
-                                print_during_refinement=True):
+  def refinement_loop(self,
+                      n_macro_cycle = 10,
+                      sites = True,
+                      u_iso = False,
+                      alternate_refinement = True,
+                      finite_grad_differences_test = False,
+                      r_work_target = 0.01,
+                      use_strict_ncs = True,
+                      print_during_refinement=True):
     """
-    Refine the complete ASU using strict-NCS refinement
+    Refine the complete ASU, using strict-NCS refinement
 
     Arguments:
     n_macro_cycle: (int) number of refinement cycles
@@ -378,9 +380,8 @@ class ncs_refine_test(object):
 
   def __repr__(self):
     """
-    When printing to log, print only r-factor values in a string
+    Print the following information
 
-    (r_work
     """
     outdata = [self.pdb_code,
                self.r_work_reported_pdb_ncs,
@@ -390,9 +391,11 @@ class ncs_refine_test(object):
                self.initial_r_work,
                self.initial_r_free,
                self.r_work_final,
-               self.r_free_final]
+               self.r_free_final,
+               str(self.use_strict_ncs),
+               str(self.use_geometry_restraints)]
     s1 = '  {0:^10}|{1:^8.2f}|{2:^8.2f}|{3:^8.2f}|{4:^8.2f}|'
-    s2 = '{5:^8.2f}|{6:^8.2f}|{7:^8.2f}|{8:^8.2f}'
+    s2 = '{5:^8.2f}|{6:^8.2f}|{7:^8.2f}|{8:^8.2f}|{9:^10}|{10:^11}'
     s = s1 + s2
     return  s.format(*outdata)
 
@@ -432,13 +435,17 @@ def run (args):
   run tests
   """
   class print_refinement_data(object):
-    def __init__(
-            self,
-            refinement_time,
-            ref_obj,
-            print_title=False):
+    def __init__(self,
+                 refinement_time,
+                 ref_obj,
+                 print_title=False):
       """
       Print refinement results
+
+      Arguments:
+      refinement_time: (float) the time it took to refine
+      ref_obj: (object) refined object, contains all the r-work/free info
+      print_title: (bool) When true, the table title row will be printed
       """
       if not refinement_time:
         refinement_time = -1.0
@@ -446,45 +453,30 @@ def run (args):
         print '!!!!!!!!!!!!! Refinement time is not a float !!!!!!!!!!!!!!'
         print refinement_time
       column1 = ['PDB code','Reorted in PDB','Calc from NCS',
-                 'ASU initial','ASU final','time (sec)']
-      column2 = [''] + ['r-work','r-free']*4 + ['']
-      title1 = '# {0:^10}|{1:^16} |{2:^16} |{3:^16} |{4:^16} |{5:^12}'.\
-        format(*column1)
+                 'ASU initial','ASU final','Use NCS','Geo. Rest.','time (sec)']
+      column2 = [''] + ['r-work','r-free']*4 + ['','','']
+      title1 = '# {0:^10}|{1:^16} |{2:^16} |{3:^17} |{4:^15} |{5:^9}'
+      title1 += ' |{6:^9} |{7:^12}'
+      title1 = title1.format(*column1)
       s1 = '# {0:^10}|{1:^8}|{2:^8}|{3:^8}|{4:^8}|'
-      s2 = '{5:^8}|{6:^8}|{7:^8}|{8:^8}|{9:^6}'
+      s2 = '{5:^8}|{6:^8}|{7:^8}|{8:^8}|{9:^10}|{10:^11}|{11:^12}'
       s = s1 + s2
       title2 = s.format(*column2)
       if print_title:
         print title1
         print title2
-      print '-'*99
-      print ref_obj.__repr__() + '|{0:^12.4f}'.format(refinement_time)
+      print '#' + '-'*120
+      print ref_obj.__repr__() + '|{0:^13.4f}'.format(refinement_time)
 
   # process args
 
-  # Run tests with strict NCS
+  # Run tests without NCS
   tic()
-  test_obj1 = ncs_refine_test(use_geometry_restraints=False,real_data=True)
-  test_obj1.set_working_path()
-  test_obj1.process_pdb_and_cif_files(args)
-  # Run refinement
-  test_obj1.refine_using_complete_asu(
-    n_macro_cycle=5,
-    r_work_target=0.1,
-    sites=False,
-    u_iso=True,
-    alternate_refinement=True,
-    use_strict_ncs=True,
-    print_during_refinement=False)
-  print_refinement_data(toc(),test_obj1,print_title=True)
-  del test_obj1
-  # Run tests with without NCS
-  tic()
-  test_obj2 = ncs_refine_test(use_geometry_restraints=False,real_data=True)
+  test_obj2 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
   test_obj2.set_working_path()
   test_obj2.process_pdb_and_cif_files(args)
   # Run refinement
-  test_obj2.refine_using_complete_asu(
+  test_obj2.refinement_loop(
     n_macro_cycle=5,
     r_work_target=0.1,
     sites=False,
@@ -492,8 +484,24 @@ def run (args):
     alternate_refinement=True,
     use_strict_ncs=False,
     print_during_refinement=False)
-  print_refinement_data(toc(),test_obj2)
+  print_refinement_data(toc(),test_obj2,print_title=True)
   del test_obj2
+  # Run tests with strict NCS
+  tic()
+  test_obj1 = ncs_refine_test(use_geometry_restraints=True,real_data=True)
+  test_obj1.set_working_path()
+  test_obj1.process_pdb_and_cif_files(args)
+  # Run refinement
+  test_obj1.refinement_loop(
+    n_macro_cycle=5,
+    r_work_target=0.1,
+    sites=False,
+    u_iso=True,
+    alternate_refinement=True,
+    use_strict_ncs=True,
+    print_during_refinement=False)
+  print_refinement_data(toc(),test_obj1)
+  del test_obj1
 
 if __name__=='__main__':
   """
@@ -513,7 +521,8 @@ if __name__=='__main__':
 
 
   # run('tttt')
-  # run('1llc')
+  # run('1w39')
+  # print 'Done'
   # run('1vcr')
 
 

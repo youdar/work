@@ -8,7 +8,7 @@ import sys
 import re
 
 """
-Output example:
+File data input example:
 #  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   | Year   | Use NCS  |Geo. Rest. | time (sec)
 #           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        |        |          |           |
 #----------------------------------------------------------------------------------------------------------------------------------------
@@ -22,37 +22,61 @@ class results_collection(object):
 
   def __init__(self):
     self.data_records = []
+    self.data_records_long = []
     self.data_records_strict_ncs_dict = {}
     self.data_records_without_strict_ncs_dict = {}
     self.data_records_dict = {}
+    self.cols_inp = [
+      'pdb_code',
+      'r_work_pdb_reported',
+      'r_free_pdb_reported',
+      'r_work_pdb_ncs',
+      'r_free_pdb_ncs',
+      'r_work_asu_init',
+      'r_free_asu_init',
+      'r_work_asu_final',
+      'r_free_asu_final',
+      'resolution',
+      'num_ncs_copies',
+      'solvent_fraction',
+      'data_completeness',
+      'year',
+      'use_strict_ncs',
+      'use_geometry_restraints',
+      'time']
     self.cols_names = [
-      'pdb_code','r_work_pdb_reported','r_free_pdb_reported',
-      'r_work_pdb_ncs','r_free_pdb_ncs',
-      'r_work_asu_init','r_free_asu_init',
-      'r_work_asu_final','r_free_asu_final',
-      'resolution','year','use_strict_ncs',
-      'use_geometry_restraints','time']
-    self.cols_names_for_table = [
-      'pdb code','r-work pdb reported',
-      'r-free pdb reported',
-      'r-work pdb ncs','r-free pdb ncs',
-      'r-work asu init','r-free asu init',
-      'r-work asu final','r-free asu final',
-      'resolution','year ','use strict ncs',
-      'use geometry restraints','time']
-    class sort_by():
-      def __init__(self):
-        """ Parameter number to sort by"""
-    sort_by.__dict__.update(zip(self.cols_names, range(len(self.cols_names))))
-    self.sort_by = sort_by
-
+      'pdb_code',
+      'r_work_pdb_reported',
+      'r_free_pdb_reported',
+      'r_work_pdb_ncs',
+      'r_free_pdb_ncs',
+      'r_work_asu_init',
+      'r_free_asu_init',
+      'r_work_asu_final_ncs',
+      'r_free_asu_final_ncs',
+      'r_work_asu_final_no_ncs',
+      'r_free_asu_final_no_ncs',
+      'resolution',
+      'num_ncs_copies',
+      'solvent_fraction',
+      'data_completeness',
+      'year',
+      'use_geometry_restraints',
+      'time_ncs',
+      'time_no_ncs']
+    self.cols_names_for_table1 = [x.replace('_',' ') for x in self.cols_inp]
+    self.cols_names_for_table2 = [x.replace('_',' ') for x in self.cols_names]
+    self.map_to_ncs = {0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:11,10:12,
+                       11:13,12:14,13:15,15:16,16:17}
+    self.map_to_no_ncs = {0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:9,8:10,9:11,10:12,
+                       11:13,12:14,13:15,15:16,16:18}
 
   def read_filenames(self):
     class sort_by():
-      # def __init__(self):
+      def __init__(self):
         """ Parameter number to sort by"""
-    sort_by.__dict__.update(zip(self.cols_names, range(len(self.cols_names))))
-    assert sort_by.time == 13
+    sort_by.__dict__.update(zip(self.cols_inp, range(len(self.cols_inp))))
+    data_long_dict = {}
     # Read files in current directory
     files = os.listdir(os.getcwd())
     # collect only non-empty files that starts with log_
@@ -66,28 +90,51 @@ class results_collection(object):
       for ln in d:
         if ln.startswith('Warning'):
           print '{0}: {1}'.format(pdb_code,ln.strip())
+        if ln.startswith('Using pdb file from local machine'):
+          print 'Used {} from local machine'.format(pdb_code)
         if ln.startswith('Traceback'):
           print '{0}: {1}'.format(pdb_code,'Problem processing')
+        # process files with good data
         if re.match(regex,ln[:13]):
           data = [x.strip() for x in ln.split('|')]
-          for indx in [1,2,3,4,5,6,7,8,9]:
-            # convert r-values to float
+          # convert float data values
+          for indx in [1,2,3,4,5,6,7,8,9,11,12]:
             data[indx] = float(data[indx])
-          # convert year and time to integers
-          data[10] = round(float(data[10]))
-          data[13] = round(float(data[13]))
-          # print data
+          # convert integer data values
+          for indx in [10,13,16]:
+            if not data[indx]: data[indx] = 0
+            else: data[indx] = int(data[indx])
+          # collect data as is
           self.data_records.append(data)
           self.data_records_dict[data[0]] = data
+          # combine the with and without ncs
+          if data_long_dict.has_key(data[0]):
+            data_long = data_long_dict[data[0]]
+          else:
+            data_long = len(self.cols_names)*[None,]
+          if data[sort_by.use_strict_ncs]=='True':
+            for (i,val) in enumerate(data):
+              if i != 14 and not data_long[self.map_to_ncs[i]]:
+                data_long[self.map_to_ncs[i]] = val
+          else:
+            for (i,val) in enumerate(data):
+              if i != 14 and not data_long[self.map_to_no_ncs[i]]:
+                data_long[self.map_to_no_ncs[i]] = val
+          data_long_dict[data[0]] = data_long
           if data[sort_by.use_strict_ncs] == 'True':
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
+    for key,val in data_long_dict.iteritems():
+      self.data_records_long.append(val)
     print 'There are {} good data records'.format(len(self.data_records))
+    # organize data
+
     # Sort records
     # self.data_records.sort(key=lambda x:x[sort_by.time])
     print 'done with collection'
     pickle.dump(self.data_records,open('data_records','w'))
+    pickle.dump(self.data_records_long,open('data_records_long','w'))
     pickle.dump(self.data_records_dict,open('data_records_dict','w'))
     pickle.dump(
       self.data_records_strict_ncs_dict,open('data_records_strict_ncs_dict','w'))
@@ -98,6 +145,7 @@ class results_collection(object):
   def get_data_from_files(self):
     """  Read data from files    """
     self.data_records = pickle.load(open('data_records','r'))
+    self.data_records_long = pickle.load(open('data_records_long','r'))
     self.data_records_dict = pickle.load(open('data_records_dict','r'))
     self.data_records_strict_ncs_dict = pickle.load(
       open('data_records_strict_ncs_dict','r'))
@@ -140,9 +188,6 @@ class results_collection(object):
     # variable error bar values
     xerr = [x-y for (x,y) in zip(x_ncs,x2)]
     yerr = [x-y for (x,y) in zip(y_no_ncs,y2)]
-    # all_data = zip(x_ncs,y_no_ncs,xerr,yerr)
-    # all_data.sort(key=lambda x:x[0])
-    # plot_data = np.array(all_data)
 
     # get larges r-values for the 45 degrees line
     maxval = max(x_ncs + y_no_ncs) *1.05
@@ -152,11 +197,6 @@ class results_collection(object):
     y_no_ncs = np.array(y_no_ncs)
     xerr = np.array(xerr)
     yerr = np.array(yerr)
-    # x_ncs = plot_data[:,0]
-    # y_no_ncs = plot_data[:,1]
-    # xerr = plot_data[:,2]
-    # yerr = plot_data[:,3]
-
     # First illustrate basic pyplot interface, using defaults where possible.
     plt.figure()
     colors = []
@@ -172,16 +212,17 @@ class results_collection(object):
     s.extend([105,55,5])
     colors.extend(['g','g','g'])
     x_ncs = np.append(x_ncs,[.02,.02,.02])
-    y_no_ncs = np.append(y_no_ncs,[.4,.45,.5])
+    d = maxval - 0.55
+    y_no_ncs = np.append(y_no_ncs,[.4 + d,.45 + d,.5 + d])
     plt.scatter(x_ncs,y_no_ncs,s,c=colors)
     plt.plot([0,maxval],[0,maxval])
     plt.xlabel('r-work Refinement using strict-ncs')
     plt.ylabel('r-work Refinement without strict-ncs')
     plt.title('Compare r-work values and stric-ncs influence on r-free')
     # plot reference point, to indicate the meaning of size
-    plt.text(0.035,0.49, 'The same r_work - r_free value',fontsize=14)
-    plt.text(0.035,0.44, '0.05 difference',fontsize=14)
-    plt.text(0.035,0.39, '0.1 difference',fontsize=14)
+    plt.text(0.035,0.49 + d, 'The same r_work - r_free value',fontsize=14)
+    plt.text(0.035,0.44 + d, '0.05 difference',fontsize=14)
+    plt.text(0.035,0.39 + d, '0.1 difference',fontsize=14)
 
     plt.xlim(0,maxval)
     plt.ylim(0,maxval)
@@ -224,20 +265,22 @@ class results_collection(object):
     plt.ylim(0,maxval)
     plt.show()
 
-
   def save_csv_table_to_file(self):
     """
     Save a the collected data in a csv file:
 
     The data in the file is one line per test with the following records order:
     'pdb_code','r_work_pdb_reported','r_free_pdb_reported',
-    'r_work_pdb_ncs','r_free_pdb_ncs','r_work_asu_init','r_free_asu_init',
-    'r_work_asu_final','r_free_asu_final','resolution','year','use_strict_ncs',
-    'usd_geometry_restaints','time'
+      'r_work_pdb_ncs','r_free_pdb_ncs',
+      'r_work_asu_init','r_free_asu_init',
+      'r_work_asu_final','r_free_asu_final',
+      'resolution','num_ncs_copies','solvent_fraction',
+      'data_completeness','year','use_strict_ncs',
+      'use_geometry_restraints','time'
     """
     file_name = 'ncs_refinement_results.csv'
     f = open(file_name,'w')
-    f.write(','.join(self.cols_names_for_table))
+    f.write(','.join(self.cols_names_for_table1))
     f.write('\n')
     for rec in self.data_records:
       rec = [str(x) for x in rec]
@@ -245,6 +288,34 @@ class results_collection(object):
       f.write(','.join(rec))
     f.close()
     print 'data was saved to: ',file_name
+
+  def save_csv_table2_to_file(self):
+    """
+    Save a the collected data in a csv file:
+
+    The data in the file is one line per test with the following records order:
+    'pdb_code','r_work_pdb_reported','r_free_pdb_reported',
+      'r_work_pdb_ncs','r_free_pdb_ncs',
+      'r_work_asu_init','r_free_asu_init',
+      'r_work_asu_final','r_free_asu_final',
+      'resolution','num_ncs_copies','solvent_fraction',
+      'data_completeness','year','use_strict_ncs',
+      'use_geometry_restraints','time'
+
+    replace the
+    """
+    file_name = 'ncs_refinement_results_table2.csv'
+    table_title = self.cols_names_for_table2
+    f = open(file_name,'w')
+    f.write(','.join(self.cols_names_for_table2))
+    f.write('\n')
+    for rec in self.data_records_long:
+      rec = [str(x) for x in rec]
+      rec += '\n'
+      f.write(','.join(rec))
+    f.close()
+    print 'data was saved to: ',file_name
+
 
   def get_list_of_unprocessed_files(self):
     """
@@ -273,18 +344,18 @@ class results_collection(object):
     without_strict_ncs_set=set(self.data_records_without_strict_ncs_dict.keys())
     with_strict_ncs_set=set(self.data_records_strict_ncs_dict.keys())
     print ''
-    print 'files with missing records'
-    print '--------------------------'
-    outdata = list(pdb_code_set - without_strict_ncs_set - with_strict_ncs_set)
+    print '  files with some records missing'
+    print '---------------------------------'
+    outdata1 = pdb_code_set - without_strict_ncs_set
+    outdata2 = pdb_code_set - with_strict_ncs_set
+    outdata = list(outdata1.union(outdata2))
     n = 5
     l = len(outdata)
     for i in range(0,l,n):
-      e = min((i+1)*n,l)
-      s = '{} '*(e-i)
+      e = min(i+n,l)
+      s = ['{}']*(e-i)
+      s = ', '.join(s)
       print s.format(*outdata[i:e])
-
-
-
 
 if __name__=='__main__':
   # path_to_log_files = "/net/cci/youval/Work/work/NCS/junk/pdb_test/queue_job"
@@ -292,11 +363,12 @@ if __name__=='__main__':
   current_path = os.getcwd()
   os.chdir(path_to_log_files)
   process_results = results_collection()
-  # process_results.read_filenames()
+  process_results.read_filenames()
   process_results.get_data_from_files()
-  # process_results.save_csv_table_to_file()
-  # process_results.plot_results_1()
-  # process_results.plot_results_2()
+  process_results.save_csv_table_to_file()
+  process_results.save_csv_table2_to_file()
+  process_results.plot_results_1()
+  process_results.plot_results_2()
   process_results.get_list_of_unprocessed_files()
   os.chdir(current_path)
   print 'Done...'

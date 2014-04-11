@@ -40,7 +40,8 @@ if __name__=='__main__':
   #file_name = '4aun'  # have issues running phenix.cif_as_mtz
   #file_name = '2wws'
   #run('3nby')
-  pdb_id = '1ofs'
+  pdb_id = '1vcr'
   #pdb_id = '4iw4'
   #pdb_id = '1b0c'
-  run(pdb_id)
+  os.chdir(r'C:\Phenix\Dev\Work\work\NCS\junk\pdb_test')
+  # run(pdb_id)

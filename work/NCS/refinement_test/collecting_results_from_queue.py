@@ -70,13 +70,14 @@ class results_collection(object):
                        11:13,12:14,13:15,15:16,16:17}
     self.map_to_no_ncs = {0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:9,8:10,9:11,10:12,
                        11:13,12:14,13:15,15:16,16:18}
-
-  def read_filenames(self):
-    class sort_by():
+    class sort_inp():
       def __init__(self):
         """ Parameter number to sort by"""
-    sort_by.__dict__.update(zip(self.cols_inp, range(len(self.cols_inp))))
-    data_long_dict = {}
+    sort_inp.__dict__.update(zip(self.cols_inp, range(len(self.cols_inp))))
+    self.sort_inp = sort_inp
+
+  def read_filenames(self):
+    sort_by = self.sort_inp
     # Read files in current directory
     files = os.listdir(os.getcwd())
     # collect only non-empty files that starts with log_
@@ -106,10 +107,9 @@ class results_collection(object):
             else: data[indx] = int(data[indx])
           # collect data as is
           self.data_records.append(data)
-          self.data_records_dict[data[0]] = data
           # combine the with and without ncs
-          if data_long_dict.has_key(data[0]):
-            data_long = data_long_dict[data[0]]
+          if self.data_records_dict.has_key(data[0]):
+            data_long = self.data_records_dict[data[0]]
           else:
             data_long = len(self.cols_names)*[None,]
           if data[sort_by.use_strict_ncs]=='True':
@@ -120,12 +120,12 @@ class results_collection(object):
             for (i,val) in enumerate(data):
               if i != 14 and not data_long[self.map_to_no_ncs[i]]:
                 data_long[self.map_to_no_ncs[i]] = val
-          data_long_dict[data[0]] = data_long
+          self.data_records_dict[data[0]] = data_long
           if data[sort_by.use_strict_ncs] == 'True':
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
-    for key,val in data_long_dict.iteritems():
+    for key,val in self.data_records_dict.iteritems():
       self.data_records_long.append(val)
     print 'There are {} good data records'.format(len(self.data_records))
     # organize data
@@ -164,6 +164,7 @@ class results_collection(object):
     The size of the circles indicate the size of (xerr - yerr). It is blue
     when the strict_ncs refinement make the (r_work - r_free) smaller.
     """
+    sort_by = self.sort_inp
     # Collect data points that have results with and without strict_ncs
     x_ncs = []; y_no_ncs =[]
     x2 = []; y2 = []
@@ -172,17 +173,17 @@ class results_collection(object):
     for x in self.data_records_strict_ncs_dict:
       if self.data_records_without_strict_ncs_dict.has_key(x):
         x_ncs.append(self.data_records_strict_ncs_dict[x]
-                           [self.sort_by.r_work_asu_final])
+                           [sort_by.r_work_asu_final])
         y_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
-                                  [self.sort_by.r_work_asu_final])
+                                  [sort_by.r_work_asu_final])
         x2.append(self.data_records_strict_ncs_dict[x]
-                      [self.sort_by.r_free_asu_final])
+                      [sort_by.r_free_asu_final])
         y2.append(self.data_records_without_strict_ncs_dict[x]
-                      [self.sort_by.r_free_asu_final])
+                      [sort_by.r_free_asu_final])
         time_ncs.append(self.data_records_strict_ncs_dict[x]
-                      [self.sort_by.time])
+                      [sort_by.time])
         time_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
-                      [self.sort_by.time])
+                      [sort_by.time])
         pdb_code.append(x)
 
     # variable error bar values
@@ -239,9 +240,9 @@ class results_collection(object):
     for x in self.data_records_strict_ncs_dict:
       if self.data_records_without_strict_ncs_dict.has_key(x):
         time_ncs.append(self.data_records_strict_ncs_dict[x]
-                      [self.sort_by.time])
+                      [self.sort_inp.time])
         time_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
-                      [self.sort_by.time])
+                      [self.sort_inp.time])
         pdb_code.append(x)
 
     # print outliers

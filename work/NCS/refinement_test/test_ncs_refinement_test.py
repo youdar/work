@@ -39,7 +39,7 @@ class test_ncs_refinement(object):
     u_iso=False,
     alternate_refinement=False)
     print test_obj
-    print '='*140
+    print '='*173
 
 
   def test_adp(self):
@@ -62,7 +62,7 @@ class test_ncs_refinement(object):
     u_iso=True,
     alternate_refinement=False)
     print test_obj
-    print '='*140
+    print '='*173
 
   def test_adp_and_site(self):
     """
@@ -85,7 +85,7 @@ class test_ncs_refinement(object):
     u_iso=True,
     alternate_refinement=True)
     print test_obj
-    print '='*140
+    print '='*173
 
   def test_with_geometry_restraints(self):
     """
@@ -108,7 +108,7 @@ class test_ncs_refinement(object):
     u_iso=False,
     alternate_refinement=False)
     print test_obj
-    print '='*140
+    print '='*173
 
   def tearDown(self):
     '''remove temp files and folder'''

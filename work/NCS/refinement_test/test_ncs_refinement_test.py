@@ -33,11 +33,12 @@ class test_ncs_refinement(object):
     test_obj.set_working_path(self.path)
     test_obj.process_pdb_and_cif_files('xxxx')
     test_obj.refinement_loop(
-    n_macro_cycle=100,
-    r_work_target=0.00001,
-    sites=True,
-    u_iso=False,
-    alternate_refinement=False)
+    n_macro_cycle        = 100,
+    r_work_target        = 0.00001,
+    sites                = True,
+    u_iso                = False,
+    transformations      = False,
+    alternate_refinement = False)
     print test_obj
     print '='*173
 
@@ -56,15 +57,16 @@ class test_ncs_refinement(object):
     test_obj.set_working_path(self.path)
     test_obj.process_pdb_and_cif_files('yyyy')
     test_obj.refinement_loop(
-    n_macro_cycle=50,
-    r_work_target=0.00001,
-    sites=False,
-    u_iso=True,
-    alternate_refinement=False)
+    n_macro_cycle        = 50,
+    r_work_target        = 0.00001,
+    sites                = False,
+    u_iso                = True,
+    transformations      = False,
+    alternate_refinement = False)
     print test_obj
     print '='*173
 
-  def test_adp_and_site(self):
+  def test_alternate(self):
     """
     test alternate sites / ADP refinement, without geometry restraints
 
@@ -79,11 +81,12 @@ class test_ncs_refinement(object):
     test_obj.set_working_path(self.path)
     test_obj.process_pdb_and_cif_files('zzzz')
     test_obj.refinement_loop(
-    n_macro_cycle=50,
-    r_work_target=0.00001,
-    sites=False,
-    u_iso=True,
-    alternate_refinement=True)
+    n_macro_cycle        = 50,
+    r_work_target        = 0.00001,
+    sites                = True,
+    u_iso                = False,
+    transformations      = False,
+    alternate_refinement = True)
     print test_obj
     print '='*173
 
@@ -102,13 +105,37 @@ class test_ncs_refinement(object):
     test_obj.set_working_path(self.path)
     test_obj.process_pdb_and_cif_files('xxxx')
     test_obj.refinement_loop(
-    n_macro_cycle=50,
-    r_work_target=0.0001,
-    sites=True,
-    u_iso=False,
-    alternate_refinement=False)
+    n_macro_cycle        = 50,
+    r_work_target        = 0.0001,
+    sites                = True,
+    u_iso                = False,
+    transformations      = False,
+    alternate_refinement = False)
     print test_obj
     print '='*173
+
+  def test_transformation_refinement(self):
+    """
+    Test transformation refinement
+    """
+    print 'Running ',sys._getframe().f_code.co_name
+    test_obj = ncs_refine_test(
+      use_geometry_restraints=False,  # change to True
+      real_data=False,
+      sf_and_grads_algorithm = 'direct',
+      target_name = 'ls_wunit_k1')
+    test_obj.set_working_path(self.path)
+    test_obj.process_pdb_and_cif_files('tttt')
+    test_obj.refinement_loop(
+    n_macro_cycle        = 5,
+    r_work_target        = 0.0001,
+    sites                = False,
+    u_iso                = False,
+    transformations      = True,
+    alternate_refinement = False)
+    print test_obj
+    print '='*173
+
 
   def tearDown(self):
     '''remove temp files and folder'''
@@ -120,10 +147,18 @@ def run():
   test_case.setUp()
   test_case.test_sites()
   test_case.test_adp()
-  test_case.test_adp_and_site()
+  test_case.test_alternate()
   test_case.test_with_geometry_restraints()
+  test_case.test_transformation_refinement()
   test_case.tearDown()
 
 if __name__=='__main__':
   run()
+#
+#   # Analyze code
+#   import cProfile
+#   import pstats
+#   cProfile.run("run()",filename='cProfile_log')
+#   p = pstats.Stats('cProfile_log')
+#   p.sort_stats('time').print_stats(15)
 

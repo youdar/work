@@ -22,6 +22,7 @@ _*.nb
 *.project
 *.pydevproject
 *.png
+*.pyc
 
 /work/Clashes/Data
 /work/Clashes/junk

@@ -136,6 +136,28 @@ class test_ncs_refinement(object):
     print test_obj
     print '='*173
 
+  def test_refine_witout_transformations(self):
+    """
+    Test transformation refinement
+    """
+    print 'Running ',sys._getframe().f_code.co_name
+    test_obj = ncs_refine_test(
+      use_geometry_restraints=False,  # change to True
+      real_data=False,
+      sf_and_grads_algorithm = 'direct',
+      target_name = 'ls_wunit_k1')
+    test_obj.set_working_path(self.path)
+    test_obj.process_pdb_and_cif_files('nnnn')
+    test_obj.refinement_loop(
+    n_macro_cycle        = 5,
+    r_work_target        = 0.0001,
+    sites                = False,
+    u_iso                = False,
+    transformations      = True,
+    alternate_refinement = True)
+    print test_obj
+    print '='*173
+
 
   def tearDown(self):
     '''remove temp files and folder'''
@@ -150,6 +172,7 @@ def run():
   test_case.test_alternate()
   test_case.test_with_geometry_restraints()
   test_case.test_transformation_refinement()
+  test_case.test_refine_witout_transformations()
   test_case.tearDown()
 
 if __name__=='__main__':

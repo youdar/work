@@ -35,10 +35,10 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 100,
     r_work_target        = 0.00001,
+    print_during_refinement = True,
     sites                = True,
     u_iso                = False,
-    transformations      = False,
-    alternate_refinement = False)
+    transformations      = False)
     print test_obj
     print '='*173
 
@@ -59,10 +59,10 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 50,
     r_work_target        = 0.00001,
+    print_during_refinement = True,
     sites                = False,
     u_iso                = True,
-    transformations      = False,
-    alternate_refinement = False)
+    transformations      = False)
     print test_obj
     print '='*173
 
@@ -83,10 +83,10 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 50,
     r_work_target        = 0.00001,
+    print_during_refinement = True,
     sites                = True,
-    u_iso                = False,
-    transformations      = False,
-    alternate_refinement = True)
+    u_iso                = True,
+    transformations      = True)
     print test_obj
     print '='*173
 
@@ -107,10 +107,10 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 50,
     r_work_target        = 0.0001,
+    print_during_refinement = True,
     sites                = True,
     u_iso                = False,
-    transformations      = False,
-    alternate_refinement = False)
+    transformations      = False)
     print test_obj
     print '='*173
 
@@ -129,10 +129,10 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 5,
     r_work_target        = 0.0001,
+    print_during_refinement = True,
     sites                = False,
     u_iso                = False,
-    transformations      = True,
-    alternate_refinement = False)
+    transformations      = True)
     print test_obj
     print '='*173
 
@@ -151,12 +151,56 @@ class test_ncs_refinement(object):
     test_obj.refinement_loop(
     n_macro_cycle        = 5,
     r_work_target        = 0.0001,
-    sites                = False,
-    u_iso                = False,
-    transformations      = True,
-    alternate_refinement = True)
+    print_during_refinement = True,
+    sites                = True,
+    u_iso                = True,
+    transformations      = False)
     print test_obj
     print '='*173
+
+  def test_altrnating_method(self):
+    """
+    Verify that alternating refinement method works properly
+    """
+    print 'Running ',sys._getframe().f_code.co_name
+    test_obj = ncs_refine_test(
+      use_geometry_restraints=False,  # change to True
+      real_data=False,
+      sf_and_grads_algorithm = 'direct',
+      target_name = 'ls_wunit_k1')
+    # test all three
+    method = test_obj.use_refinement_method(
+      sites=True,u_iso=True, transformations=True)
+    for i in range(10):
+      n = i % 3
+      method = test_obj.iterate_refine_method(method,i)
+      temp = [ v[2] for (k,v) in method.iteritems()]
+      assert temp.count(True) == 1
+      if n == 0: assert method['sites'][2] == True
+      if n == 1: assert method['u_iso'][2] == True
+      if n == 2: assert method['transformations'][2] == True
+    # test just one method
+    method = test_obj.use_refinement_method(
+      sites=False,u_iso=True, transformations=False)
+    for i in range(10):
+      method = test_obj.iterate_refine_method(method,i)
+      temp = [ v[2] for (k,v) in method.iteritems()]
+      assert temp.count(True) == 1
+      assert method['sites'][2] == False
+      assert method['u_iso'][2] == True
+      assert method['transformations'][2] == False
+    # test two
+    # test just one method
+    method = test_obj.use_refinement_method(
+      sites=False,u_iso=True, transformations=True)
+    for i in range(10):
+      n = i % 2
+      method = test_obj.iterate_refine_method(method,i)
+      temp = [ v[2] for (k,v) in method.iteritems()]
+      assert temp.count(True) == 1
+      assert method['sites'][2] == False
+      if n == 0: assert method['u_iso'][2] == True
+      if n == 1: assert method['transformations'][2] == True
 
 
   def tearDown(self):
@@ -167,12 +211,13 @@ class test_ncs_refinement(object):
 def run():
   test_case = test_ncs_refinement()
   test_case.setUp()
-  test_case.test_sites()
-  test_case.test_adp()
-  test_case.test_alternate()
-  test_case.test_with_geometry_restraints()
+  # test_case.test_sites()
+  # test_case.test_adp()
+  # test_case.test_alternate()
+  # test_case.test_with_geometry_restraints()
   test_case.test_transformation_refinement()
-  test_case.test_refine_witout_transformations()
+  # test_case.test_refine_witout_transformations()
+  # test_case.test_altrnating_method()
   test_case.tearDown()
 
 if __name__=='__main__':

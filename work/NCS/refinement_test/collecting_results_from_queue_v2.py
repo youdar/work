@@ -1,6 +1,5 @@
 from __future__ import division
 import matplotlib.pyplot as plt
-from pprint import pprint
 import cPickle as pickle
 import numpy as np
 import os
@@ -12,16 +11,26 @@ File data input example:
 #  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
 #           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     tttt   | -1.00  | -1.00  |  0.57  |  0.58  |  0.33  |  0.34  |  0.00  |  0.00  | -1.00  |    3    |   0.95   |     1.00     |  None  | True |False |  True  |   14
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3368 | 0.4735 |  9.50  |    5    |   0.94   |     1.00     |  2004  |False | True | False  |  195
+
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3556 | 0.4067 |  9.50  |    5    |   0.94   |     1.00     |  2004  | True | True | False  |  189
+
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3731 | 0.4521 |  9.50  |    5    |   0.94   |     1.00     |  2004  | True | True |  True  |  236
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Rotation,Translation difference      |  Rxx   |  Rxy   |  Rxz   |  Ryx   |  Ryy   |  Ryz   |  Rzx   |  Rzy   |  Rzz   |   Tx   |   Ty   |   Tz
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Transform number: 1                  | 0.0454 | 0.0219 |-0.0169 |-0.0278 | 0.0410 |-0.0222 |-0.0101 |-0.0036 | 0.0030 | 0.0006 | 0.0005 |-0.0004
-  Transform number: 2                  |-0.0439 |-0.0115 |-0.0184 |-0.0579 |-0.0646 |-0.0046 | 0.0465 |-0.0623 | 0.0493 | 0.0003 |-0.0010 | 0.0001
+  Transform number: 1                  | 0.0008 |-0.0004 |-0.0010 | 0.0032 |-0.0064 |-0.0028 | 0.0032 | 0.0042 |-0.0056 |-0.0021 |-0.0003 | 0.0004
+  Transform number: 2                  | 0.0011 |-0.0031 | 0.0064 | 0.0016 |-0.0004 | 0.0028 | 0.0059 | 0.0048 | 0.0007 |-0.0004 |-0.0006 | 0.0003
+  Transform number: 3                  | 0.0037 |-0.0040 |-0.0047 |-0.0027 | 0.0013 | 0.0053 | 0.0013 |-0.0074 | 0.0050 |-0.0007 |-0.0008 | 0.0001
+  Transform number: 4                  | 0.0002 |-0.0017 |-0.0008 | 0.0013 | 0.0002 |-0.0006 |-0.0011 |-0.0005 | 0.0004 | 0.0006 | 0.0007 |-0.0001
 
-=============================================================================================================================================================================
-
-Posiotion in the data list:
+Position in the data list:
       0         1	     2	      3	        4	     5	      6        7       8         9       10        11            12         13       14     15     16         17
 
 
@@ -31,20 +40,24 @@ Data to excel output
 pdb code| num ncs copies | year | resolution | data completeness| solvent fraction |
 
 
- 6(1)             |     7(2)          |     8(7)(14)            |    9(8)(14)
-R-work pdb header | R-free pdb header | R-work using strict ncs | R-free using strict ncs |
+ 6(1)             |     7(2)          |     8(5)   |    9(6)
+R-work pdb header | R-free pdb header | R-work init    | init
 
-  10(7)(14)               |        11(8)(14)          |       12(7)(16)       |
-R-work without strict ncs | R-free without strict ncs | R-work with transform |
+  10(7)(14)               |        11(8)(14)          |
+R-work without strict ncs | R-free without strict ncs |
 
-  13(8)(16)           |    14(5)        |    15(6)        |   16(15)
-R-free with transform | r work asu init | r free asu init |	use geometry restraints |
+    12(7)(14)             |    13(8)(14)
+ R-work using strict ncs | R-free using strict ncs |
 
-  17(16)      | 18(14)(14)| 19(14)(14)  |    20(14)(16)  |
-use transform | time ncs  | time no ncs | time_transform |
 
-  21
-Compare to reported
+      14(7)(16)        |  15(8)(16)           |
+ R-work with transform |R-free with transform |
+
+    16(15)
+ use geometry restraints |
+
+ 17(17)(14)| 18(17)(14)  |    19(17)(16)  |
+time no ncs   | time ncs | time_transform |
 
 """
 
@@ -54,8 +67,10 @@ class results_collection(object):
     self.data_records = []
     self.data_records_long = []
     self.data_records_strict_ncs_dict = {}
+    self.data_records_transform_dict = {}
     self.data_records_without_strict_ncs_dict = {}
     self.data_records_dict = {}
+    self.transform_records_dict = {}
     self.cols_inp = [
       'pdb_code',
       'r_work_pdb_reported',
@@ -85,28 +100,27 @@ class results_collection(object):
       'solvent_fraction',
       'r_work_pdb_header',
       'r_free_pdb_header',
-      'r_work_asu_ncs',
-      'r_free_asu_ncs',
-      'r_work_asu_no_ncs',
-      'r_free_asu_no_ncs',
-      'r_work_asu_transform',
-      'r_free_asu_transform',
       'r_work_asu_init',
       'r_free_asu_init',
+      'r_work_asu_no_ncs',
+      'r_free_asu_no_ncs',
+      'r_work_asu_ncs',
+      'r_free_asu_ncs',
+      'r_work_asu_transform',
+      'r_free_asu_transform',
       'use_geometry_restraints',
-      'use_transforms',
-      'time_ncs',
       'time_no_ncs',
+      'time_ncs',
       'time_transform']
 
     self.cols_names_for_table1 = [x.replace('_',' ') for x in self.cols_inp]
     self.cols_names_for_table2 = [x.replace('_',' ') for x in self.cols_names]
-    self.map_to_ncs = {0:0,1:6,2:7,5:14,6:15,13:2,9:3,10:1,11:5,12:4,15:16,
-                       16:17,7:8,8:9,14:18}
-    self.map_to_no_ncs = {0:0,1:6,2:7,5:14,6:15,13:2,9:3,10:1,11:5,12:4,15:16,
-                          16:17,7:10,8:11,14:19}
-    self.map_to_transform = {0:0,1:6,2:7,5:14,6:15,13:2,9:3,10:1,11:5,12:4,
-                             15:16,16:17,7:12,8:13,14:20}
+    self.map_to_no_ncs = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
+                          7:10,8:11,17:17}
+    self.map_to_ncs = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
+                       7:12,8:13,17:18}
+    self.map_to_transform = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
+                             7:14,8:15,17:19}
     self.float_type_records = [1,2,3,4,5,6,7,8,9,11,12,17]
     self.int_type_records = [10,13]
     self.bool_type_records = [14,15,16]
@@ -117,6 +131,12 @@ class results_collection(object):
         """ Parameter number to sort by """
     sort_inp.__dict__.update(zip(self.cols_inp, range(len(self.cols_inp))))
     self.sort_inp = sort_inp
+
+    class sort_out():
+      def __init__(self):
+        """ Parameter number to sort by """
+    sort_out.__dict__.update(zip(self.cols_names, range(len(self.cols_names))))
+    self.sort_out = sort_out
 
   def read_filenames(self):
     use_rec = self.sort_inp
@@ -145,7 +165,7 @@ class results_collection(object):
           for indx in self.float_type_records:
             data[indx] = float(data[indx])
           for indx in self.int_type_records:
-            if not data[indx]: data[indx] = 0
+            if data[indx] == 'None': data[indx] = 0
             else: data[indx] = int(data[indx])
           for indx in self.bool_type_records:
             data[indx] = (data[indx] == 'True')
@@ -174,10 +194,25 @@ class results_collection(object):
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
+          # build other dictionaries
+          if data[use_rec.use_transforms]:
+            self.data_records_transform_dict[data[0]] = data
+        # process transformation info
+        if ln.startswith('  Transform number:'):
+          transform_data = [x.strip() for x in ln.split('|')][1:]
+          transform_data = map(float,transform_data)
+          if self.transform_records_dict.has_key(data[0]):
+            self.transform_records_dict[data[0]].append(transform_data)
+          else:
+            self.transform_records_dict[data[0]] = [transform_data]
+
     # create a list version of the dictionary
     for key,val in self.data_records_dict.iteritems():
       self.data_records_long.append(val)
+    print '-'*60
     print 'There are {} good data records'.format(len(self.data_records))
+    print 'There are {} pdb records'.format(len(self.data_records_long))
+    print '-'*60
 
     # organize data
     # Sort records
@@ -186,6 +221,7 @@ class results_collection(object):
     pickle.dump(self.data_records,open('data_records_v2','w'))
     pickle.dump(self.data_records_long,open('data_records_long_v2','w'))
     pickle.dump(self.data_records_dict,open('data_records_dict_v2','w'))
+    pickle.dump(self.transform_records_dict,open('transform_records_dict','w'))
     pickle.dump(
       self.data_records_strict_ncs_dict,open('data_records_strict_ncs_dict_v2','w'))
     pickle.dump(
@@ -197,6 +233,7 @@ class results_collection(object):
     self.data_records = pickle.load(open('data_records_v2','r'))
     self.data_records_long = pickle.load(open('data_records_long_v2','r'))
     self.data_records_dict = pickle.load(open('data_records_dict_v2','r'))
+    self.transform_records_dict =pickle.load(open('transform_records_dict','r'))
     self.data_records_strict_ncs_dict = pickle.load(
       open('data_records_strict_ncs_dict_v2','r'))
     self.data_records_without_strict_ncs_dict = pickle.load(
@@ -269,7 +306,7 @@ class results_collection(object):
     plt.plot([0,maxval],[0,maxval])
     plt.xlabel('r-work Refinement using strict-ncs')
     plt.ylabel('r-work Refinement without strict-ncs')
-    plt.title('Compare r-work values and stric-ncs influence on r-free')
+    plt.title('strict-ncs influence on (R_work - R_free)')
     # plot reference point, to indicate the meaning of size
     plt.text(0.035,0.49 + d, 'The same r_work - r_free value',fontsize=14)
     plt.text(0.035,0.44 + d, '0.05 difference',fontsize=14)
@@ -295,11 +332,12 @@ class results_collection(object):
                       [self.sort_inp.time])
         pdb_code.append(x)
 
-    # print outliers
-    d = 0.1
-    for (x,y,code) in zip(time_ncs,time_no_ncs,pdb_code):
-      if abs(x-y)/x > d:
-        print 'Time difference is {0:.0f}% for {1}'.format(100*(x-y)/x,code)
+    # print time outliers
+    # d = 0.1
+    # for (x,y,code) in zip(time_ncs,time_no_ncs,pdb_code):
+    #   if abs(x-y)/x > d:
+    #     print 'Time difference is {0:.0f}% for {1}'.format(100*(x-y)/x,code)
+
     # get larges r-values for the 45 degrees line
     maxval = max(time_ncs + time_no_ncs) *1.05
 
@@ -316,17 +354,82 @@ class results_collection(object):
     plt.ylim(0,maxval)
     plt.show()
 
+  def plot_results_3(self):
+    """
+    Plot a result summery:
+    r-work (refined using strict-ncs and Transforms) vs.
+    r-work (refined without strict-ncs)
+
+    xerr , yerr are the difference between r-work and r-free for the two
+    refinement methods
+
+    The size of the circles indicate the size of (xerr - yerr). It is blue
+    when the strict_ncs refinement make the (r_work - r_free) smaller.
+    """
+    sort_by = self.sort_inp
+    # Collect data points that have results with and without strict_ncs
+    x_ncs = []; y_no_ncs =[]
+    x2 = []; y2 = []
+    pdb_code = []
+    print len(self.data_records_transform_dict)
+    for x in self.data_records_transform_dict:
+      if self.data_records_without_strict_ncs_dict.has_key(x):
+        x_ncs.append(self.data_records_transform_dict[x]
+                           [sort_by.r_work_asu_final])
+        y_no_ncs.append(self.data_records_without_strict_ncs_dict[x]
+                                  [sort_by.r_work_asu_final])
+        x2.append(self.data_records_transform_dict[x]
+                      [sort_by.r_free_asu_final])
+        y2.append(self.data_records_without_strict_ncs_dict[x]
+                      [sort_by.r_free_asu_final])
+        pdb_code.append(x)
+
+    # get larges r-values for the 45 degrees line
+    maxval = max(x_ncs + y_no_ncs) *1.05
+
+    # Convert lists to numpy arrays
+    x_ncs = np.array(x_ncs)
+    y_no_ncs = np.array(y_no_ncs)
+
+    # First illustrate basic pyplot interface, using defaults where possible.
+    plt.figure()
+    colors = []
+    delta_err = [(x-y) for (x,y) in zip (x_ncs,y_no_ncs)]
+    s = [5+1000*abs(x) for x in delta_err]
+    for i,x in enumerate(delta_err):
+      if x > 0:
+        colors.append('b')
+      else:
+        colors.append('y')
+        print 'Better r-free without NCS: ',pdb_code[i]
+    # add points for size reference : Difference of 0, 0.05, 0.1
+    s.extend([105,55,5])
+    colors.extend(['g','g','g'])
+    x_ncs = np.append(x_ncs,[.02,.02,.02])
+    d = maxval - 0.55
+    y_no_ncs = np.append(y_no_ncs,[.4 + d,.45 + d,.5 + d])
+    plt.scatter(x_ncs,y_no_ncs,s,c=colors)
+    plt.plot([0,maxval],[0,maxval])
+    plt.xlabel('R_work Refinement, strict-ncs and transforms',fontsize=14)
+    plt.ylabel('R_work Refinement, without strict-ncs',fontsize=14)
+    plt.title('Transform and strict-NCS influence on (R_work - R_free)',fontsize=14)
+    # plot reference point, to indicate the meaning of size
+    plt.text(0.035,0.49 + d, 'The same r_work - r_free value',fontsize=14)
+    plt.text(0.035,0.44 + d, '0.05 difference',fontsize=14)
+    plt.text(0.035,0.39 + d, '0.1 difference',fontsize=14)
+
+    plt.xlim(0,maxval)
+    plt.ylim(0,maxval)
+    plt.savefig('transform_refinement.png',transparent=False)
+    plt.show()
+
+
   def save_csv_table_to_file(self):
     """
-    Save a the collected data in a csv file:
-
-    The data in the file is one line per test with the following records order:
-    'pdb_code','r_work_pdb_reported','r_free_pdb_reported',
-    'r_work_single_ncs','r_free_single_ncs','r_work_asu_init',
-    'r_free_asu_init','r_work_asu_final','r_free_asu_final','resolution',
-    'num_ncs_copies','solvent_fraction','data_completeness','year',
-    'use_strict_ncs','use_geometry_restraints','use_transforms','time'
+    Save a the collected data in a csv file using the record order as
+    specified in self.cols_names_for_table1
     """
+    print 'Running ',sys._getframe().f_code.co_name
     file_name = 'ncs_refinement_results_v2.csv'
     f = open(file_name,'w')
     f.write(','.join(self.cols_names_for_table1))
@@ -342,15 +445,10 @@ class results_collection(object):
     """
     Save a the collected data in a csv file:
 
-    The data in the file is one line per test with the following records order:
-
-    'pdb_code','num_ncs_copies','year','resolution','data_completeness',
-    'solvent_fraction','r_work_pdb_header','r_free_pdb_header',
-    'r_work_asu_ncs','r_free_asu_ncs','r_work_asu_no_ncs','r_free_asu_no_ncs',
-    'r_work_asu_transform','r_free_asu_transform','r_work_asu_init',
-    'r_free_asu_init','use_geometry_restraints','use_transforms',
-    'time_ncs','time_no_ncs','time_transform'
+    The data in the file is one line per test with the records order as
+    specified in self.cols_names_for_table2
     """
+    print 'Running ',sys._getframe().f_code.co_name
     file_name = 'ncs_refinement_results_table2_v2.csv'
     table_title = self.cols_names_for_table2
     f = open(file_name,'w')
@@ -363,12 +461,41 @@ class results_collection(object):
     f.close()
     print 'data was saved to: ',file_name
 
+  def save_csv_selected_files(self,pdb_file_list):
+    """
+    Create a CSV of selected files in a modified format
+    """
+    print 'Running ',sys._getframe().f_code.co_name
+    ur = self.sort_out
+    file_name = 'selected_files_v2.csv'
+    records_to_use = self.cols_names_for_table2[:ur.r_free_asu_transform]
+    table_title = ['PDB','n','Year','Res.','Comp','Solvent',
+                   'Header','Initial','W/O NCS','W NCS','Transform']
+
+    f = open(file_name,'w')
+    f.write(','.join(table_title))
+    f.write('\n')
+    for rec in self.data_records_long:
+      if rec[ur.pdb_code] in pdb_file_list:
+        rec = [str(x) for x in rec]
+        outstr = rec[0:6]
+        outstr += ['/'.join(rec[ur.r_work_pdb_header:ur.r_free_pdb_header+1]),
+                  '/'.join(rec[ur.r_work_asu_init:ur.r_free_asu_init+1]),
+                  '/'.join(rec[ur.r_work_asu_no_ncs:ur.r_free_asu_no_ncs+1]),
+                  '/'.join(rec[ur.r_work_asu_ncs:ur.r_free_asu_ncs+1]),
+                  '/'.join(rec[ur.r_work_asu_transform:ur.r_free_asu_transform+1])]
+        outstr += '\n'
+        f.write(','.join(outstr))
+    f.close()
+    print 'data was saved to: ',file_name
+
 
   def get_list_of_unprocessed_files(self):
     """
     Check which of the PDB files, from our initial list, are not included in
     the results
     """
+    print 'Running ',sys._getframe().f_code.co_name
     pdb_code_set = {
       '3dar', '1vcr', '1r2j', '1a37', '1llc', '1tnv', '1tdi', '1w39', '1ny7',
       '1ddl', '1c8n', '2bfu', '4gmp', '3vbr', '3vbu', '3vbo', '4jgy', '3es5',
@@ -390,19 +517,267 @@ class results_collection(object):
 
     without_strict_ncs_set=set(self.data_records_without_strict_ncs_dict.keys())
     with_strict_ncs_set=set(self.data_records_strict_ncs_dict.keys())
+    with_transform_set=set(self.data_records_transform_dict.keys())
     print ''
     print '  files with some records missing'
     print '---------------------------------'
     outdata1 = pdb_code_set - without_strict_ncs_set
     outdata2 = pdb_code_set - with_strict_ncs_set
-    outdata = list(outdata1.union(outdata2))
+    outdata3 = pdb_code_set - with_transform_set
+    outdata = outdata3.union(outdata2)
+    outdata = list(outdata.union(outdata1))
+
     n = 5
     l = len(outdata)
+    print 'Total number of files: ',len(pdb_code_set)
+    print(list(outdata))
     for i in range(0,l,n):
       e = min(i+n,l)
       s = ['{}']*(e-i)
       s = ', '.join(s)
       print s.format(*outdata[i:e])
+
+  def filter_best_1(self):
+    """
+    Filter files with best (r_work_asu_init - r_work_asu_transform)
+    """
+    print 'Filter files with best (r_work_asu_init - r_work_asu_transform)'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x2,x1,use_data = self.final_vs_init(rec)
+      if use_data:
+        if rec[use_rec.r_work_asu_transform] != \
+                rec[use_rec.r_free_asu_transform]:
+          temp.extend([[round(x1-x2,4),rec]])
+    temp.sort()
+    for rec in temp[-15:]:
+      print rec
+      file_list.append(rec[1][0])
+    print set([x[1][0] for x in temp])
+
+
+  def filter_best_2(self):
+    """
+    Filter files with r_free_asu_transform == r_work_asu_transform
+    """
+    print 'Filter files with r_free_asu_transform == r_work_asu_transform'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x1 =  rec[use_rec.r_free_asu_transform]
+      y1 =  rec[use_rec.r_work_asu_transform]
+      if  isinstance(x1,float):
+        if x1 == y1:
+          temp.extend([[x1,rec]])
+    temp.sort()
+    for rec in temp[-10:]:
+      file_list.append(rec[1][0])
+      print rec
+    print set([x[1][0] for x in temp])
+
+  def filter_best_3(self):
+    """
+    Filter files with best delta(r_work - r_free) improvement
+    """
+    print 'Filter files with best delta(r_work - r_free) improvement'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x1 =  rec[use_rec.r_work_asu_ncs]
+      x2 =  rec[use_rec.r_free_asu_ncs]
+      y1 =  rec[use_rec.r_work_asu_transform]
+      y2 =  rec[use_rec.r_free_asu_transform]
+      if  isinstance(x1,float) and isinstance(y1,float):
+        temp.extend([[round(abs(x1-x2) - abs(y1-y2),4),rec]])
+    temp.sort()
+    for rec in temp[-10:]:
+      file_list.append(rec[1][0])
+      print rec
+    print set([x[1][0] for x in temp])
+
+  def filter_best_4(self):
+    """
+    Collect files with final R-work larger than initial
+    """
+    print 'Filter files with final R-work larger than initial'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x1 =  rec[use_rec.r_work_asu_init]
+      y1 =  rec[use_rec.r_work_asu_transform]
+      if  isinstance(x1,float) and isinstance(y1,float):
+        if y1 > x1:
+          temp.extend([[round(y1-x1,4),rec]])
+    temp.sort()
+    for rec in temp[-10:]:
+      file_list.append(rec[1][0])
+      print rec
+    print set([x[1][0] for x in temp])
+    print 'number of files: ',len(temp)
+
+  def filter_best_5(self):
+    """
+    Collect files with big change in transformations
+    """
+    print 'Collect files with big change in transformations'
+    list_of_files = []
+    set_of_files = set()
+    for k,v in self.transform_records_dict.iteritems():
+      for rec in v:
+        m = max(rec)
+        if m > 0.2:
+          list_of_files.append([m,self.data_records_dict[k]])
+          set_of_files.add(k)
+    list_of_files.sort()
+    list_of_files.reverse()
+    printed_files = []
+    for l in list_of_files:
+      if l[1][0] not in printed_files:
+        print l
+        printed_files.append(l[1][0])
+    print set_of_files
+
+  def filter_best_6(self):
+    """
+    Collect files with R_work (initial - Header) > 0.2
+    """
+    print 'Collect files with R_work (initial - Header) > 0.2'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x1 =  rec[use_rec.r_work_asu_init]
+      y1 =  rec[use_rec.r_work_pdb_header]
+      if  isinstance(x1,float) and isinstance(y1,float):
+        if (y1 != -1) and (x1 - y1) > 0.2:
+          temp.extend([[round(abs(y1-x1),4),rec]])
+    temp.sort()
+    for rec in temp:
+      file_list.append(rec[1][0])
+      print rec
+    print set([x[1][0] for x in temp])
+    print 'number of files: ',len(temp)
+
+  def filter_best_7(self):
+    """
+    Collect files with R_work final > 0.5
+    """
+    print 'Collect files with R_work final > 0.5'
+    temp = []
+    file_list = []
+    use_rec = self.sort_out
+    for rec in self.data_records_long:
+      x1 =  rec[use_rec.r_work_asu_transform]
+      if  isinstance(x1,float):
+        if x1 > 0.5:
+          temp.extend([[round(x1,4),rec]])
+    temp.sort()
+    for rec in temp:
+      file_list.append(rec[1][0])
+      print rec
+    print set([x[1][0] for x in temp])
+    print 'number of files: ',len(temp)
+
+  def get_stat(self,exclude_list=[]):
+    """
+    Get mean and standard deviation of:
+    1) improvement in R-work, All refinements methods compare to initial value
+    2) improvement in delta(R_work - R_free)  All refinements methods compare to without NCS
+    3) improvement in R-work, All refinements methods compare to without transform
+
+    exclude_list: (list of str) contains list of outliers not to include
+    """
+    use_rec = self.sort_out
+    st1 ='R-work improvement, All refinements methods compare to initial value'
+    sf1 = self.final_vs_init
+    st2 ='delta(R_work - R_free) improvement, All refinements methods compare to without NCS'
+    sf2 = self.delta_work_free
+    st3 ='R-work improvement, applying transform refinement'
+    sf3 = self.final_vs_ncs
+    get_stat_using = [(st1,sf1),(st2,sf2),(st3,sf3)]
+    for test in get_stat_using:
+      i = []
+      f = []
+      print test[0]
+      for rec in self.data_records_long:
+        f1,i1,use_data =test[1](rec)
+        if use_data:
+          i.append(i1)
+          f.append(f1)
+      i = np.array(i)
+      f = np.array(f)
+      d = i - f
+      print 'Mean : {0:.4f}  STD : {1:.4f}   Number of files {2}'\
+        .format(np.mean(d),np.std(d),len(d))
+
+
+  def final_vs_init(self,rec):
+    """
+    Compare R-work, All refinements methods compare to initial value
+
+    Argument:
+    rec : list of all refinement data
+    Return:
+    f,i : (float,float) R-work : final,initial
+    use_data : (bool) When True, both values are floats
+    """
+    use_rec = self.sort_out
+    f =  rec[use_rec.r_work_asu_transform]
+    i =  rec[use_rec.r_work_asu_init]
+    use_data = isinstance(f,float) and isinstance(i,float)
+    return f,i,use_data
+
+  def delta_work_free(self,rec):
+    """
+    Compare delta(R_work - R_free)  All refinements methods compare to without NCS
+
+    Argument:
+    rec : list of all refinement data
+    Return:
+    f,i : (float,float) delta(R_work - R_free) : final,initial
+    use_data : (bool) When True, both values are floats
+    """
+    use_rec = self.sort_out
+    i1 =  rec[use_rec.r_work_asu_no_ncs]
+    i2 =  rec[use_rec.r_free_asu_no_ncs]
+    f1 =  rec[use_rec.r_work_asu_transform]
+    f2 =  rec[use_rec.r_free_asu_transform]
+    use_data = isinstance(f1,float) and isinstance(i1,float)
+    if use_data:
+      f =  abs(f2-f1)
+      i =  abs(i2-i1)
+    else:
+      f = i = None
+    return f,i,use_data
+
+  def final_vs_ncs(self,rec):
+    """
+    Compare R-work, All refinements methods compare to without transform
+
+    Argument:
+    rec : list of all refinement data
+    Return:
+    f,i : (float,float) R-work : final,initial
+    use_data : (bool) When True, both values are floats
+    """
+    use_rec = self.sort_out
+    f =  rec[use_rec.r_work_asu_transform]
+    i =  rec[use_rec.r_work_asu_ncs]
+    use_data = isinstance(f,float) and isinstance(i,float)
+    return f,i,use_data
+
+  def filter_by_year(self,rec_list,year):
+    """d
+    filter a list of [[float,list],[float,list]...] by the year value in list
+    Return rec_list with records from 'year' and on
+    """
+    use_rec = self.sort_out
+    return [x for x in rec_list if x[1][use_rec.year] >= year]
 
 if __name__=='__main__':
   # path_to_log_files = "/net/cci/youval/Work/work/NCS/junk/pdb_test/queue_job"
@@ -419,7 +794,26 @@ if __name__=='__main__':
   # plot
   process_results.plot_results_1()
   process_results.plot_results_2()
+  process_results.plot_results_3()
   # check which files are not processed yet
   process_results.get_list_of_unprocessed_files()
+
+  s1 = ['3raa','2bfu','3qpr','3ntt','1dzl','3s4g','1ei7',
+        '2qij','2ztn','3nou','3hag','2g34']
+  s2 = ['3raa','2bfu','3qpr','3ntt','1dzl','3s4g','1ei7',
+        '2qij','3nou','3hag','2g34',
+        '1dwn','1qjy', '1qju', '1a37', '2buk','1vcr','1tnv',
+        '3r0r','1vb2','4gbt']
+
+  # process_results.save_csv_selected_files(s2)
+  process_results.filter_best_1()
+  process_results.filter_best_2()
+  process_results.filter_best_3()
+  process_results.filter_best_4()
+  process_results.filter_best_5()
+  process_results.filter_best_6()
+  process_results.filter_best_7()
+  process_results.get_stat(exclude_list=['1llc'])
+
   os.chdir(current_path)
   print 'Done...'

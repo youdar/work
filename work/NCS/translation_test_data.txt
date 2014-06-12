@@ -1,0 +1,1403 @@
+C:\Phenix\Dev\phenix_build\bin\python.bat C:/Phenix/Dev/phenix_sources/cctbx_project/mmtbx/refinement/tst_minimization_ncs_constraints.py
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4455
+  macro_cycle   0 (transformation)   r_factor: 0.0564   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0359   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0271   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0089   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0040   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0028   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4122
+  macro_cycle   0 (transformation)   r_factor: 0.0592   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0254   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0135   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0057   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0040   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0028   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4054
+  macro_cycle   0 (transformation)   r_factor: 0.0603   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0264   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0142   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0071   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0024   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4523
+  macro_cycle   0 (transformation)   r_factor: 0.3839   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3701   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3586   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3564   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3526   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3526   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3516   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3516   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3515   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3513   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4401
+  macro_cycle   0 (transformation)   r_factor: 0.0916   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0316   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0236   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0150   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0132   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0032   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4376
+  macro_cycle   0 (transformation)   r_factor: 0.1031   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0533   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0374   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0276   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0190   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0014   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4539
+  macro_cycle   0 (transformation)   r_factor: 0.1112   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0613   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0461   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0213   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0125   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0066   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0025   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4562
+  macro_cycle   0 (transformation)   r_factor: 0.0597   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0362   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0180   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0117   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0064   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0037   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0019   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3875
+  macro_cycle   0 (transformation)   r_factor: 0.0651   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0166   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4174
+  macro_cycle   0 (transformation)   r_factor: 0.3632   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3629   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3627   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3621   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3624   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3625   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3623   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3623   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3624   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3622   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4491
+  macro_cycle   0 (transformation)   r_factor: 0.1056   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0391   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0110   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0038   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0026   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4772
+  macro_cycle   0 (transformation)   r_factor: 0.1156   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0499   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0322   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0274   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0134   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0090   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0028   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0022   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4160
+  macro_cycle   0 (transformation)   r_factor: 0.0973   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0399   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0238   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0100   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0042   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4431
+  macro_cycle   0 (transformation)   r_factor: 0.0995   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0492   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0317   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0133   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0099   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0059   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0021   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0015   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4686
+  macro_cycle   0 (transformation)   r_factor: 0.0846   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0367   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0209   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0170   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0047   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0017   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4753
+  macro_cycle   0 (transformation)   r_factor: 0.3554   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3473   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3452   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3446   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3444   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3444   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3443   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3443   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3443   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3443   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4444
+  macro_cycle   0 (transformation)   r_factor: 0.3668   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3648   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3627   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3665   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3655   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3654   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3645   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3648   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3647   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3648   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4676
+  macro_cycle   0 (transformation)   r_factor: 0.0619   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0487   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0417   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0245   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0202   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0173   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0048   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0037   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4565
+  macro_cycle   0 (transformation)   r_factor: 0.0665   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0341   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0188   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0150   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0025   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4661
+  macro_cycle   0 (transformation)   r_factor: 0.4190   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3904   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3647   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3456   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3401   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3390   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3366   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3371   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3374   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3373   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4273
+  macro_cycle   0 (transformation)   r_factor: 0.0530   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0246   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0121   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0066   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0023   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0014   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4601
+  macro_cycle   0 (transformation)   r_factor: 0.0619   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0149   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0060   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0035   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4601
+  macro_cycle   0 (transformation)   r_factor: 0.1419   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0448   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0359   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0162   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0102   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0073   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4416
+  macro_cycle   0 (transformation)   r_factor: 0.4298   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.4264   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.4193   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.4140   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.4113   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.4113   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.4106   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.4103   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.4103   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.4104   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4424
+  macro_cycle   0 (transformation)   r_factor: 0.3655   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3503   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3474   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3440   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3439   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3438   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3438   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3437   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3436   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3437   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4506
+  macro_cycle   0 (transformation)   r_factor: 0.3722   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3705   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3648   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3631   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3613   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3610   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3612   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3617   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3616   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3617   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4243
+  macro_cycle   0 (transformation)   r_factor: 0.0342   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0266   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0072   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0057   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4316
+  macro_cycle   0 (transformation)   r_factor: 0.0890   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0290   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0184   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0085   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0049   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0036   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0000   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4781
+  macro_cycle   0 (transformation)   r_factor: 0.0847   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0605   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0363   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0188   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0112   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0061   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0029   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0017   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4446
+  macro_cycle   0 (transformation)   r_factor: 0.0811   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0304   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0158   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0102   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0065   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0034   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0000   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4520
+  macro_cycle   0 (transformation)   r_factor: 0.3661   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3670   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3667   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3665   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3667   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3665   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3662   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3661   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3661   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3661   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4129
+  macro_cycle   0 (transformation)   r_factor: 0.0679   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0436   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0257   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0126   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0085   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0057   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0034   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0018   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4550
+  macro_cycle   0 (transformation)   r_factor: 0.3697   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3609   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3520   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3460   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3459   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3502   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3507   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3508   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3497   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3498   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4164
+  macro_cycle   0 (transformation)   r_factor: 0.0422   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0141   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0080   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0041   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0017   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4673
+  macro_cycle   0 (transformation)   r_factor: 0.4559   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.4509   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.4476   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.4453   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.4481   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.4478   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.4438   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.4443   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.4428   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.4430   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4483
+  macro_cycle   0 (transformation)   r_factor: 0.1300   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0983   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0296   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0200   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0132   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0105   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0087   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0040   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4606
+  macro_cycle   0 (transformation)   r_factor: 0.1293   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0428   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0212   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0076   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0038   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0023   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0015   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4606
+  macro_cycle   0 (transformation)   r_factor: 0.3618   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3531   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3518   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3492   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3469   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3464   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3451   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3449   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3449   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3450   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4541
+  macro_cycle   0 (transformation)   r_factor: 0.0674   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0316   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0163   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0112   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0063   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0042   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0034   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0025   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4274
+  macro_cycle   0 (transformation)   r_factor: 0.0669   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0135   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0078   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0045   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0037   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4457
+  macro_cycle   0 (transformation)   r_factor: 0.3665   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3539   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3514   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3505   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3501   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3500   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3502   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3501   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3502   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3502   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4558
+  macro_cycle   0 (transformation)   r_factor: 0.0924   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0122   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0053   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0034   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0028   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4347
+  macro_cycle   0 (transformation)   r_factor: 0.3578   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3519   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3491   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3482   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4705
+  macro_cycle   0 (transformation)   r_factor: 0.1146   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0329   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0156   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0080   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0045   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0027   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0019   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4615
+  macro_cycle   0 (transformation)   r_factor: 0.0975   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0398   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0200   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0091   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0062   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0015   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4645
+  macro_cycle   0 (transformation)   r_factor: 0.3522   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3333   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3297   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3279   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3254   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3256   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3254   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3252   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3251   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3246   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4405
+  macro_cycle   0 (transformation)   r_factor: 0.0816   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0535   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0325   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0129   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0054   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0045   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0022   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4432
+  macro_cycle   0 (transformation)   r_factor: 0.3073   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.2993   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.2943   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.2947   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.2948   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.2941   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.2940   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.2940   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.2940   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.2940   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4515
+  macro_cycle   0 (transformation)   r_factor: 0.1235   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0567   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0421   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0305   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0165   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0096   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0024   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4390
+  macro_cycle   0 (transformation)   r_factor: 0.1032   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0253   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0132   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0080   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0025   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4378
+  macro_cycle   0 (transformation)   r_factor: 0.0895   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0394   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0264   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0157   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0084   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0059   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4642
+  macro_cycle   0 (transformation)   r_factor: 0.4189   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.4117   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.4091   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.4082   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.4002   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3937   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3898   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3842   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3789   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3803   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4222
+  macro_cycle   0 (transformation)   r_factor: 0.1177   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0368   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0239   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0158   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0102   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0063   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0047   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4038
+  macro_cycle   0 (transformation)   r_factor: 0.0332   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0061   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4474
+  macro_cycle   0 (transformation)   r_factor: 0.3557   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3551   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3552   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3550   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3549   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4519
+  macro_cycle   0 (transformation)   r_factor: 0.4217   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.4161   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.4147   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.4133   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3641   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3596   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3580   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3562   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3562   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3556   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4498
+  macro_cycle   0 (transformation)   r_factor: 0.0519   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0219   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0077   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0046   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4493
+  macro_cycle   0 (transformation)   r_factor: 0.0569   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0254   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0149   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0115   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0041   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4417
+  macro_cycle   0 (transformation)   r_factor: 0.1309   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0369   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0174   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0077   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0018   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4326
+  macro_cycle   0 (transformation)   r_factor: 0.1286   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.1012   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0476   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0377   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0210   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0095   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0071   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4654
+  macro_cycle   0 (transformation)   r_factor: 0.1086   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0843   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0346   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0262   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0140   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0119   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0048   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4802
+  macro_cycle   0 (transformation)   r_factor: 0.4128   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.4008   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3755   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3741   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3724   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3715   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3548   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3464   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3321   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3304   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4624
+  macro_cycle   0 (transformation)   r_factor: 0.3710   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3565   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3442   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3434   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3406   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3403   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3405   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3400   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3400   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3402   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4657
+  macro_cycle   0 (transformation)   r_factor: 0.0888   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0525   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0289   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0169   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0128   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0054   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0039   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3761
+  macro_cycle   0 (transformation)   r_factor: 0.0711   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0196   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0090   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0050   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0039   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4177
+  macro_cycle   0 (transformation)   r_factor: 0.0911   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0475   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0216   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0059   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0026   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4604
+  macro_cycle   0 (transformation)   r_factor: 0.0636   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0121   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0077   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0023   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4570
+  macro_cycle   0 (transformation)   r_factor: 0.3790   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3691   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3552   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3532   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3500   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3496   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3494   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3494   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3492   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3492   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4554
+  macro_cycle   0 (transformation)   r_factor: 0.0632   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0406   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0284   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0166   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0071   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0039   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0021   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4562
+  macro_cycle   0 (transformation)   r_factor: 0.3442   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3388   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3363   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3343   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3342   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3340   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3340   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3339   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3339   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3339   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4129
+  macro_cycle   0 (transformation)   r_factor: 0.0489   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0154   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0083   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0069   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0032   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0017   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4687
+  macro_cycle   0 (transformation)   r_factor: 0.3628   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3594   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3481   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3472   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3470   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3471   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3472   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3472   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3472   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3472   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4108
+  macro_cycle   0 (transformation)   r_factor: 0.0807   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0219   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0055   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0026   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3821
+  macro_cycle   0 (transformation)   r_factor: 0.1069   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0229   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0155   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0084   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0029   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4068
+  macro_cycle   0 (transformation)   r_factor: 0.1191   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0334   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0104   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0055   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0031   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0015   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4535
+  macro_cycle   0 (transformation)   r_factor: 0.3497   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3364   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3355   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3350   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3353   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3342   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3342   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3343   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3343   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3343   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4351
+  macro_cycle   0 (transformation)   r_factor: 0.0508   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0458   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0156   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0063   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0048   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0011   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4268
+  macro_cycle   0 (transformation)   r_factor: 0.0435   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0233   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0171   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0040   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0014   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3551
+  macro_cycle   0 (transformation)   r_factor: 0.1080   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0409   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0272   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0168   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0096   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0048   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4388
+  macro_cycle   0 (transformation)   r_factor: 0.0907   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0543   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0189   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0091   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0050   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0021   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4527
+  macro_cycle   0 (transformation)   r_factor: 0.0889   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0313   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0168   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0092   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0073   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4657
+  macro_cycle   0 (transformation)   r_factor: 0.3859   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3674   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3524   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3510   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3485   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3413   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3441   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3452   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3446   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3457   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3865
+  macro_cycle   0 (transformation)   r_factor: 0.0816   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0170   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0088   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0058   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0029   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3834
+  macro_cycle   0 (transformation)   r_factor: 0.0481   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0226   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0104   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0060   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0014   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3505
+  macro_cycle   0 (transformation)   r_factor: 0.0795   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0302   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0184   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0106   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0093   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0072   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0024   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0006   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4249
+  macro_cycle   0 (transformation)   r_factor: 0.0476   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0198   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0084   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0035   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0019   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0009   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4244
+  macro_cycle   0 (transformation)   r_factor: 0.1125   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0333   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0230   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0151   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0076   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0038   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0028   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0020   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4642
+  macro_cycle   0 (transformation)   r_factor: 0.3607   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3539   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3539   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3539   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3538   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4765
+  macro_cycle   0 (transformation)   r_factor: 0.3477   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3446   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3406   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3390   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3380   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3385   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3377   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3380   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3380   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3381   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4394
+  macro_cycle   0 (transformation)   r_factor: 0.1100   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0294   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0090   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0042   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0027   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4349
+  macro_cycle   0 (transformation)   r_factor: 0.0416   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0257   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0148   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0036   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0019   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0013   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4172
+  macro_cycle   0 (transformation)   r_factor: 0.0358   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0266   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0132   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0094   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0044   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0008   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4581
+  macro_cycle   0 (transformation)   r_factor: 0.0620   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0334   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0215   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0158   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0112   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0078   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0050   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0010   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0002   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4161
+  macro_cycle   0 (transformation)   r_factor: 0.0502   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0227   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0140   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0089   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0047   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0035   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0030   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0018   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0014   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4068
+  macro_cycle   0 (transformation)   r_factor: 0.0504   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0174   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0092   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0037   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0029   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0003   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4474
+  macro_cycle   0 (transformation)   r_factor: 0.3639   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3595   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3585   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3586   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3585   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3584   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3585   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3584   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3584   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3584   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4021
+  macro_cycle   0 (transformation)   r_factor: 0.0605   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0356   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0214   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0103   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0043   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0019   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0001   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4666
+  macro_cycle   0 (transformation)   r_factor: 0.3803   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.3598   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.3532   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.3458   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.3445   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.3436   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.3434   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.3433   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.3433   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.3433   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.4538
+  macro_cycle   0 (transformation)   r_factor: 0.2221   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0911   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0318   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0194   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0103   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0065   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0041   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0007   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0004   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+Running  exercise_transformation_refinement
+Shake rotation matrices and translation vectors
+start r_factor: 0.3814
+  macro_cycle   0 (transformation)   r_factor: 0.0849   finite_grad_difference_val: 0.0000
+  macro_cycle   1 (transformation)   r_factor: 0.0248   finite_grad_difference_val: 0.0000
+  macro_cycle   2 (transformation)   r_factor: 0.0186   finite_grad_difference_val: 0.0000
+  macro_cycle   3 (transformation)   r_factor: 0.0160   finite_grad_difference_val: 0.0000
+  macro_cycle   4 (transformation)   r_factor: 0.0123   finite_grad_difference_val: 0.0000
+  macro_cycle   5 (transformation)   r_factor: 0.0048   finite_grad_difference_val: 0.0000
+  macro_cycle   6 (transformation)   r_factor: 0.0024   finite_grad_difference_val: 0.0000
+  macro_cycle   7 (transformation)   r_factor: 0.0016   finite_grad_difference_val: 0.0000
+  macro_cycle   8 (transformation)   r_factor: 0.0012   finite_grad_difference_val: 0.0000
+  macro_cycle   9 (transformation)   r_factor: 0.0005   finite_grad_difference_val: 0.0000
+Add assertion for transformation refinement
+
+Process finished with exit code 0

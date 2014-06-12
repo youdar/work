@@ -28,8 +28,8 @@ class fab_elbow_angle(object):
     Argument:
     ---------
     pdb_file_name : 4 characters string, a PDB name
-    chain_ID_heavy : The heavy protion of the protein, chain ID
-    chain_ID_light : The light protion of the protein, chain ID
+    chain_ID_heavy : The heavy portion of the protein, chain ID
+    chain_ID_light : The light portion of the protein, chain ID
     limit_heavy : the number of the cutoff residue, between
                   the variable and constant portions in the heavy chian
     limit_light : the number of the cutoff residue, between

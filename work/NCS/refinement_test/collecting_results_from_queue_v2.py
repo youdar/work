@@ -699,7 +699,9 @@ class results_collection(object):
     sf2 = self.delta_work_free
     st3 ='R-work improvement, applying transform refinement'
     sf3 = self.final_vs_ncs
-    get_stat_using = [(st1,sf1),(st2,sf2),(st3,sf3)]
+    st4 = 'delta(R_work - R_free) All refinements methods compare to PDB'
+    sf4 = self.delta_work_free_pdb
+    get_stat_using = [(st1,sf1),(st2,sf2),(st3,sf3),(st4,sf4)]
     for test in get_stat_using:
       i = []
       f = []
@@ -732,6 +734,22 @@ class results_collection(object):
     use_data = isinstance(f,float) and isinstance(i,float)
     return f,i,use_data
 
+  def final_vs_pdb(self,rec):
+    """
+    Compare R-work, All refinements methods compare to pdb published value
+
+    Argument:
+    rec : list of all refinement data
+    Return:
+    f,i : (float,float) R-work : final,initial
+    use_data : (bool) When True, both values are floats
+    """
+    use_rec = self.sort_out
+    f =  rec[use_rec.r_work_asu_transform]
+    i =  rec[use_rec.r_work_pdb_header]
+    use_data = isinstance(f,float) and isinstance(i,float)
+    return f,i,use_data
+
   def delta_work_free(self,rec):
     """
     Compare delta(R_work - R_free)  All refinements methods compare to without NCS
@@ -748,6 +766,31 @@ class results_collection(object):
     f1 =  rec[use_rec.r_work_asu_transform]
     f2 =  rec[use_rec.r_free_asu_transform]
     use_data = isinstance(f1,float) and isinstance(i1,float)
+    if use_data:
+      f =  abs(f2-f1)
+      i =  abs(i2-i1)
+    else:
+      f = i = None
+    return f,i,use_data
+
+  def delta_work_free_pdb(self,rec):
+    """
+    Compare delta(R_work - R_free)  All refinements methods compare to PDB
+
+    Argument:
+    rec : list of all refinement data
+    Return:
+    f,i : (float,float) delta(R_work - R_free) : final,initial
+    use_data : (bool) When True, both values are floats
+    """
+    use_rec = self.sort_out
+    i1 =  rec[use_rec.r_work_pdb_header]
+    i2 =  rec[use_rec.r_free_pdb_header]
+    f1 =  rec[use_rec.r_work_asu_transform]
+    f2 =  rec[use_rec.r_free_asu_transform]
+    test1 = isinstance(i1,float) and isinstance(i2,float)
+    test2 = test1 and (-1 not in [i1,i2])
+    use_data = isinstance(f1,float) and test2
     if use_data:
       f =  abs(f2-f1)
       i =  abs(i2-i1)
@@ -781,12 +824,14 @@ class results_collection(object):
 
 if __name__=='__main__':
   # path_to_log_files = "/net/cci/youval/Work/work/NCS/junk/pdb_test/queue_job"
-  path_to_log_files = r"C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\queue_job"
+  # path_to_log_files = r"C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\queue_job"
+  path_to_log_files = r'C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\rifinement_data_5-3-2014'
+
   current_path = os.getcwd()
   os.chdir(path_to_log_files)
   process_results = results_collection()
   # need to read_filenames only for new runs, it overwrites existing data files
-  process_results.read_filenames()
+  # process_results.read_filenames()
   # process existing files
   process_results.get_data_from_files()
   process_results.save_csv_table_to_file()
@@ -794,7 +839,8 @@ if __name__=='__main__':
   # plot
   process_results.plot_results_1()
   process_results.plot_results_2()
-  process_results.plot_results_3()
+  # TODO: fix error
+  # process_results.plot_results_3()
   # check which files are not processed yet
   process_results.get_list_of_unprocessed_files()
 

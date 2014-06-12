@@ -36,6 +36,7 @@ class test_ncs_refinement(object):
     n_macro_cycle        = 100,
     r_work_target        = 0.00001,
     print_during_refinement = True,
+    finite_grad_differences_test = True,
     sites                = True,
     u_iso                = False,
     transformations      = False)
@@ -203,6 +204,7 @@ class test_ncs_refinement(object):
       if n == 1: assert method['transformations'][2] == True
 
 
+
   def tearDown(self):
     '''remove temp files and folder'''
     print 'Running ',sys._getframe().f_code.co_name
@@ -211,13 +213,13 @@ class test_ncs_refinement(object):
 def run():
   test_case = test_ncs_refinement()
   test_case.setUp()
-  # test_case.test_sites()
-  # test_case.test_adp()
-  # test_case.test_alternate()
-  # test_case.test_with_geometry_restraints()
+  test_case.test_sites()
+  test_case.test_adp()
+  test_case.test_alternate()
+  test_case.test_with_geometry_restraints()
   test_case.test_transformation_refinement()
-  # test_case.test_refine_witout_transformations()
-  # test_case.test_altrnating_method()
+  test_case.test_refine_witout_transformations()
+  test_case.test_altrnating_method()
   test_case.tearDown()
 
 if __name__=='__main__':

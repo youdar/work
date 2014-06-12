@@ -37,15 +37,17 @@ class explor_fab(object):
     self.pdb_code = tmp.split('.')[0]
 
   def set_test_range(self,n):
-    self.limits_delta = [x for x in itertools.permutations(range(-n,n+1),2)]
-    self.limits_delta.append((0,0))
+    # self.limits_delta = [x for x in itertools.permutations(range(-n,n+1),2)]
+    # self.limits_delta.append((0,0))
+    self.limits_delta = [x for x in itertools.product(range(-n,n+1),repeat=2)]
+
 
   def get_fab_angle(self,limit_light=None,limit_heavy=None):
     if not limit_light: limit_light=self.limit_L
     if not limit_heavy: limit_heavy=self.limit_H
     ph = pdb.input(file_name=self.file_name).construct_hierarchy()
     fab = fab_elbow_angle(pdb_hierarchy=ph,limit_light=limit_light,limit_heavy=limit_heavy)
-    return fab.fab_elbow_angle
+    return round(fab.fab_elbow_angle)
 
   def calc_fab(self,range=0,limit_light=107,limit_heavy=113):
     ''''''
@@ -80,6 +82,7 @@ def run(fab_list):
     t = explor_fab(file_name=name,limit_L=limit_L,limit_H=limit_H)
     t.calc_fab(range=2)
     t.fab_angle_print()
+
 
 if __name__=='__main__':
   fab_list = sys.argv[1:]

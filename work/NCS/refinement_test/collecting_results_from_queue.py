@@ -360,7 +360,8 @@ class results_collection(object):
 
 if __name__=='__main__':
   # path_to_log_files = "/net/cci/youval/Work/work/NCS/junk/pdb_test/queue_job"
-  path_to_log_files = r"C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\queue_job"
+  # path_to_log_files = r"C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\queue_job"
+  path_to_log_files = r'C:\Phenix\Dev\Work\work\NCS\junk\pdb_test\rifinement_data_5-3-2014'
   current_path = os.getcwd()
   os.chdir(path_to_log_files)
   process_results = results_collection()

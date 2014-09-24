@@ -36,28 +36,31 @@ Position in the data list:
 
 Data to excel output
 --------------------
-   0 (0)|  1 (10)        | 2(13)|   3(9)     |      4(12)       |   5(11)          |
+   0 (0)|  1 (10)        | 2(15)|   3(9)     |      4(12)       |   5(11)          |
 pdb code| num ncs copies | year | resolution | data completeness| solvent fraction |
 
+ 6(13)         |   7(14)
+data/param ASU | data/param NCS |
 
- 6(1)             |     7(2)          |     8(5)   |    9(6)
+
+ 8(1)             |     9(2)          |     10(5)      | 11(6)
 R-work pdb header | R-free pdb header | R-work init    | init
 
-  10(7)(14)               |        11(8)(14)          |
+  12(7)(16)               |        13(8)(16)          |
 R-work without strict ncs | R-free without strict ncs |
 
-    12(7)(14)             |    13(8)(14)
+    14(7)(16)             |    15(8)(16)
  R-work using strict ncs | R-free using strict ncs |
 
 
-      14(7)(16)        |  15(8)(16)           |
+      16(7)(18)        |  17(8)(18)           |
  R-work with transform |R-free with transform |
 
-    16(15)
+    18(17)
  use geometry restraints |
 
- 17(17)(14)| 18(17)(14)  |    19(17)(16)  |
-time no ncs   | time ncs | time_transform |
+ 19(19)(16)   | 18(19)(16) |    20(19)(18)  |
+time no ncs   | time ncs   | time_transform |
 
 """
 
@@ -73,8 +76,8 @@ class results_collection(object):
     self.transform_records_dict = {}
     self.cols_inp = [
       'pdb_code',
-      'r_work_pdb_reported',
-      'r_free_pdb_reported',
+      'r_work_pdb_header',
+      'r_free_pdb_header',
       'r_work_single_ncs',
       'r_free_single_ncs',
       'r_work_asu_init',
@@ -85,6 +88,8 @@ class results_collection(object):
       'num_ncs_copies',
       'solvent_fraction',
       'data_completeness',
+      'data_to_atoms_ratio_asu',
+      'data_to_atoms_ratio_ncs',
       'year',
       'use_strict_ncs',
       'use_geometry_restraints',
@@ -98,6 +103,8 @@ class results_collection(object):
       'resolution',
       'data_completeness',
       'solvent_fraction',
+      'data_to_atoms_ratio_asu',
+      'data_to_atoms_ratio_ncs',
       'r_work_pdb_header',
       'r_free_pdb_header',
       'r_work_asu_init',
@@ -115,16 +122,12 @@ class results_collection(object):
 
     self.cols_names_for_table1 = [x.replace('_',' ') for x in self.cols_inp]
     self.cols_names_for_table2 = [x.replace('_',' ') for x in self.cols_names]
-    self.map_to_no_ncs = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
-                          7:10,8:11,17:17}
-    self.map_to_ncs = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
-                       7:12,8:13,17:18}
-    self.map_to_transform = {0:0,1:6,2:7,5:8,6:9,9:3,10:1,11:5,12:4,13:2,15:16,
-                             7:14,8:15,17:19}
-    self.float_type_records = [1,2,3,4,5,6,7,8,9,11,12,17]
-    self.int_type_records = [10,13]
-    self.bool_type_records = [14,15,16]
-    self.str_type_records = [0]
+    # map the location in cols_inp to cols_names
+    self.map_to_no_ncs = self.get_map(use_strict_ncs=False)
+    self.map_to_ncs = self.get_map(use_strict_ncs=True,use_transforms=False)
+    self.map_to_transform=self.get_map(use_strict_ncs=True,use_transforms=True)
+    # set records type
+    self.set_records_type()
 
     class sort_inp():
       def __init__(self):
@@ -137,6 +140,79 @@ class results_collection(object):
         """ Parameter number to sort by """
     sort_out.__dict__.update(zip(self.cols_names, range(len(self.cols_names))))
     self.sort_out = sort_out
+
+  def set_records_type(self):
+    """ Create list containing the type of each record """
+    strings = ['pdb_code']
+    floats = [
+      'r_work_pdb_header',
+      'r_free_pdb_header',
+      'r_work_single_ncs',
+      'r_free_single_ncs',
+      'r_work_asu_init',
+      'r_free_asu_init',
+      'r_work_asu_final',
+      'r_free_asu_final',
+      'resolution',
+      'solvent_fraction',
+      'data_completeness',
+      'data_to_atoms_ratio_asu',
+      'data_to_atoms_ratio_ncs',
+      'time']
+    integers = ['num_ncs_copies','year']
+    bools = ['use_strict_ncs', 'use_geometry_restraints', 'use_transforms']
+
+    r = range(len(self.cols_inp))
+    self.float_type_records = [i for i in r if self.cols_inp[i] in floats]
+    self.int_type_records = [i for i in r if self.cols_inp[i] in integers]
+    self.bool_type_records = [i for i in r if self.cols_inp[i] in bools]
+    self.str_type_records = [i for i in r if self.cols_inp[i] in strings]
+
+  def get_map(self,use_strict_ncs=True,use_transforms=False):
+    """
+    set the map between the input records and the combined output line
+
+    Args:
+      use_strict_ncs (bool): when True, using strict NCS
+      use_transforms (bool): when True, refining rotation and translation
+
+    Returns:
+      (dict): map record location in the input to the record number at the
+        output
+    """
+    if not use_strict_ncs:
+      d = 0
+    elif use_transforms:
+      d = 2
+    else:
+      d = 1
+
+    direct_match = ['pdb_code','r_work_pdb_header','r_free_pdb_header',
+                    'r_work_asu_init','r_free_asu_init','resolution',
+                    'num_ncs_copies','solvent_fraction','data_completeness',
+                    'data_to_atoms_ratio_asu','data_to_atoms_ratio_ncs','year',
+                    'use_geometry_restraints']
+    type_match = [['time',['time_no_ncs','time_ncs','time_transform']],
+                  ['r_work_asu_final',['r_work_asu_no_ncs','r_work_asu_ncs',
+                                       'r_work_asu_transform',]],
+                  ['r_free_asu_final',['r_free_asu_no_ncs','r_free_asu_ncs',
+                                       'r_free_asu_transform',]]]
+    map_dict = {}
+    r1 = range(len(self.cols_inp))
+    r2 = range(len(self.cols_names))
+    for val in direct_match:
+      k = [i for i in r1 if val == self.cols_inp[i]][0]
+      v = [i for i in r2 if val == self.cols_names[i]][0]
+      map_dict[k] = v
+
+    for v1,v_all in type_match:
+      v2 = v_all[d]
+      k = [i for i in r1 if v1 == self.cols_inp[i]][0]
+      v = [i for i in r2 if v2 == self.cols_names[i]][0]
+      map_dict[k] = v
+
+    return map_dict
+
 
   def read_filenames(self):
     """

@@ -1,9 +1,15 @@
 from __future__ import division
+import tempfile
+import getpass
+import time
+import os
+import sys
+
 from iotbx.pdb.multimer_reconstruction import multimer
 import mmtbx.refinement.minimization_ncs_constraints
 import mmtbx.monomer_library.pdb_interpretation
 from iotbx.pdb import format_MTRIX_pdb_string
-import mmtbx.utils.ncs_utils as nu
+import mmtbx.ncs.ncs_utils as nu
 import mmtbx.monomer_library.server
 from libtbx import adopt_init_args
 from libtbx.utils import null_out
@@ -13,11 +19,7 @@ import mmtbx.f_model
 import mmtbx.utils
 import iotbx.cif
 import iotbx.pdb
-import tempfile
-import getpass
-import time
-import os
-import sys
+
 
 __author__ = 'Youval Dar'
 
@@ -542,7 +544,7 @@ class ncs_refine_test(object):
 
   def iterate_refine_method(self,refine_dict,cycle_num):
     """
-    Change one on the refinement methods to True, according to the cycle_num
+    Change one of the refinement methods to True, according to the cycle_num
     and the methods that should be used
     """
     use_methods = [k for (k,v) in refine_dict.iteritems() if v[0]]

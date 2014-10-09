@@ -1,0 +1,46 @@
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     4iv3   | 0.2350 | 0.2390 | 0.5029 | 0.5046 | 0.2352 | 0.2389 | 0.2156 | 0.2616 |  2.90  |   15    |   0.76   |     0.79     |  2013  |False | True | False  |  3924  
+
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     4iv3   | 0.2350 | 0.2390 | 0.5029 | 0.5046 | 0.2352 | 0.2389 | 0.2422 | 0.2439 |  2.90  |   15    |   0.76   |     0.79     |  2013  | True | True | False  |  3309  
+
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 738, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 710, in run
+    refine_transformations = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 733, in run_test
+    print_during_refinement=print_during_refinement)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 449, in refinement_loop
+    use_hd                       = self.use_hd)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 79, in __init__
+    ignore_line_search_failed_maxfev=True))
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 259, in run
+    log)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 127, in run_c_plus_plus
+    f, g = target_evaluator.compute_functional_and_gradients()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 91, in compute_functional_and_gradients
+    t, ef_grad = self.apply_weights_and_grm(tgx)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 149, in apply_weights_and_grm
+    compute_gradients = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/restraints.py", line 106, in energies_sites
+    normalization=False)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 720, in energies_sites
+    flags=flags, sites_cart=sites_cart, site_labels=site_labels)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 622, in pair_proxies
+    check_bonded_distance_cutoff(sites_frac=sites_frac)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 503, in check_bonded_distance_cutoff
+    raise RuntimeError(msg)
+RuntimeError: Bond distance > max_reasonable_bond_distance: 98.4001 > 50:
+  distance: 6893 - 60221:  53.419 -x,-y,z
+  distance: 11741 - 31133:  47.929 x,-y,-z
+  distance: 16589 - 45677:  56.534
+  distance: 21437 - 65069:  41.508
+  distance: 26285 - 26285:  81.213 x,-y,-z
+  distance: 35981 - 55373:  76.004 -x,y,-z
+  distance: 40829 - 69917:  46.712
+  distance: 50525 - 50525:  98.400 -x,y,-z

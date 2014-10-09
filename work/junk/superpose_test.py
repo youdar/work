@@ -1,5 +1,5 @@
 from __future__ import division
-import mmtbx.utils.ncs_utils as nu
+import mmtbx.ncs.ncs_utils as nu
 from scitbx import matrix
 from scitbx.math import superpose
 from scitbx.array_family import flex

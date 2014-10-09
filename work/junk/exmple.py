@@ -161,22 +161,39 @@ print '='*30
 #   }
 #   """)
 
+# master_phil = parse("""
+#   ncs_group_selection {
+#     ncs_group
+#         .multiple = True
+#         {
+#         ncs_group_number = None
+#           .type = int
+#         ncs_selection = ''
+#           .type = str
+#           .help = 'Residue selection string for a single NCS group'
+#         asu_selection = ''
+#           .type = str
+#           .help = 'Residue selection string for NCS copies location in ASU'
+#           .multiple = True
+#     }
+#   }
+#   """)
+
+
 master_phil = parse("""
-  ncs_group_selection {
+
     ncs_group
+      .multiple = True
+      {
+      master_ncs_selection = ''
+        .type = str
+        .help = 'Residue selection string for the complete master NCS copy'
+      selection_copy = ''
+        .type = str
+        .help = 'Residue selection string for each NCS copy location in ASU'
         .multiple = True
-        {
-        ncs_group_number = None
-          .type = int
-        ncs_selection = ''
-          .type = str
-          .help = 'Residue selection string for a single NCS group'
-        asu_selection = ''
-          .type = str
-          .help = 'Residue selection string for NCS copies location in ASU'
-          .multiple = True
     }
-  }
+
   """)
 
 
@@ -205,6 +222,23 @@ print '='*30
 #   minimization.parameters.max_iterations = 5
 #   """)
 #
+
+
+user_phil = parse('''\
+
+  ncs_group {
+    master_ncs_selection = 'chain A'
+    selection_copy = 'chain C'
+    selection_copy = 'chain E'
+  }
+  ncs_group {
+    master_ncs_selection = 'chain B'
+    selection_copy = 'chain D'
+    selection_copy = 'chain F'
+  }
+
+''')
+
 working_params = master_phil.fetch(source=user_phil).extract()
 print working_params
 # print working_params.minimization.input.file_name

@@ -1,0 +1,15 @@
+
+refinement.ncs.restraint_group { 
+reference = chain 'A' and (resseq 151:159 ) 
+selection = chain 'B' and (resseq 151:159 ) 
+selection = chain 'C' and (resseq 151:159 ) 
+} 
+
+
+
+refinement.ncs.restraint_group { 
+reference = chain 'D' and (resseq 1:7 ) 
+selection = chain 'E' and (resseq 1:7 ) 
+} 
+
+

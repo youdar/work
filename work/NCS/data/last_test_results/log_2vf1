@@ -1,0 +1,158 @@
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     2vf1   | 0.2730 | 0.2720 | 0.5023 | 0.5068 | 0.4254 | 0.4255 | 0.5001 | 0.5040 |  3.40  |   30    |   0.89   |     0.44     |  2007  |False | True | False  | 19161  
+
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     2vf1   | 0.2730 | 0.2720 | 0.5023 | 0.5068 | 0.4254 | 0.4255 | 0.4966 | 0.4943 |  3.40  |   30    |   0.89   |     0.44     |  2007  | True | True | False  | 13947  
+
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 738, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 710, in run
+    refine_transformations = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 733, in run_test
+    print_during_refinement=print_during_refinement)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 449, in refinement_loop
+    use_hd                       = self.use_hd)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 79, in __init__
+    ignore_line_search_failed_maxfev=True))
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 259, in run
+    log)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 127, in run_c_plus_plus
+    f, g = target_evaluator.compute_functional_and_gradients()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 91, in compute_functional_and_gradients
+    t, ef_grad = self.apply_weights_and_grm(tgx)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 149, in apply_weights_and_grm
+    compute_gradients = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/restraints.py", line 106, in energies_sites
+    normalization=False)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 720, in energies_sites
+    flags=flags, sites_cart=sites_cart, site_labels=site_labels)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 622, in pair_proxies
+    check_bonded_distance_cutoff(sites_frac=sites_frac)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 503, in check_bonded_distance_cutoff
+    raise RuntimeError(msg)
+RuntimeError: Bond distance > max_reasonable_bond_distance: 215.935 > 50:
+  distance: 1282 - 125572:  20.087 x-y+1,-y+2,-z+1/3
+  distance: 2403 - 126693:  19.387 x-y+1,-y+2,-z+1/3
+  distance: 2519 - 126809:  20.146 x-y+1,-y+2,-z+1/3
+  distance: 3149 - 127439:  20.103 x-y+1,-y+2,-z+1/3
+  distance: 5399 - 129689:  17.530 x-y+1,-y+2,-z+1/3
+  distance: 6520 - 130810:  17.645 x-y+1,-y+2,-z+1/3
+  distance: 6636 - 130926:  16.486 x-y+1,-y+2,-z+1/3
+  distance: 7266 - 131556:  16.852 x-y+1,-y+2,-z+1/3
+  distance: 9568 - 133858: 110.135 x-y+1,-y+2,-z+1/3
+  distance: 10689 - 134979: 107.353 x-y+1,-y+2,-z+1/3
+  distance: 10805 - 135095: 108.961 x-y+1,-y+2,-z+1/3
+  distance: 11435 - 135725: 110.812 x-y+1,-y+2,-z+1/3
+  distance: 13685 - 137975: 104.467 x-y+1,-y+2,-z+1/3
+  distance: 14806 - 139096:  99.411 x-y+1,-y+2,-z+1/3
+  distance: 14922 - 139212:  92.936 x-y+1,-y+2,-z+1/3
+  distance: 15552 - 139842:  95.078 x-y+1,-y+2,-z+1/3
+  distance: 17854 - 142144:  37.875 x-y+1,-y+2,-z+1/3
+  distance: 18975 - 143265:  36.215 x-y+1,-y+2,-z+1/3
+  distance: 19091 - 143381:  37.880 x-y+1,-y+2,-z+1/3
+  distance: 19721 - 144011:  37.578 x-y+1,-y+2,-z+1/3
+  distance: 21971 - 146261:  31.856 x-y+1,-y+2,-z+1/3
+  distance: 23092 - 147382:  32.784 x-y+1,-y+2,-z+1/3
+  distance: 23208 - 147498:  30.608 x-y+1,-y+2,-z+1/3
+  distance: 23838 - 148128:  31.319 x-y+1,-y+2,-z+1/3
+  distance: 26140 - 150430:  92.328 x-y+1,-y+2,-z+1/3
+  distance: 27261 - 151551:  88.396 x-y+1,-y+2,-z+1/3
+  distance: 27377 - 151667:  91.225 x-y+1,-y+2,-z+1/3
+  distance: 28007 - 152297:  91.376 x-y+1,-y+2,-z+1/3
+  distance: 30257 - 154547:  81.367 x-y+1,-y+2,-z+1/3
+  distance: 31378 - 155668:  80.852 x-y+1,-y+2,-z+1/3
+  distance: 31494 - 155784:  75.465 x-y+1,-y+2,-z+1/3
+  distance: 32124 - 156414:  77.344 x-y+1,-y+2,-z+1/3
+  distance: 34426 - 158716: 119.334 x-y+1,-y+2,-z+1/3
+  distance: 35547 - 159837: 111.286 x-y+1,-y+2,-z+1/3
+  distance: 35663 - 159953: 114.411 x-y+1,-y+2,-z+1/3
+  distance: 36293 - 160583: 114.317 x-y+1,-y+2,-z+1/3
+  distance: 38543 - 162833: 101.840 x-y+1,-y+2,-z+1/3
+  distance: 39664 - 163954: 102.306 x-y+1,-y+2,-z+1/3
+  distance: 39780 - 164070:  94.997 x-y+1,-y+2,-z+1/3
+  distance: 40410 - 164700:  98.463 x-y+1,-y+2,-z+1/3
+  distance: 42712 - 84142: 109.737 x-y+1,-y+2,-z+1/3
+  distance: 43833 - 85263: 106.042 x-y+1,-y+2,-z+1/3
+  distance: 43949 - 85379: 110.291 x-y+1,-y+2,-z+1/3
+  distance: 44579 - 86009: 109.955 x-y+1,-y+2,-z+1/3
+  distance: 46829 - 88259:  96.082 x-y+1,-y+2,-z+1/3
+  distance: 47950 - 89380:  96.493 x-y+1,-y+2,-z+1/3
+  distance: 48066 - 89496:  90.156 x-y+1,-y+2,-z+1/3
+  distance: 48696 - 90126:  92.144 x-y+1,-y+2,-z+1/3
+  distance: 50998 - 92428: 138.182 x-y+1,-y+2,-z+1/3
+  distance: 52119 - 93549: 135.181 x-y+1,-y+2,-z+1/3
+  distance: 52235 - 93665: 139.459 x-y+1,-y+2,-z+1/3
+  distance: 52865 - 94295: 140.201 x-y+1,-y+2,-z+1/3
+  distance: 55115 - 96545: 126.142 x-y+1,-y+2,-z+1/3
+  distance: 56236 - 97666: 123.671 x-y+1,-y+2,-z+1/3
+  distance: 56352 - 97782: 115.754 x-y+1,-y+2,-z+1/3
+  distance: 56982 - 98412: 117.957 x-y+1,-y+2,-z+1/3
+  distance: 59284 - 100714:  91.400 x-y+1,-y+2,-z+1/3
+  distance: 60405 - 101835:  86.784 x-y+1,-y+2,-z+1/3
+  distance: 60521 - 101951:  90.744 x-y+1,-y+2,-z+1/3
+  distance: 61151 - 102581:  89.897 x-y+1,-y+2,-z+1/3
+  distance: 63401 - 104831:  76.033 x-y+1,-y+2,-z+1/3
+  distance: 64522 - 105952:  78.661 x-y+1,-y+2,-z+1/3
+  distance: 64638 - 106068:  73.321 x-y+1,-y+2,-z+1/3
+  distance: 65268 - 106698:  75.289 x-y+1,-y+2,-z+1/3
+  distance: 67570 - 109000:  80.710 x-y+1,-y+2,-z+1/3
+  distance: 68691 - 110121:  78.346 x-y+1,-y+2,-z+1/3
+  distance: 68807 - 110237:  81.486 x-y+1,-y+2,-z+1/3
+  distance: 69437 - 110867:  81.290 x-y+1,-y+2,-z+1/3
+  distance: 71687 - 113117:  71.374 x-y+1,-y+2,-z+1/3
+  distance: 72808 - 114238:  71.283 x-y+1,-y+2,-z+1/3
+  distance: 72924 - 114354:  66.652 x-y+1,-y+2,-z+1/3
+  distance: 73554 - 114984:  68.008 x-y+1,-y+2,-z+1/3
+  distance: 75856 - 117286: 168.433 x-y+1,-y+2,-z+1/3
+  distance: 76977 - 118407: 158.562 x-y+1,-y+2,-z+1/3
+  distance: 77093 - 118523: 164.186 x-y+1,-y+2,-z+1/3
+  distance: 77723 - 119153: 163.459 x-y+1,-y+2,-z+1/3
+  distance: 79973 - 121403: 143.109 x-y+1,-y+2,-z+1/3
+  distance: 81094 - 122524: 144.933 x-y+1,-y+2,-z+1/3
+  distance: 81210 - 122640: 134.815 x-y+1,-y+2,-z+1/3
+  distance: 81840 - 123270: 139.127 x-y+1,-y+2,-z+1/3
+  distance: 167002 - 208432: 173.667 x-y+1,-y+2,-z+1/3
+  distance: 168123 - 209553: 166.851 x-y+1,-y+2,-z+1/3
+  distance: 168239 - 209669: 173.035 x-y+1,-y+2,-z+1/3
+  distance: 168869 - 210299: 172.811 x-y+1,-y+2,-z+1/3
+  distance: 171119 - 212549: 152.025 x-y+1,-y+2,-z+1/3
+  distance: 172240 - 213670: 152.003 x-y+1,-y+2,-z+1/3
+  distance: 172356 - 213786: 141.999 x-y+1,-y+2,-z+1/3
+  distance: 172986 - 214416: 145.191 x-y+1,-y+2,-z+1/3
+  distance: 175288 - 216718:  34.578 x-y+1,-y+2,-z+1/3
+  distance: 176409 - 217839:  33.256 x-y+1,-y+2,-z+1/3
+  distance: 176525 - 217955:  34.163 x-y+1,-y+2,-z+1/3
+  distance: 177155 - 218585:  34.365 x-y+1,-y+2,-z+1/3
+  distance: 179405 - 220835:  31.025 x-y+1,-y+2,-z+1/3
+  distance: 180526 - 221956:  30.519 x-y+1,-y+2,-z+1/3
+  distance: 180642 - 222072:  28.496 x-y+1,-y+2,-z+1/3
+  distance: 181272 - 222702:  29.196 x-y+1,-y+2,-z+1/3
+  distance: 183574 - 225004: 213.990 x-y+1,-y+2,-z+1/3
+  distance: 184695 - 226125: 202.806 x-y+1,-y+2,-z+1/3
+  distance: 184811 - 226241: 206.897 x-y+1,-y+2,-z+1/3
+  distance: 185441 - 226871: 208.597 x-y+1,-y+2,-z+1/3
+  distance: 187691 - 229121: 191.342 x-y+1,-y+2,-z+1/3
+  distance: 188812 - 230242: 187.249 x-y+1,-y+2,-z+1/3
+  distance: 188928 - 230358: 174.347 x-y+1,-y+2,-z+1/3
+  distance: 189558 - 230988: 179.787 x-y+1,-y+2,-z+1/3
+  distance: 191860 - 233290: 125.629 x-y+1,-y+2,-z+1/3
+  distance: 192981 - 234411: 120.641 x-y+1,-y+2,-z+1/3
+  distance: 193097 - 234527: 124.235 x-y+1,-y+2,-z+1/3
+  distance: 193727 - 235157: 124.715 x-y+1,-y+2,-z+1/3
+  distance: 195977 - 237407: 111.729 x-y+1,-y+2,-z+1/3
+  distance: 197098 - 238528: 110.505 x-y+1,-y+2,-z+1/3
+  distance: 197214 - 238644: 103.174 x-y+1,-y+2,-z+1/3
+  distance: 197844 - 239274: 105.695 x-y+1,-y+2,-z+1/3
+  distance: 200146 - 241576: 144.338 x-y+1,-y+2,-z+1/3
+  distance: 201267 - 242697: 137.553 x-y+1,-y+2,-z+1/3
+  distance: 201383 - 242813: 142.017 x-y+1,-y+2,-z+1/3
+  distance: 202013 - 243443: 142.051 x-y+1,-y+2,-z+1/3
+  distance: 204263 - 245693: 126.326 x-y+1,-y+2,-z+1/3
+  distance: 205384 - 246814: 125.837 x-y+1,-y+2,-z+1/3
+  distance: 205500 - 246930: 117.341 x-y+1,-y+2,-z+1/3
+  distance: 206130 - 247560: 120.487 x-y+1,-y+2,-z+1/3

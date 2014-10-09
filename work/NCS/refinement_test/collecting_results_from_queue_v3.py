@@ -8,30 +8,32 @@ import re
 
 """
 File data input example:
-#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
-#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3368 | 0.4735 |  9.50  |    5    |   0.94   |     1.00     |  2004  |False | True | False  |  195
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |     Data     |  D/A ratio   |  D/A ratio   | Year   | Use  | Geo. | Trans. | time (sec)
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |     ASU      |     NCS      |        | NCS  | Rest | refine |
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3280 | 0.4407 |  9.50  |    5    |   0.93   |     1.00     |     0.21     |     1.06     |  2004  |False | True | False  |  1131
 
-#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
-#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3556 | 0.4067 |  9.50  |    5    |   0.94   |     1.00     |  2004  | True | True | False  |  189
+Using pdb file from local machine (not from MIRROR)
+Using cif file from local machine (not from MIRROR)
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |     Data     |  D/A ratio   |  D/A ratio   | Year   | Use  | Geo. | Trans. | time (sec)
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |     ASU      |     NCS      |        | NCS  | Rest | refine |
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3662 | 0.4119 |  9.50  |    5    |   0.93   |     1.00     |     0.21     |     1.06     |  2004  | True | True | False  |  928
 
-#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec)
-#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3731 | 0.4521 |  9.50  |    5    |   0.94   |     1.00     |  2004  | True | True |  True  |  236
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Using pdb file from local machine (not from MIRROR)
+Using cif file from local machine (not from MIRROR)
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |     Data     |  D/A ratio   |  D/A ratio   | Year   | Use  | Geo. | Trans. | time (sec)
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |     ASU      |     NCS      |        | NCS  | Rest | refine |
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1vcr   | 0.3790 | 0.3530 | 0.4292 | 0.4486 | 0.4242 | 0.4382 | 0.3558 | 0.4175 |  9.50  |    5    |   0.93   |     1.00     |     0.21     |     1.06     |  2004  | True | True |  True  |  1554
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Rotation,Translation difference      |  Rxx   |  Rxy   |  Rxz   |  Ryx   |  Ryy   |  Ryz   |  Rzx   |  Rzy   |  Rzz   |   Tx   |   Ty   |   Tz
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Transform number: 1                  | 0.0008 |-0.0004 |-0.0010 | 0.0032 |-0.0064 |-0.0028 | 0.0032 | 0.0042 |-0.0056 |-0.0021 |-0.0003 | 0.0004
-  Transform number: 2                  | 0.0011 |-0.0031 | 0.0064 | 0.0016 |-0.0004 | 0.0028 | 0.0059 | 0.0048 | 0.0007 |-0.0004 |-0.0006 | 0.0003
-  Transform number: 3                  | 0.0037 |-0.0040 |-0.0047 |-0.0027 | 0.0013 | 0.0053 | 0.0013 |-0.0074 | 0.0050 |-0.0007 |-0.0008 | 0.0001
-  Transform number: 4                  | 0.0002 |-0.0017 |-0.0008 | 0.0013 | 0.0002 |-0.0006 |-0.0011 |-0.0005 | 0.0004 | 0.0006 | 0.0007 |-0.0001
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Transform number: 1                  |-0.0132 | 0.0194 | 0.0100 |-0.0370 | 0.0708 | 0.0253 |-0.0481 |-0.0465 | 0.0563 | 0.8755 | 1.6418 | 3.8338
+  Transform number: 2                  | 0.0307 |-0.0333 | 0.0440 |-0.0088 |-0.0076 |-0.0097 | 0.0241 | 0.0532 | 0.0213 |-2.8667 | 0.5622 |-3.2518
+  Transform number: 3                  |-0.0204 | 0.0023 |-0.0292 | 0.0158 | 0.0264 |-0.0083 |-0.0071 |-0.0135 | 0.0055 | 2.3881 |-1.3371 | 0.1937
+  Transform number: 4                  |-0.0186 | 0.0733 | 0.0095 |-0.0460 | 0.0168 | 0.0087 | 0.0651 | 0.0341 |-0.0072 |-0.4086 | 5.3377 |-6.0357
 
-Position in the data list:
-      0         1	     2	      3	        4	     5	      6        7       8         9       10        11            12         13       14     15     16         17
 
 
 Data to excel output
@@ -709,6 +711,7 @@ class results_collection(object):
     file_name = 'selected_files_v2.csv'
     records_to_use = self.cols_names_for_table2[:ur.r_free_asu_transform]
     table_title = ['PDB','n','Year','Res.','Comp','Solvent',
+                   'D/P ASU','D/P NCS',
                    'Header','Initial','W/O NCS','W NCS','Transform']
 
     f = open(file_name,'w')
@@ -717,7 +720,7 @@ class results_collection(object):
     for rec in self.data_records_long:
       if rec[ur.pdb_code] in pdb_file_list:
         rec = [str(x) for x in rec]
-        outstr = rec[0:6]
+        outstr = rec[0:8]
         outstr += ['/'.join(rec[ur.r_work_pdb_header:ur.r_free_pdb_header+1]),
                   '/'.join(rec[ur.r_work_asu_init:ur.r_free_asu_init+1]),
                   '/'.join(rec[ur.r_work_asu_no_ncs:ur.r_free_asu_no_ncs+1]),

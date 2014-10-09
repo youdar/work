@@ -80,7 +80,8 @@ class explor_fab(object):
 def run(fab_list):
   for name,limit_L,limit_H in fab_list:
     t = explor_fab(file_name=name,limit_L=limit_L,limit_H=limit_H)
-    t.calc_fab(range=2)
+    # t.calc_fab(range=2)
+    t.calc_fab(range=1)
     t.fab_angle_print()
 
 

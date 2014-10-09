@@ -1,0 +1,38 @@
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     4hl8   | 0.3520 | 0.3540 | 0.5127 | 0.5149 | 0.3598 | 0.3508 | 0.3295 | 0.3379 |  3.50  |   39    |   0.88   |     0.91     |  2012  |False | True | False  | 18412  
+
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     4hl8   | 0.3520 | 0.3540 | 0.5127 | 0.5079 | 0.3598 | 0.3595 | 0.3724 | 0.3690 |  3.50  |   39    |   0.88   |     0.91     |  2012  | True | True | False  | 22070  
+
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 738, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 710, in run
+    refine_transformations = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 733, in run_test
+    print_during_refinement=print_during_refinement)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 449, in refinement_loop
+    use_hd                       = self.use_hd)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 79, in __init__
+    ignore_line_search_failed_maxfev=True))
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 259, in run
+    log)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/scitbx/lbfgs/__init__.py", line 127, in run_c_plus_plus
+    f, g = target_evaluator.compute_functional_and_gradients()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 91, in compute_functional_and_gradients
+    t, ef_grad = self.apply_weights_and_grm(tgx)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/refinement/minimization_ncs_constraints.py", line 149, in apply_weights_and_grm
+    compute_gradients = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/restraints.py", line 106, in energies_sites
+    normalization=False)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 720, in energies_sites
+    flags=flags, sites_cart=sites_cart, site_labels=site_labels)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 622, in pair_proxies
+    check_bonded_distance_cutoff(sites_frac=sites_frac)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/cctbx/geometry_restraints/manager.py", line 503, in check_bonded_distance_cutoff
+    raise RuntimeError(msg)
+RuntimeError: Bond distance > max_reasonable_bond_distance: 143.936 > 50

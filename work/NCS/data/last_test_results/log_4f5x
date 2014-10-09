@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 738, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 700, in run
+    refine_transformations = False)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 724, in run_test
+    test_obj.process_pdb_and_cif_files(pdb_code)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 143, in process_pdb_and_cif_files
+    self.process_pdb_file()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 183, in process_pdb_file
+    self.get_pdb_published_data(pdb_inp=pdb_inp,xrs_pdb=xrs_ncs)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 242, in get_pdb_published_data
+    self.get_f_model(xrs_pdb)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 377, in get_f_model
+    target_name                  = self.target_name)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/f_model.py", line 440, in __init__
+    force_update   = True)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/masks/__init__.py", line 263, in shell_f_masks
+    self.compute_f_mask()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/masks/__init__.py", line 309, in compute_f_mask
+    fm_asu = asu_mask_obj.structure_factors(self.miller_array.indices(),i+1)
+MemoryError

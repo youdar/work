@@ -1,0 +1,13 @@
+min_length (int): minimum number of matching residues in a segment 
+min_percent (float): min percent identity of matching residues
+similarity_threshold (float): Threshold for similarity between segments
+require_equal_start_match (bool): require that all matching segments start at the same relative residue number for all members of an NCS group, trimming the matching region as necessary. This is, but not otherwise
+maximize_size_of_groups (bool): request that the scoring be set up to maximize the number of members in NCS groups (maximize_size_of_groups=True) or that scoring is set up to maximize the length of the matching segments in the NCS group (maximize_size_of_groups=False)
+required_chains (list):
+min_fraction_domain (float): domain must be this fraction of a chain
+initial_rms (float): Guess of RMS among chains
+match_radius (float): Keep atoms that are within match_radius of NCS-related atoms
+min_contig_length (int): segments < min_contig_length rejected
+smooth_length (int): two segments separated by smooth_length or less get connected
+max_rmsd_domain (int): max rmsd of domains
+min_fraction_represented (float): Minimum fraction of residues represented by NCS to keep. If less...skip ncs entirely

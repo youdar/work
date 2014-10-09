@@ -37,7 +37,6 @@ def run():
     commands.append(
       "python {}".format(outString))
 
-
   easy_qsub.run(
     phenix_source = phenix_source,
     where         = where_to_run_dir,

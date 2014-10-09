@@ -1,0 +1,21 @@
+#  PDB code |Reported in PDB  | Calc from NCS   |  ASU initial    |   ASU final     | Res.   |   NCS   |  Solvent |    Data      | Year   | Use  | Geo. | Trans. | time (sec) 
+#           | r-work | r-free | r-work | r-free | r-work | r-free | r-work | r-free |        | copies  | fraction | completeness |        | NCS  | Rest | refine |        
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     3zfg   | 0.2491 |-1.0000 | 0.5297 | 0.5297 | 0.2436 | 0.2436 | 0.5273 | 0.5273 |  3.20  |   60    |   0.74   |     0.66     |  2012  |False | True | False  | 55705  
+
+Traceback (most recent call last):
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 738, in <module>
+    run(sys.argv[1:])
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 705, in run
+    refine_transformations = False)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 724, in run_test
+    test_obj.process_pdb_and_cif_files(pdb_code)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 143, in process_pdb_and_cif_files
+    self.process_pdb_file()
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 214, in process_pdb_file
+    self.get_solvent_fraction(xrs_asu)
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/misc_scripts/strict_ncs/test_ncs_refinement.py", line 224, in get_solvent_fraction
+    d_min=1).asu_mask.contact_surface_fraction
+  File "/net/chevy/raid1/youval/Work_chevy/phenix_sources/cctbx_project/mmtbx/masks/__init__.py", line 161, in __init__
+    shrink_truncation_radius = self.mask_params.shrink_truncation_radius)
+MemoryError

@@ -73,7 +73,6 @@ class TestStrictNCS(object):
     r_factor = self.calc_r_factor(self.f_obs,f_calc)
     msg='''\
     Problem with test data, r_factor is only {}'''.format(r_factor)
-    # NOTE THAT THE CURRENT SHAKING METHOD,SHAKE LESS BUT DESTROY MORE
     assert r_factor > delta_r_factor, msg
     print 'r-factor of shaken structure is: {0:.3f}'.format(r_factor)
 

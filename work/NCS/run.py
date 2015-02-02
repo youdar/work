@@ -34,7 +34,7 @@ def process_pdb_file(pdb_file_name):
   ncs_selection = flex.bool(
     pdb_inp_one_ncs.xray_structure_simple().scatterers().size(), True)
   return processed_pdb_file, m, ncs_selection
-  
+
 def get_fmodel(xray_structure, hkl_file):
   rfs = reflection_file_utils.reflection_file_server(
     crystal_symmetry = xray_structure.crystal_symmetry(),
@@ -60,7 +60,7 @@ def get_fmodel(xray_structure, hkl_file):
   fmodel.update_all_scales(update_f_part1_for=False)
   print "r_work, r_free: %6.4f %6.4f" % (fmodel.r_work(), fmodel.r_free())
   return fmodel
-  
+
 def get_weight(fmodel, grm):
   fmdc = fmodel.deep_copy()
   fmdc.xray_structure.shake_sites_in_place(mean_distance=0.3)
@@ -83,7 +83,7 @@ def get_weight(fmodel, grm):
   if(gxc_norm != 0.0):
     weight = gc_norm / gxc_norm
   return weight
-  
+
 def exercise(args):
   processed_args = mmtbx.utils.process_command_line_args(
     args=args, log=null_out())
@@ -91,21 +91,20 @@ def exercise(args):
     pdb_file_name = processed_args.pdb_file_names[0])
   pdb_hierarchy = ppf.all_chain_proxies.pdb_hierarchy
   xray_structure = ppf.xray_structure()
-  ncs_selection = flex.bool(xray_structure.scatterers().size(), 
+  ncs_selection = flex.bool(xray_structure.scatterers().size(),
     ncs_selection.iselection())
   fmodel = get_fmodel(
-    xray_structure = xray_structure, 
+    xray_structure = xray_structure,
     hkl_file=processed_args.reflection_files)
   geometry = ppf.geometry_restraints_manager(
     show_energies                = False,
-    show_nonbonded_clashscore    = False,
     plain_pairs_radius           = 5,
     assume_hydrogens_all_missing = True)
   restraints_manager = mmtbx.restraints.manager(
     geometry      = geometry,
     normalization = True)
   restraints_manager.crystal_symmetry = xray_structure.crystal_symmetry()
-  # 
+  #
   print "start r_factor: %6.4f" % fmodel.r_work()
   for macro_cycle in xrange(10):
     data_weight = get_weight(fmodel=fmodel, grm=restraints_manager)

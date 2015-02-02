@@ -1,0 +1,8072 @@
+
+Summary of NCS information
+Wed Nov 19 10:58:26 2014
+C:\Phenix\Dev\Work\work\NCS\pdb_surveys\pdb_survey_logs
+
+
+
+
+
+new_ncs_group
+new_operator
+
+rota_matrix    0.8703    0.3869    0.3047
+rota_matrix   -0.4339    0.3100    0.8459
+rota_matrix    0.2328   -0.8685    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN AB
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4205   -0.8008   -0.4264
+rota_matrix    0.7994    0.5494   -0.2433
+rota_matrix    0.4291   -0.2385    0.8712
+tran_orth    16.3278  -39.7467  -272.7462
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN AG
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7406    0.5965   -0.3094
+rota_matrix   -0.5678    0.3095   -0.7627
+rota_matrix   -0.3592    0.7406    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN AL
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1962   -0.7295   -0.6552
+rota_matrix   -0.8127    0.4949   -0.3077
+rota_matrix    0.5487    0.4721   -0.6900
+tran_orth   159.7640  202.5494   98.4172
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN AQ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.5061    0.3073   -0.8059
+rota_matrix    0.3166    0.8029    0.5050
+rota_matrix    0.8023   -0.5107    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN AV
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.0936   -0.9940   -0.0574
+rota_matrix   -0.0380   -0.0541    0.9978
+rota_matrix   -0.9949    0.0956   -0.0327
+tran_orth    -3.1968  -230.6238  151.7871
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN BC
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1167    0.1659   -0.9792
+rota_matrix   -0.9925   -0.0544    0.1091
+rota_matrix   -0.0351    0.9846    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN BH
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3182   -0.8647    0.3886
+rota_matrix   -0.8039   -0.4634   -0.3729
+rota_matrix    0.5025   -0.1938   -0.8426
+tran_orth   -162.5289  187.7296  120.7426
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN BM
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3210   -0.3223   -0.8906
+rota_matrix    0.3973   -0.8078    0.4355
+rota_matrix   -0.8597   -0.4936   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN BR
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3210    0.3973   -0.8597
+rota_matrix   -0.3223   -0.8078   -0.4936
+rota_matrix   -0.8906    0.4355   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN BW
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3269   -0.3977    0.8573
+rota_matrix   -0.3189    0.8075    0.4962
+rota_matrix   -0.8896   -0.4356    0.1372
+tran_orth   -259.7760  -46.9477   80.9272
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN CD
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8074    0.4225   -0.4119
+rota_matrix    0.5572   -0.3165    0.7677
+rota_matrix    0.1940   -0.8493   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN CI
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8102   -0.4227    0.4061
+rota_matrix    0.5519    0.3169   -0.7714
+rota_matrix    0.1974    0.8491    0.4900
+tran_orth   -223.1405  112.4044  -117.5179
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN CN
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3155    0.8645   -0.3913
+rota_matrix   -0.8013    0.4636    0.3782
+rota_matrix    0.5083    0.1942    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN CS
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.2158   -0.7980    0.5627
+rota_matrix    0.8002    0.4748    0.3664
+rota_matrix   -0.5595    0.3713    0.7410
+tran_orth   -186.8799  -185.3361  -83.4460
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN CX
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.2932    0.8138   -0.5017
+rota_matrix    0.8196    0.4841    0.3063
+rota_matrix    0.4922   -0.3214   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN DE
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1190   -0.9909   -0.0627
+rota_matrix    0.0378    0.0677   -0.9970
+rota_matrix    0.9922    0.1163    0.0455
+tran_orth   -32.0382  230.8651  -148.0260
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN DJ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7921    0.5975   -0.1248
+rota_matrix   -0.4320   -0.4043    0.8061
+rota_matrix    0.4312    0.6924    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN DO
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3993   -0.8569    0.3261
+rota_matrix   -0.8128    0.4954    0.3066
+rota_matrix   -0.4242   -0.1426   -0.8942
+tran_orth   -45.7548   58.2931  265.9798
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN DT
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.6541    0.2947   -0.6967
+rota_matrix    0.2947   -0.7490   -0.5935
+rota_matrix   -0.6967   -0.5935    0.4031
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN EA
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4910   -0.4238    0.7611
+rota_matrix   -0.2910   -0.7437   -0.6018
+rota_matrix    0.8211   -0.5170    0.2419
+tran_orth   -121.8702  160.2457  -188.9597
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN EF
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4015    0.8567   -0.3238
+rota_matrix   -0.8149   -0.4956   -0.3007
+rota_matrix   -0.4180    0.1431    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN EK
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.6626    0.2138    0.7178
+rota_matrix   -0.2173    0.8623   -0.4574
+rota_matrix   -0.7168   -0.4590   -0.5249
+tran_orth   -68.1147  164.2781  211.2105
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN EP
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.2119    0.7977   -0.5646
+rota_matrix    0.7977   -0.4750   -0.3716
+rota_matrix   -0.5646   -0.3716   -0.7369
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN EU
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.0863    0.0444    0.9953
+rota_matrix    0.9946   -0.0536    0.0886
+rota_matrix    0.0573    0.9976   -0.0395
+tran_orth   -220.2042  -163.6209   31.2291
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN FB
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1195    0.9909    0.0614
+rota_matrix    0.0447   -0.0671    0.9967
+rota_matrix    0.9918   -0.1163   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN FG
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.6493   -0.2950    0.7010
+rota_matrix    0.2988    0.7487    0.5918
+rota_matrix   -0.6994    0.5937   -0.3979
+tran_orth   -81.4000  -158.8533  210.6575
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN FL
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.2932    0.8196    0.4922
+rota_matrix    0.8138    0.4841   -0.3214
+rota_matrix   -0.5017    0.3063   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN FQ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.2897   -0.8141    0.5033
+rota_matrix    0.8175   -0.4840   -0.3123
+rota_matrix    0.4978    0.3210    0.8057
+tran_orth   -101.6495  -57.2833  -250.2455
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN FV
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3180   -0.2996   -0.8995
+rota_matrix    0.2974    0.8693   -0.3947
+rota_matrix    0.9003   -0.3930   -0.1873
+tran_orth   247.3968   76.7154  -95.6366
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN G
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3117    0.3001    0.9015
+rota_matrix    0.3001   -0.8691    0.3931
+rota_matrix    0.9015    0.3931    0.1809
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN GC
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7912   -0.5976    0.1299
+rota_matrix   -0.4376    0.4048   -0.8029
+rota_matrix    0.4272   -0.6922   -0.5817
+tran_orth    63.7728  262.9248   55.1393
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN GH
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7966    0.3914    0.4607
+rota_matrix   -0.5642   -0.2077   -0.7991
+rota_matrix   -0.2171   -0.8965    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN GM
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1917    0.7299    0.6562
+rota_matrix   -0.8105   -0.4947    0.3135
+rota_matrix    0.5535   -0.4717    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN GR
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.0932    0.9940    0.0575
+rota_matrix   -0.0449    0.0535   -0.9976
+rota_matrix   -0.9946   -0.0955    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN GW
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4235    0.8010    0.4231
+rota_matrix    0.8010   -0.5492    0.2381
+rota_matrix    0.4231    0.2381   -0.8742
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN HD
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.5061    0.3166    0.8023
+rota_matrix    0.3073    0.8029   -0.5107
+rota_matrix   -0.8059    0.5050    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN HI
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.6605   -0.3153    0.6814
+rota_matrix    0.1920   -0.8064   -0.5593
+rota_matrix    0.7258    0.5003   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN HN
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.0904   -0.1658    0.9820
+rota_matrix   -0.9924    0.0680    0.1028
+rota_matrix   -0.0838   -0.9838   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN HS
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.6605    0.1920    0.7258
+rota_matrix   -0.3153   -0.8064    0.5003
+rota_matrix    0.6814   -0.5593   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN HX
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3138    0.7401    0.5948
+rota_matrix   -0.8061    0.5387   -0.2451
+rota_matrix   -0.5018   -0.4026    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN IE
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8074    0.5572    0.1940
+rota_matrix    0.4225   -0.3165   -0.8493
+rota_matrix   -0.4119    0.7677   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN IJ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.9777   -0.0128    0.2095
+rota_matrix   -0.0128   -0.9926   -0.1208
+rota_matrix    0.2095   -0.1208    0.9703
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN IO
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.8593    0.4433   -0.2550
+rota_matrix    0.4433    0.3972   -0.8035
+rota_matrix   -0.2550   -0.8035   -0.5379
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN IT
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7251    0.5746    0.3795
+rota_matrix    0.5746    0.2011    0.7933
+rota_matrix    0.3795    0.7933   -0.4760
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN JA
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.9997    0.0264    0.0016
+rota_matrix    0.0264    0.9925    0.1194
+rota_matrix    0.0016    0.1194   -0.9928
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN JF
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7921   -0.4320    0.4312
+rota_matrix    0.5975   -0.4043    0.6924
+rota_matrix   -0.1248    0.8061    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN JK
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7966   -0.5642   -0.2171
+rota_matrix    0.3914   -0.2077   -0.8965
+rota_matrix    0.4607   -0.7991    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN JP
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.6676   -0.2141   -0.7131
+rota_matrix   -0.2141   -0.8621    0.4593
+rota_matrix   -0.7131    0.4593    0.5296
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN JU
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.0932   -0.0449   -0.9946
+rota_matrix    0.9940    0.0535   -0.0955
+rota_matrix    0.0575   -0.9976    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN KB
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4962    0.4234   -0.7579
+rota_matrix   -0.2868    0.7441    0.6034
+rota_matrix    0.8194    0.5168   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN KG
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4990   -0.2945   -0.8150
+rota_matrix    0.2221    0.8656   -0.4488
+rota_matrix    0.8376   -0.4050   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN KL
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.8811   -0.3799   -0.2816
+rota_matrix   -0.3799    0.2142    0.8999
+rota_matrix   -0.2816    0.8999   -0.3331
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN KQ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4015   -0.8149   -0.4180
+rota_matrix    0.8567   -0.4956    0.1431
+rota_matrix   -0.3238   -0.3007    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN KV
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7998   -0.3912   -0.4553
+rota_matrix   -0.5586    0.2073    0.8031
+rota_matrix   -0.2197    0.8967   -0.3843
+tran_orth   208.6930  -103.0989  148.5080
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN L
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1711   -0.7434   -0.6466
+rota_matrix   -0.7434   -0.5281    0.4105
+rota_matrix   -0.6466    0.4105   -0.6430
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN LC
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7406   -0.5678   -0.3592
+rota_matrix    0.5965    0.3095    0.7406
+rota_matrix   -0.3094   -0.7627    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN LH
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4898   -0.1999   -0.8486
+rota_matrix   -0.4028    0.8114   -0.4236
+rota_matrix    0.7732    0.5493    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN LM
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3138   -0.8061   -0.5018
+rota_matrix    0.7401    0.5387   -0.4026
+rota_matrix    0.5948   -0.2451    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN LR
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3357   -0.7263   -0.5999
+rota_matrix   -0.8517    0.5061   -0.1361
+rota_matrix    0.4025    0.4652   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN LW
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1167   -0.9925   -0.0351
+rota_matrix    0.1659   -0.0544    0.9846
+rota_matrix   -0.9792    0.1091    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN MD
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3792   -0.8693    0.3171
+rota_matrix   -0.8693   -0.4521   -0.1999
+rota_matrix    0.3171   -0.1999   -0.9271
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN MI
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4898   -0.4028    0.7732
+rota_matrix   -0.1999    0.8114    0.5493
+rota_matrix   -0.8486   -0.4236    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN MN
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8703   -0.4339    0.2328
+rota_matrix    0.3869    0.3100   -0.8685
+rota_matrix    0.3047    0.8459    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN MS
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3155   -0.8013    0.5083
+rota_matrix    0.8645    0.4636    0.1942
+rota_matrix   -0.3913    0.3782    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN MX
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.0904   -0.9924   -0.0838
+rota_matrix   -0.1658    0.0680   -0.9838
+rota_matrix    0.9820    0.1028   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN NE
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3357   -0.8517    0.4025
+rota_matrix   -0.7263    0.5061    0.4652
+rota_matrix   -0.5999   -0.1361   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN NJ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3308   -0.4177    0.8462
+rota_matrix   -0.4177   -0.7392   -0.5282
+rota_matrix    0.8462   -0.5282    0.0700
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN NO
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4990    0.2221    0.8376
+rota_matrix   -0.2945    0.8656   -0.4050
+rota_matrix   -0.8150   -0.4488   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN NT
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1195    0.0447    0.9918
+rota_matrix    0.9909   -0.0671   -0.1163
+rota_matrix    0.0614    0.9967   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN OA
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4962   -0.2868    0.8194
+rota_matrix    0.4234    0.7441    0.5168
+rota_matrix   -0.7579    0.6034   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN OF
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1917   -0.8105    0.5535
+rota_matrix    0.7299   -0.4947   -0.4717
+rota_matrix    0.6562    0.3135    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN OK
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7559   -0.5869    0.2900
+rota_matrix   -0.5869    0.4113   -0.6974
+rota_matrix    0.2900   -0.6974   -0.6554
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN OP
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.9788    0.0134    0.2043
+rota_matrix   -0.0135    0.9999   -0.0008
+rota_matrix   -0.2043   -0.0019    0.9789
+tran_orth   -186.5294   32.2662  -201.0039
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN OU
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8682   -0.3867   -0.3109
+rota_matrix   -0.4398   -0.3096   -0.8431
+rota_matrix    0.2298    0.8687   -0.4388
+tran_orth   -61.8676  251.1304   96.6579
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN PB
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7428   -0.5966    0.3039
+rota_matrix   -0.5625   -0.3099    0.7665
+rota_matrix   -0.3631   -0.7403   -0.5658
+tran_orth   -194.8105  -109.5412  162.1308
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN PG
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    1.0000   -0.0000   -0.0069
+rota_matrix   -0.0000   -1.0000   -0.0005
+rota_matrix   -0.0069    0.0005   -1.0000
+tran_orth   -140.3209  -30.0269  235.8925
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN PL
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7844    0.3979    0.4758
+rota_matrix   -0.6018    0.3025    0.7392
+rota_matrix    0.1502   -0.8661    0.4767
+tran_orth   -211.1064  -79.0872  -159.4244
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN PQ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7801    0.6069   -0.1520
+rota_matrix   -0.4042    0.3033   -0.8629
+rota_matrix   -0.4776    0.7346    0.4819
+tran_orth   -56.7242  269.2181  -23.2539
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN PV
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.2966   -0.8194   -0.4906
+rota_matrix    0.8160   -0.4843    0.3155
+rota_matrix   -0.4961   -0.3068    0.8123
+tran_orth   132.6333  -204.5525  -129.6282
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN Q
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.6558    0.3156   -0.6858
+rota_matrix    0.1959    0.8061    0.5584
+rota_matrix    0.7291   -0.5005    0.4669
+tran_orth    77.5122  -134.6597  -228.2442
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN QC
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.0836    0.1663   -0.9825
+rota_matrix   -0.9931   -0.0679   -0.0960
+rota_matrix   -0.0827    0.9837    0.1594
+tran_orth   223.9436  161.4637    3.9429
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN QH
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.5005   -0.3162   -0.8059
+rota_matrix    0.3108   -0.8032    0.5082
+rota_matrix   -0.8080   -0.5048   -0.3037
+tran_orth   108.7329  -187.7070  170.8213
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN QM
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4844    0.4032   -0.7764
+rota_matrix   -0.2037   -0.8111   -0.5483
+rota_matrix   -0.8508    0.4238   -0.3108
+tran_orth   125.7580  133.2672  206.5468
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN QR
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8687    0.4341   -0.2386
+rota_matrix    0.3929   -0.3105    0.8656
+rota_matrix    0.3016   -0.8457   -0.4402
+tran_orth   -54.1794  -268.4585   35.0920
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN QW
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    1.0000    0.0000    0.0000
+rota_matrix    0.0000    1.0000    0.0000
+rota_matrix    0.0000    0.0000    1.0000
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN R
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3770    0.8694   -0.3193
+rota_matrix   -0.8679    0.4520    0.2061
+rota_matrix    0.3235    0.1994    0.9250
+tran_orth    47.6980   88.4030  -257.1899
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN RD
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1955    0.8108   -0.5517
+rota_matrix    0.7331    0.4945    0.4669
+rota_matrix    0.6514   -0.3132   -0.6911
+tran_orth   181.7910  -198.8402   60.4268
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN RI
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7579    0.5871   -0.2845
+rota_matrix   -0.5821   -0.4117    0.7012
+rota_matrix    0.2945    0.6970    0.6537
+tran_orth   192.1077  -94.5046  -174.3571
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN RN
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.5019    0.2872   -0.8158
+rota_matrix    0.4198   -0.7438   -0.5201
+rota_matrix   -0.7562   -0.6036    0.2527
+tran_orth   271.5462   40.1587   29.7780
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN RS
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3385    0.8519   -0.3997
+rota_matrix   -0.7295   -0.5059   -0.4604
+rota_matrix   -0.5944    0.1357    0.7926
+tran_orth   167.6178  196.4467  -97.7235
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN RX
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3120    0.8015   -0.5101
+rota_matrix    0.8631   -0.4635   -0.2004
+rota_matrix   -0.3971   -0.3778   -0.8364
+tran_orth    99.7063  -89.4129  241.4557
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN SE
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.0910    0.9923    0.0837
+rota_matrix   -0.1590   -0.0685    0.9849
+rota_matrix    0.9831   -0.1029    0.1515
+tran_orth    -2.6509  -210.8563  -178.2399
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN SJ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3986    0.8147    0.4212
+rota_matrix    0.8557    0.4956   -0.1488
+rota_matrix   -0.3300    0.3012   -0.8947
+tran_orth   -17.8024  -71.5800  266.0755
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN SO
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.4934    0.2941    0.8186
+rota_matrix    0.2252   -0.8658    0.4468
+rota_matrix    0.8402    0.4048    0.3609
+tran_orth   -113.3791  -163.0350  -191.8375
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN ST
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.8791    0.3798    0.2879
+rota_matrix   -0.3861   -0.2137   -0.8973
+rota_matrix   -0.2793   -0.9000    0.3346
+tran_orth    68.6268  259.1531  -66.0823
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN TA
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3315    0.7259    0.6026
+rota_matrix   -0.8507   -0.5062    0.1417
+rota_matrix    0.4079   -0.4656    0.7854
+tran_orth   -72.5906   72.1993  -256.4267
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN TF
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1164    0.9925    0.0365
+rota_matrix    0.1591    0.0549   -0.9857
+rota_matrix   -0.9804   -0.1090   -0.1643
+tran_orth    37.8861  210.6148  174.4788
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN TK
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3172    0.8058    0.5000
+rota_matrix    0.7429   -0.5389    0.3972
+rota_matrix    0.5895    0.2454   -0.7696
+tran_orth   -138.1906  -214.9933  104.4897
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN TP
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3271    0.3219    0.8885
+rota_matrix    0.3942    0.8080   -0.4379
+rota_matrix   -0.8588    0.4935    0.1374
+tran_orth   -245.4368   71.2514  104.5027
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN TU
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.5116   -0.3077    0.8022
+rota_matrix    0.3131   -0.8027   -0.5076
+rota_matrix    0.8001    0.5109   -0.3143
+tran_orth   -270.3443   50.5793  -24.3411
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN UB
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.1099   -0.1665    0.9799
+rota_matrix   -0.9933    0.0544   -0.1022
+rota_matrix   -0.0363   -0.9845   -0.1713
+tran_orth   -219.5977  166.6335   15.7162
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN UG
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.4957    0.1995    0.8453
+rota_matrix   -0.3999   -0.8116    0.4260
+rota_matrix    0.7710   -0.5492   -0.3225
+tran_orth   -262.9069  -67.7692  -50.2410
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN UL
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1756    0.7431    0.6458
+rota_matrix   -0.7462    0.5283   -0.4050
+rota_matrix   -0.6421   -0.4108    0.6473
+tran_orth   -154.2067  216.9962  -73.2787
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN UQ
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7431    0.5676    0.3544
+rota_matrix    0.5913   -0.3091   -0.7449
+rota_matrix   -0.3133    0.7630   -0.5654
+tran_orth   -171.6096   81.7090  200.2763
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN UV
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.9996   -0.0264    0.0053
+rota_matrix    0.0256   -0.9924   -0.1201
+rota_matrix    0.0085   -0.1199    0.9928
+tran_orth   139.8523   -5.3425  -238.0119
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN VC
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7951    0.4322   -0.4255
+rota_matrix    0.5927    0.4047   -0.6964
+rota_matrix   -0.1288   -0.8058   -0.5779
+tran_orth   225.8433   91.6413  129.7440
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN VH
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7951    0.5641    0.2229
+rota_matrix    0.3976    0.2073    0.8938
+rota_matrix    0.4580    0.7993   -0.3891
+tran_orth    77.5119  -260.1540   50.4831
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN VM
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.9792    0.0130   -0.2027
+rota_matrix   -0.0120    0.9925    0.1214
+rota_matrix    0.2028    0.1213   -0.9717
+tran_orth   186.9977    3.1033  203.1231
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN VR
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.8576   -0.4434    0.2607
+rota_matrix    0.4489   -0.3976    0.8003
+rota_matrix   -0.2512    0.8033    0.5400
+tran_orth    47.1305  -263.6845  -66.9772
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN VW
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.7277   -0.5744   -0.3748
+rota_matrix    0.5691   -0.2007   -0.7974
+rota_matrix    0.3828   -0.7936    0.4729
+tran_orth   174.0230  100.4771  -189.3598
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN WD
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.5048   -0.2217   -0.8343
+rota_matrix   -0.2917   -0.8658    0.4066
+rota_matrix   -0.8124    0.4487    0.3724
+tran_orth   260.9469  -80.1978   41.3749
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN WI
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.1126   -0.0442   -0.9927
+rota_matrix    0.9917    0.0671    0.1095
+rota_matrix    0.0617   -0.9968    0.0514
+tran_orth   215.8580  -164.4766  -50.8882
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN WN
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix   -0.3366    0.4182   -0.8437
+rota_matrix   -0.4141    0.7390    0.5315
+rota_matrix    0.8457    0.5283   -0.0756
+tran_orth   258.5741  -43.7901  -86.3643
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN WS
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7811   -0.3982   -0.4810
+rota_matrix   -0.6069   -0.3029   -0.7348
+rota_matrix    0.1469    0.8659   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN X
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.3096   -0.7398   -0.5974
+rota_matrix   -0.8044   -0.5388    0.2504
+rota_matrix   -0.5071    0.4030   -0.7619
+tran_orth    74.0651   39.1276  263.0974
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN c
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.7811   -0.6069    0.1469
+rota_matrix   -0.3982   -0.3029    0.8659
+rota_matrix   -0.4810   -0.7348   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN h
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.8060   -0.5571   -0.1998
+rota_matrix    0.4283    0.3160    0.8466
+rota_matrix   -0.4085   -0.7679    0.4934
+tran_orth   -84.2710  -250.1294  -81.0586
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN m
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.9774   -0.0135   -0.2111
+rota_matrix   -0.0135   -0.9999    0.0014
+rota_matrix   -0.2111    0.0014   -0.9775
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN r
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+new_operator
+
+rota_matrix    0.6555   -0.1917   -0.7305
+rota_matrix   -0.3187    0.8067   -0.4977
+rota_matrix    0.6846    0.5590    0.4677
+tran_orth    72.7606  186.4639  -190.1945
+
+center_orth   -7.4582   28.9189  107.0366
+CHAIN w
+RMSD 0
+MATCHING 14
+  RESSEQ 4:17
+
+
+
+
+
+new_ncs_group
+new_operator
+
+rota_matrix    0.8703    0.3869    0.3047
+rota_matrix   -0.4339    0.3100    0.8459
+rota_matrix    0.2328   -0.8685    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN AC
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4205   -0.8008   -0.4264
+rota_matrix    0.7994    0.5494   -0.2433
+rota_matrix    0.4291   -0.2385    0.8712
+tran_orth    16.3278  -39.7467  -272.7462
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN AH
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7406    0.5965   -0.3094
+rota_matrix   -0.5678    0.3095   -0.7627
+rota_matrix   -0.3592    0.7406    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN AM
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1962   -0.7295   -0.6552
+rota_matrix   -0.8127    0.4949   -0.3077
+rota_matrix    0.5487    0.4721   -0.6900
+tran_orth   159.7640  202.5494   98.4172
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN AR
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.5061    0.3073   -0.8059
+rota_matrix    0.3166    0.8029    0.5050
+rota_matrix    0.8023   -0.5107    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN AW
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.0936   -0.9940   -0.0574
+rota_matrix   -0.0380   -0.0541    0.9978
+rota_matrix   -0.9949    0.0956   -0.0327
+tran_orth    -3.1968  -230.6238  151.7871
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN BD
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1167    0.1659   -0.9792
+rota_matrix   -0.9925   -0.0544    0.1091
+rota_matrix   -0.0351    0.9846    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN BI
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3182   -0.8647    0.3886
+rota_matrix   -0.8039   -0.4634   -0.3729
+rota_matrix    0.5025   -0.1938   -0.8426
+tran_orth   -162.5289  187.7296  120.7426
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN BN
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3210   -0.3223   -0.8906
+rota_matrix    0.3973   -0.8078    0.4355
+rota_matrix   -0.8597   -0.4936   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN BS
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3210    0.3973   -0.8597
+rota_matrix   -0.3223   -0.8078   -0.4936
+rota_matrix   -0.8906    0.4355   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN BX
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3269   -0.3977    0.8573
+rota_matrix   -0.3189    0.8075    0.4962
+rota_matrix   -0.8896   -0.4356    0.1372
+tran_orth   -259.7760  -46.9477   80.9272
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN CE
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8074    0.4225   -0.4119
+rota_matrix    0.5572   -0.3165    0.7677
+rota_matrix    0.1940   -0.8493   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN CJ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8102   -0.4227    0.4061
+rota_matrix    0.5519    0.3169   -0.7714
+rota_matrix    0.1974    0.8491    0.4900
+tran_orth   -223.1405  112.4044  -117.5179
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN CO
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3155    0.8645   -0.3913
+rota_matrix   -0.8013    0.4636    0.3782
+rota_matrix    0.5083    0.1942    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN CT
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.2158   -0.7980    0.5627
+rota_matrix    0.8002    0.4748    0.3664
+rota_matrix   -0.5595    0.3713    0.7410
+tran_orth   -186.8799  -185.3361  -83.4460
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN DA
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.2932    0.8138   -0.5017
+rota_matrix    0.8196    0.4841    0.3063
+rota_matrix    0.4922   -0.3214   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN DF
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1190   -0.9909   -0.0627
+rota_matrix    0.0378    0.0677   -0.9970
+rota_matrix    0.9922    0.1163    0.0455
+tran_orth   -32.0382  230.8651  -148.0260
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN DK
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7921    0.5975   -0.1248
+rota_matrix   -0.4320   -0.4043    0.8061
+rota_matrix    0.4312    0.6924    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN DP
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3993   -0.8569    0.3261
+rota_matrix   -0.8128    0.4954    0.3066
+rota_matrix   -0.4242   -0.1426   -0.8942
+tran_orth   -45.7548   58.2931  265.9798
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN DU
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.6541    0.2947   -0.6967
+rota_matrix    0.2947   -0.7490   -0.5935
+rota_matrix   -0.6967   -0.5935    0.4031
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN EB
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4910   -0.4238    0.7611
+rota_matrix   -0.2910   -0.7437   -0.6018
+rota_matrix    0.8211   -0.5170    0.2419
+tran_orth   -121.8702  160.2457  -188.9597
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN EG
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4015    0.8567   -0.3238
+rota_matrix   -0.8149   -0.4956   -0.3007
+rota_matrix   -0.4180    0.1431    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN EL
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.6626    0.2138    0.7178
+rota_matrix   -0.2173    0.8623   -0.4574
+rota_matrix   -0.7168   -0.4590   -0.5249
+tran_orth   -68.1147  164.2781  211.2105
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN EQ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.2119    0.7977   -0.5646
+rota_matrix    0.7977   -0.4750   -0.3716
+rota_matrix   -0.5646   -0.3716   -0.7369
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN EV
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.0863    0.0444    0.9953
+rota_matrix    0.9946   -0.0536    0.0886
+rota_matrix    0.0573    0.9976   -0.0395
+tran_orth   -220.2042  -163.6209   31.2291
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN FC
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1195    0.9909    0.0614
+rota_matrix    0.0447   -0.0671    0.9967
+rota_matrix    0.9918   -0.1163   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN FH
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.6493   -0.2950    0.7010
+rota_matrix    0.2988    0.7487    0.5918
+rota_matrix   -0.6994    0.5937   -0.3979
+tran_orth   -81.4000  -158.8533  210.6575
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN FM
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.2932    0.8196    0.4922
+rota_matrix    0.8138    0.4841   -0.3214
+rota_matrix   -0.5017    0.3063   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN FR
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.2897   -0.8141    0.5033
+rota_matrix    0.8175   -0.4840   -0.3123
+rota_matrix    0.4978    0.3210    0.8057
+tran_orth   -101.6495  -57.2833  -250.2455
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN FW
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3117    0.3001    0.9015
+rota_matrix    0.3001   -0.8691    0.3931
+rota_matrix    0.9015    0.3931    0.1809
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN GD
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7912   -0.5976    0.1299
+rota_matrix   -0.4376    0.4048   -0.8029
+rota_matrix    0.4272   -0.6922   -0.5817
+tran_orth    63.7728  262.9248   55.1393
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN GI
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7966    0.3914    0.4607
+rota_matrix   -0.5642   -0.2077   -0.7991
+rota_matrix   -0.2171   -0.8965    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN GN
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1917    0.7299    0.6562
+rota_matrix   -0.8105   -0.4947    0.3135
+rota_matrix    0.5535   -0.4717    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN GS
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.0932    0.9940    0.0575
+rota_matrix   -0.0449    0.0535   -0.9976
+rota_matrix   -0.9946   -0.0955    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN GX
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3180   -0.2996   -0.8995
+rota_matrix    0.2974    0.8693   -0.3947
+rota_matrix    0.9003   -0.3930   -0.1873
+tran_orth   247.3968   76.7154  -95.6366
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN H
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4235    0.8010    0.4231
+rota_matrix    0.8010   -0.5492    0.2381
+rota_matrix    0.4231    0.2381   -0.8742
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN HE
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.5061    0.3166    0.8023
+rota_matrix    0.3073    0.8029   -0.5107
+rota_matrix   -0.8059    0.5050    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN HJ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.6605   -0.3153    0.6814
+rota_matrix    0.1920   -0.8064   -0.5593
+rota_matrix    0.7258    0.5003   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN HO
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.0904   -0.1658    0.9820
+rota_matrix   -0.9924    0.0680    0.1028
+rota_matrix   -0.0838   -0.9838   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN HT
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.6605    0.1920    0.7258
+rota_matrix   -0.3153   -0.8064    0.5003
+rota_matrix    0.6814   -0.5593   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN IA
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3138    0.7401    0.5948
+rota_matrix   -0.8061    0.5387   -0.2451
+rota_matrix   -0.5018   -0.4026    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN IF
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8074    0.5572    0.1940
+rota_matrix    0.4225   -0.3165   -0.8493
+rota_matrix   -0.4119    0.7677   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN IK
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.9777   -0.0128    0.2095
+rota_matrix   -0.0128   -0.9926   -0.1208
+rota_matrix    0.2095   -0.1208    0.9703
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN IP
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.8593    0.4433   -0.2550
+rota_matrix    0.4433    0.3972   -0.8035
+rota_matrix   -0.2550   -0.8035   -0.5379
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN IU
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7251    0.5746    0.3795
+rota_matrix    0.5746    0.2011    0.7933
+rota_matrix    0.3795    0.7933   -0.4760
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN JB
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.9997    0.0264    0.0016
+rota_matrix    0.0264    0.9925    0.1194
+rota_matrix    0.0016    0.1194   -0.9928
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN JG
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7921   -0.4320    0.4312
+rota_matrix    0.5975   -0.4043    0.6924
+rota_matrix   -0.1248    0.8061    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN JL
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7966   -0.5642   -0.2171
+rota_matrix    0.3914   -0.2077   -0.8965
+rota_matrix    0.4607   -0.7991    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN JQ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.6676   -0.2141   -0.7131
+rota_matrix   -0.2141   -0.8621    0.4593
+rota_matrix   -0.7131    0.4593    0.5296
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN JV
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.0932   -0.0449   -0.9946
+rota_matrix    0.9940    0.0535   -0.0955
+rota_matrix    0.0575   -0.9976    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN KC
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4962    0.4234   -0.7579
+rota_matrix   -0.2868    0.7441    0.6034
+rota_matrix    0.8194    0.5168   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN KH
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4990   -0.2945   -0.8150
+rota_matrix    0.2221    0.8656   -0.4488
+rota_matrix    0.8376   -0.4050   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN KM
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.8811   -0.3799   -0.2816
+rota_matrix   -0.3799    0.2142    0.8999
+rota_matrix   -0.2816    0.8999   -0.3331
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN KR
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4015   -0.8149   -0.4180
+rota_matrix    0.8567   -0.4956    0.1431
+rota_matrix   -0.3238   -0.3007    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN KW
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1711   -0.7434   -0.6466
+rota_matrix   -0.7434   -0.5281    0.4105
+rota_matrix   -0.6466    0.4105   -0.6430
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN LD
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7406   -0.5678   -0.3592
+rota_matrix    0.5965    0.3095    0.7406
+rota_matrix   -0.3094   -0.7627    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN LI
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4898   -0.1999   -0.8486
+rota_matrix   -0.4028    0.8114   -0.4236
+rota_matrix    0.7732    0.5493    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN LN
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3138   -0.8061   -0.5018
+rota_matrix    0.7401    0.5387   -0.4026
+rota_matrix    0.5948   -0.2451    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN LS
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3357   -0.7263   -0.5999
+rota_matrix   -0.8517    0.5061   -0.1361
+rota_matrix    0.4025    0.4652   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN LX
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7998   -0.3912   -0.4553
+rota_matrix   -0.5586    0.2073    0.8031
+rota_matrix   -0.2197    0.8967   -0.3843
+tran_orth   208.6930  -103.0989  148.5080
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN M
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1167   -0.9925   -0.0351
+rota_matrix    0.1659   -0.0544    0.9846
+rota_matrix   -0.9792    0.1091    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN ME
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3792   -0.8693    0.3171
+rota_matrix   -0.8693   -0.4521   -0.1999
+rota_matrix    0.3171   -0.1999   -0.9271
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN MJ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4898   -0.4028    0.7732
+rota_matrix   -0.1999    0.8114    0.5493
+rota_matrix   -0.8486   -0.4236    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN MO
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8703   -0.4339    0.2328
+rota_matrix    0.3869    0.3100   -0.8685
+rota_matrix    0.3047    0.8459    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN MT
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3155   -0.8013    0.5083
+rota_matrix    0.8645    0.4636    0.1942
+rota_matrix   -0.3913    0.3782    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN NA
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.0904   -0.9924   -0.0838
+rota_matrix   -0.1658    0.0680   -0.9838
+rota_matrix    0.9820    0.1028   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN NF
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3357   -0.8517    0.4025
+rota_matrix   -0.7263    0.5061    0.4652
+rota_matrix   -0.5999   -0.1361   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN NK
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3308   -0.4177    0.8462
+rota_matrix   -0.4177   -0.7392   -0.5282
+rota_matrix    0.8462   -0.5282    0.0700
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN NP
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4990    0.2221    0.8376
+rota_matrix   -0.2945    0.8656   -0.4050
+rota_matrix   -0.8150   -0.4488   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN NU
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1195    0.0447    0.9918
+rota_matrix    0.9909   -0.0671   -0.1163
+rota_matrix    0.0614    0.9967   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN OB
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4962   -0.2868    0.8194
+rota_matrix    0.4234    0.7441    0.5168
+rota_matrix   -0.7579    0.6034   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN OG
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1917   -0.8105    0.5535
+rota_matrix    0.7299   -0.4947   -0.4717
+rota_matrix    0.6562    0.3135    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN OL
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7559   -0.5869    0.2900
+rota_matrix   -0.5869    0.4113   -0.6974
+rota_matrix    0.2900   -0.6974   -0.6554
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN OQ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.9788    0.0134    0.2043
+rota_matrix   -0.0135    0.9999   -0.0008
+rota_matrix   -0.2043   -0.0019    0.9789
+tran_orth   -186.5294   32.2662  -201.0039
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN OV
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8682   -0.3867   -0.3109
+rota_matrix   -0.4398   -0.3096   -0.8431
+rota_matrix    0.2298    0.8687   -0.4388
+tran_orth   -61.8676  251.1304   96.6579
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN PC
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7428   -0.5966    0.3039
+rota_matrix   -0.5625   -0.3099    0.7665
+rota_matrix   -0.3631   -0.7403   -0.5658
+tran_orth   -194.8105  -109.5412  162.1308
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN PH
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    1.0000   -0.0000   -0.0069
+rota_matrix   -0.0000   -1.0000   -0.0005
+rota_matrix   -0.0069    0.0005   -1.0000
+tran_orth   -140.3209  -30.0269  235.8925
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN PM
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7844    0.3979    0.4758
+rota_matrix   -0.6018    0.3025    0.7392
+rota_matrix    0.1502   -0.8661    0.4767
+tran_orth   -211.1064  -79.0872  -159.4244
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN PR
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7801    0.6069   -0.1520
+rota_matrix   -0.4042    0.3033   -0.8629
+rota_matrix   -0.4776    0.7346    0.4819
+tran_orth   -56.7242  269.2181  -23.2539
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN PW
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.6558    0.3156   -0.6858
+rota_matrix    0.1959    0.8061    0.5584
+rota_matrix    0.7291   -0.5005    0.4669
+tran_orth    77.5122  -134.6597  -228.2442
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN QD
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.0836    0.1663   -0.9825
+rota_matrix   -0.9931   -0.0679   -0.0960
+rota_matrix   -0.0827    0.9837    0.1594
+tran_orth   223.9436  161.4637    3.9429
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN QI
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.5005   -0.3162   -0.8059
+rota_matrix    0.3108   -0.8032    0.5082
+rota_matrix   -0.8080   -0.5048   -0.3037
+tran_orth   108.7329  -187.7070  170.8213
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN QN
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4844    0.4032   -0.7764
+rota_matrix   -0.2037   -0.8111   -0.5483
+rota_matrix   -0.8508    0.4238   -0.3108
+tran_orth   125.7580  133.2672  206.5468
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN QS
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8687    0.4341   -0.2386
+rota_matrix    0.3929   -0.3105    0.8656
+rota_matrix    0.3016   -0.8457   -0.4402
+tran_orth   -54.1794  -268.4585   35.0920
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN QX
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3770    0.8694   -0.3193
+rota_matrix   -0.8679    0.4520    0.2061
+rota_matrix    0.3235    0.1994    0.9250
+tran_orth    47.6980   88.4030  -257.1899
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN RE
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1955    0.8108   -0.5517
+rota_matrix    0.7331    0.4945    0.4669
+rota_matrix    0.6514   -0.3132   -0.6911
+tran_orth   181.7910  -198.8402   60.4268
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN RJ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7579    0.5871   -0.2845
+rota_matrix   -0.5821   -0.4117    0.7012
+rota_matrix    0.2945    0.6970    0.6537
+tran_orth   192.1077  -94.5046  -174.3571
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN RO
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.5019    0.2872   -0.8158
+rota_matrix    0.4198   -0.7438   -0.5201
+rota_matrix   -0.7562   -0.6036    0.2527
+tran_orth   271.5462   40.1587   29.7780
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN RT
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    1.0000    0.0000    0.0000
+rota_matrix    0.0000    1.0000    0.0000
+rota_matrix    0.0000    0.0000    1.0000
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN S
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3385    0.8519   -0.3997
+rota_matrix   -0.7295   -0.5059   -0.4604
+rota_matrix   -0.5944    0.1357    0.7926
+tran_orth   167.6178  196.4467  -97.7235
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN SA
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3120    0.8015   -0.5101
+rota_matrix    0.8631   -0.4635   -0.2004
+rota_matrix   -0.3971   -0.3778   -0.8364
+tran_orth    99.7063  -89.4129  241.4557
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN SF
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.0910    0.9923    0.0837
+rota_matrix   -0.1590   -0.0685    0.9849
+rota_matrix    0.9831   -0.1029    0.1515
+tran_orth    -2.6509  -210.8563  -178.2399
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN SK
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3986    0.8147    0.4212
+rota_matrix    0.8557    0.4956   -0.1488
+rota_matrix   -0.3300    0.3012   -0.8947
+tran_orth   -17.8024  -71.5800  266.0755
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN SP
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.4934    0.2941    0.8186
+rota_matrix    0.2252   -0.8658    0.4468
+rota_matrix    0.8402    0.4048    0.3609
+tran_orth   -113.3791  -163.0350  -191.8375
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN SU
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.2966   -0.8194   -0.4906
+rota_matrix    0.8160   -0.4843    0.3155
+rota_matrix   -0.4961   -0.3068    0.8123
+tran_orth   132.6333  -204.5525  -129.6282
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN T
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.8791    0.3798    0.2879
+rota_matrix   -0.3861   -0.2137   -0.8973
+rota_matrix   -0.2793   -0.9000    0.3346
+tran_orth    68.6268  259.1531  -66.0823
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN TB
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3315    0.7259    0.6026
+rota_matrix   -0.8507   -0.5062    0.1417
+rota_matrix    0.4079   -0.4656    0.7854
+tran_orth   -72.5906   72.1993  -256.4267
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN TG
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1164    0.9925    0.0365
+rota_matrix    0.1591    0.0549   -0.9857
+rota_matrix   -0.9804   -0.1090   -0.1643
+tran_orth    37.8861  210.6148  174.4788
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN TL
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3172    0.8058    0.5000
+rota_matrix    0.7429   -0.5389    0.3972
+rota_matrix    0.5895    0.2454   -0.7696
+tran_orth   -138.1906  -214.9933  104.4897
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN TQ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3271    0.3219    0.8885
+rota_matrix    0.3942    0.8080   -0.4379
+rota_matrix   -0.8588    0.4935    0.1374
+tran_orth   -245.4368   71.2514  104.5027
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN TV
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.5116   -0.3077    0.8022
+rota_matrix    0.3131   -0.8027   -0.5076
+rota_matrix    0.8001    0.5109   -0.3143
+tran_orth   -270.3443   50.5793  -24.3411
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN UC
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.1099   -0.1665    0.9799
+rota_matrix   -0.9933    0.0544   -0.1022
+rota_matrix   -0.0363   -0.9845   -0.1713
+tran_orth   -219.5977  166.6335   15.7162
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN UH
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.4957    0.1995    0.8453
+rota_matrix   -0.3999   -0.8116    0.4260
+rota_matrix    0.7710   -0.5492   -0.3225
+tran_orth   -262.9069  -67.7692  -50.2410
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN UM
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1756    0.7431    0.6458
+rota_matrix   -0.7462    0.5283   -0.4050
+rota_matrix   -0.6421   -0.4108    0.6473
+tran_orth   -154.2067  216.9962  -73.2787
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN UR
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7431    0.5676    0.3544
+rota_matrix    0.5913   -0.3091   -0.7449
+rota_matrix   -0.3133    0.7630   -0.5654
+tran_orth   -171.6096   81.7090  200.2763
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN UW
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.9996   -0.0264    0.0053
+rota_matrix    0.0256   -0.9924   -0.1201
+rota_matrix    0.0085   -0.1199    0.9928
+tran_orth   139.8523   -5.3425  -238.0119
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN VD
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7951    0.4322   -0.4255
+rota_matrix    0.5927    0.4047   -0.6964
+rota_matrix   -0.1288   -0.8058   -0.5779
+tran_orth   225.8433   91.6413  129.7440
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN VI
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7951    0.5641    0.2229
+rota_matrix    0.3976    0.2073    0.8938
+rota_matrix    0.4580    0.7993   -0.3891
+tran_orth    77.5119  -260.1540   50.4831
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN VN
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.9792    0.0130   -0.2027
+rota_matrix   -0.0120    0.9925    0.1214
+rota_matrix    0.2028    0.1213   -0.9717
+tran_orth   186.9977    3.1033  203.1231
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN VS
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.8576   -0.4434    0.2607
+rota_matrix    0.4489   -0.3976    0.8003
+rota_matrix   -0.2512    0.8033    0.5400
+tran_orth    47.1305  -263.6845  -66.9772
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN VX
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.7277   -0.5744   -0.3748
+rota_matrix    0.5691   -0.2007   -0.7974
+rota_matrix    0.3828   -0.7936    0.4729
+tran_orth   174.0230  100.4771  -189.3598
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN WE
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.5048   -0.2217   -0.8343
+rota_matrix   -0.2917   -0.8658    0.4066
+rota_matrix   -0.8124    0.4487    0.3724
+tran_orth   260.9469  -80.1978   41.3749
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN WJ
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.1126   -0.0442   -0.9927
+rota_matrix    0.9917    0.0671    0.1095
+rota_matrix    0.0617   -0.9968    0.0514
+tran_orth   215.8580  -164.4766  -50.8882
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN WO
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix   -0.3366    0.4182   -0.8437
+rota_matrix   -0.4141    0.7390    0.5315
+rota_matrix    0.8457    0.5283   -0.0756
+tran_orth   258.5741  -43.7901  -86.3643
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN WT
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7811   -0.3982   -0.4810
+rota_matrix   -0.6069   -0.3029   -0.7348
+rota_matrix    0.1469    0.8659   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN Y
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.3096   -0.7398   -0.5974
+rota_matrix   -0.8044   -0.5388    0.2504
+rota_matrix   -0.5071    0.4030   -0.7619
+tran_orth    74.0651   39.1276  263.0974
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN d
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.7811   -0.6069    0.1469
+rota_matrix   -0.3982   -0.3029    0.8659
+rota_matrix   -0.4810   -0.7348   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN i
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.8060   -0.5571   -0.1998
+rota_matrix    0.4283    0.3160    0.8466
+rota_matrix   -0.4085   -0.7679    0.4934
+tran_orth   -84.2710  -250.1294  -81.0586
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN n
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.9774   -0.0135   -0.2111
+rota_matrix   -0.0135   -0.9999    0.0014
+rota_matrix   -0.2111    0.0014   -0.9775
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN s
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+new_operator
+
+rota_matrix    0.6555   -0.1917   -0.7305
+rota_matrix   -0.3187    0.8067   -0.4977
+rota_matrix    0.6846    0.5590    0.4677
+tran_orth    72.7606  186.4639  -190.1945
+
+center_orth   16.4685   -5.9451  105.8482
+CHAIN x
+RMSD 0
+MATCHING 13
+  RESSEQ 4:10
+  RESSEQ 12:17
+
+
+
+
+
+new_ncs_group
+new_operator
+
+rota_matrix    1.0000    0.0000    0.0000
+rota_matrix    0.0000    1.0000    0.0000
+rota_matrix    0.0000    0.0000    1.0000
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN A
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4205   -0.8008   -0.4264
+rota_matrix    0.7994    0.5494   -0.2433
+rota_matrix    0.4291   -0.2385    0.8712
+tran_orth    16.3278  -39.7467  -272.7462
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN AD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7406    0.5965   -0.3094
+rota_matrix   -0.5678    0.3095   -0.7627
+rota_matrix   -0.3592    0.7406    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN AI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1962   -0.7295   -0.6552
+rota_matrix   -0.8127    0.4949   -0.3077
+rota_matrix    0.5487    0.4721   -0.6900
+tran_orth   159.7640  202.5494   98.4172
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN AN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5061    0.3073   -0.8059
+rota_matrix    0.3166    0.8029    0.5050
+rota_matrix    0.8023   -0.5107    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN AS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0936   -0.9940   -0.0574
+rota_matrix   -0.0380   -0.0541    0.9978
+rota_matrix   -0.9949    0.0956   -0.0327
+tran_orth    -3.1968  -230.6238  151.7871
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN AX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1167    0.1659   -0.9792
+rota_matrix   -0.9925   -0.0544    0.1091
+rota_matrix   -0.0351    0.9846    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN BE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3182   -0.8647    0.3886
+rota_matrix   -0.8039   -0.4634   -0.3729
+rota_matrix    0.5025   -0.1938   -0.8426
+tran_orth   -162.5289  187.7296  120.7426
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN BJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3210   -0.3223   -0.8906
+rota_matrix    0.3973   -0.8078    0.4355
+rota_matrix   -0.8597   -0.4936   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN BO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3210    0.3973   -0.8597
+rota_matrix   -0.3223   -0.8078   -0.4936
+rota_matrix   -0.8906    0.4355   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN BT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3269   -0.3977    0.8573
+rota_matrix   -0.3189    0.8075    0.4962
+rota_matrix   -0.8896   -0.4356    0.1372
+tran_orth   -259.7760  -46.9477   80.9272
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN CA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8074    0.4225   -0.4119
+rota_matrix    0.5572   -0.3165    0.7677
+rota_matrix    0.1940   -0.8493   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN CF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8102   -0.4227    0.4061
+rota_matrix    0.5519    0.3169   -0.7714
+rota_matrix    0.1974    0.8491    0.4900
+tran_orth   -223.1405  112.4044  -117.5179
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN CK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3155    0.8645   -0.3913
+rota_matrix   -0.8013    0.4636    0.3782
+rota_matrix    0.5083    0.1942    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN CP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.2158   -0.7980    0.5627
+rota_matrix    0.8002    0.4748    0.3664
+rota_matrix   -0.5595    0.3713    0.7410
+tran_orth   -186.8799  -185.3361  -83.4460
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN CU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3180   -0.2996   -0.8995
+rota_matrix    0.2974    0.8693   -0.3947
+rota_matrix    0.9003   -0.3930   -0.1873
+tran_orth   247.3968   76.7154  -95.6366
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN D
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2932    0.8138   -0.5017
+rota_matrix    0.8196    0.4841    0.3063
+rota_matrix    0.4922   -0.3214   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN DB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1190   -0.9909   -0.0627
+rota_matrix    0.0378    0.0677   -0.9970
+rota_matrix    0.9922    0.1163    0.0455
+tran_orth   -32.0382  230.8651  -148.0260
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN DG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7921    0.5975   -0.1248
+rota_matrix   -0.4320   -0.4043    0.8061
+rota_matrix    0.4312    0.6924    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN DL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3993   -0.8569    0.3261
+rota_matrix   -0.8128    0.4954    0.3066
+rota_matrix   -0.4242   -0.1426   -0.8942
+tran_orth   -45.7548   58.2931  265.9798
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN DQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6541    0.2947   -0.6967
+rota_matrix    0.2947   -0.7490   -0.5935
+rota_matrix   -0.6967   -0.5935    0.4031
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN DV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4910   -0.4238    0.7611
+rota_matrix   -0.2910   -0.7437   -0.6018
+rota_matrix    0.8211   -0.5170    0.2419
+tran_orth   -121.8702  160.2457  -188.9597
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN EC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4015    0.8567   -0.3238
+rota_matrix   -0.8149   -0.4956   -0.3007
+rota_matrix   -0.4180    0.1431    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN EH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6626    0.2138    0.7178
+rota_matrix   -0.2173    0.8623   -0.4574
+rota_matrix   -0.7168   -0.4590   -0.5249
+tran_orth   -68.1147  164.2781  211.2105
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN EM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.2119    0.7977   -0.5646
+rota_matrix    0.7977   -0.4750   -0.3716
+rota_matrix   -0.5646   -0.3716   -0.7369
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN ER
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0863    0.0444    0.9953
+rota_matrix    0.9946   -0.0536    0.0886
+rota_matrix    0.0573    0.9976   -0.0395
+tran_orth   -220.2042  -163.6209   31.2291
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN EW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1195    0.9909    0.0614
+rota_matrix    0.0447   -0.0671    0.9967
+rota_matrix    0.9918   -0.1163   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN FD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6493   -0.2950    0.7010
+rota_matrix    0.2988    0.7487    0.5918
+rota_matrix   -0.6994    0.5937   -0.3979
+tran_orth   -81.4000  -158.8533  210.6575
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN FI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2932    0.8196    0.4922
+rota_matrix    0.8138    0.4841   -0.3214
+rota_matrix   -0.5017    0.3063   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN FN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2897   -0.8141    0.5033
+rota_matrix    0.8175   -0.4840   -0.3123
+rota_matrix    0.4978    0.3210    0.8057
+tran_orth   -101.6495  -57.2833  -250.2455
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN FS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3117    0.3001    0.9015
+rota_matrix    0.3001   -0.8691    0.3931
+rota_matrix    0.9015    0.3931    0.1809
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN FX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7912   -0.5976    0.1299
+rota_matrix   -0.4376    0.4048   -0.8029
+rota_matrix    0.4272   -0.6922   -0.5817
+tran_orth    63.7728  262.9248   55.1393
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN GE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7966    0.3914    0.4607
+rota_matrix   -0.5642   -0.2077   -0.7991
+rota_matrix   -0.2171   -0.8965    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN GJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1917    0.7299    0.6562
+rota_matrix   -0.8105   -0.4947    0.3135
+rota_matrix    0.5535   -0.4717    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN GO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0932    0.9940    0.0575
+rota_matrix   -0.0449    0.0535   -0.9976
+rota_matrix   -0.9946   -0.0955    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN GT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4235    0.8010    0.4231
+rota_matrix    0.8010   -0.5492    0.2381
+rota_matrix    0.4231    0.2381   -0.8742
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN HA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5061    0.3166    0.8023
+rota_matrix    0.3073    0.8029   -0.5107
+rota_matrix   -0.8059    0.5050    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN HF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6605   -0.3153    0.6814
+rota_matrix    0.1920   -0.8064   -0.5593
+rota_matrix    0.7258    0.5003   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN HK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0904   -0.1658    0.9820
+rota_matrix   -0.9924    0.0680    0.1028
+rota_matrix   -0.0838   -0.9838   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN HP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6605    0.1920    0.7258
+rota_matrix   -0.3153   -0.8064    0.5003
+rota_matrix    0.6814   -0.5593   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN HU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7998   -0.3912   -0.4553
+rota_matrix   -0.5586    0.2073    0.8031
+rota_matrix   -0.2197    0.8967   -0.3843
+tran_orth   208.6930  -103.0989  148.5080
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN I
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3138    0.7401    0.5948
+rota_matrix   -0.8061    0.5387   -0.2451
+rota_matrix   -0.5018   -0.4026    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN IB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8074    0.5572    0.1940
+rota_matrix    0.4225   -0.3165   -0.8493
+rota_matrix   -0.4119    0.7677   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN IG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9777   -0.0128    0.2095
+rota_matrix   -0.0128   -0.9926   -0.1208
+rota_matrix    0.2095   -0.1208    0.9703
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN IL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8593    0.4433   -0.2550
+rota_matrix    0.4433    0.3972   -0.8035
+rota_matrix   -0.2550   -0.8035   -0.5379
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN IQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7251    0.5746    0.3795
+rota_matrix    0.5746    0.2011    0.7933
+rota_matrix    0.3795    0.7933   -0.4760
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN IV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9997    0.0264    0.0016
+rota_matrix    0.0264    0.9925    0.1194
+rota_matrix    0.0016    0.1194   -0.9928
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN JC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7921   -0.4320    0.4312
+rota_matrix    0.5975   -0.4043    0.6924
+rota_matrix   -0.1248    0.8061    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN JH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7966   -0.5642   -0.2171
+rota_matrix    0.3914   -0.2077   -0.8965
+rota_matrix    0.4607   -0.7991    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN JM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6676   -0.2141   -0.7131
+rota_matrix   -0.2141   -0.8621    0.4593
+rota_matrix   -0.7131    0.4593    0.5296
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN JR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0932   -0.0449   -0.9946
+rota_matrix    0.9940    0.0535   -0.0955
+rota_matrix    0.0575   -0.9976    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN JW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4962    0.4234   -0.7579
+rota_matrix   -0.2868    0.7441    0.6034
+rota_matrix    0.8194    0.5168   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN KD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4990   -0.2945   -0.8150
+rota_matrix    0.2221    0.8656   -0.4488
+rota_matrix    0.8376   -0.4050   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN KI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8811   -0.3799   -0.2816
+rota_matrix   -0.3799    0.2142    0.8999
+rota_matrix   -0.2816    0.8999   -0.3331
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN KN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4015   -0.8149   -0.4180
+rota_matrix    0.8567   -0.4956    0.1431
+rota_matrix   -0.3238   -0.3007    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN KS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1711   -0.7434   -0.6466
+rota_matrix   -0.7434   -0.5281    0.4105
+rota_matrix   -0.6466    0.4105   -0.6430
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN KX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7406   -0.5678   -0.3592
+rota_matrix    0.5965    0.3095    0.7406
+rota_matrix   -0.3094   -0.7627    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN LE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4898   -0.1999   -0.8486
+rota_matrix   -0.4028    0.8114   -0.4236
+rota_matrix    0.7732    0.5493    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN LJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3138   -0.8061   -0.5018
+rota_matrix    0.7401    0.5387   -0.4026
+rota_matrix    0.5948   -0.2451    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN LO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3357   -0.7263   -0.5999
+rota_matrix   -0.8517    0.5061   -0.1361
+rota_matrix    0.4025    0.4652   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN LT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1167   -0.9925   -0.0351
+rota_matrix    0.1659   -0.0544    0.9846
+rota_matrix   -0.9792    0.1091    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN MA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3792   -0.8693    0.3171
+rota_matrix   -0.8693   -0.4521   -0.1999
+rota_matrix    0.3171   -0.1999   -0.9271
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN MF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4898   -0.4028    0.7732
+rota_matrix   -0.1999    0.8114    0.5493
+rota_matrix   -0.8486   -0.4236    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN MK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8703   -0.4339    0.2328
+rota_matrix    0.3869    0.3100   -0.8685
+rota_matrix    0.3047    0.8459    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN MP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3155   -0.8013    0.5083
+rota_matrix    0.8645    0.4636    0.1942
+rota_matrix   -0.3913    0.3782    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN MU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2966   -0.8194   -0.4906
+rota_matrix    0.8160   -0.4843    0.3155
+rota_matrix   -0.4961   -0.3068    0.8123
+tran_orth   132.6333  -204.5525  -129.6282
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN N
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0904   -0.9924   -0.0838
+rota_matrix   -0.1658    0.0680   -0.9838
+rota_matrix    0.9820    0.1028   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN NB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3357   -0.8517    0.4025
+rota_matrix   -0.7263    0.5061    0.4652
+rota_matrix   -0.5999   -0.1361   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN NG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3308   -0.4177    0.8462
+rota_matrix   -0.4177   -0.7392   -0.5282
+rota_matrix    0.8462   -0.5282    0.0700
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN NL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4990    0.2221    0.8376
+rota_matrix   -0.2945    0.8656   -0.4050
+rota_matrix   -0.8150   -0.4488   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN NQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1195    0.0447    0.9918
+rota_matrix    0.9909   -0.0671   -0.1163
+rota_matrix    0.0614    0.9967   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN NV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4962   -0.2868    0.8194
+rota_matrix    0.4234    0.7441    0.5168
+rota_matrix   -0.7579    0.6034   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN OC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1917   -0.8105    0.5535
+rota_matrix    0.7299   -0.4947   -0.4717
+rota_matrix    0.6562    0.3135    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN OH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7559   -0.5869    0.2900
+rota_matrix   -0.5869    0.4113   -0.6974
+rota_matrix    0.2900   -0.6974   -0.6554
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN OM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.9788    0.0134    0.2043
+rota_matrix   -0.0135    0.9999   -0.0008
+rota_matrix   -0.2043   -0.0019    0.9789
+tran_orth   -186.5294   32.2662  -201.0039
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN OR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8682   -0.3867   -0.3109
+rota_matrix   -0.4398   -0.3096   -0.8431
+rota_matrix    0.2298    0.8687   -0.4388
+tran_orth   -61.8676  251.1304   96.6579
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN OW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7428   -0.5966    0.3039
+rota_matrix   -0.5625   -0.3099    0.7665
+rota_matrix   -0.3631   -0.7403   -0.5658
+tran_orth   -194.8105  -109.5412  162.1308
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN PD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    1.0000   -0.0000   -0.0069
+rota_matrix   -0.0000   -1.0000   -0.0005
+rota_matrix   -0.0069    0.0005   -1.0000
+tran_orth   -140.3209  -30.0269  235.8925
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN PI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7844    0.3979    0.4758
+rota_matrix   -0.6018    0.3025    0.7392
+rota_matrix    0.1502   -0.8661    0.4767
+tran_orth   -211.1064  -79.0872  -159.4244
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN PN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7801    0.6069   -0.1520
+rota_matrix   -0.4042    0.3033   -0.8629
+rota_matrix   -0.4776    0.7346    0.4819
+tran_orth   -56.7242  269.2181  -23.2539
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN PS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6558    0.3156   -0.6858
+rota_matrix    0.1959    0.8061    0.5584
+rota_matrix    0.7291   -0.5005    0.4669
+tran_orth    77.5122  -134.6597  -228.2442
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN PX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0836    0.1663   -0.9825
+rota_matrix   -0.9931   -0.0679   -0.0960
+rota_matrix   -0.0827    0.9837    0.1594
+tran_orth   223.9436  161.4637    3.9429
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN QE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5005   -0.3162   -0.8059
+rota_matrix    0.3108   -0.8032    0.5082
+rota_matrix   -0.8080   -0.5048   -0.3037
+tran_orth   108.7329  -187.7070  170.8213
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN QJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4844    0.4032   -0.7764
+rota_matrix   -0.2037   -0.8111   -0.5483
+rota_matrix   -0.8508    0.4238   -0.3108
+tran_orth   125.7580  133.2672  206.5468
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN QO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8687    0.4341   -0.2386
+rota_matrix    0.3929   -0.3105    0.8656
+rota_matrix    0.3016   -0.8457   -0.4402
+tran_orth   -54.1794  -268.4585   35.0920
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN QT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3770    0.8694   -0.3193
+rota_matrix   -0.8679    0.4520    0.2061
+rota_matrix    0.3235    0.1994    0.9250
+tran_orth    47.6980   88.4030  -257.1899
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN RA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1955    0.8108   -0.5517
+rota_matrix    0.7331    0.4945    0.4669
+rota_matrix    0.6514   -0.3132   -0.6911
+tran_orth   181.7910  -198.8402   60.4268
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN RF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7579    0.5871   -0.2845
+rota_matrix   -0.5821   -0.4117    0.7012
+rota_matrix    0.2945    0.6970    0.6537
+tran_orth   192.1077  -94.5046  -174.3571
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN RK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.5019    0.2872   -0.8158
+rota_matrix    0.4198   -0.7438   -0.5201
+rota_matrix   -0.7562   -0.6036    0.2527
+tran_orth   271.5462   40.1587   29.7780
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN RP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3385    0.8519   -0.3997
+rota_matrix   -0.7295   -0.5059   -0.4604
+rota_matrix   -0.5944    0.1357    0.7926
+tran_orth   167.6178  196.4467  -97.7235
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN RU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3120    0.8015   -0.5101
+rota_matrix    0.8631   -0.4635   -0.2004
+rota_matrix   -0.3971   -0.3778   -0.8364
+tran_orth    99.7063  -89.4129  241.4557
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN SB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0910    0.9923    0.0837
+rota_matrix   -0.1590   -0.0685    0.9849
+rota_matrix    0.9831   -0.1029    0.1515
+tran_orth    -2.6509  -210.8563  -178.2399
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN SG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3986    0.8147    0.4212
+rota_matrix    0.8557    0.4956   -0.1488
+rota_matrix   -0.3300    0.3012   -0.8947
+tran_orth   -17.8024  -71.5800  266.0755
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN SL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4934    0.2941    0.8186
+rota_matrix    0.2252   -0.8658    0.4468
+rota_matrix    0.8402    0.4048    0.3609
+tran_orth   -113.3791  -163.0350  -191.8375
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN SQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8791    0.3798    0.2879
+rota_matrix   -0.3861   -0.2137   -0.8973
+rota_matrix   -0.2793   -0.9000    0.3346
+tran_orth    68.6268  259.1531  -66.0823
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN SV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3315    0.7259    0.6026
+rota_matrix   -0.8507   -0.5062    0.1417
+rota_matrix    0.4079   -0.4656    0.7854
+tran_orth   -72.5906   72.1993  -256.4267
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN TC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1164    0.9925    0.0365
+rota_matrix    0.1591    0.0549   -0.9857
+rota_matrix   -0.9804   -0.1090   -0.1643
+tran_orth    37.8861  210.6148  174.4788
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN TH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3172    0.8058    0.5000
+rota_matrix    0.7429   -0.5389    0.3972
+rota_matrix    0.5895    0.2454   -0.7696
+tran_orth   -138.1906  -214.9933  104.4897
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN TM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3271    0.3219    0.8885
+rota_matrix    0.3942    0.8080   -0.4379
+rota_matrix   -0.8588    0.4935    0.1374
+tran_orth   -245.4368   71.2514  104.5027
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN TR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5116   -0.3077    0.8022
+rota_matrix    0.3131   -0.8027   -0.5076
+rota_matrix    0.8001    0.5109   -0.3143
+tran_orth   -270.3443   50.5793  -24.3411
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN TW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7811   -0.3982   -0.4810
+rota_matrix   -0.6069   -0.3029   -0.7348
+rota_matrix    0.1469    0.8659   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN U
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1099   -0.1665    0.9799
+rota_matrix   -0.9933    0.0544   -0.1022
+rota_matrix   -0.0363   -0.9845   -0.1713
+tran_orth   -219.5977  166.6335   15.7162
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN UD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4957    0.1995    0.8453
+rota_matrix   -0.3999   -0.8116    0.4260
+rota_matrix    0.7710   -0.5492   -0.3225
+tran_orth   -262.9069  -67.7692  -50.2410
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN UI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1756    0.7431    0.6458
+rota_matrix   -0.7462    0.5283   -0.4050
+rota_matrix   -0.6421   -0.4108    0.6473
+tran_orth   -154.2067  216.9962  -73.2787
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN UN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7431    0.5676    0.3544
+rota_matrix    0.5913   -0.3091   -0.7449
+rota_matrix   -0.3133    0.7630   -0.5654
+tran_orth   -171.6096   81.7090  200.2763
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN US
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9996   -0.0264    0.0053
+rota_matrix    0.0256   -0.9924   -0.1201
+rota_matrix    0.0085   -0.1199    0.9928
+tran_orth   139.8523   -5.3425  -238.0119
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN UX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7951    0.4322   -0.4255
+rota_matrix    0.5927    0.4047   -0.6964
+rota_matrix   -0.1288   -0.8058   -0.5779
+tran_orth   225.8433   91.6413  129.7440
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN VE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7951    0.5641    0.2229
+rota_matrix    0.3976    0.2073    0.8938
+rota_matrix    0.4580    0.7993   -0.3891
+tran_orth    77.5119  -260.1540   50.4831
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN VJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9792    0.0130   -0.2027
+rota_matrix   -0.0120    0.9925    0.1214
+rota_matrix    0.2028    0.1213   -0.9717
+tran_orth   186.9977    3.1033  203.1231
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN VO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8576   -0.4434    0.2607
+rota_matrix    0.4489   -0.3976    0.8003
+rota_matrix   -0.2512    0.8033    0.5400
+tran_orth    47.1305  -263.6845  -66.9772
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN VT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7277   -0.5744   -0.3748
+rota_matrix    0.5691   -0.2007   -0.7974
+rota_matrix    0.3828   -0.7936    0.4729
+tran_orth   174.0230  100.4771  -189.3598
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN WA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.5048   -0.2217   -0.8343
+rota_matrix   -0.2917   -0.8658    0.4066
+rota_matrix   -0.8124    0.4487    0.3724
+tran_orth   260.9469  -80.1978   41.3749
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN WF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1126   -0.0442   -0.9927
+rota_matrix    0.9917    0.0671    0.1095
+rota_matrix    0.0617   -0.9968    0.0514
+tran_orth   215.8580  -164.4766  -50.8882
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN WK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3366    0.4182   -0.8437
+rota_matrix   -0.4141    0.7390    0.5315
+rota_matrix    0.8457    0.5283   -0.0756
+tran_orth   258.5741  -43.7901  -86.3643
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN WP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3096   -0.7398   -0.5974
+rota_matrix   -0.8044   -0.5388    0.2504
+rota_matrix   -0.5071    0.4030   -0.7619
+tran_orth    74.0651   39.1276  263.0974
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN Z
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7811   -0.6069    0.1469
+rota_matrix   -0.3982   -0.3029    0.8659
+rota_matrix   -0.4810   -0.7348   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN e
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8060   -0.5571   -0.1998
+rota_matrix    0.4283    0.3160    0.8466
+rota_matrix   -0.4085   -0.7679    0.4934
+tran_orth   -84.2710  -250.1294  -81.0586
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN j
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.9774   -0.0135   -0.2111
+rota_matrix   -0.0135   -0.9999    0.0014
+rota_matrix   -0.2111    0.0014   -0.9775
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN o
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6555   -0.1917   -0.7305
+rota_matrix   -0.3187    0.8067   -0.4977
+rota_matrix    0.6846    0.5590    0.4677
+tran_orth    72.7606  186.4639  -190.1945
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN t
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8703    0.3869    0.3047
+rota_matrix   -0.4339    0.3100    0.8459
+rota_matrix    0.2328   -0.8685    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   -7.7737   23.8758  124.7010
+CHAIN y
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+
+
+
+
+new_ncs_group
+new_operator
+
+rota_matrix    0.4205   -0.8008   -0.4264
+rota_matrix    0.7994    0.5494   -0.2433
+rota_matrix    0.4291   -0.2385    0.8712
+tran_orth    16.3278  -39.7467  -272.7462
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN AE
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7406    0.5965   -0.3094
+rota_matrix   -0.5678    0.3095   -0.7627
+rota_matrix   -0.3592    0.7406    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN AJ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1962   -0.7295   -0.6552
+rota_matrix   -0.8127    0.4949   -0.3077
+rota_matrix    0.5487    0.4721   -0.6900
+tran_orth   159.7640  202.5494   98.4172
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN AO
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.5061    0.3073   -0.8059
+rota_matrix    0.3166    0.8029    0.5050
+rota_matrix    0.8023   -0.5107    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN AT
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    1.0000    0.0000    0.0000
+rota_matrix    0.0000    1.0000    0.0000
+rota_matrix    0.0000    0.0000    1.0000
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN B
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.0936   -0.9940   -0.0574
+rota_matrix   -0.0380   -0.0541    0.9978
+rota_matrix   -0.9949    0.0956   -0.0327
+tran_orth    -3.1968  -230.6238  151.7871
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN BA
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1167    0.1659   -0.9792
+rota_matrix   -0.9925   -0.0544    0.1091
+rota_matrix   -0.0351    0.9846    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN BF
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3182   -0.8647    0.3886
+rota_matrix   -0.8039   -0.4634   -0.3729
+rota_matrix    0.5025   -0.1938   -0.8426
+tran_orth   -162.5289  187.7296  120.7426
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN BK
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3210   -0.3223   -0.8906
+rota_matrix    0.3973   -0.8078    0.4355
+rota_matrix   -0.8597   -0.4936   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN BP
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3210    0.3973   -0.8597
+rota_matrix   -0.3223   -0.8078   -0.4936
+rota_matrix   -0.8906    0.4355   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN BU
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3269   -0.3977    0.8573
+rota_matrix   -0.3189    0.8075    0.4962
+rota_matrix   -0.8896   -0.4356    0.1372
+tran_orth   -259.7760  -46.9477   80.9272
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN CB
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8074    0.4225   -0.4119
+rota_matrix    0.5572   -0.3165    0.7677
+rota_matrix    0.1940   -0.8493   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN CG
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8102   -0.4227    0.4061
+rota_matrix    0.5519    0.3169   -0.7714
+rota_matrix    0.1974    0.8491    0.4900
+tran_orth   -223.1405  112.4044  -117.5179
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN CL
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3155    0.8645   -0.3913
+rota_matrix   -0.8013    0.4636    0.3782
+rota_matrix    0.5083    0.1942    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN CQ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.2158   -0.7980    0.5627
+rota_matrix    0.8002    0.4748    0.3664
+rota_matrix   -0.5595    0.3713    0.7410
+tran_orth   -186.8799  -185.3361  -83.4460
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN CV
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.2932    0.8138   -0.5017
+rota_matrix    0.8196    0.4841    0.3063
+rota_matrix    0.4922   -0.3214   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN DC
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1190   -0.9909   -0.0627
+rota_matrix    0.0378    0.0677   -0.9970
+rota_matrix    0.9922    0.1163    0.0455
+tran_orth   -32.0382  230.8651  -148.0260
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN DH
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7921    0.5975   -0.1248
+rota_matrix   -0.4320   -0.4043    0.8061
+rota_matrix    0.4312    0.6924    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN DM
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3993   -0.8569    0.3261
+rota_matrix   -0.8128    0.4954    0.3066
+rota_matrix   -0.4242   -0.1426   -0.8942
+tran_orth   -45.7548   58.2931  265.9798
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN DR
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.6541    0.2947   -0.6967
+rota_matrix    0.2947   -0.7490   -0.5935
+rota_matrix   -0.6967   -0.5935    0.4031
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN DW
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3180   -0.2996   -0.8995
+rota_matrix    0.2974    0.8693   -0.3947
+rota_matrix    0.9003   -0.3930   -0.1873
+tran_orth   247.3968   76.7154  -95.6366
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN E
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4910   -0.4238    0.7611
+rota_matrix   -0.2910   -0.7437   -0.6018
+rota_matrix    0.8211   -0.5170    0.2419
+tran_orth   -121.8702  160.2457  -188.9597
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN ED
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4015    0.8567   -0.3238
+rota_matrix   -0.8149   -0.4956   -0.3007
+rota_matrix   -0.4180    0.1431    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN EI
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.6626    0.2138    0.7178
+rota_matrix   -0.2173    0.8623   -0.4574
+rota_matrix   -0.7168   -0.4590   -0.5249
+tran_orth   -68.1147  164.2781  211.2105
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN EN
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.2119    0.7977   -0.5646
+rota_matrix    0.7977   -0.4750   -0.3716
+rota_matrix   -0.5646   -0.3716   -0.7369
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN ES
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.0863    0.0444    0.9953
+rota_matrix    0.9946   -0.0536    0.0886
+rota_matrix    0.0573    0.9976   -0.0395
+tran_orth   -220.2042  -163.6209   31.2291
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN EX
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1195    0.9909    0.0614
+rota_matrix    0.0447   -0.0671    0.9967
+rota_matrix    0.9918   -0.1163   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN FE
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.6493   -0.2950    0.7010
+rota_matrix    0.2988    0.7487    0.5918
+rota_matrix   -0.6994    0.5937   -0.3979
+tran_orth   -81.4000  -158.8533  210.6575
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN FJ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.2932    0.8196    0.4922
+rota_matrix    0.8138    0.4841   -0.3214
+rota_matrix   -0.5017    0.3063   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN FO
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.2897   -0.8141    0.5033
+rota_matrix    0.8175   -0.4840   -0.3123
+rota_matrix    0.4978    0.3210    0.8057
+tran_orth   -101.6495  -57.2833  -250.2455
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN FT
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3117    0.3001    0.9015
+rota_matrix    0.3001   -0.8691    0.3931
+rota_matrix    0.9015    0.3931    0.1809
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN GA
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7912   -0.5976    0.1299
+rota_matrix   -0.4376    0.4048   -0.8029
+rota_matrix    0.4272   -0.6922   -0.5817
+tran_orth    63.7728  262.9248   55.1393
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN GF
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7966    0.3914    0.4607
+rota_matrix   -0.5642   -0.2077   -0.7991
+rota_matrix   -0.2171   -0.8965    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN GK
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1917    0.7299    0.6562
+rota_matrix   -0.8105   -0.4947    0.3135
+rota_matrix    0.5535   -0.4717    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN GP
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.0932    0.9940    0.0575
+rota_matrix   -0.0449    0.0535   -0.9976
+rota_matrix   -0.9946   -0.0955    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN GU
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.4235    0.8010    0.4231
+rota_matrix    0.8010   -0.5492    0.2381
+rota_matrix    0.4231    0.2381   -0.8742
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN HB
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.5061    0.3166    0.8023
+rota_matrix    0.3073    0.8029   -0.5107
+rota_matrix   -0.8059    0.5050    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN HG
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.6605   -0.3153    0.6814
+rota_matrix    0.1920   -0.8064   -0.5593
+rota_matrix    0.7258    0.5003   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN HL
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.0904   -0.1658    0.9820
+rota_matrix   -0.9924    0.0680    0.1028
+rota_matrix   -0.0838   -0.9838   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN HQ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.6605    0.1920    0.7258
+rota_matrix   -0.3153   -0.8064    0.5003
+rota_matrix    0.6814   -0.5593   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN HV
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3138    0.7401    0.5948
+rota_matrix   -0.8061    0.5387   -0.2451
+rota_matrix   -0.5018   -0.4026    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN IC
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8074    0.5572    0.1940
+rota_matrix    0.4225   -0.3165   -0.8493
+rota_matrix   -0.4119    0.7677   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN IH
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.9777   -0.0128    0.2095
+rota_matrix   -0.0128   -0.9926   -0.1208
+rota_matrix    0.2095   -0.1208    0.9703
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN IM
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.8593    0.4433   -0.2550
+rota_matrix    0.4433    0.3972   -0.8035
+rota_matrix   -0.2550   -0.8035   -0.5379
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN IR
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7251    0.5746    0.3795
+rota_matrix    0.5746    0.2011    0.7933
+rota_matrix    0.3795    0.7933   -0.4760
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN IW
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7998   -0.3912   -0.4553
+rota_matrix   -0.5586    0.2073    0.8031
+rota_matrix   -0.2197    0.8967   -0.3843
+tran_orth   208.6930  -103.0989  148.5080
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN J
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.9997    0.0264    0.0016
+rota_matrix    0.0264    0.9925    0.1194
+rota_matrix    0.0016    0.1194   -0.9928
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN JD
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7921   -0.4320    0.4312
+rota_matrix    0.5975   -0.4043    0.6924
+rota_matrix   -0.1248    0.8061    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN JI
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7966   -0.5642   -0.2171
+rota_matrix    0.3914   -0.2077   -0.8965
+rota_matrix    0.4607   -0.7991    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN JN
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.6676   -0.2141   -0.7131
+rota_matrix   -0.2141   -0.8621    0.4593
+rota_matrix   -0.7131    0.4593    0.5296
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN JS
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.0932   -0.0449   -0.9946
+rota_matrix    0.9940    0.0535   -0.0955
+rota_matrix    0.0575   -0.9976    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN JX
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4962    0.4234   -0.7579
+rota_matrix   -0.2868    0.7441    0.6034
+rota_matrix    0.8194    0.5168   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN KE
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4990   -0.2945   -0.8150
+rota_matrix    0.2221    0.8656   -0.4488
+rota_matrix    0.8376   -0.4050   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN KJ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.8811   -0.3799   -0.2816
+rota_matrix   -0.3799    0.2142    0.8999
+rota_matrix   -0.2816    0.8999   -0.3331
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN KO
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4015   -0.8149   -0.4180
+rota_matrix    0.8567   -0.4956    0.1431
+rota_matrix   -0.3238   -0.3007    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN KT
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1711   -0.7434   -0.6466
+rota_matrix   -0.7434   -0.5281    0.4105
+rota_matrix   -0.6466    0.4105   -0.6430
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN LA
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7406   -0.5678   -0.3592
+rota_matrix    0.5965    0.3095    0.7406
+rota_matrix   -0.3094   -0.7627    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN LF
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.4898   -0.1999   -0.8486
+rota_matrix   -0.4028    0.8114   -0.4236
+rota_matrix    0.7732    0.5493    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN LK
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3138   -0.8061   -0.5018
+rota_matrix    0.7401    0.5387   -0.4026
+rota_matrix    0.5948   -0.2451    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN LP
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3357   -0.7263   -0.5999
+rota_matrix   -0.8517    0.5061   -0.1361
+rota_matrix    0.4025    0.4652   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN LU
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1167   -0.9925   -0.0351
+rota_matrix    0.1659   -0.0544    0.9846
+rota_matrix   -0.9792    0.1091    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN MB
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3792   -0.8693    0.3171
+rota_matrix   -0.8693   -0.4521   -0.1999
+rota_matrix    0.3171   -0.1999   -0.9271
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN MG
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.4898   -0.4028    0.7732
+rota_matrix   -0.1999    0.8114    0.5493
+rota_matrix   -0.8486   -0.4236    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN ML
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8703   -0.4339    0.2328
+rota_matrix    0.3869    0.3100   -0.8685
+rota_matrix    0.3047    0.8459    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN MQ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3155   -0.8013    0.5083
+rota_matrix    0.8645    0.4636    0.1942
+rota_matrix   -0.3913    0.3782    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN MV
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.0904   -0.9924   -0.0838
+rota_matrix   -0.1658    0.0680   -0.9838
+rota_matrix    0.9820    0.1028   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN NC
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3357   -0.8517    0.4025
+rota_matrix   -0.7263    0.5061    0.4652
+rota_matrix   -0.5999   -0.1361   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN NH
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3308   -0.4177    0.8462
+rota_matrix   -0.4177   -0.7392   -0.5282
+rota_matrix    0.8462   -0.5282    0.0700
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN NM
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4990    0.2221    0.8376
+rota_matrix   -0.2945    0.8656   -0.4050
+rota_matrix   -0.8150   -0.4488   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN NR
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1195    0.0447    0.9918
+rota_matrix    0.9909   -0.0671   -0.1163
+rota_matrix    0.0614    0.9967   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN NW
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.2966   -0.8194   -0.4906
+rota_matrix    0.8160   -0.4843    0.3155
+rota_matrix   -0.4961   -0.3068    0.8123
+tran_orth   132.6333  -204.5525  -129.6282
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN O
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4962   -0.2868    0.8194
+rota_matrix    0.4234    0.7441    0.5168
+rota_matrix   -0.7579    0.6034   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN OD
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1917   -0.8105    0.5535
+rota_matrix    0.7299   -0.4947   -0.4717
+rota_matrix    0.6562    0.3135    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN OI
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7559   -0.5869    0.2900
+rota_matrix   -0.5869    0.4113   -0.6974
+rota_matrix    0.2900   -0.6974   -0.6554
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN ON
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.9788    0.0134    0.2043
+rota_matrix   -0.0135    0.9999   -0.0008
+rota_matrix   -0.2043   -0.0019    0.9789
+tran_orth   -186.5294   32.2662  -201.0039
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN OS
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8682   -0.3867   -0.3109
+rota_matrix   -0.4398   -0.3096   -0.8431
+rota_matrix    0.2298    0.8687   -0.4388
+tran_orth   -61.8676  251.1304   96.6579
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN OX
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7428   -0.5966    0.3039
+rota_matrix   -0.5625   -0.3099    0.7665
+rota_matrix   -0.3631   -0.7403   -0.5658
+tran_orth   -194.8105  -109.5412  162.1308
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN PE
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    1.0000   -0.0000   -0.0069
+rota_matrix   -0.0000   -1.0000   -0.0005
+rota_matrix   -0.0069    0.0005   -1.0000
+tran_orth   -140.3209  -30.0269  235.8925
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN PJ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7844    0.3979    0.4758
+rota_matrix   -0.6018    0.3025    0.7392
+rota_matrix    0.1502   -0.8661    0.4767
+tran_orth   -211.1064  -79.0872  -159.4244
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN PO
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7801    0.6069   -0.1520
+rota_matrix   -0.4042    0.3033   -0.8629
+rota_matrix   -0.4776    0.7346    0.4819
+tran_orth   -56.7242  269.2181  -23.2539
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN PT
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.6558    0.3156   -0.6858
+rota_matrix    0.1959    0.8061    0.5584
+rota_matrix    0.7291   -0.5005    0.4669
+tran_orth    77.5122  -134.6597  -228.2442
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN QA
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.0836    0.1663   -0.9825
+rota_matrix   -0.9931   -0.0679   -0.0960
+rota_matrix   -0.0827    0.9837    0.1594
+tran_orth   223.9436  161.4637    3.9429
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN QF
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.5005   -0.3162   -0.8059
+rota_matrix    0.3108   -0.8032    0.5082
+rota_matrix   -0.8080   -0.5048   -0.3037
+tran_orth   108.7329  -187.7070  170.8213
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN QK
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.4844    0.4032   -0.7764
+rota_matrix   -0.2037   -0.8111   -0.5483
+rota_matrix   -0.8508    0.4238   -0.3108
+tran_orth   125.7580  133.2672  206.5468
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN QP
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8687    0.4341   -0.2386
+rota_matrix    0.3929   -0.3105    0.8656
+rota_matrix    0.3016   -0.8457   -0.4402
+tran_orth   -54.1794  -268.4585   35.0920
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN QU
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3770    0.8694   -0.3193
+rota_matrix   -0.8679    0.4520    0.2061
+rota_matrix    0.3235    0.1994    0.9250
+tran_orth    47.6980   88.4030  -257.1899
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN RB
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1955    0.8108   -0.5517
+rota_matrix    0.7331    0.4945    0.4669
+rota_matrix    0.6514   -0.3132   -0.6911
+tran_orth   181.7910  -198.8402   60.4268
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN RG
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7579    0.5871   -0.2845
+rota_matrix   -0.5821   -0.4117    0.7012
+rota_matrix    0.2945    0.6970    0.6537
+tran_orth   192.1077  -94.5046  -174.3571
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN RL
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.5019    0.2872   -0.8158
+rota_matrix    0.4198   -0.7438   -0.5201
+rota_matrix   -0.7562   -0.6036    0.2527
+tran_orth   271.5462   40.1587   29.7780
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN RQ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3385    0.8519   -0.3997
+rota_matrix   -0.7295   -0.5059   -0.4604
+rota_matrix   -0.5944    0.1357    0.7926
+tran_orth   167.6178  196.4467  -97.7235
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN RV
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3120    0.8015   -0.5101
+rota_matrix    0.8631   -0.4635   -0.2004
+rota_matrix   -0.3971   -0.3778   -0.8364
+tran_orth    99.7063  -89.4129  241.4557
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN SC
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.0910    0.9923    0.0837
+rota_matrix   -0.1590   -0.0685    0.9849
+rota_matrix    0.9831   -0.1029    0.1515
+tran_orth    -2.6509  -210.8563  -178.2399
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN SH
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3986    0.8147    0.4212
+rota_matrix    0.8557    0.4956   -0.1488
+rota_matrix   -0.3300    0.3012   -0.8947
+tran_orth   -17.8024  -71.5800  266.0755
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN SM
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.4934    0.2941    0.8186
+rota_matrix    0.2252   -0.8658    0.4468
+rota_matrix    0.8402    0.4048    0.3609
+tran_orth   -113.3791  -163.0350  -191.8375
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN SR
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.8791    0.3798    0.2879
+rota_matrix   -0.3861   -0.2137   -0.8973
+rota_matrix   -0.2793   -0.9000    0.3346
+tran_orth    68.6268  259.1531  -66.0823
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN SW
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3315    0.7259    0.6026
+rota_matrix   -0.8507   -0.5062    0.1417
+rota_matrix    0.4079   -0.4656    0.7854
+tran_orth   -72.5906   72.1993  -256.4267
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN TD
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1164    0.9925    0.0365
+rota_matrix    0.1591    0.0549   -0.9857
+rota_matrix   -0.9804   -0.1090   -0.1643
+tran_orth    37.8861  210.6148  174.4788
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN TI
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3172    0.8058    0.5000
+rota_matrix    0.7429   -0.5389    0.3972
+rota_matrix    0.5895    0.2454   -0.7696
+tran_orth   -138.1906  -214.9933  104.4897
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN TN
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3271    0.3219    0.8885
+rota_matrix    0.3942    0.8080   -0.4379
+rota_matrix   -0.8588    0.4935    0.1374
+tran_orth   -245.4368   71.2514  104.5027
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN TS
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.5116   -0.3077    0.8022
+rota_matrix    0.3131   -0.8027   -0.5076
+rota_matrix    0.8001    0.5109   -0.3143
+tran_orth   -270.3443   50.5793  -24.3411
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN TX
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.1099   -0.1665    0.9799
+rota_matrix   -0.9933    0.0544   -0.1022
+rota_matrix   -0.0363   -0.9845   -0.1713
+tran_orth   -219.5977  166.6335   15.7162
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN UE
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.4957    0.1995    0.8453
+rota_matrix   -0.3999   -0.8116    0.4260
+rota_matrix    0.7710   -0.5492   -0.3225
+tran_orth   -262.9069  -67.7692  -50.2410
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN UJ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1756    0.7431    0.6458
+rota_matrix   -0.7462    0.5283   -0.4050
+rota_matrix   -0.6421   -0.4108    0.6473
+tran_orth   -154.2067  216.9962  -73.2787
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN UO
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7431    0.5676    0.3544
+rota_matrix    0.5913   -0.3091   -0.7449
+rota_matrix   -0.3133    0.7630   -0.5654
+tran_orth   -171.6096   81.7090  200.2763
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN UT
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7811   -0.3982   -0.4810
+rota_matrix   -0.6069   -0.3029   -0.7348
+rota_matrix    0.1469    0.8659   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN V
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.9996   -0.0264    0.0053
+rota_matrix    0.0256   -0.9924   -0.1201
+rota_matrix    0.0085   -0.1199    0.9928
+tran_orth   139.8523   -5.3425  -238.0119
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN VA
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7951    0.4322   -0.4255
+rota_matrix    0.5927    0.4047   -0.6964
+rota_matrix   -0.1288   -0.8058   -0.5779
+tran_orth   225.8433   91.6413  129.7440
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN VF
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7951    0.5641    0.2229
+rota_matrix    0.3976    0.2073    0.8938
+rota_matrix    0.4580    0.7993   -0.3891
+tran_orth    77.5119  -260.1540   50.4831
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN VK
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.9792    0.0130   -0.2027
+rota_matrix   -0.0120    0.9925    0.1214
+rota_matrix    0.2028    0.1213   -0.9717
+tran_orth   186.9977    3.1033  203.1231
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN VP
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.8576   -0.4434    0.2607
+rota_matrix    0.4489   -0.3976    0.8003
+rota_matrix   -0.2512    0.8033    0.5400
+tran_orth    47.1305  -263.6845  -66.9772
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN VU
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.7277   -0.5744   -0.3748
+rota_matrix    0.5691   -0.2007   -0.7974
+rota_matrix    0.3828   -0.7936    0.4729
+tran_orth   174.0230  100.4771  -189.3598
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN WB
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.5048   -0.2217   -0.8343
+rota_matrix   -0.2917   -0.8658    0.4066
+rota_matrix   -0.8124    0.4487    0.3724
+tran_orth   260.9469  -80.1978   41.3749
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN WG
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.1126   -0.0442   -0.9927
+rota_matrix    0.9917    0.0671    0.1095
+rota_matrix    0.0617   -0.9968    0.0514
+tran_orth   215.8580  -164.4766  -50.8882
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN WL
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix   -0.3366    0.4182   -0.8437
+rota_matrix   -0.4141    0.7390    0.5315
+rota_matrix    0.8457    0.5283   -0.0756
+tran_orth   258.5741  -43.7901  -86.3643
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN WQ
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.3096   -0.7398   -0.5974
+rota_matrix   -0.8044   -0.5388    0.2504
+rota_matrix   -0.5071    0.4030   -0.7619
+tran_orth    74.0651   39.1276  263.0974
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN a
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.7811   -0.6069    0.1469
+rota_matrix   -0.3982   -0.3029    0.8659
+rota_matrix   -0.4810   -0.7348   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN f
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8060   -0.5571   -0.1998
+rota_matrix    0.4283    0.3160    0.8466
+rota_matrix   -0.4085   -0.7679    0.4934
+tran_orth   -84.2710  -250.1294  -81.0586
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN k
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.9774   -0.0135   -0.2111
+rota_matrix   -0.0135   -0.9999    0.0014
+rota_matrix   -0.2111    0.0014   -0.9775
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN p
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.6555   -0.1917   -0.7305
+rota_matrix   -0.3187    0.8067   -0.4977
+rota_matrix    0.6846    0.5590    0.4677
+tran_orth    72.7606  186.4639  -190.1945
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN u
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+new_operator
+
+rota_matrix    0.8703    0.3869    0.3047
+rota_matrix   -0.4339    0.3100    0.8459
+rota_matrix    0.2328   -0.8685    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth  -10.5374   38.5882  122.8294
+CHAIN z
+RMSD 0
+MATCHING 132
+  RESSEQ 1:131
+  RESSEQ 132:132
+
+
+
+
+
+new_ncs_group
+new_operator
+
+rota_matrix    0.8703    0.3869    0.3047
+rota_matrix   -0.4339    0.3100    0.8459
+rota_matrix    0.2328   -0.8685    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN AA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4205   -0.8008   -0.4264
+rota_matrix    0.7994    0.5494   -0.2433
+rota_matrix    0.4291   -0.2385    0.8712
+tran_orth    16.3278  -39.7467  -272.7462
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN AF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7406    0.5965   -0.3094
+rota_matrix   -0.5678    0.3095   -0.7627
+rota_matrix   -0.3592    0.7406    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN AK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1962   -0.7295   -0.6552
+rota_matrix   -0.8127    0.4949   -0.3077
+rota_matrix    0.5487    0.4721   -0.6900
+tran_orth   159.7640  202.5494   98.4172
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN AP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5061    0.3073   -0.8059
+rota_matrix    0.3166    0.8029    0.5050
+rota_matrix    0.8023   -0.5107    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN AU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0936   -0.9940   -0.0574
+rota_matrix   -0.0380   -0.0541    0.9978
+rota_matrix   -0.9949    0.0956   -0.0327
+tran_orth    -3.1968  -230.6238  151.7871
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN BB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1167    0.1659   -0.9792
+rota_matrix   -0.9925   -0.0544    0.1091
+rota_matrix   -0.0351    0.9846    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN BG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3182   -0.8647    0.3886
+rota_matrix   -0.8039   -0.4634   -0.3729
+rota_matrix    0.5025   -0.1938   -0.8426
+tran_orth   -162.5289  187.7296  120.7426
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN BL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3210   -0.3223   -0.8906
+rota_matrix    0.3973   -0.8078    0.4355
+rota_matrix   -0.8597   -0.4936   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN BQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3210    0.3973   -0.8597
+rota_matrix   -0.3223   -0.8078   -0.4936
+rota_matrix   -0.8906    0.4355   -0.1312
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN BV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    1.0000    0.0000    0.0000
+rota_matrix    0.0000    1.0000    0.0000
+rota_matrix    0.0000    0.0000    1.0000
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN C
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3269   -0.3977    0.8573
+rota_matrix   -0.3189    0.8075    0.4962
+rota_matrix   -0.8896   -0.4356    0.1372
+tran_orth   -259.7760  -46.9477   80.9272
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN CC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8074    0.4225   -0.4119
+rota_matrix    0.5572   -0.3165    0.7677
+rota_matrix    0.1940   -0.8493   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN CH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8102   -0.4227    0.4061
+rota_matrix    0.5519    0.3169   -0.7714
+rota_matrix    0.1974    0.8491    0.4900
+tran_orth   -223.1405  112.4044  -117.5179
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN CM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3155    0.8645   -0.3913
+rota_matrix   -0.8013    0.4636    0.3782
+rota_matrix    0.5083    0.1942    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN CR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.2158   -0.7980    0.5627
+rota_matrix    0.8002    0.4748    0.3664
+rota_matrix   -0.5595    0.3713    0.7410
+tran_orth   -186.8799  -185.3361  -83.4460
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN CW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2932    0.8138   -0.5017
+rota_matrix    0.8196    0.4841    0.3063
+rota_matrix    0.4922   -0.3214   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN DD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1190   -0.9909   -0.0627
+rota_matrix    0.0378    0.0677   -0.9970
+rota_matrix    0.9922    0.1163    0.0455
+tran_orth   -32.0382  230.8651  -148.0260
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN DI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7921    0.5975   -0.1248
+rota_matrix   -0.4320   -0.4043    0.8061
+rota_matrix    0.4312    0.6924    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN DN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3993   -0.8569    0.3261
+rota_matrix   -0.8128    0.4954    0.3066
+rota_matrix   -0.4242   -0.1426   -0.8942
+tran_orth   -45.7548   58.2931  265.9798
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN DS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6541    0.2947   -0.6967
+rota_matrix    0.2947   -0.7490   -0.5935
+rota_matrix   -0.6967   -0.5935    0.4031
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN DX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4910   -0.4238    0.7611
+rota_matrix   -0.2910   -0.7437   -0.6018
+rota_matrix    0.8211   -0.5170    0.2419
+tran_orth   -121.8702  160.2457  -188.9597
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN EE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4015    0.8567   -0.3238
+rota_matrix   -0.8149   -0.4956   -0.3007
+rota_matrix   -0.4180    0.1431    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN EJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6626    0.2138    0.7178
+rota_matrix   -0.2173    0.8623   -0.4574
+rota_matrix   -0.7168   -0.4590   -0.5249
+tran_orth   -68.1147  164.2781  211.2105
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN EO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.2119    0.7977   -0.5646
+rota_matrix    0.7977   -0.4750   -0.3716
+rota_matrix   -0.5646   -0.3716   -0.7369
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN ET
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3180   -0.2996   -0.8995
+rota_matrix    0.2974    0.8693   -0.3947
+rota_matrix    0.9003   -0.3930   -0.1873
+tran_orth   247.3968   76.7154  -95.6366
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN F
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0863    0.0444    0.9953
+rota_matrix    0.9946   -0.0536    0.0886
+rota_matrix    0.0573    0.9976   -0.0395
+tran_orth   -220.2042  -163.6209   31.2291
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN FA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1195    0.9909    0.0614
+rota_matrix    0.0447   -0.0671    0.9967
+rota_matrix    0.9918   -0.1163   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN FF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6493   -0.2950    0.7010
+rota_matrix    0.2988    0.7487    0.5918
+rota_matrix   -0.6994    0.5937   -0.3979
+tran_orth   -81.4000  -158.8533  210.6575
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN FK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2932    0.8196    0.4922
+rota_matrix    0.8138    0.4841   -0.3214
+rota_matrix   -0.5017    0.3063   -0.8090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN FP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2897   -0.8141    0.5033
+rota_matrix    0.8175   -0.4840   -0.3123
+rota_matrix    0.4978    0.3210    0.8057
+tran_orth   -101.6495  -57.2833  -250.2455
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN FU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3117    0.3001    0.9015
+rota_matrix    0.3001   -0.8691    0.3931
+rota_matrix    0.9015    0.3931    0.1809
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN GB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7912   -0.5976    0.1299
+rota_matrix   -0.4376    0.4048   -0.8029
+rota_matrix    0.4272   -0.6922   -0.5817
+tran_orth    63.7728  262.9248   55.1393
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN GG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7966    0.3914    0.4607
+rota_matrix   -0.5642   -0.2077   -0.7991
+rota_matrix   -0.2171   -0.8965    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN GL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1917    0.7299    0.6562
+rota_matrix   -0.8105   -0.4947    0.3135
+rota_matrix    0.5535   -0.4717    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN GQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0932    0.9940    0.0575
+rota_matrix   -0.0449    0.0535   -0.9976
+rota_matrix   -0.9946   -0.0955    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN GV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4235    0.8010    0.4231
+rota_matrix    0.8010   -0.5492    0.2381
+rota_matrix    0.4231    0.2381   -0.8742
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN HC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5061    0.3166    0.8023
+rota_matrix    0.3073    0.8029   -0.5107
+rota_matrix   -0.8059    0.5050    0.3090
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN HH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6605   -0.3153    0.6814
+rota_matrix    0.1920   -0.8064   -0.5593
+rota_matrix    0.7258    0.5003   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN HM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0904   -0.1658    0.9820
+rota_matrix   -0.9924    0.0680    0.1028
+rota_matrix   -0.0838   -0.9838   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN HR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6605    0.1920    0.7258
+rota_matrix   -0.3153   -0.8064    0.5003
+rota_matrix    0.6814   -0.5593   -0.4721
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN HW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3138    0.7401    0.5948
+rota_matrix   -0.8061    0.5387   -0.2451
+rota_matrix   -0.5018   -0.4026    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN ID
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8074    0.5572    0.1940
+rota_matrix    0.4225   -0.3165   -0.8493
+rota_matrix   -0.4119    0.7677   -0.4909
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN II
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9777   -0.0128    0.2095
+rota_matrix   -0.0128   -0.9926   -0.1208
+rota_matrix    0.2095   -0.1208    0.9703
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN IN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8593    0.4433   -0.2550
+rota_matrix    0.4433    0.3972   -0.8035
+rota_matrix   -0.2550   -0.8035   -0.5379
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN IS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7251    0.5746    0.3795
+rota_matrix    0.5746    0.2011    0.7933
+rota_matrix    0.3795    0.7933   -0.4760
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN IX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9997    0.0264    0.0016
+rota_matrix    0.0264    0.9925    0.1194
+rota_matrix    0.0016    0.1194   -0.9928
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN JE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7921   -0.4320    0.4312
+rota_matrix    0.5975   -0.4043    0.6924
+rota_matrix   -0.1248    0.8061    0.5784
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN JJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7966   -0.5642   -0.2171
+rota_matrix    0.3914   -0.2077   -0.8965
+rota_matrix    0.4607   -0.7991    0.3863
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN JO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.6676   -0.2141   -0.7131
+rota_matrix   -0.2141   -0.8621    0.4593
+rota_matrix   -0.7131    0.4593    0.5296
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN JT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7998   -0.3912   -0.4553
+rota_matrix   -0.5586    0.2073    0.8031
+rota_matrix   -0.2197    0.8967   -0.3843
+tran_orth   208.6930  -103.0989  148.5080
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN K
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.0932   -0.0449   -0.9946
+rota_matrix    0.9940    0.0535   -0.0955
+rota_matrix    0.0575   -0.9976    0.0396
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN KA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4962    0.4234   -0.7579
+rota_matrix   -0.2868    0.7441    0.6034
+rota_matrix    0.8194    0.5168   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN KF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4990   -0.2945   -0.8150
+rota_matrix    0.2221    0.8656   -0.4488
+rota_matrix    0.8376   -0.4050   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN KK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8811   -0.3799   -0.2816
+rota_matrix   -0.3799    0.2142    0.8999
+rota_matrix   -0.2816    0.8999   -0.3331
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN KP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4015   -0.8149   -0.4180
+rota_matrix    0.8567   -0.4956    0.1431
+rota_matrix   -0.3238   -0.3007    0.8971
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN KU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1711   -0.7434   -0.6466
+rota_matrix   -0.7434   -0.5281    0.4105
+rota_matrix   -0.6466    0.4105   -0.6430
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN LB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7406   -0.5678   -0.3592
+rota_matrix    0.5965    0.3095    0.7406
+rota_matrix   -0.3094   -0.7627    0.5679
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN LG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4898   -0.1999   -0.8486
+rota_matrix   -0.4028    0.8114   -0.4236
+rota_matrix    0.7732    0.5493    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN LL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3138   -0.8061   -0.5018
+rota_matrix    0.7401    0.5387   -0.4026
+rota_matrix    0.5948   -0.2451    0.7656
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN LQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3357   -0.7263   -0.5999
+rota_matrix   -0.8517    0.5061   -0.1361
+rota_matrix    0.4025    0.4652   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN LV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1167   -0.9925   -0.0351
+rota_matrix    0.1659   -0.0544    0.9846
+rota_matrix   -0.9792    0.1091    0.1711
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN MC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3792   -0.8693    0.3171
+rota_matrix   -0.8693   -0.4521   -0.1999
+rota_matrix    0.3171   -0.1999   -0.9271
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN MH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4898   -0.4028    0.7732
+rota_matrix   -0.1999    0.8114    0.5493
+rota_matrix   -0.8486   -0.4236    0.3169
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN MM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8703   -0.4339    0.2328
+rota_matrix    0.3869    0.3100   -0.8685
+rota_matrix    0.3047    0.8459    0.4377
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN MR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3155   -0.8013    0.5083
+rota_matrix    0.8645    0.4636    0.1942
+rota_matrix   -0.3913    0.3782    0.8390
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN MW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0904   -0.9924   -0.0838
+rota_matrix   -0.1658    0.0680   -0.9838
+rota_matrix    0.9820    0.1028   -0.1584
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN ND
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3357   -0.8517    0.4025
+rota_matrix   -0.7263    0.5061    0.4652
+rota_matrix   -0.5999   -0.1361   -0.7884
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN NI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3308   -0.4177    0.8462
+rota_matrix   -0.4177   -0.7392   -0.5282
+rota_matrix    0.8462   -0.5282    0.0700
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN NN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4990    0.2221    0.8376
+rota_matrix   -0.2945    0.8656   -0.4050
+rota_matrix   -0.8150   -0.4488   -0.3665
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN NS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1195    0.0447    0.9918
+rota_matrix    0.9909   -0.0671   -0.1163
+rota_matrix    0.0614    0.9967   -0.0523
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN NX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4962   -0.2868    0.8194
+rota_matrix    0.4234    0.7441    0.5168
+rota_matrix   -0.7579    0.6034   -0.2478
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN OE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1917   -0.8105    0.5535
+rota_matrix    0.7299   -0.4947   -0.4717
+rota_matrix    0.6562    0.3135    0.6864
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN OJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7559   -0.5869    0.2900
+rota_matrix   -0.5869    0.4113   -0.6974
+rota_matrix    0.2900   -0.6974   -0.6554
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN OO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.9788    0.0134    0.2043
+rota_matrix   -0.0135    0.9999   -0.0008
+rota_matrix   -0.2043   -0.0019    0.9789
+tran_orth   -186.5294   32.2662  -201.0039
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN OT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.2966   -0.8194   -0.4906
+rota_matrix    0.8160   -0.4843    0.3155
+rota_matrix   -0.4961   -0.3068    0.8123
+tran_orth   132.6333  -204.5525  -129.6282
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN P
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8682   -0.3867   -0.3109
+rota_matrix   -0.4398   -0.3096   -0.8431
+rota_matrix    0.2298    0.8687   -0.4388
+tran_orth   -61.8676  251.1304   96.6579
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN PA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7428   -0.5966    0.3039
+rota_matrix   -0.5625   -0.3099    0.7665
+rota_matrix   -0.3631   -0.7403   -0.5658
+tran_orth   -194.8105  -109.5412  162.1308
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN PF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    1.0000   -0.0000   -0.0069
+rota_matrix   -0.0000   -1.0000   -0.0005
+rota_matrix   -0.0069    0.0005   -1.0000
+tran_orth   -140.3209  -30.0269  235.8925
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN PK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7844    0.3979    0.4758
+rota_matrix   -0.6018    0.3025    0.7392
+rota_matrix    0.1502   -0.8661    0.4767
+tran_orth   -211.1064  -79.0872  -159.4244
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN PP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7801    0.6069   -0.1520
+rota_matrix   -0.4042    0.3033   -0.8629
+rota_matrix   -0.4776    0.7346    0.4819
+tran_orth   -56.7242  269.2181  -23.2539
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN PU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6558    0.3156   -0.6858
+rota_matrix    0.1959    0.8061    0.5584
+rota_matrix    0.7291   -0.5005    0.4669
+tran_orth    77.5122  -134.6597  -228.2442
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN QB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0836    0.1663   -0.9825
+rota_matrix   -0.9931   -0.0679   -0.0960
+rota_matrix   -0.0827    0.9837    0.1594
+tran_orth   223.9436  161.4637    3.9429
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN QG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5005   -0.3162   -0.8059
+rota_matrix    0.3108   -0.8032    0.5082
+rota_matrix   -0.8080   -0.5048   -0.3037
+tran_orth   108.7329  -187.7070  170.8213
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN QL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4844    0.4032   -0.7764
+rota_matrix   -0.2037   -0.8111   -0.5483
+rota_matrix   -0.8508    0.4238   -0.3108
+tran_orth   125.7580  133.2672  206.5468
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN QQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8687    0.4341   -0.2386
+rota_matrix    0.3929   -0.3105    0.8656
+rota_matrix    0.3016   -0.8457   -0.4402
+tran_orth   -54.1794  -268.4585   35.0920
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN QV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3770    0.8694   -0.3193
+rota_matrix   -0.8679    0.4520    0.2061
+rota_matrix    0.3235    0.1994    0.9250
+tran_orth    47.6980   88.4030  -257.1899
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN RC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1955    0.8108   -0.5517
+rota_matrix    0.7331    0.4945    0.4669
+rota_matrix    0.6514   -0.3132   -0.6911
+tran_orth   181.7910  -198.8402   60.4268
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN RH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7579    0.5871   -0.2845
+rota_matrix   -0.5821   -0.4117    0.7012
+rota_matrix    0.2945    0.6970    0.6537
+tran_orth   192.1077  -94.5046  -174.3571
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN RM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.5019    0.2872   -0.8158
+rota_matrix    0.4198   -0.7438   -0.5201
+rota_matrix   -0.7562   -0.6036    0.2527
+tran_orth   271.5462   40.1587   29.7780
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN RR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3385    0.8519   -0.3997
+rota_matrix   -0.7295   -0.5059   -0.4604
+rota_matrix   -0.5944    0.1357    0.7926
+tran_orth   167.6178  196.4467  -97.7235
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN RW
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3120    0.8015   -0.5101
+rota_matrix    0.8631   -0.4635   -0.2004
+rota_matrix   -0.3971   -0.3778   -0.8364
+tran_orth    99.7063  -89.4129  241.4557
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN SD
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.0910    0.9923    0.0837
+rota_matrix   -0.1590   -0.0685    0.9849
+rota_matrix    0.9831   -0.1029    0.1515
+tran_orth    -2.6509  -210.8563  -178.2399
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN SI
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3986    0.8147    0.4212
+rota_matrix    0.8557    0.4956   -0.1488
+rota_matrix   -0.3300    0.3012   -0.8947
+tran_orth   -17.8024  -71.5800  266.0755
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN SN
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.4934    0.2941    0.8186
+rota_matrix    0.2252   -0.8658    0.4468
+rota_matrix    0.8402    0.4048    0.3609
+tran_orth   -113.3791  -163.0350  -191.8375
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN SS
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8791    0.3798    0.2879
+rota_matrix   -0.3861   -0.2137   -0.8973
+rota_matrix   -0.2793   -0.9000    0.3346
+tran_orth    68.6268  259.1531  -66.0823
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN SX
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3315    0.7259    0.6026
+rota_matrix   -0.8507   -0.5062    0.1417
+rota_matrix    0.4079   -0.4656    0.7854
+tran_orth   -72.5906   72.1993  -256.4267
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN TE
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1164    0.9925    0.0365
+rota_matrix    0.1591    0.0549   -0.9857
+rota_matrix   -0.9804   -0.1090   -0.1643
+tran_orth    37.8861  210.6148  174.4788
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN TJ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3172    0.8058    0.5000
+rota_matrix    0.7429   -0.5389    0.3972
+rota_matrix    0.5895    0.2454   -0.7696
+tran_orth   -138.1906  -214.9933  104.4897
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN TO
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3271    0.3219    0.8885
+rota_matrix    0.3942    0.8080   -0.4379
+rota_matrix   -0.8588    0.4935    0.1374
+tran_orth   -245.4368   71.2514  104.5027
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN TT
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.5116   -0.3077    0.8022
+rota_matrix    0.3131   -0.8027   -0.5076
+rota_matrix    0.8001    0.5109   -0.3143
+tran_orth   -270.3443   50.5793  -24.3411
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN UA
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.1099   -0.1665    0.9799
+rota_matrix   -0.9933    0.0544   -0.1022
+rota_matrix   -0.0363   -0.9845   -0.1713
+tran_orth   -219.5977  166.6335   15.7162
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN UF
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.4957    0.1995    0.8453
+rota_matrix   -0.3999   -0.8116    0.4260
+rota_matrix    0.7710   -0.5492   -0.3225
+tran_orth   -262.9069  -67.7692  -50.2410
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN UK
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1756    0.7431    0.6458
+rota_matrix   -0.7462    0.5283   -0.4050
+rota_matrix   -0.6421   -0.4108    0.6473
+tran_orth   -154.2067  216.9962  -73.2787
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN UP
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7431    0.5676    0.3544
+rota_matrix    0.5913   -0.3091   -0.7449
+rota_matrix   -0.3133    0.7630   -0.5654
+tran_orth   -171.6096   81.7090  200.2763
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN UU
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9996   -0.0264    0.0053
+rota_matrix    0.0256   -0.9924   -0.1201
+rota_matrix    0.0085   -0.1199    0.9928
+tran_orth   139.8523   -5.3425  -238.0119
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN VB
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7951    0.4322   -0.4255
+rota_matrix    0.5927    0.4047   -0.6964
+rota_matrix   -0.1288   -0.8058   -0.5779
+tran_orth   225.8433   91.6413  129.7440
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN VG
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7951    0.5641    0.2229
+rota_matrix    0.3976    0.2073    0.8938
+rota_matrix    0.4580    0.7993   -0.3891
+tran_orth    77.5119  -260.1540   50.4831
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN VL
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.9792    0.0130   -0.2027
+rota_matrix   -0.0120    0.9925    0.1214
+rota_matrix    0.2028    0.1213   -0.9717
+tran_orth   186.9977    3.1033  203.1231
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN VQ
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.8576   -0.4434    0.2607
+rota_matrix    0.4489   -0.3976    0.8003
+rota_matrix   -0.2512    0.8033    0.5400
+tran_orth    47.1305  -263.6845  -66.9772
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN VV
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7811   -0.3982   -0.4810
+rota_matrix   -0.6069   -0.3029   -0.7348
+rota_matrix    0.1469    0.8659   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN W
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.7277   -0.5744   -0.3748
+rota_matrix    0.5691   -0.2007   -0.7974
+rota_matrix    0.3828   -0.7936    0.4729
+tran_orth   174.0230  100.4771  -189.3598
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN WC
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.5048   -0.2217   -0.8343
+rota_matrix   -0.2917   -0.8658    0.4066
+rota_matrix   -0.8124    0.4487    0.3724
+tran_orth   260.9469  -80.1978   41.3749
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN WH
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.1126   -0.0442   -0.9927
+rota_matrix    0.9917    0.0671    0.1095
+rota_matrix    0.0617   -0.9968    0.0514
+tran_orth   215.8580  -164.4766  -50.8882
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN WM
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix   -0.3366    0.4182   -0.8437
+rota_matrix   -0.4141    0.7390    0.5315
+rota_matrix    0.8457    0.5283   -0.0756
+tran_orth   258.5741  -43.7901  -86.3643
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN WR
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.3096   -0.7398   -0.5974
+rota_matrix   -0.8044   -0.5388    0.2504
+rota_matrix   -0.5071    0.4030   -0.7619
+tran_orth    74.0651   39.1276  263.0974
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN b
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.7811   -0.6069    0.1469
+rota_matrix   -0.3982   -0.3029    0.8659
+rota_matrix   -0.4810   -0.7348   -0.4782
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN g
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.8060   -0.5571   -0.1998
+rota_matrix    0.4283    0.3160    0.8466
+rota_matrix   -0.4085   -0.7679    0.4934
+tran_orth   -84.2710  -250.1294  -81.0586
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN l
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.9774   -0.0135   -0.2111
+rota_matrix   -0.0135   -0.9999    0.0014
+rota_matrix   -0.2111    0.0014   -0.9775
+tran_orth     0.0000    0.0000    0.0000
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN q
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+new_operator
+
+rota_matrix    0.6555   -0.1917   -0.7305
+rota_matrix   -0.3187    0.8067   -0.4977
+rota_matrix    0.6846    0.5590    0.4677
+tran_orth    72.7606  186.4639  -190.1945
+
+center_orth   18.4800   -2.3658  122.9390
+CHAIN v
+RMSD 0
+MATCHING 131
+  RESSEQ 1:131
+
+
+

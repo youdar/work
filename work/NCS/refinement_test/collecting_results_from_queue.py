@@ -41,7 +41,7 @@ class results_collection(object):
       'solvent_fraction',
       'data_completeness',
       'year',
-      'use_strict_ncs',
+      'use_ncs_constraints',
       'use_geometry_restraints',
       'time']
     self.cols_names = [
@@ -112,7 +112,7 @@ class results_collection(object):
             data_long = self.data_records_dict[data[0]]
           else:
             data_long = len(self.cols_names)*[None,]
-          if data[sort_by.use_strict_ncs]=='True':
+          if data[sort_by.use_ncs_constraints]=='True':
             for (i,val) in enumerate(data):
               if i != 14 and not data_long[self.map_to_ncs[i]]:
                 data_long[self.map_to_ncs[i]] = val
@@ -121,7 +121,7 @@ class results_collection(object):
               if i != 14 and not data_long[self.map_to_no_ncs[i]]:
                 data_long[self.map_to_no_ncs[i]] = val
           self.data_records_dict[data[0]] = data_long
-          if data[sort_by.use_strict_ncs] == 'True':
+          if data[sort_by.use_ncs_constraints] == 'True':
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
@@ -276,7 +276,7 @@ class results_collection(object):
       'r_work_asu_init','r_free_asu_init',
       'r_work_asu_final','r_free_asu_final',
       'resolution','num_ncs_copies','solvent_fraction',
-      'data_completeness','year','use_strict_ncs',
+      'data_completeness','year','use_ncs_constraints',
       'use_geometry_restraints','time'
     """
     file_name = 'ncs_refinement_results.csv'
@@ -300,7 +300,7 @@ class results_collection(object):
       'r_work_asu_init','r_free_asu_init',
       'r_work_asu_final','r_free_asu_final',
       'resolution','num_ncs_copies','solvent_fraction',
-      'data_completeness','year','use_strict_ncs',
+      'data_completeness','year','use_ncs_constraints',
       'use_geometry_restraints','time'
 
     replace the

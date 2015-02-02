@@ -159,7 +159,7 @@ def number_of_mtrix_rec(file_name_and_path,eps=0.01):
   tr_info = pdb_hierarchy_inp.input.process_mtrix_records(eps=eps)
   n_mtrix_rec = 0
   for r,t in zip(tr_info.r, tr_info.t):
-    if (not r.is_r3_identity_matrix()) and (not t.is_col_zero()):
+    if not (r.is_r3_identity_matrix() and t.is_col_zero()):
       n_mtrix_rec += 1
   return n_mtrix_rec
 
@@ -198,7 +198,6 @@ def test(file_name_and_path):
   Returns:
     min_ncs_opr, max_ncs_opr (int, int): min and max number of transforms
   """
-  t0 = time.time()
   t_min = t_max = t_simple = -1
   t_min_groups = t_max_groups = t_simple_groups = -1
 
@@ -206,32 +205,34 @@ def test(file_name_and_path):
   try:
     trans_obj = iotbx.ncs.input(
         file_name=file_name_and_path,
-        use_simple_ncs_from_pdb=False,
-        use_cctbx_find_ncs_tools=True,
         use_minimal_master_ncs=False,
-        error_msg_on=False,
+        write_messages=True,
         process_similar_chains=True,
-        rms_eps=99999)
+        min_percent=0.85,
+        max_rmsd=99999)
     t_min = len(trans_obj.transform_to_ncs)
     t_min_groups = trans_obj.number_of_ncs_groups
+    trans_obj.get_ncs_info_as_spec(write=True)
+    print '='*30
   except:
     pass
   t_min_time = (time.time()-time_min)
 
   time_max = time.time()
-  try:
-    trans_obj = iotbx.ncs.input(
-        file_name=file_name_and_path,
-        use_simple_ncs_from_pdb=False,
-        use_cctbx_find_ncs_tools=True,
-        use_minimal_master_ncs=True,
-        error_msg_on=False,
-        process_similar_chains=True,
-        rms_eps=99999)
-    t_max = len(trans_obj.transform_to_ncs)
-    t_max_groups = trans_obj.number_of_ncs_groups
-  except:
-    pass
+  # try:
+  trans_obj = iotbx.ncs.input(
+      file_name=file_name_and_path,
+      use_minimal_master_ncs=True,
+      write_messages=False,
+      process_similar_chains=True,
+      min_percent=0.85,
+      max_rmsd=99999)
+  t_max = len(trans_obj.transform_to_ncs)
+  t_max_groups = trans_obj.number_of_ncs_groups
+  trans_obj.get_ncs_info_as_spec(write=True)
+  print '='*30
+  # except:
+  #   pass
   t_max_time = (time.time()-time_max)
 
   # Fixme: change use_simple_ncs_from_pdb back to False
@@ -239,13 +240,14 @@ def test(file_name_and_path):
   try:
     trans_obj = iotbx.ncs.input(
         file_name=file_name_and_path,
-        use_simple_ncs_from_pdb=True,
-        use_cctbx_find_ncs_tools=False,
-        error_msg_on=False,
+        write_messages=False,
         process_similar_chains=False,
-        rms_eps=99999)
+        min_percent=0.85,
+        max_rmsd=99999)
     t_simple = len(trans_obj.transform_to_ncs)
     t_simple_groups = trans_obj.number_of_ncs_groups
+    trans_obj.get_ncs_info_as_spec(write=True)
+    print '='*30
   except:
     pass
   t_simple_time = (time.time()-time_simple)
@@ -280,7 +282,13 @@ def run(args):
     # pc='2g32'
     # pc='4hs6'
     # pc='1jj2'
-    pc='1mcd'
+    # pc='1ruy'
+    # pc='4d0i'
+    # pc='1z7q'
+    # pc='3abh'
+    # pc='4bnz'
+    # pc='4bq9'
+    pc='4ang'
     if pc:
       check_for_ncs(pdb_code=pc)
       # s = 'check_for_ncs(pdb_code="%s")' % pc

@@ -86,7 +86,7 @@ class results_collection(object):
       'solvent_fraction',
       'data_completeness',
       'year',
-      'use_strict_ncs',
+      'use_ncs_constraints',
       'use_geometry_restraints',
       'use_transforms',
       'time']
@@ -164,7 +164,7 @@ class results_collection(object):
           data_record = self.combine_records(data)
           self.data_records_dict[data[0]] = data_record
           # build other dictionaries
-          if data[use_rec.use_strict_ncs]:
+          if data[use_rec.use_ncs_constraints]:
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
@@ -1046,15 +1046,15 @@ class results_collection(object):
       data_record = self.data_records_dict[data[0]]
     else:
       data_record = len(self.cols_names)*[None,]
-    if data[use_rec.use_strict_ncs] and not data[use_rec.use_transforms]:
+    if data[use_rec.use_ncs_constraints] and not data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_ncs.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]
-    if not data[use_rec.use_strict_ncs] and not data[use_rec.use_transforms]:
+    if not data[use_rec.use_ncs_constraints] and not data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_no_ncs.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]
-    if data[use_rec.use_strict_ncs] and data[use_rec.use_transforms]:
+    if data[use_rec.use_ncs_constraints] and data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_transform.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]

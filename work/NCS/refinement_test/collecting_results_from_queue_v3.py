@@ -93,7 +93,7 @@ class results_collection(object):
       'data_to_atoms_ratio_asu',
       'data_to_atoms_ratio_ncs',
       'year',
-      'use_strict_ncs',
+      'use_ncs_constraints',
       'use_geometry_restraints',
       'use_transforms',
       'time']
@@ -125,9 +125,9 @@ class results_collection(object):
     self.cols_names_for_table1 = [x.replace('_',' ') for x in self.cols_inp]
     self.cols_names_for_table2 = [x.replace('_',' ') for x in self.cols_names]
     # map the location in cols_inp to cols_names
-    self.map_to_no_ncs = self.get_map(use_strict_ncs=False)
-    self.map_to_ncs = self.get_map(use_strict_ncs=True,use_transforms=False)
-    self.map_to_transform=self.get_map(use_strict_ncs=True,use_transforms=True)
+    self.map_to_no_ncs = self.get_map(use_ncs_constraints=False)
+    self.map_to_ncs = self.get_map(use_ncs_constraints=True,use_transforms=False)
+    self.map_to_transform=self.get_map(use_ncs_constraints=True,use_transforms=True)
     # set records type
     self.set_records_type()
 
@@ -162,7 +162,7 @@ class results_collection(object):
       'data_to_atoms_ratio_ncs',
       'time']
     integers = ['num_ncs_copies','year']
-    bools = ['use_strict_ncs', 'use_geometry_restraints', 'use_transforms']
+    bools = ['use_ncs_constraints', 'use_geometry_restraints', 'use_transforms']
 
     r = range(len(self.cols_inp))
     self.float_type_records = [i for i in r if self.cols_inp[i] in floats]
@@ -170,19 +170,19 @@ class results_collection(object):
     self.bool_type_records = [i for i in r if self.cols_inp[i] in bools]
     self.str_type_records = [i for i in r if self.cols_inp[i] in strings]
 
-  def get_map(self,use_strict_ncs=True,use_transforms=False):
+  def get_map(self,use_ncs_constraints=True,use_transforms=False):
     """
     set the map between the input records and the combined output line
 
     Args:
-      use_strict_ncs (bool): when True, using strict NCS
+      use_ncs_constraints (bool): when True, using strict NCS
       use_transforms (bool): when True, refining rotation and translation
 
     Returns:
       (dict): map record location in the input to the record number at the
         output
     """
-    if not use_strict_ncs:
+    if not use_ncs_constraints:
       d = 0
     elif use_transforms:
       d = 2
@@ -242,7 +242,7 @@ class results_collection(object):
           data_record = self.combine_records(data)
           self.data_records_dict[data[0]] = data_record
           # build other dictionaries
-          if data[use_rec.use_strict_ncs]:
+          if data[use_rec.use_ncs_constraints]:
             self.data_records_strict_ncs_dict[data[0]] = data
           else:
             self.data_records_without_strict_ncs_dict[data[0]] = data
@@ -1125,15 +1125,15 @@ class results_collection(object):
       data_record = self.data_records_dict[data[0]]
     else:
       data_record = len(self.cols_names)*[None,]
-    if data[use_rec.use_strict_ncs] and not data[use_rec.use_transforms]:
+    if data[use_rec.use_ncs_constraints] and not data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_ncs.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]
-    if not data[use_rec.use_strict_ncs] and not data[use_rec.use_transforms]:
+    if not data[use_rec.use_ncs_constraints] and not data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_no_ncs.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]
-    if data[use_rec.use_strict_ncs] and data[use_rec.use_transforms]:
+    if data[use_rec.use_ncs_constraints] and data[use_rec.use_transforms]:
       for map_from,map_to in self.map_to_transform.iteritems():
         if not  data_record[map_to]:
           data_record[map_to] = data[map_from]

@@ -1,5 +1,9 @@
 from __future__ import division
+import matplotlib.colors as colors
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import cPickle as pickle
+import numpy as np
 import os
 
 def read_raw_data(save_to_file=False,file_name=''):
@@ -49,8 +53,10 @@ def run():
   if os.path.isfile(file_name):
     print 'Using existing data file'
     data = pickle.load(open(file_name,'r'))
-    improper_rotations = pickle.load(open('improper_rotations','r'))
-    master_ncs_relation_issues = pickle.load(open('master_ncs_relation_issues','r'))
+    improper_rotations = open('improper_rotations','r').read().splitlines()
+    # improper_rotations = pickle.load(open('improper_rotations','r'))
+    master_ncs_relation_issues = open('master_ncs_relation_issues','r').read().splitlines()
+    # master_ncs_relation_issues = pickle.load(open('master_ncs_relation_issues','r'))
   else:
     print 'processing new data'
     data = read_raw_data(save_to_file=True,file_name=file_name)
@@ -68,33 +74,76 @@ def run():
   print '8: min_time,9: max_time, 10: simple_time\n'
 
 
-  bad_rec = [d for d in data if d[4]==-1]
-  print '\nNumber of records with "simple" processing issues: ',len(bad_rec)
-  print_rec(bad_rec)
+  # bad_rec = [d for d in data if d[4]==-1]
+  # print '\nNumber of records with "simple" processing issues:',len(bad_rec)
+  # print_rec(bad_rec)
+  # save_to_file('all processed files',data)
 
   bad_rec = [d for d in data if -1 in d[2:4]]
-  print '\nNumber of records with "cctbx" processing issues: ',len(bad_rec)
+  print '\nNumber of records with "cctbx" processing issues:',len(bad_rec)
   print_rec(bad_rec)
 
-  d0 = [d for d in data if (d[1] == d[3])]
-  print '\nNumber of records with equal max and MTRIX ncs operators: ',len(d0)
+  d0 = [d for d in data if (d[1] == d[3]) and (d[3]==0)]
+  print '\nRecords with equal max and MTRIX ncs operators (=0):',len(d0)
   print_rec(d0)
 
+  d00 = [d for d in data if (d[1] == d[3]) and (d[3]>0)]
+  save_to_file('MTRIX (gt 0) cctbx (gt 0) MTRIX (eq) ccbtx',d00)
+  print '\nRecords with equal max and MTRIX ncs operators (>0):',len(d00)
+  print_rec(d00)
+
+  d00 = [d for d in data if (d[3]>0)]
+  save_to_file('cctbx (gt 0)',d00)
+  print '\nRecords with CCTBX (>0):',len(d00)
+  print_rec(d00)
+
+  # just as control
+  d00 = [d for d in data if (d[3]==0)]
+  save_to_file('cctbx (eq 0)',d00)
+  print '\nRecords with CCTBX (=0):',len(d00)
+  print_rec(d00)
+
+  d01 = [d for d in data if (d[1] > 0) and (d[3]==0)]
+  print '\nRecords MTRIX >0 ncs operators (=0):',len(d01)
+  print [x[0] for x in d01]
+  print_rec(d01)
+
+  d01 = [d for d in data if (d[3] > 0) and (d[1]==0)]
+  print '\nRecords MTRIX (=0) ncs operators (>0):',len(d01)
+  d01.sort(key= lambda x:x[3],reverse=True)
+  print_rec(d01,nim_n=30)
+  save_to_file('MTRIX (eq 0) cctbx (gt 0)',d01)
+
+
+  d02 = [d for d in data if (d[1] != d[3]) and (d[3]>0) and (d[1]>0)]
+  print '\nRecords MTRIX != ncs but both (>0):',len(d02)
+  save_to_file('MTRIX (gt 0) cctbx (gt 0) MTRIX (ne) cctbx',d02)
+  print_rec(d02)
+
+  d03 = [d for d in data if (d[1] > 0)]
+  print '\nRecords MTRIX (>0):',len(d03)
+
+  d04 = [d for d in data if (d[1] > 0) and (d[5]>1) and (d[1] != d[3])]
+  print '\nRecords MTRIX (>0) ncs groups (>1), ncs != MTRIX:',len(d04)
+  save_to_file('MTRIX (gt 0) ncs groups (gt 1) ncs (ne) MTRIX',d04)
+  print_rec(d04)
+
   d1 = [d for d in data if (d[1] != d[3])]
-  print 'Number of records with different max and MTRIX ncs operators: ',len(d1)
+  print '\nNumber of records with different max and MTRIX ncs operators:',\
+    len(d1)
   print_rec(d1)
 
   d1_1 = [d for d in data if ((d[1] ==0) and (d[3]==0))]
-  s= 'Records with MTRIX ncs operators where ncs relation are present: '
+  s= 'MTRIX (=0) ncs (=0):'
   print s,len(d1_1)
   print_rec(d1_1)
 
   d2 = [d for d in data if (d[1] != d[2])]
-  print 'Number of records with different min and MTRIX ncs operators: ',len(d2)
+  print 'Number of records with different min and MTRIX ncs operators:',len(d2)
   print_rec(d2)
 
   d3 = [d for d in data if (d[3] != d[2])]
-  print 'Number of records with different max and min ncs operators:   ',len(d3)
+  print 'Number of records with different max and min ncs operators:',len(d3)
   print_rec(d3)
 
   d4 = [d for d in data if (d[3] != d[4])]
@@ -102,26 +151,77 @@ def run():
   print_rec(d4)
 
   d5 = [d for d in data if (d[2] > d[1])]
-  print 'Number of new ncs relation:                                   ',len(d5)
+  print 'Number of new ncs relation:',len(d5)
   print_rec(d5)
 
   d6 = [d for d in data if (d[4] in d[2:4])]
-  print '"cctbx" find the number of ncs relations as "simple":         ',len(d6)
+  print '"cctbx" find the number of ncs relations as "simple":',len(d6)
   print_rec(d6)
 
   d7 = [d for d in data if (d[0] in ['2wff','2wws'])]
   print '"2wws, 2wff":         ',len(d6)
   print_rec(d7)
 
+  d8 = [d for d in data if d[5]>1]
+  print 'more than 1 NCS group:',len(d8)
+  d9 = [d for d in data if d[5]>0]
+  print 'NCS relation found in:',len(d9)
+
   d_time = sorted(data, key= lambda x: x[9])
-  print '10 slowest files to process: ', d_time[-10:]
+  print '10 slowest files to process (cctbx): ', d_time[-10:]
   print_rec(d_time,reverse=True,nim_n=10,print_item=9)
 
 
   d_time = sorted(data, key= lambda x: x[10])
-  print '10 slowest files to process: ', d_time[-10:]
+  print '10 slowest files to process (simple): ', d_time[-10:]
   print_rec(d_time,reverse=True,nim_n=10,print_item=10)
 
+  dd = [(x[9]-x[10],x[0]) for x in data if x[3] > 0 ]
+  # dd = [(x[9]-x[10],x[0]) for x in data]
+  dd.sort()
+  delta_time = np.array([x[0] for x in dd])
+  print 'Average time difference (cctbx - simple): ',np.mean(delta_time)
+  print 'STD time difference (cctbx - simple): ',np.std(delta_time)
+  print 'number of cases where delta >= 300',len(
+    [x for x in delta_time if x <= -300])
+  print 'max time saving',-min(delta_time)
+  print dd[:10]
+
+
+  # plt.figure()
+  # xx = [x[9] for x in data if x[3] > 0 ]
+  # # xx = [x[9] for x in data]
+  # yy = [x[10] for x in data if x[3] > 0 ]
+  # # yy = [x[10] for x in data]
+  # print 'average time (cctbx):',round(sum(xx)/len(xx),1)
+  # plt.plot([0,2000],[0,2000])
+  # plt.plot(xx,yy,'o')
+  # plt.xlabel('CCTBX',fontsize=14)
+  # plt.ylabel('simple_ncs_from_pdb',fontsize=14)
+  # plt.title('NCS search time (sec)',fontsize=14)
+  # plt.xlim(0,2000)
+  # plt.ylim(0,2000)
+  # # plt.savefig('r_free-r_work.png',transparent=False)
+  # plt.show()
+  #
+  # # Histogram
+  # fig, ax = plt.subplots()
+  # # histogram our data with numpy
+  # n, bins, patches = ax.hist(delta_time, bins=100)
+  # plt.xlabel('CCTBX - simple_ncs_from_pdb (sec)',fontsize=14)
+  # plt.ylabel('Number of PDB files',fontsize=14)
+  # plt.title('Search time difference',fontsize=14)
+  # plt.ylim((0,1.1*n.max()))
+  # plt.xlim(min(delta_time),max(delta_time))
+  # plt.show()
+
+  # save some files to .txt file
+  path = r'C:\Phenix\Dev\Work\work\NCS\refinement_test\refinment_subeset'
+  file_name = 'jan_1_2010 to nov_18_2014 res 3_5 to 9_5 with NCS'
+  fn = os.path.join(path,file_name)
+  pdbs_to_save = [d[0] + '\n' for d in data if d[3] > 0]
+  open(fn,'w').writelines(pdbs_to_save)
+  print '{} files where saved to {}'.format(len(pdbs_to_save),file_name)
   print 'Done...'
 
 def print_rec(d,reverse=False,nim_n=5,print_item=None):
@@ -138,6 +238,13 @@ def print_rec(d,reverse=False,nim_n=5,print_item=None):
     else:
       print d[j]
   print '......'
+
+def save_to_file(file_name,data):
+  """ Saves a list of pdb codes to a file """
+  pdb_codes_list = [(x[0] + '\n') for x in data]
+  data_folder = r'C:\Phenix\Dev\Work\work\NCS\data'
+  fn = os.path.join(data_folder, file_name)
+  open(fn,'w').writelines(pdb_codes_list)
 
 if __name__ == '__main__':
   run()

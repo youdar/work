@@ -86,6 +86,3 @@ docs/_build/
 
 # PyBuilder
 target/
-
-# pycharm proect files
-.idea/

@@ -23,8 +23,16 @@ class TestNCSDataCollection(unittest.TestCase):
       os.mkdir(self.tempdir)
     os.chdir(self.tempdir)
 
-  def test_something(self):
-    pass
+  def test_look_at_file_summary(self):
+    """     look at __repr__ results     """
+    obj = collect_ncs_files.File_records()
+    obj.data_completeness = 10
+    obj.r_free_header = 0.4
+    r = collect_ncs_files.Refinement_results()
+    r.r_free_final  = 0.1
+    r.clashscore = 10
+    obj.refinement_records['init'] = r
+    # print out_str
 
   def tearDown(self):
     """ remove temp files and folder
@@ -47,7 +55,7 @@ def run_selected_tests():
 
 if __name__ == '__main__':
   # use for individual tests
-  # DEBUG_MODE = True
+  DEBUG_MODE = True
   # unittest.TextTestRunner().run(run_selected_tests())
 
   # Use to run all tests

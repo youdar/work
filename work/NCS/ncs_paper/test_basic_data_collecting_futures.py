@@ -113,8 +113,11 @@ class TestNCSDataCollection(unittest.TestCase):
     f.solvent = 7
     f.n_ncs_copies = 10
     f.refinement_records['xray'] = [1,2,3]
-
-    n =
+    n = get_mtz.fix_pdb_info(f)
+    self.assertEqual(n.solvent_fraction,7)
+    self.assertEqual(n.n_ncs_copies,10)
+    self.assertEqual(n.refinement_records['xray'],[1,2,3])
+    print n
 
 
 
@@ -122,8 +125,11 @@ class TestNCSDataCollection(unittest.TestCase):
     """ remove temp files and folder
         When DEBUG_MODE = True, the temporary folder will not be deleted """
     os.chdir(self.current_dir)
-    if not DEBUG_MODE:
-      shutil.rmtree(self.tempdir)
+    try:
+      if not DEBUG_MODE:
+        shutil.rmtree(self.tempdir)
+    except:
+      pass
 
 test_pdb_1 = '''\
 CRYST1  577.812  448.715  468.790  90.00  90.00  90.00 P 1
@@ -262,7 +268,7 @@ def run_selected_tests():
   2) Comment out unittest.main()
   3) Un-comment unittest.TextTestRunner().run(run_selected_tests())
   """
-  tests = ['test_reading_results']
+  tests = ['test_records_update']
   suite = unittest.TestSuite(map(TestNCSDataCollection, tests))
   return suite
 

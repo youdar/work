@@ -121,6 +121,7 @@ class ncs_paper_data_collection(object):
     self.pdb_dir = self.ncs_dir + '/ncs_paper/ncs_paper_data_files/pdb'
     self.pdb_records_dir = self.ncs_dir + '/ncs_paper/ncs_queue_results'
     self.pdb_not_used_dir = self.ncs_dir + '/ncs_paper/pdb_with_ncs_not_used'
+    self.data_dir = self.ncs_dir + 'data'
     self.current_dir = os.getcwd()
 
   def get_pdb_file_info(self,pdb_id):

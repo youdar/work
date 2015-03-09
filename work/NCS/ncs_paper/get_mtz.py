@@ -29,21 +29,20 @@ def run(pdb_id):
   assert len(pdb_id) == 1
   pdb_id = pdb_id[0]
   collect = collect_ncs_files.ncs_paper_data_collection()
-  pdb = os.path.join(collect.asu_dir, pdb_id + '.pdb')
   pdb_info_fn = os.path.join(collect.pdb_records_dir,'log_' + pdb_id)
+  pdb_info_out_fn = os.path.join(collect.data_dir,'log_' + pdb_id)
   pdb_info = collect.read_from_file(pdb_info_fn)
   pdb_info = fix_pdb_info(pdb_info)
   if pdb_info:
     pdb_info = collect.make_mtz_file(pdb_info)
     if pdb_info:
-      collect.write_to_file('log_' + pdb_id,pdb_info)
+      collect.write_to_file(pdb_info_out_fn,pdb_info)
     else:
       shutil.move(pdb_info_fn,collect.pdb_not_used_dir)
 
 def fix_pdb_info(pdb_info):
   """ if using pdb_info record with old names, update them """
 
-  pdb_info = collect_ncs_files.File_records()
   if hasattr(pdb_info, 'n_atoms_in_asu'):
     return pdb_info
   else:

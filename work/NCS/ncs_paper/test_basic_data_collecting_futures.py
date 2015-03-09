@@ -3,6 +3,7 @@ from datetime import datetime
 import collect_ncs_files
 import cPickle as pickle
 import unittest
+import get_mtz
 import shutil
 import sys
 import os
@@ -86,6 +87,35 @@ class TestNCSDataCollection(unittest.TestCase):
       print pdb_info
     else:
       print 'Could not find log_vcr'
+
+  def test_records_update(self):
+    """ test that we reformat the file records object
+    attribute names correctly """
+    class Old_File_records(object):
+
+      def __init__(self):
+
+        self.pdb_id = ''
+        self.n_ncs_copies = None
+        self.year = None
+        self.resolution = None
+        self.data_completeness = None
+        self.solvent = None
+        self.only_master_in_pdb = None
+        self.ncs_reported_in_pdb = None
+        # data_to_param_ratio: f_obs.size / atom_number
+        self.data_to_param_ration = None
+        # refinement_records contains Refinement_results objects
+        # for example refinement_records['using cartesian NCS']
+        self.refinement_records = {}
+
+    f = Old_File_records()
+    f.solvent = 7
+    f.n_ncs_copies = 10
+    f.refinement_records['xray'] = [1,2,3]
+
+    n =
+
 
 
   def tearDown(self):

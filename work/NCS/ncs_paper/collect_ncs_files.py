@@ -1,10 +1,16 @@
 from __future__ import division
 from  iotbx.pdb.multimer_reconstruction import multimer
+import mmtbx.monomer_library.server
+import iotbx.reflection_file_utils
 from libtbx.utils import null_out
 from iotbx.pdb import fetch
+from libtbx import easy_run
 import cPickle as pickle
+import mmtbx.utils
+import mmtbx.masks
 import iotbx.ncs
 import iotbx.pdb
+import iotbx.mtz
 import shutil
 import os
 
@@ -33,11 +39,12 @@ class File_records(object):
     self.year = None
     self.resolution = None
     self.data_completeness = None
-    self.solvent = None
+    self.solvent_fraction = None
     self.only_master_in_pdb = None
     self.ncs_reported_in_pdb = None
-    # data_to_param_ration: f_obs.size / atom_number
-    self.data_to_param_ration = None
+    self.n_atoms_in_asu = None
+    # data_to_param_ratio: f_obs.size / atom_number
+    self.data_to_param_ratio = None
     # refinement_records contains Refinement_results objects
     # for example refinement_records['using cartesian NCS']
     self.refinement_records = {}
@@ -107,10 +114,13 @@ class ncs_paper_data_collection(object):
 
   def __init__(self):
     self.files_list = []
+    self.pdbs_dict = {}
     self.ncs_dir = '/net/cci-filer2/raid1/home/youval/work/work/NCS'
     self.asu_dir = self.ncs_dir + '/ncs_paper/ncs_paper_data_files/asu'
     self.mtz_dir = self.ncs_dir + '/ncs_paper/ncs_paper_data_files/mtz'
     self.pdb_dir = self.ncs_dir + '/ncs_paper/ncs_paper_data_files/pdb'
+    self.pdb_records_dir = self.ncs_dir + '/ncs_paper/ncs_queue_results'
+    self.pdb_not_used_dir = self.ncs_dir + '/ncs_paper/pdb_with_ncs_not_used'
     self.current_dir = os.getcwd()
 
   def get_pdb_file_info(self,pdb_id):
@@ -174,22 +184,65 @@ class ncs_paper_data_collection(object):
     if file_record:
       pickle.dump(file_record,open(file_name,'w'))
 
-  def make_mtz_file(self):
-    """ get cif file and create mtz """
-    pass
+  def read_from_file(self,file_name):
+    """
+    reads pickled object from file_name
 
-def get_cif_file(self,pdb_id, write_folder):
-  """ get the cif file for pdb_id and write it in write_folder"""
-  fetched_file = fetch.get_pdb (
-    id=self.pdb_code, data_type='xray',
-    mirror='rcsb',quiet=True,log=null_out())
-  if os.path.isdir(write_folder):
-    try:
-      shutil.move(fetched_file,write_folder)
-      return True
-    except:
-      # avoid error if file already exist
-      pass
+    Args:
+      file_name (str): such as log_"pdb id"
+
+    Returns:
+      File_records object
+    """
+    fn = os.path.join(self.pdb_records_dir,file_name)
+    if os.path.isfile(fn):
+      return pickle.load(open(fn,'r'))
+    else:
+      return None
+
+  def make_mtz_file(self,file_record):
+    """
+    get cif file and create mtz and add info to pdb_file_records
+
+    Args:
+      file_record (obj): File_records object
+
+    Return:
+      updated file_record
+    """
+    cif = get_cif_file(file_record.pdb_id)
+    if cif:
+      pdb = os.path.join(self.asu_dir,file_record.pdb_id + '.pdb')
+      f_obs,i_obs,r_free_flags,completeness,data_size = get_structure_factors(
+        pdb,cif,self.mtz_dir)
+    else:
+      return None
+    if f_obs:
+      file_record.data_completeness = completeness
+      #
+      pdb_inp = iotbx.pdb.input(file_name=pdb)
+      n_atoms = pdb_inp.atoms().size()
+      file_record.data_to_param_ratio = data_size/3.0/n_atoms
+      file_record.n_atoms_in_asu = n_atoms
+      #
+      xrs_asu = pdb_inp.xray_structure_simple()
+      file_record.solvent_fraction = mmtbx.masks.asu_mask(
+        xray_structure=xrs_asu,
+        d_min=f_obs.d_min()).asu_mask.contact_surface_fraction
+      return file_record
+    else:
+      return None
+
+def get_cif_file(pdb_id):
+  """ get the cif file """
+  try:
+    fetched_file = fetch.get_pdb(
+      id=pdb_id, data_type='xray',
+      mirror='rcsb',quiet=True,log=null_out())
+    return fetched_file
+  except:
+    # avoid error if file already exist
+    pass
   return False
 
 
@@ -207,6 +260,7 @@ def get_4_letters_pdb_id(file_name):
   >>>get_4_letters_pdb_id('1a37')
   1a37
   """
+  pdb = None
   basename = os.path.basename(file_name)
   file_name, file_type = os.path.splitext(basename)
   if len(file_name)>4:
@@ -219,75 +273,152 @@ def get_4_letters_pdb_id(file_name):
     pdb_id = None
   return pdb_id
 
-def get_structure_factors(self):
-    """
-    Get f_obs and r_free_flags From cif file, if available
-    """
-    try:
-      inputs = mmtbx.utils.process_command_line_args(args = self.args)
-      df = mmtbx.utils.determine_data_and_flags(
-        reflection_file_server  = inputs.get_reflection_file_server(),
-        log = null_out())
-      self.f_obs = df.f_obs
-      self.r_free_flags = df.r_free_flags
-    except:
-      if self.print_during_refinement:
-        print 'Getting f_obs and r_free_flags by processing cif file'
-      self.f_obs = None
-      self.r_free_flags = None
-      fobs = ["FOBS,SIGFOBS",'FOBS','FOBS,PHIM',
-              "F(+),SIGF(+),F(-),SIGF(-)","F(+),F(-)"]
-      iobs = ["IOBS,SIGIOBS",'IOBS','IOBS,PHIM',
-              'I(+),SIGI(+),I(-),SIGI(-)']
-      self.i_obs = None
-      self.f_obs = None
-      if self.full_path_cif:
-        miller_arrays = self.get_miller_arrays()
-        # print miller_arrays[0].completeness()
-        for ma in miller_arrays:
-          ls = ma.info().label_string()
-          if (ls in fobs):
-            # Consider using Bijvoet mates
-            ma = ma.average_bijvoet_mates()
-            self.f_obs = abs(ma)
-          elif ls == "R-free-flags":
-            self.r_free_flags = abs(ma)
-          elif not self.f_obs and (ls in iobs):
-            # Consider using Bijvoet mates
-            ma = ma.average_bijvoet_mates()
-            # convert i_obs to f_obs
-            self.i_obs = ma
-          elif not self.r_free_flags and ls == "R-free-flags-1":
-            self.r_free_flags = abs(ma.french_wilson(log=null_out()))
-      else:
-        raise RuntimeError("No cif file.")
+def get_structure_factors(pdb,cif,mtz_folder):
+  """
+  Get f_obs and r_free_flags From cif file
 
-      # When fobs where not found via string look of other fobs forms
-      if not self.f_obs:
-        for ma in miller_arrays:
-          if ma.is_xray_amplitude_array():
-            ma = ma.average_bijvoet_mates()
-            self.f_obs = abs(ma)
-      if (not self.f_obs) and (not self.i_obs):
-        for ma in miller_arrays:
-          if ma.is_xray_intensity_array():
-            ma = ma.average_bijvoet_mates()
-            self.i_obs = ma
-      if not self.f_obs and self.i_obs:
-        self.f_obs = abs(self.i_obs.french_wilson(log=null_out()))
-    #
-    if self.f_obs:
-      # self.f_obs.show_summary()
-      self.data_set_size = self.f_obs.size()
-      if self.r_free_flags:
-        self.f_obs, self.r_free_flags = self.f_obs.common_sets(
-          self.r_free_flags)
-        self.r_free_flags = self.make_r_free_boolean(self.r_free_flags)
-      else:
-        self.r_free_flags = self.f_obs.generate_r_free_flags()
-      # Data completeness: Fraction of unmeasured reflections within the
-      # [d_min, d_max] range,where d_min and d_max are highest and lowest
-      # resolution of data set correspondingly.
-      self.completeness = self.f_obs.array().completeness()
+  Args:
+    mtz_folder (str): path to the folder mtz file will be saved to
+    pdb (str): pdb file path
+    cif (str): cif file path
+
+  Returns:
+    f_obs, i_obs, r_free_flags, completeness, data_set_size
+      Data completeness: Fraction of unmeasured reflections within the
+  """
+  f_obs = None
+  i_obs = None
+  r_free_flags = None
+  if not (os.path.isfile(pdb) and os.path.isfile(cif)):
+    return None,None,None,0,0
+  try:
+    inputs = mmtbx.utils.process_command_line_args(args = [pdb,cif])
+    df = mmtbx.utils.determine_data_and_flags(
+      reflection_file_server  = inputs.get_reflection_file_server(),
+      log = null_out())
+    f_obs = df.f_obs
+    r_free_flags = df.r_free_flags
+  except:
+    fobs_type = ["FOBS,SIGFOBS",'FOBS','FOBS,PHIM',
+                 "F(+),SIGF(+),F(-),SIGF(-)","F(+),F(-)"]
+    iobs_type = ["IOBS,SIGIOBS",'IOBS','IOBS,PHIM',
+                 'I(+),SIGI(+),I(-),SIGI(-)']
+    miller_arrays = get_miller_arrays(pdb,cif,mtz_folder)
+    # print miller_arrays[0].completeness()
+    for ma in miller_arrays:
+      ls = ma.info().label_string()
+      if (ls in fobs_type):
+        # Consider using Bijvoet mates
+        ma = ma.average_bijvoet_mates()
+        f_obs = abs(ma)
+      elif ls == "R-free-flags":
+        r_free_flags = abs(ma)
+      elif not f_obs and (ls in iobs_type):
+        # Consider using Bijvoet mates
+        ma = ma.average_bijvoet_mates()
+        # convert i_obs to f_obs
+        i_obs = ma
+      elif not r_free_flags and ls == "R-free-flags-1":
+        r_free_flags = abs(ma.french_wilson(log=null_out()))
+
+    # When fobs where not found via string look of other fobs forms
+    if not f_obs:
+      for ma in miller_arrays:
+        if ma.is_xray_amplitude_array():
+          ma = ma.average_bijvoet_mates()
+          f_obs = abs(ma)
+    if (not f_obs) and (not i_obs):
+      for ma in miller_arrays:
+        if ma.is_xray_intensity_array():
+          ma = ma.average_bijvoet_mates()
+          i_obs = ma
+    if not f_obs and i_obs:
+      f_obs = abs(i_obs.french_wilson(log=null_out()))
+  #
+  if f_obs:
+    # f_obs.show_summary()
+    data_set_size = f_obs.size()
+    if r_free_flags:
+      f_obs, r_free_flags = f_obs.common_sets(r_free_flags)
+      r_free_flags = make_r_free_boolean(r_free_flags)
     else:
-      raise RuntimeError("Missing amplitude array.")
+      r_free_flags = f_obs.generate_r_free_flags()
+    # Data completeness: Fraction of unmeasured reflections within the
+    # [d_min, d_max] range,where d_min and d_max are highest and lowest
+    # resolution of data set correspondingly.
+    completeness = f_obs.array().completeness()
+  else:
+    return None,None,None,0,0
+  return f_obs, i_obs, r_free_flags, completeness,data_set_size
+
+def get_miller_arrays(pdb,cif,mtz_folder):
+  """
+  convert cif to mtz and write it in the mtz_folder
+
+  convert cif of the format 'r_name_sf.ent.gz' to mtz file
+  creates mtz file with crystal symmetry in current folder
+
+  Returns:
+
+  """
+  if not (os.path.isfile(pdb) and os.path.isfile(cif)):
+    return None
+  pdb_id = get_4_letters_pdb_id(cif)
+  mtz_fn = os.path.join(mtz_folder, pdb_id + '.mtz')
+  cmd_list = []
+  cmd_list.append('phenix.cif_as_mtz')
+  cmd_list.append(cif)
+  cmd_list.append('--output-file-name={}'.format(mtz_fn))
+  cmd_list.append("--merge")
+  cmd_list.append("--remove-systematic-absences")
+  cmd_list.append("--map-to-asu")
+  cmd_list.append("--ignore-bad-sigmas")
+  cmd_list.append("--extend-flags")
+  cmd = ' '.join(cmd_list)
+  r = easy_run.go(cmd)
+  # NOTE !!! in windows r does not returns the errors as expected
+  tmp = [x for x in r.stdout_lines if '--' in x]
+  tmp2 = ''.join(tmp)
+  run_cmd_again = False
+  if '--incompatible_flags_to_work_set' in tmp2:
+    cmd_list.append('--incompatible_flags_to_work_set')
+    run_cmd_again = True
+  if '--symmetry' in tmp2:
+    cmd_list.append('--symmetry={}'.format(pdb))
+    run_cmd_again = True
+  if run_cmd_again:
+    cmd = ' '.join(cmd_list)
+    easy_run.go(cmd)
+  try:
+    # Get miller arrays from mtz file
+    mtz_object = iotbx.mtz.object(file_name=mtz_fn)
+    miller_arrays = mtz_object.as_miller_arrays()
+  except:
+    miller_arrays = None
+  # cleanup
+  os.remove(cif)
+  if not miller_arrays:
+    return None
+  return miller_arrays
+
+def make_r_free_boolean(r_free_flags):
+  '''
+  Convert r_free_flag from any of the conventions possible
+  to a boolean
+
+  Posiblle convention for free and working set flags:
+  CCP4     assigns the flag r_free_flags to be 0 for the free set and 1,
+           ...n-1 for the working set.
+  XPLOR    assigns the flag TEST to be 1 for the free set and 0 for the
+           working set.
+  CNS      assigns the flag TEST to be 1 for the free set and 0,2,...n-1 for
+           the working set.
+  SHELX    assigns a flag with -1 for the free set and 1 for the working set.
+  TNT      assigns a flag with 0 to indicate the free set.
+  '''
+  flag_value = iotbx.reflection_file_utils.guess_r_free_flag_value(
+    miller_array =r_free_flags)
+  if flag_value is None:
+    return None
+  else:
+    return r_free_flags.customized_copy(data=r_free_flags.data()==flag_value)

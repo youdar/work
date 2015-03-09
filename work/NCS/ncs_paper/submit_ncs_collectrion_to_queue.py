@@ -1,6 +1,7 @@
 from __future__ import division
 from collect_ncs_files import get_4_letters_pdb_id
 from libtbx.command_line import easy_qsub
+import sys
 import os
 
 class run_queue_tests(object):
@@ -17,7 +18,7 @@ class run_queue_tests(object):
     # command path
     self.com_path = sources + '/NCS/ncs_paper/get_file_ncs_info.py'
     # where all queue output will be deposited
-    self.where_to_run_dir = sources + 'NCS\ncs_paper\ncs_queue_results'
+    self.where_to_run_dir = sources + '/NCS/ncs_paper/ncs_queue_results'
     self.pdb_code = []
     self.pdb_file_with_path = []
     # The commands list is a list that will be sent to the queue for processing
@@ -37,6 +38,7 @@ class run_queue_tests(object):
     pdb_dir = os.environ["PDB_MIRROR_PDB"]
     pdb_files = open(os.path.join(pdb_dir, "INDEX"), "r").read().splitlines()
     self.pdb_code_list = [get_4_letters_pdb_id(x) for x in pdb_files]
+    print 'Processing {} files'.format(len(self.pdb_code_list))
     # for testing
     self.pdb_code_list = ['1vcr']
 
@@ -52,7 +54,7 @@ class run_queue_tests(object):
     in the same format that you would use to run is from the command prompt
     """
     for file_name in self.pdb_code_list:
-      outString = '{0} {1} >& log_{1}'.format(self.com_path,file_name)
+      outString = '{0} {1}'.format(self.com_path,file_name)
       self.commands.append("python {}".format(outString))
 
   def send_to_queue(self):

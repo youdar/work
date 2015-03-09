@@ -1,8 +1,10 @@
 from __future__ import division
 from datetime import datetime
 import collect_ncs_files
+import cPickle as pickle
 import unittest
 import shutil
+import sys
 import os
 
 __author__ = 'Youval'
@@ -32,7 +34,7 @@ class TestNCSDataCollection(unittest.TestCase):
     r.r_free_final  = 0.1
     r.clashscore = 10
     obj.refinement_records['init'] = r
-    # print out_str
+    print obj
 
   def test_getting_file_info(self):
     """ making sure MTRIX records are handled correctly   """
@@ -42,24 +44,48 @@ class TestNCSDataCollection(unittest.TestCase):
     for fn,s,n in zip(fns,pdbs,n_ncs):
       open(fn+'.pdb','w').write(s)
       collect = collect_ncs_files.ncs_paper_data_collection()
-      collect.collect_pdb_file(fn)
-      self.assertEqual(1,len(collect.files_list))
-      a = collect.files_list[0].n_ncs_copies
-      self.assertEqual(a,n)
+      a = collect.get_pdb_file_info(fn)
+      if a:
+        n_ncs_copies = a.n_ncs_copies
+      else:
+        n_ncs_copies = None
+      self.assertEqual(n_ncs_copies,n)
 
+    # clean test pdb files from pdb folder
+    files_to_delete = [
+      'test_pdb_1.pdb','test_pdb_2.pdb','test_pdb_3.pdb','test_pdb_4.pdb']
+    for fn in files_to_delete:
+      full_path = os.path.join(collect.asu_dir,fn)
+      if os.path.isfile(full_path):
+        os.remove(full_path)
 
-
+  def test_reading_processing_pdb_file(self):
+    """ test processing a pdb file """
     collect = collect_ncs_files.ncs_paper_data_collection()
-    collect.collect_pdb_file('1vcr')
-    self.assertEqual(1,len(collect.files_list))
-    a = collect.files_list[0].n_ncs_copies
-    self.assertEqual(a,n)
+    a = collect.get_pdb_file_info('1vcr')
+    self.assertEqual(a.n_ncs_copies,5)
 
+  def test_command_line(self):
+    """     Test the command line call    """
+    osType = sys.platform
+    if osType.startswith('win'):
+      pass
+    else:
+      sources = os.environ["workfolder"]
+      com_path = sources + '/NCS/ncs_paper/get_file_ncs_info.py'
+      cmd = 'python {} 1vcr > log_test'.format(com_path)
+      os.system(cmd)
 
-
-
-    print 'done'
-
+  def test_reading_results(self):
+    """ make sure we can read the results """
+    sources = os.environ["workfolder"]
+    path = sources + '/NCS/ncs_paper/ncs_queue_results'
+    fn = os.path.join(path,'log_1vcr')
+    if os.path.isfile(fn):
+      pdb_info = pickle.load(open(fn,'r'))
+      print pdb_info
+    else:
+      print 'Could not find log_vcr'
 
 
   def tearDown(self):
@@ -140,13 +166,42 @@ MTRIX3   2 -0.010221  0.666588  0.745356        0.00000
 MTRIX1   3 -0.317946 -0.173437  0.932111        0.00000
 MTRIX2   3  0.760735 -0.633422  0.141629        0.00000
 MTRIX3   3  0.565855  0.754120  0.333333        0.00000
-ATOM      1  N   THR A   1       9.670  10.289  11.135  1.00 20.00           N
-ATOM      2  CA  THR A   2       9.559   8.931  10.615  1.00 20.00           C
-ATOM      3  C   THR A   3       9.634   7.903  11.739  1.00 20.00           C
-ATOM      4  O   THR B   4      10.449   8.027  12.653  1.00 20.00           O
-ATOM      5  CB  THR B   5      10.660   8.630   9.582  1.00 20.00           C
-ATOM      6  OG1 THR A   6      10.560   9.552   8.490  1.00 20.00           O
-ATOM      7  CG2 THR A   7      10.523   7.209   9.055  1.00 20.00           C
+ATOM    757  N   ASP A 247      16.068 -20.882 -28.984  1.00 35.93           N
+ATOM    758  CA  ASP A 247      15.914 -22.265 -28.600  1.00 47.90           C
+ATOM    759  C   ASP A 247      17.130 -23.042 -29.116  1.00 42.32           C
+ATOM    760  O   ASP A 247      17.461 -22.986 -30.301  1.00 47.25           O
+ATOM    761  CB  ASP A 247      14.621 -22.814 -29.198  1.00 47.22           C
+ATOM    762  CG  ASP A 247      14.068 -23.974 -28.412  1.00 61.15           C
+ATOM    763  OD1 ASP A 247      14.359 -24.061 -27.196  1.00 63.66           O
+ATOM    764  OD2 ASP A 247      13.341 -24.798 -29.012  1.00 77.01           O
+ATOM    765  N   VAL A 248      17.808 -23.746 -28.218  1.00 44.08           N
+ATOM    766  CA  VAL A 248      19.008 -24.503 -28.584  1.00 46.18           C
+ATOM    767  C   VAL A 248      18.668 -25.988 -28.583  1.00 53.97           C
+ATOM    768  O   VAL A 248      18.049 -26.478 -27.638  1.00 51.48           O
+ATOM    769  CB  VAL A 248      20.185 -24.226 -27.608  1.00 47.55           C
+ATOM    770  CG1 VAL A 248      21.414 -25.015 -28.012  1.00 41.43           C
+ATOM    771  CG2 VAL A 248      20.513 -22.743 -27.567  1.00 41.64           C
+ATOM    772  N   VAL A 249      19.057 -26.697 -29.641  1.00 54.29           N
+ATOM    773  CA  VAL A 249      18.662 -28.097 -29.810  1.00 60.17           C
+ATOM    774  C   VAL A 249      19.859 -29.041 -29.982  1.00 57.98           C
+ATOM    775  O   VAL A 249      20.731 -28.827 -30.828  1.00 58.31           O
+ATOM    776  CB  VAL A 249      17.671 -28.280 -30.997  1.00 60.85           C
+ATOM    777  CG1 VAL A 249      16.500 -27.300 -30.884  1.00 48.00           C
+ATOM    778  CG2 VAL A 249      18.386 -28.110 -32.337  1.00 59.99           C
+TER
+ATOM    780  N   LYS D 151       4.045  -6.858 -32.823  1.00 45.22           N
+ATOM    781  CA  LYS D 151       4.686  -6.715 -34.123  1.00 50.40           C
+ATOM    782  C   LYS D 151       5.707  -5.554 -34.172  1.00 47.13           C
+ATOM    783  O   LYS D 151       6.820  -5.764 -34.625  1.00 52.91           O
+ATOM    784  CB  LYS D 151       3.657  -6.646 -35.268  1.00 40.73           C
+ATOM    785  CG  LYS D 151       4.264  -6.627 -36.661  1.00 55.98           C
+ATOM    786  CD  LYS D 151       3.272  -7.051 -37.745  1.00 72.14           C
+ATOM    787  CE  LYS D 151       2.529  -8.338 -37.375  1.00 75.11           C
+ATOM    788  NZ  LYS D 151       3.451  -9.400 -36.884  1.00 75.46           N
+ATOM    789  N   ARG D 152       5.369  -4.349 -33.709  1.00 42.01           N
+ATOM    790  CA  ARG D 152       6.399  -3.290 -33.702  1.00 40.51           C
+ATOM    791  C   ARG D 152       6.155  -2.002 -32.909  1.00 34.21           C
+ATOM    792  O   ARG D 152       5.015  -1.605 -32.636  1.00 33.77           O
 END
 """
 
@@ -177,15 +232,15 @@ def run_selected_tests():
   2) Comment out unittest.main()
   3) Un-comment unittest.TextTestRunner().run(run_selected_tests())
   """
-  tests = ['some_test_name']
-  suite = unittest.TestSuite(map(MyTestCase, tests))
+  tests = ['test_reading_results']
+  suite = unittest.TestSuite(map(TestNCSDataCollection, tests))
   return suite
 
 
 if __name__ == '__main__':
   # use for individual tests
-  DEBUG_MODE = True
-  # unittest.TextTestRunner().run(run_selected_tests())
+  # DEBUG_MODE = True
+  unittest.TextTestRunner().run(run_selected_tests())
 
   # Use to run all tests
-  unittest.main(verbosity=0)
+  # unittest.main(verbosity=0)

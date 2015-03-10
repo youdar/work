@@ -40,6 +40,7 @@ class File_records(object):
     self.resolution = None
     self.data_completeness = None
     self.solvent_fraction = None
+    # fixme: did not set 'only master in pdb' and 'ncs_reported_in_pdb'
     self.only_master_in_pdb = None
     self.ncs_reported_in_pdb = None
     self.n_atoms_in_asu = None
@@ -121,7 +122,7 @@ class ncs_paper_data_collection(object):
     self.pdb_dir = self.ncs_dir + '/ncs_paper/ncs_paper_data_files/pdb'
     self.pdb_records_dir = self.ncs_dir + '/ncs_paper/ncs_queue_results'
     self.pdb_not_used_dir = self.ncs_dir + '/ncs_paper/pdb_with_ncs_not_used'
-    self.data_dir = self.ncs_dir + 'data'
+    self.data_dir = self.ncs_dir + '/ncs_paper/data'
     self.current_dir = os.getcwd()
 
   def get_pdb_file_info(self,pdb_id):
@@ -261,13 +262,14 @@ def get_4_letters_pdb_id(file_name):
   >>>get_4_letters_pdb_id('1a37')
   1a37
   """
-  pdb = None
   basename = os.path.basename(file_name)
   file_name, file_type = os.path.splitext(basename)
   if len(file_name)>4:
     if 'pdb' in file_name:
       i = file_name.find('pdb')
       pdb_id = file_name[i+3:i+7]
+    else:
+      pdb_id = file_name.replace('-sf','')
   elif len(file_name)==4:
     pdb_id = file_name
   else:
@@ -292,6 +294,7 @@ def get_structure_factors(pdb,cif,mtz_folder):
   r_free_flags = None
   if not (os.path.isfile(pdb) and os.path.isfile(cif)):
     return None,None,None,0,0
+  miller_arrays = get_miller_arrays(pdb,cif,mtz_folder)
   try:
     inputs = mmtbx.utils.process_command_line_args(args = [pdb,cif])
     df = mmtbx.utils.determine_data_and_flags(
@@ -304,7 +307,6 @@ def get_structure_factors(pdb,cif,mtz_folder):
                  "F(+),SIGF(+),F(-),SIGF(-)","F(+),F(-)"]
     iobs_type = ["IOBS,SIGIOBS",'IOBS','IOBS,PHIM',
                  'I(+),SIGI(+),I(-),SIGI(-)']
-    miller_arrays = get_miller_arrays(pdb,cif,mtz_folder)
     # print miller_arrays[0].completeness()
     for ma in miller_arrays:
       ls = ma.info().label_string()

@@ -117,8 +117,10 @@ class TestNCSDataCollection(unittest.TestCase):
     self.assertEqual(n.solvent_fraction,7)
     self.assertEqual(n.n_ncs_copies,10)
     self.assertEqual(n.refinement_records['xray'],[1,2,3])
-    print n
 
+  def test_get_mtz(self):
+    """ make sure get_mtz works """
+    get_mtz.run(['1vcr'])
 
 
   def tearDown(self):
@@ -268,7 +270,7 @@ def run_selected_tests():
   2) Comment out unittest.main()
   3) Un-comment unittest.TextTestRunner().run(run_selected_tests())
   """
-  tests = ['test_records_update']
+  tests = ['test_get_mtz']
   suite = unittest.TestSuite(map(TestNCSDataCollection, tests))
   return suite
 

@@ -1,6 +1,7 @@
 from __future__ import division
 import collect_ncs_files
 import sys
+import os
 
 __author__ = 'Youval'
 
@@ -19,7 +20,8 @@ def run(pdb_id):
   collect = collect_ncs_files.ncs_paper_data_collection()
   pdb_info = collect.get_pdb_file_info(pdb_id)
   if pdb_info:
-    collect.write_to_file('log_' + pdb_id,pdb_info)
+    fn = os.path.join(collect.data_dir,'log_' + pdb_id)
+    collect.write_to_file(fn,pdb_info)
 
 if __name__=='__main__':
   run(sys.argv[1:])

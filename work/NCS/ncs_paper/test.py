@@ -43,9 +43,14 @@ def run():
   print len(file_list - not_used_list)
 
 
-
-
-
+  print '='*50
+  print "model_vs_data_files"
+  model_vs_data_files = glob(os.path.join(c.model_vs_data_dir,'*.txt'))
+  model_vs_data_files = [os.path.split(x)[-1] for x in model_vs_data_files]
+  model_vs_data_files = {x[:4] + '.pdb' for x in model_vs_data_files}
+  print len(model_vs_data_files)
+  print len(asu_files - model_vs_data_files)
+  print len(model_vs_data_files - asu_files)
 
   # print sample
   # keys = d.keys()

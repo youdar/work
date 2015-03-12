@@ -57,12 +57,16 @@ class File_records(object):
     self.r_work_header = None
     # list containing issues in data or pdb
     self.issues = []
+    # model vs data
+    self.r_free_model_vs_data = None
+    self.r_work_model_vs_data = None
 
   def __repr__(self):
     """ prints object's summary  """
     s = '{:<35}:{:<10}'
     out_lst = get_dict_as_list(self.__dict__,s)
     return '\n'.join(out_lst)
+
 
 class Refinement_results(object):
   """
@@ -105,6 +109,7 @@ class ncs_paper_data_collection(object):
     self.asu_dir = os.path.join(self.ncs_dir,'asu')
     self.mtz_dir = os.path.join(self.ncs_dir,'mtz')
     self.pdb_dir = os.path.join(self.ncs_dir,'pdb')
+    self.cif_dir = os.path.join(self.ncs_dir,'cif')
     self.data_dir = os.path.join(self.ncs_dir,'data')
     self.model_vs_data_dir = os.path.join(self.ncs_dir,'model_vs_data')
     self.pdb_not_used_dir = os.path.join(self.ncs_dir,'pdb_with_ncs_not_used')
@@ -234,6 +239,37 @@ class ncs_paper_data_collection(object):
     self.files_list = [x[-4:] for x in files_list]
     return self.pdbs_dict
 
+  def make_csv_file(self,file_name,records=None,path=''):
+    """
+    creates a csv file from all data collected
+
+    Args:
+      file_name (str): output file name
+      records (dict): dictionary containing all records
+      path (str): output file path
+      """
+    # file_rec = File_records()
+    # if not records:
+    #   records = self.pdbs_dict
+    # if not records: return False
+    # # get sorted pdb IDs
+    # pdb_ids = sorted(records)
+    # # sort table columns
+    # header = sorted(file_rec.__dict__.keys())
+    # table = [header]
+    # for pdb_id in pdb_ids:
+    #   row = ['',]*len(header)
+    #   for i,col in enumerate(header):
+    #     if records[pdb_id].__dict__.has_key(col):
+    #       val = records[pdb_id].__dict__[col]
+    #       if (val is None) or (val == {}) or (val==[]):
+    #         val =''
+    #       row[i] = str(val)
+    #   table.append(row)
+    # table = '\n'.join(table)
+    # fn = os.path.join(path,file_name)
+    # open(fn,'w').write(table)
+    return True
 
 def get_cif_file(pdb_id):
   """ get the cif file """

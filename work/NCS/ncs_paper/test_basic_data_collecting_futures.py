@@ -122,6 +122,12 @@ class TestNCSDataCollection(unittest.TestCase):
     """ make sure get_mtz works """
     get_mtz.run(['1vcr'])
 
+  def test_make_csv_file(self):
+    """ check csv file creation, with all data """
+    c = collect_ncs_files.ncs_paper_data_collection()
+    all_records = c.collect_all_file_records()
+    c.make_csv_file('temp.csv',path=c.ncs_dir)
+
 
   def tearDown(self):
     """ remove temp files and folder
@@ -270,7 +276,7 @@ def run_selected_tests():
   2) Comment out unittest.main()
   3) Un-comment unittest.TextTestRunner().run(run_selected_tests())
   """
-  tests = ['test_get_mtz']
+  tests = ['test_make_csv_file']
   suite = unittest.TestSuite(map(TestNCSDataCollection, tests))
   return suite
 

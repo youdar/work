@@ -51,6 +51,8 @@ def run():
   print len(model_vs_data_files)
   print len(asu_files - model_vs_data_files)
   print len(model_vs_data_files - asu_files)
+  print asu_files - model_vs_data_files
+  print model_vs_data_files - asu_files
 
   # print sample
   # keys = d.keys()

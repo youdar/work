@@ -1,6 +1,6 @@
 from __future__ import division
-from libtbx.command_line import easy_qsub
 import collect_ncs_files
+from libtbx.command_line import easy_qsub
 from glob import glob
 import sys
 import os
@@ -18,9 +18,9 @@ class run_queue_tests(object):
     sources = os.environ["workfolder"]
     # command path
     c = collect_ncs_files.ncs_paper_data_collection()
-    self.com_path = sources + '/NCS/ncs_paper/get_model_vs_data.py'
+    self.com_path = sources + '/NCS/ncs_paper/get_ligand_cif.py'
     # where all queue output will be deposited
-    self.where_to_run_dir = sources + '/NCS/ncs_paper/ncs_queue_results'
+    self.where_to_run_dir = sources + '/NCS/ncs_paper/ncs_queue_results2'
     self.collect_files_from = c.data_dir
     self.pdb_code = []
     self.pdb_file_with_path = []
@@ -42,12 +42,6 @@ class run_queue_tests(object):
     self.pdb_log_file_list = [x[-4:] for x in self.pdb_log_file_list]
     print 'Processing {} files'.format(len(self.pdb_log_file_list))
     # for testing
-    self.pdb_log_file_list = ['2a3x']
-    self.pdb_log_file_list = [
-      '3hfs', '3ksb', '2p5t', '4h1l', '4gh4', '2ja7', '2hn2', '4nkz', '3km2',
-      '4gx2', '3ks2', '1iss', '4h1i', '1n3n', '4gk5', '3hxk', '3g05', '3ksa',
-      '4hi2', '1ott', '4kn4', '3nmj', '4hic', '2gw1', '4h37', '4gx5']
-
 
   def get_commands(self):
     """

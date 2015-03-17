@@ -16,6 +16,7 @@ import iotbx.mtz
 import shutil
 import sys
 import os
+import re
 
 """
 Collection of all pdb files with NCS relations, either with only master and
@@ -81,11 +82,15 @@ class Refinement_results(object):
     self.refinement_time = None
     self.normalized_sym_nbo = None
     self.clashscore = None
+    self.clashscore_final = None
     self.c_beta_deviation = None
+    self.c_beta_final = None
     self.map_cc = None
     self.rmsd = None
     self.rama_outliers = None
+    self.rama_final = None
     self.rotamer_outliers = None
+    self.rotamer_final = None
 
   def __repr__(self):
     """ prints object's summary  """
@@ -111,7 +116,7 @@ class ncs_paper_data_collection(object):
     self.pdb_dir = os.path.join(self.ncs_dir,'pdb')
     self.cif_dir = os.path.join(self.ncs_dir,'cif')
     self.data_dir = os.path.join(self.ncs_dir,'data')
-    self.refine_no_ncs_dir = os.path.join(self.ncs_dir,'refine_no_ncs_dir')
+    self.refine_no_ncs_dir = os.path.join(self.ncs_dir,'refine_no_ncs')
     self.refine_cartesian_ncs = os.path.join(self.ncs_dir,'refine_cartesian_ncs')
     self.refine_torsion_ncs = os.path.join(self.ncs_dir,'refine_torsion_ncs')
     self.refine_ncs_con_no_oper = os.path.join(self.ncs_dir,'refine_ncs_no_oper')
@@ -176,6 +181,10 @@ class ncs_paper_data_collection(object):
   def write_to_file(self,file_name,file_record):
     """
     writes pickled object to file_name
+
+    Args:
+      file_name (str): such as log_"pdb id"
+      file_record (obj): file record object
     """
     if file_record:
       pickle.dump(file_record,open(file_name,'w'))
@@ -237,43 +246,92 @@ class ncs_paper_data_collection(object):
       dict key: pdb_id
       dict val: File_records object
     """
-    files_list = glob(self.data_dir + '/log_*')
+    files_list = glob(os.path.join(self.data_dir,'log_*'))
     for fn in files_list:
       r = pickle.load(open(fn,'r'))
       self.pdbs_dict[r.pdb_id] = r
     self.files_list = [x[-4:] for x in files_list]
     return self.pdbs_dict
 
-  def make_csv_file(self,file_name,records=None,path=''):
+  def collect_refinement_results(self):
+    """ updates records with refinement results """
+    paths = [
+      self.refine_no_ncs_dir,self.refine_cartesian_ncs,
+      self.refine_torsion_ncs,self.refine_ncs_con_no_oper,
+      self.refine_ncs_con_all]
+    refine_test_names = [
+    'no ncs','cartesian ncs restraints','torsion ncs restraints',
+    'ncs constraints no operators','ncs constraints all']
+    records = self.collect_all_file_records()
+    for test_name,data_path in zip(refine_test_names,paths):
+      # get all folders in directory
+      if os.path.isdir(data_path):
+        pdb_id_dirs = glob(os.path.join(data_path,'*'))
+        print pdb_id_dirs
+        for pdb_dir in pdb_id_dirs:
+          print pdb_dir
+          # update relevant record with new data
+          pdb_id = pdb_dir[-4:]
+          pdb_info = records[pdb_id]
+          refine_results = collect_refine_data(pdb_dir)
+          pdb_info.refinement_records[test_name] = refine_results
+          fn = os.path.join(self.data_dir,'log_' + pdb_id)
+          self.write_to_file(fn,pdb_info)
+
+  def make_csv_file(self,file_name='',records=None,out_path=''):
     """
     creates a csv file from all data collected
 
     Args:
       file_name (str): output file name
       records (dict): dictionary containing all records
-      path (str): output file path
+      out_path (str): output file path
       """
-    # file_rec = File_records()
-    # if not records:
-    #   records = self.pdbs_dict
-    # if not records: return False
-    # # get sorted pdb IDs
-    # pdb_ids = sorted(records)
-    # # sort table columns
-    # header = sorted(file_rec.__dict__.keys())
-    # table = [header]
-    # for pdb_id in pdb_ids:
-    #   row = ['',]*len(header)
-    #   for i,col in enumerate(header):
-    #     if records[pdb_id].__dict__.has_key(col):
-    #       val = records[pdb_id].__dict__[col]
-    #       if (val is None) or (val == {}) or (val==[]):
-    #         val =''
-    #       row[i] = str(val)
-    #   table.append(row)
-    # table = '\n'.join(table)
-    # fn = os.path.join(path,file_name)
-    # open(fn,'w').write(table)
+    # get pdb IDs to collect data on
+    if not records:
+      records = self.collect_all_file_records()
+    if not records: return False
+    if not file_name:
+      file_name = 'ncs_paper_data.csv'
+    if not out_path:
+      out_path = self.ncs_dir
+    headers, table_pos_map = table_headers()
+    l = len(table_pos_map)
+    h = [(v,k) for k,v in table_pos_map.iteritems()]
+    h.sort()
+    table = [[k for (v,k) in h]]
+    file_rec = File_records()
+    for pdb_id in records:
+      pdb_info = records[pdb_id]
+      new_row = ['',] * l
+      for key in file_rec.__dict__.iterkeys():
+        # fixme: remove the following test since all keys should be present
+        if  pdb_info.__dict__.has_key(key):
+          v = pdb_info.__dict__[key]
+        else:
+          v = None
+        if not (v is None):
+          if key == 'refinement_records':
+            # unpack the dictionary containing different refinement tests
+            for ref_type in v.iterkeys():
+              ref_rec = v[ref_type]
+              if not (ref_rec is None):
+                # iterate over refinement test results
+                for ref_k in ref_rec.__dict__.iterkeys():
+                  h = headers.refinement_records.__dict__[ref_k]
+                  i = table_pos_map[h]
+                  d = ref_rec.__dict__[ref_k]
+                  if d is None: d = ''
+                  new_row[i] = str(d)
+          elif key != 'issues':
+            h = headers.__dict__[key]
+            i = table_pos_map[h]
+            new_row[i] = str(v)
+      table.append(new_row)
+    table = [','.join(x) for x in table]
+    table = '\n'.join(table)
+    fn = os.path.join(out_path,file_name)
+    open(fn,'w').write(table)
     return True
 
 def get_cif_file(pdb_id):
@@ -468,14 +526,14 @@ def make_r_free_boolean(r_free_flags):
   else:
     return r_free_flags.customized_copy(data=r_free_flags.data()==flag_value)
 
-def get_dict_as_list(d,template):
+def get_dict_as_list(d,template,add_title=False):
   """
   recursively expands dictionary for printing
 
   Args:
     d (dict):  a dictionary
     template (str): a template used to format the key and value of dict
-
+    add_title (bool): add title to dictionary printout
   Returns:
     out_lst (list): a list of string containing the formatted key-value pairs
   """
@@ -483,12 +541,256 @@ def get_dict_as_list(d,template):
   keys = d.keys()
   keys.sort()
   for k in keys:
+    if add_title:
+      out_lst.extend([k,'-'*len(k)])
     v = d[k]
     if type(v) is dict:
-      x = get_dict_as_list(v,template)
+      x = get_dict_as_list(v,template,add_title=True)
       out_lst.extend(x)
     elif 'Refinement_results' in type(v).__name__:
       out_lst.append(v.__repr__())
     elif (not (v is None)) and (v.__str__() != '0') and (v != []) and (v != {}):
       out_lst.append(template.format(k,v.__str__()))
+    if add_title:
+      out_lst.append('-'*40)
   return out_lst
+
+def collect_refine_data(pdb_dir):
+  """ collecting data from refinement log """
+  refine_results = Refinement_results()
+  files_list = glob(os.path.join(pdb_dir,'*.log'))
+  if len(files_list) > 1:
+    msg = "There are several refinement log files in: \n{}\n"
+    msg += "please remove the .log extension from the files you do not collect"
+    print msg.format(pdb_dir)
+  else:
+    data = open(files_list[0],'r').read().splitlines()
+    i = 0
+    for l in data:
+      # collect data from file
+      start_r_val = re.search(r'(Start R-work =)(.*)(\,.*R-free =)(.*)',l)
+      final_r_val = re.search(r'(Final R-work =)(.*)(\,.*R-free =)(.*)',l)
+      clashscore = re.search(r'(all-atom clashscore.*:)(.*)',l)
+      rotamer_outliers = re.search(r'(rotamer outliers.*:)(.*)(\%)',l)
+      c_beta_deviation = re.search(r'(cbeta deviations.*:)(.*)',l)
+      cpu_time = re.search(r'(Total CPU time:)(.*)(minutes)',l)
+      next_line_are_results = re.search(r'Accepted refinement result:',l)
+      molprobity_statistics = re.search(r'Molprobity statistics',l)
+      i += 1
+      # update record
+      if start_r_val:
+        refine_results.r_work_init = float(start_r_val.group(2))
+        refine_results.r_free_init = float(start_r_val.group(4))
+      if final_r_val:
+        refine_results.r_work_final = float(final_r_val.group(2))
+        refine_results.r_free_final = float(final_r_val.group(4))
+      if cpu_time:
+        # convert cpu time to seconds
+        refine_results.refinement_time = round(60*float(cpu_time.group(2)),1)
+      if clashscore:
+        refine_results.clashscore = float(clashscore.group(2))
+      if rotamer_outliers:
+        refine_results.rotamer_outliers = float(rotamer_outliers.group(2))
+      if c_beta_deviation:
+        refine_results.c_beta_deviation = float(c_beta_deviation.group(2))
+      if next_line_are_results:
+        d = data[i].split()
+        if len(d) == 12:
+          refine_results.clashscore_final = float(d[5])
+          refine_results.rama_final = float(d[6])
+          refine_results.rotamer_final = float(d[7])
+          refine_results.c_beta_final = float(d[8])
+      if molprobity_statistics:
+        d = data[i + 2].split()
+        if d[0].lower() == 'outliers':
+          refine_results.rama_outliers = float(d[2])
+  return refine_results
+
+def table_headers():
+  """
+  Returns:
+    headers (dict): map data and experiment to header
+    table_pos_map (dict): map header to a location in the table
+  """
+  headers = File_records()
+  headers.pdb_id = 'pdb id'
+  headers.n_ncs_copies = 'n copies'
+  headers.year = 'year'
+  headers.resolution =  'resolution'
+  headers.data_completeness =  'completeness'
+  headers.solvent_fraction =  'solvent fraction'
+  headers.experiment_type =  'experiment'
+  headers.only_master_in_pdb =  'master only'
+  headers.n_atoms_in_asu =  'atoms in asu'
+  headers.data_to_param_ratio_ncs =  'p-to-d ratio ncs'
+  headers.data_to_param_ratio =  'p-to-d ratio asu'
+  headers.r_free_header =  'r-free header'
+  headers.r_work_header =  'r-work header'
+  headers.r_free_model_vs_data = 'r-free model vs data'
+  headers.r_work_model_vs_data = 'r-work model vs data'
+  #
+  test = Refinement_results()
+  test.r_free_init        = 'r-free init : no ncs'
+  test.r_work_init        = 'r-work init : no ncs'
+  test.r_free_final       = 'r-free final : no ncs'
+  test.r_work_final       = 'r-work final : no ncs'
+  test.refinement_time    = 'refinement time : no ncs'
+  test.clashscore         = 'all-atom clashscore : no ncs'
+  test.clashscore_final   = 'final clashscore : no ncs'
+  test.rotamer_outliers   = 'rotamer outliers : no ncs'
+  test.rotamer_final      = 'rotamer final : no ncs'
+  test.c_beta_deviation   = 'cbeta deviations : no ncs'
+  test.c_beta_final       = 'cbeta final : no ncs'
+  test.rama_outliers      = 'rama outliers : no ncs'
+  test.rama_final         = 'rama final : no ncs'
+  headers.refinement_records['no ncs'] = test
+  #
+  test = Refinement_results()
+  test.r_free_init        = 'r-free init : cartesian ncs restraints'
+  test.r_work_init        = 'r-work init : cartesian ncs restraints'
+  test.r_free_final       = 'r-free final : cartesian ncs restraints'
+  test.r_work_final       = 'r-work final : cartesian ncs restraints'
+  test.refinement_time    = 'refinement time : cartesian ncs restraints'
+  test.clashscore         = 'all-atom clashscore : cartesian ncs restraints'
+  test.clashscore_final   = 'final clashscore : cartesian ncs restraints'
+  test.rotamer_outliers   = 'rotamer outliers : cartesian ncs restraints'
+  test.rotamer_final      = 'rotamer final : cartesian ncs restraints'
+  test.c_beta_deviation   = 'cbeta deviations : cartesian ncs restraints'
+  test.c_beta_final       = 'cbeta final : cartesian ncs restraints'
+  test.rama_outliers      = 'rama outliers : cartesian ncs restraints'
+  test.rama_final         = 'rama final : cartesian ncs restraints'
+  headers.refinement_records['cartesian ncs restraints'] = test
+  #
+  test = Refinement_results()
+  test.r_free_init        = 'r-free init : torsion ncs restraints'
+  test.r_work_init        = 'r-work init : torsion ncs restraints'
+  test.r_free_final       = 'r-free final : torsion ncs restraints'
+  test.r_work_final       = 'r-work final : torsion ncs restraints'
+  test.refinement_time    = 'refinement time : torsion ncs restraints'
+  test.clashscore         = 'all-atom clashscore : torsion ncs restraints'
+  test.clashscore_final   = 'final clashscore : torsion ncs restraints'
+  test.rotamer_outliers   = 'rotamer outliers : torsion ncs restraints'
+  test.rotamer_final      = 'rotamer final : torsion ncs restraints'
+  test.c_beta_deviation   = 'cbeta deviations : torsion ncs restraints'
+  test.c_beta_final       = 'cbeta final : torsion ncs restraints'
+  test.rama_outliers      = 'rama outliers : torsion ncs restraints'
+  test.rama_final         = 'rama final : torsion ncs restraints'
+  headers.refinement_records['torsion ncs restraints'] = test
+  #
+  test = Refinement_results()
+  test.r_free_init      = 'r-free init : ncs constraints no operators'
+  test.r_work_init      = 'r-work init : ncs constraints no operators'
+  test.r_free_final     = 'r-free final : ncs constraints no operators'
+  test.r_work_final     = 'r-work final : ncs constraints no operators'
+  test.refinement_time  = 'refinement time : ncs constraints no operators'
+  test.clashscore       = 'all-atom clashscore : ncs constraints no operators'
+  test.clashscore_final = 'final clashscore : ncs constraints no operators'
+  test.rotamer_outliers = 'rotamer outliers : ncs constraints no operators'
+  test.rotamer_final    = 'rotamer final : ncs constraints no operators'
+  test.c_beta_deviation = 'cbeta deviations : ncs constraints no operators'
+  test.c_beta_final     = 'cbeta final : ncs constraints no operators'
+  test.rama_outliers    = 'rama outliers : ncs constraints no operators'
+  test.rama_final       = 'rama final : ncs constraints no operators'
+  headers.refinement_records['ncs constraints no operators'] = test
+  #
+  test = Refinement_results()
+  test.r_free_init      = 'r-free init : ncs constraints all'
+  test.r_work_init      = 'r-work init : ncs constraints all'
+  test.r_free_final     = 'r-free final : ncs constraints all'
+  test.r_work_final     = 'r-work final : ncs constraints all'
+  test.refinement_time  = 'refinement time : ncs constraints all'
+  test.clashscore       = 'all-atom clashscore : ncs constraints all'
+  test.clashscore_final = 'final clashscore : ncs constraints all'
+  test.rotamer_outliers = 'rotamer outliers : ncs constraints all'
+  test.rotamer_final    = 'rotamer final : ncs constraints all'
+  test.c_beta_deviation = 'cbeta deviations : ncs constraints all'
+  test.c_beta_final     = 'cbeta final : ncs constraints all'
+  test.rama_outliers    = 'rama outliers : ncs constraints all'
+  test.rama_final       = 'rama final : ncs constraints all'
+  headers.refinement_records['ncs constraints all'] = test
+  #
+  # map dictionary record to a location in the table
+  headers_list = [
+      'pdb id',
+      'n copies',
+      'year',
+      'resolution',
+      'completeness',
+      'solvent fraction',
+      'experiment',
+      'master only',
+      'atoms in asu',
+      'p-to-d ratio ncs',
+      'p-to-d ratio asu',
+      'r-free header',
+      'r-work header',
+      'r-free model vs data',
+      'r-work model vs data',
+      'r-free init : no ncs',
+      'r-work init : no ncs',
+      'r-free final : no ncs',
+      'r-work final : no ncs',
+      'refinement time : no ncs',
+      'all-atom clashscore : no ncs',
+      'final clashscore : no ncs',
+      'rotamer outliers : no ncs',
+      'rotamer final : no ncs',
+      'cbeta deviations : no ncs',
+      'cbeta final : no ncs',
+      'rama outliers : no ncs'
+      'rama final : no ncs'
+      'r-free init : cartesian ncs restraints',
+      'r-work init : cartesian ncs restraints',
+      'r-free final : cartesian ncs restraints',
+      'r-work final : cartesian ncs restraints',
+      'refinement time : cartesian ncs restraints',
+      'all-atom clashscore : cartesian ncs restraints',
+      'final clashscore : cartesian ncs restraints',
+      'rotamer outliers : cartesian ncs restraints',
+      'rotamer final : cartesian ncs restraints',
+      'cbeta deviations : cartesian ncs restraints',
+      'cbeta final : cartesian ncs restraints',
+      'rama outliers : cartesian ncs restraints'
+      'rama final : cartesian ncs restraints'
+      'r-free init : torsion ncs restraints',
+      'r-work init : torsion ncs restraints',
+      'r-free final : torsion ncs restraints',
+      'r-work final : torsion ncs restraints',
+      'refinement time : torsion ncs restraints',
+      'all-atom clashscore : torsion ncs restraints',
+      'final clashscore : torsion ncs restraints',
+      'rotamer outliers : torsion ncs restraints',
+      'rotamer final : torsion ncs restraints',
+      'cbeta deviations : torsion ncs restraints',
+      'cbeta final : torsion ncs restraints',
+      'rama outliers : torsion ncs restraints'
+      'rama final : torsion ncs restraints'
+      'r-free init : ncs constraints no operators',
+      'r-work init : ncs constraints no operators',
+      'r-free final : ncs constraints no operators',
+      'r-work final : ncs constraints no operators',
+      'refinement time : ncs constraints no operators',
+      'all-atom clashscore : ncs constraints no operators',
+      'final clashscore : ncs constraints no operators',
+      'rotamer outliers : ncs constraints no operators',
+      'rotamer final : ncs constraints no operators',
+      'cbeta deviations : ncs constraints no operators',
+      'cbeta final : ncs constraints no operators',
+      'rama outliers : ncs constraints no operators'
+      'rama final : ncs constraints no operators'
+      'r-free init : ncs constraints all',
+      'r-work init : ncs constraints all',
+      'r-free final : ncs constraints all',
+      'r-work final : ncs constraints all',
+      'refinement time : ncs constraints all',
+      'all-atom clashscore : ncs constraints all',
+      'final clashscore : ncs constraints all',
+      'rotamer outliers : ncs constraints all',
+      'rotamer final : ncs constraints all',
+      'cbeta deviations : ncs constraints all'
+      'cbeta final : ncs constraints all'
+      'rama outliers : ncs constraints all'
+      'rama final : ncs constraints all'
+    ]
+  table_pos_map = {x:i for i,x in enumerate(headers_list)}
+  return headers, table_pos_map

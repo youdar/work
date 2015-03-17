@@ -21,7 +21,7 @@ class TestNCSDataCollection(unittest.TestCase):
     self.current_dir = os.getcwd()
     now = datetime.now().strftime("%I%p_%m_%d_%Y")
     test_name = self.__class__.__name__
-    self.tempdir = '{}_{}'.format(test_name,now)
+    self.tempdir = os.path.join(self.current_dir,'{}_{}'.format(test_name,now))
     if not os.path.isdir(self.tempdir):
       os.mkdir(self.tempdir)
     os.chdir(self.tempdir)
@@ -126,8 +126,34 @@ class TestNCSDataCollection(unittest.TestCase):
     """ check csv file creation, with all data """
     c = collect_ncs_files.ncs_paper_data_collection()
     all_records = c.collect_all_file_records()
-    c.make_csv_file('temp.csv',path=c.ncs_dir)
+    table = c.make_csv_file(file_name='temp.csv',out_path=self.tempdir)
+    table = c.make_csv_file()
+    print table
 
+  def test_collect_refinement_results(self):
+    """ test collection of refinement results """
+    c = collect_ncs_files.ncs_paper_data_collection()
+    c.collect_refinement_results()
+    print 'Done'
+
+  def test_collect_refine_data(self):
+    """ test collecting data from refinement log """
+    c = collect_ncs_files.ncs_paper_data_collection()
+    fn = os.path.join(c.refine_no_ncs_dir,'1a0d')
+    data = collect_ncs_files.collect_refine_data(fn)
+    print data
+    print 'Done'
+
+  def test_running_refienemt(self):
+    """ make sure the commands are called properly """
+    from run_refinement_test import run
+    run(['1vcr','-no_ncs'])
+
+  def test_table_headers(self):
+    headers, table_pos_map = collect_ncs_files.table_headers()
+    a =  headers.__repr__().splitlines()
+    self.assertEqual(len(a),len(table_pos_map))
+    print 'Done'
 
   def tearDown(self):
     """ remove temp files and folder
@@ -276,14 +302,14 @@ def run_selected_tests():
   2) Comment out unittest.main()
   3) Un-comment unittest.TextTestRunner().run(run_selected_tests())
   """
-  tests = ['test_make_csv_file']
+  tests = ['test_collect_refinement_results']
   suite = unittest.TestSuite(map(TestNCSDataCollection, tests))
   return suite
 
 
 if __name__ == '__main__':
   # use for individual tests
-  # DEBUG_MODE = True
+  DEBUG_MODE = True
   unittest.TextTestRunner().run(run_selected_tests())
 
   # Use to run all tests

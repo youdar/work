@@ -24,7 +24,7 @@ def run(args):
         pdb_info = collect.read_from_file(pdb_info_fn)
         print '                 ---    {}   ---'.format(pdb_id)
         print pdb_info
-        print '-'*50
+        print '.'*40
       else:
         print 'Could not find info for:',pdb_id
 

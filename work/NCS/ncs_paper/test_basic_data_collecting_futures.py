@@ -125,6 +125,7 @@ class TestNCSDataCollection(unittest.TestCase):
   def test_make_csv_file(self):
     """ check csv file creation, with all data """
     c = collect_ncs_files.ncs_paper_data_collection()
+
     all_records = c.collect_all_file_records()
     table = c.make_csv_file(file_name='temp.csv',out_path=self.tempdir)
     table = c.make_csv_file()

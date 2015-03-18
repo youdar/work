@@ -267,9 +267,7 @@ class ncs_paper_data_collection(object):
       # get all folders in directory
       if os.path.isdir(data_path):
         pdb_id_dirs = glob(os.path.join(data_path,'*'))
-        print pdb_id_dirs
         for pdb_dir in pdb_id_dirs:
-          print pdb_dir
           # update relevant record with new data
           pdb_id = pdb_dir[-4:]
           pdb_info = records[pdb_id]
@@ -318,11 +316,13 @@ class ncs_paper_data_collection(object):
               if not (ref_rec is None):
                 # iterate over refinement test results
                 for ref_k in ref_rec.__dict__.iterkeys():
-                  h = headers.refinement_records.__dict__[ref_k]
-                  i = table_pos_map[h]
-                  d = ref_rec.__dict__[ref_k]
-                  if d is None: d = ''
-                  new_row[i] = str(d)
+                    head = headers.refinement_records[ref_type]
+                    h = head.__dict__[ref_k]
+                    if not (h is None):
+                      i = table_pos_map[h]
+                      d = ref_rec.__dict__[ref_k]
+                      if d is None: d = ''
+                      new_row[i] = str(d)
           elif key != 'issues':
             h = headers.__dict__[key]
             i = table_pos_map[h]
@@ -547,7 +547,7 @@ def get_dict_as_list(d,template,add_title=False):
     if type(v) is dict:
       x = get_dict_as_list(v,template,add_title=True)
       out_lst.extend(x)
-    elif 'Refinement_results' in type(v).__name__:
+    elif 'refinement_records' in type(v).__name__:
       out_lst.append(v.__repr__())
     elif (not (v is None)) and (v.__str__() != '0') and (v != []) and (v != {}):
       out_lst.append(template.format(k,v.__str__()))
@@ -563,7 +563,7 @@ def collect_refine_data(pdb_dir):
     msg = "There are several refinement log files in: \n{}\n"
     msg += "please remove the .log extension from the files you do not collect"
     print msg.format(pdb_dir)
-  else:
+  elif files_list:
     data = open(files_list[0],'r').read().splitlines()
     i = 0
     for l in data:
@@ -604,7 +604,9 @@ def collect_refine_data(pdb_dir):
         d = data[i + 2].split()
         if d[0].lower() == 'outliers':
           refine_results.rama_outliers = float(d[2])
-  return refine_results
+    return refine_results
+  else:
+    return None
 
 def table_headers():
   """
@@ -737,8 +739,8 @@ def table_headers():
       'rotamer final : no ncs',
       'cbeta deviations : no ncs',
       'cbeta final : no ncs',
-      'rama outliers : no ncs'
-      'rama final : no ncs'
+      'rama outliers : no ncs',
+      'rama final : no ncs',
       'r-free init : cartesian ncs restraints',
       'r-work init : cartesian ncs restraints',
       'r-free final : cartesian ncs restraints',
@@ -750,8 +752,8 @@ def table_headers():
       'rotamer final : cartesian ncs restraints',
       'cbeta deviations : cartesian ncs restraints',
       'cbeta final : cartesian ncs restraints',
-      'rama outliers : cartesian ncs restraints'
-      'rama final : cartesian ncs restraints'
+      'rama outliers : cartesian ncs restraints',
+      'rama final : cartesian ncs restraints',
       'r-free init : torsion ncs restraints',
       'r-work init : torsion ncs restraints',
       'r-free final : torsion ncs restraints',
@@ -763,8 +765,8 @@ def table_headers():
       'rotamer final : torsion ncs restraints',
       'cbeta deviations : torsion ncs restraints',
       'cbeta final : torsion ncs restraints',
-      'rama outliers : torsion ncs restraints'
-      'rama final : torsion ncs restraints'
+      'rama outliers : torsion ncs restraints',
+      'rama final : torsion ncs restraints',
       'r-free init : ncs constraints no operators',
       'r-work init : ncs constraints no operators',
       'r-free final : ncs constraints no operators',
@@ -776,8 +778,8 @@ def table_headers():
       'rotamer final : ncs constraints no operators',
       'cbeta deviations : ncs constraints no operators',
       'cbeta final : ncs constraints no operators',
-      'rama outliers : ncs constraints no operators'
-      'rama final : ncs constraints no operators'
+      'rama outliers : ncs constraints no operators',
+      'rama final : ncs constraints no operators',
       'r-free init : ncs constraints all',
       'r-work init : ncs constraints all',
       'r-free final : ncs constraints all',
@@ -787,10 +789,17 @@ def table_headers():
       'final clashscore : ncs constraints all',
       'rotamer outliers : ncs constraints all',
       'rotamer final : ncs constraints all',
-      'cbeta deviations : ncs constraints all'
-      'cbeta final : ncs constraints all'
-      'rama outliers : ncs constraints all'
-      'rama final : ncs constraints all'
+      'cbeta deviations : ncs constraints all',
+      'cbeta final : ncs constraints all',
+      'rama outliers : ncs constraints all',
+      'rama final : ncs constraints all',
     ]
   table_pos_map = {x:i for i,x in enumerate(headers_list)}
   return headers, table_pos_map
+
+
+if __name__ == '__main__':
+  """ update all PDB structure data, buy collecting refinements results """
+  c = ncs_paper_data_collection()
+  c.collect_refinement_results()
+  print 'Done...'

@@ -69,7 +69,7 @@ def look_at_files_not_used():
   d = {}
   files_list = glob(collect.pdb_not_used_dir + '/log_*')
   for fn in files_list:
-    r = pickle.load(open(fn,'r'))
+    r = pickle.load(open(fn,'rb'))
     d[r.pdb_id] = r
   #
   not_xray_diff = {x for x in d

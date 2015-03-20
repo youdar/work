@@ -83,7 +83,7 @@ class TestNCSDataCollection(unittest.TestCase):
     path = sources + '/NCS/ncs_paper/ncs_queue_results'
     fn = os.path.join(path,'log_1vcr')
     if os.path.isfile(fn):
-      pdb_info = pickle.load(open(fn,'r'))
+      pdb_info = pickle.load(open(fn,'rb'))
       print pdb_info
     else:
       print 'Could not find log_vcr'

@@ -1,7 +1,6 @@
 from __future__ import division
 from libtbx import easy_run
 import collect_ncs_files
-from glob import glob
 import sys
 import os
 

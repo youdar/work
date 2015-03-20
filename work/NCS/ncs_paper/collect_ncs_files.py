@@ -40,6 +40,7 @@ class File_records(object):
 
     self.pdb_id = ''
     self.n_ncs_copies = None
+    self.n_ncs_groups = None
     self.year = None
     self.resolution = None
     self.data_completeness = None
@@ -161,6 +162,7 @@ class ncs_paper_data_collection(object):
     if (ncs_obj.number_of_ncs_groups == 0):
       os.remove(fn)
       return None
+    new_rec.n_ncs_groups = ncs_obj.number_of_ncs_groups
     new_rec.n_ncs_copies = len(ncs_obj.ncs_transform)
     pio = pdb_inp.get_r_rfree_sigma()
     new_rec.resolution = pio.resolution
@@ -187,7 +189,7 @@ class ncs_paper_data_collection(object):
       file_record (obj): file record object
     """
     if file_record:
-      pickle.dump(file_record,open(file_name,'w'))
+      pickle.dump(file_record,open(file_name,'wb'))
 
   def read_from_file(self,file_name,path=''):
     """
@@ -201,7 +203,7 @@ class ncs_paper_data_collection(object):
     """
     fn = os.path.join(path,file_name)
     if os.path.isfile(fn):
-      return pickle.load(open(fn,'r'))
+      return pickle.load(open(fn,'rb'))
     else:
       return None
 
@@ -248,7 +250,7 @@ class ncs_paper_data_collection(object):
     """
     files_list = glob(os.path.join(self.data_dir,'log_*'))
     for fn in files_list:
-      r = pickle.load(open(fn,'r'))
+      r = pickle.load(open(fn,'rb'))
       self.pdbs_dict[r.pdb_id] = r
     self.files_list = [x[-4:] for x in files_list]
     return self.pdbs_dict
@@ -259,9 +261,7 @@ class ncs_paper_data_collection(object):
       self.refine_no_ncs_dir,self.refine_cartesian_ncs,
       self.refine_torsion_ncs,self.refine_ncs_con_no_oper,
       self.refine_ncs_con_all]
-    refine_test_names = [
-    'no ncs','cartesian ncs restraints','torsion ncs restraints',
-    'ncs constraints no operators','ncs constraints all']
+    refine_test_names = get_refine_test_names()
     records = self.collect_all_file_records()
     for test_name,data_path in zip(refine_test_names,paths):
       # get all folders in directory
@@ -272,9 +272,10 @@ class ncs_paper_data_collection(object):
           pdb_id = pdb_dir[-4:]
           pdb_info = records[pdb_id]
           refine_results = collect_refine_data(pdb_dir)
-          pdb_info.refinement_records[test_name] = refine_results
-          fn = os.path.join(self.data_dir,'log_' + pdb_id)
-          self.write_to_file(fn,pdb_info)
+          if refine_results:
+            pdb_info.refinement_records[test_name] = refine_results
+            fn = os.path.join(self.data_dir,'log_' + pdb_id)
+            self.write_to_file(fn,pdb_info)
 
   def make_csv_file(self,file_name='',records=None,out_path=''):
     """
@@ -563,6 +564,7 @@ def collect_refine_data(pdb_dir):
     msg = "There are several refinement log files in: \n{}\n"
     msg += "please remove the .log extension from the files you do not collect"
     print msg.format(pdb_dir)
+    return None
   elif files_list:
     data = open(files_list[0],'r').read().splitlines()
     i = 0
@@ -617,6 +619,7 @@ def table_headers():
   headers = File_records()
   headers.pdb_id = 'pdb id'
   headers.n_ncs_copies = 'n copies'
+  headers.n_ncs_groups = 'n groups'
   headers.year = 'year'
   headers.resolution =  'resolution'
   headers.data_completeness =  'completeness'
@@ -715,6 +718,7 @@ def table_headers():
   headers_list = [
       'pdb id',
       'n copies',
+      'n groups',
       'year',
       'resolution',
       'completeness',
@@ -792,14 +796,13 @@ def table_headers():
       'cbeta deviations : ncs constraints all',
       'cbeta final : ncs constraints all',
       'rama outliers : ncs constraints all',
-      'rama final : ncs constraints all',
+      'rama final : ncs constraints all'
     ]
   table_pos_map = {x:i for i,x in enumerate(headers_list)}
   return headers, table_pos_map
 
-
-if __name__ == '__main__':
-  """ update all PDB structure data, buy collecting refinements results """
-  c = ncs_paper_data_collection()
-  c.collect_refinement_results()
-  print 'Done...'
+def get_refine_test_names():
+  refine_test_names = [
+    'no ncs','cartesian ncs restraints','torsion ncs restraints',
+    'ncs constraints no operators','ncs constraints all']
+  return refine_test_names

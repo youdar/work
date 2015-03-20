@@ -12,14 +12,15 @@ import os
 
 def run():
   c = collect_ncs_files.ncs_paper_data_collection()
-  file_list = glob(c.model_vs_data_dir + '/*.txt')
+  file_list = glob(os.path.join(c.model_vs_data_dir,'*.txt'))
   print "number of model vs data files:",len(file_list)
   empty_files = []
   for f in file_list:
     d = open(f,'r').read().splitlines()
     if len(d) < 5:
-      empty_files.append(f[:4])
+      empty_files.append(f[-8:-4])
   print empty_files
+  print len(empty_files)
 
 
 if __name__ == '__main__':

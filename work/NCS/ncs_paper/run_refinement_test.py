@@ -40,17 +40,20 @@ def run(args):
   option_list = [
     '-no_ncs','-cartesian_ncs_restraints','-torsion_ncs_restraints',
     '-ncs_constraints_no_operators','-ncs_constraints_all']
+  # remove limits on ncs distance
+  dist_limit = ' refinement.ncs.excessive_distance_limit=None'
   cmd_option_list = [
-    '','main.ncs=True ncs.type=cartesian','main.ncs=True',
+    '',
+    'main.ncs=True ncs.type=cartesian' + dist_limit,
+    'main.ncs=True' + dist_limit,
     '','']
   i = option_list.index(refine_method)
   cmd_option = cmd_option_list[i]
   out_folder = c.__dict__[refinement_dir_list[i]]
   # refinement string
   s = 'optimize_xyz=true '
-  s += 'optimize_adp=true strategy=individual_sites+individual_adp'
+  s += 'optimize_adp=true strategy=individual_sites+individual_adp '
   cmd = 'phenix.refine {} {} '.format(files,cmd_option) + s
-
   # Run refinement
   current_dir = os.getcwd()
   make_new_folder = True

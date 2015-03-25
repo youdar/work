@@ -1,6 +1,7 @@
 from __future__ import division
 from libtbx import easy_run
 import collect_ncs_files
+import shutil
 import sys
 import os
 
@@ -20,10 +21,18 @@ def run(args):
     args should contain:
       pdb_id (str)
       one of the refinements types
+      -again : when this option present, erase previous refinement results
 
+  Examples:
+  >>>pyhton run_refinement_test.py 1vcr -no_ncs
+
+  >>>pyhton run_refinement_test.py 1vcr -torsion_ncs_restraints -again
   """
   osType = sys.platform
   assert not ('win' in osType),'Please run on LBL machine'
+  delete_existing_results = '-again' in args
+  if delete_existing_results:
+    args.pop(args.index('-again'))
   assert len(args) == 2, 'Not enough parameters provided'
   # collect files and set working directories
   pdb_id = args[0]
@@ -60,10 +69,14 @@ def run(args):
   os.chdir(out_folder)
   if os.path.isdir(pdb_id):
     try:
+      # remove if empty
       os.rmdir(pdb_id)
     except OSError:
-      print 'refinement results already exist for:',pdb_id
-      make_new_folder = False
+      if delete_existing_results:
+        shutil.rmtree(pdb_id)
+      else:
+        print 'refinement results already exist for:',pdb_id
+        make_new_folder = False
   if make_new_folder:
     os.mkdir(pdb_id)
     os.chdir(pdb_id)

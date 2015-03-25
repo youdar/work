@@ -2,7 +2,6 @@ from __future__ import division
 import collect_ncs_files
 from libtbx.command_line import easy_qsub
 from glob import glob
-import shutil
 import sys
 import os
 
@@ -28,7 +27,7 @@ class run_queue_tests(object):
     # The commands list is a list that will be sent to the queue for processing
     self.commands = []
     # the number of command in each "chunk" sent to the queue
-    self.size_of_chunks = 200
+    self.size_of_chunks = 10
 
 
   def get_pdb_files(self):
@@ -63,13 +62,10 @@ class run_queue_tests(object):
               if pdb_info.refinement_records['no ncs'].r_free_final > 0:
                 # no result - rerun refinement
                 self.test_to_run.append(pdb_id + ' ' + op)
-                # delete existing folder
-                print pdb_dir
-                # shutil.rmtree(pdb_dir)
 
     print 'Processing {} files'.format(len(self.test_to_run))
     # for testing
-    self.test_to_run = ['2aji -cartesian_ncs_restraints']
+    # self.test_to_run = ['2aji -cartesian_ncs_restraints']
 
   def get_commands(self):
     """
@@ -83,7 +79,7 @@ class run_queue_tests(object):
     in the same format that you would use to run is from the command prompt
     """
     for redo_test in self.test_to_run:
-      outString = '{} {}'.format(self.com_path,redo_test)
+      outString = '{} {} -again'.format(self.com_path,redo_test)
       self.commands.append("python {}".format(outString))
 
   def send_to_queue(self):
@@ -102,6 +98,6 @@ if __name__ == "__main__":
   queue_job = run_queue_tests()
   queue_job.get_pdb_files()
   queue_job.get_commands()
-  # queue_job.send_to_queue()
+  queue_job.send_to_queue()
 
 

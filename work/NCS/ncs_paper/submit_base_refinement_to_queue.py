@@ -23,7 +23,7 @@ class run_queue_tests(object):
     c = collect_ncs_files.ncs_paper_data_collection()
     self.com_path = sources + '/NCS/ncs_paper/run_refinement_test.py'
     # where all queue output will be deposited
-    self.where_to_run_dir = sources + '/NCS/ncs_paper/ncs_queue_results'
+    self.where_to_run_dir = sources + '/NCS/ncs_paper/ncs_queue_results2'
     self.collect_files_from = c.data_dir
     self.pdb_code = []
     self.pdb_file_with_path = []
@@ -43,11 +43,15 @@ class run_queue_tests(object):
     msg = 'Please run this only on LBL computer'
     assert not osType.startswith('win'),msg
     # set environment
-    self.pdb_log_id_list = glob(self.collect_files_from + '/log_*')
-    self.pdb_log_id_list = [x[-4:] for x in self.pdb_log_id_list]
+    # self.pdb_log_id_list = glob(self.collect_files_from + '/log_*')
+    # self.pdb_log_id_list = [x[-4:] for x in self.pdb_log_id_list]
+    # get list of files not refined yet
+    c = collect_ncs_files.ncs_paper_data_collection()
+    fn = os.path.join(c.ncs_dir,'not_yet_refined.txt')
+    self.pdb_log_id_list = open(fn,'r').read().splitlines()
     print 'Processing {} files'.format(len(self.pdb_log_id_list))
     # for testing
-    self.pdb_log_id_list = ['1vcr']
+    # self.pdb_log_id_list = ['1vcr']
 
   def get_commands(self):
     """

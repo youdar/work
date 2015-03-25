@@ -117,6 +117,7 @@ class ncs_paper_data_collection(object):
     self.pdb_dir = os.path.join(self.ncs_dir,'pdb')
     self.cif_dir = os.path.join(self.ncs_dir,'cif')
     self.data_dir = os.path.join(self.ncs_dir,'data')
+    self.figures_dir = os.path.join(self.ncs_dir,'figures')
     self.refine_no_ncs_dir = os.path.join(self.ncs_dir,'refine_no_ncs')
     self.refine_cartesian_ncs = os.path.join(self.ncs_dir,'refine_cartesian_ncs')
     self.refine_torsion_ncs = os.path.join(self.ncs_dir,'refine_torsion_ncs')
@@ -559,14 +560,15 @@ def get_dict_as_list(d,template,add_title=False):
 def collect_refine_data(pdb_dir):
   """ collecting data from refinement log """
   refine_results = Refinement_results()
-  files_list = glob(os.path.join(pdb_dir,'*.log'))
-  if len(files_list) > 1:
+  log_files_list = glob(os.path.join(pdb_dir,'*.log'))
+  pdb_files_list = glob(os.path.join(pdb_dir,'*.pdb'))
+  if len(log_files_list) > 1:
     msg = "There are several refinement log files in: \n{}\n"
     msg += "please remove the .log extension from the files you do not collect"
     print msg.format(pdb_dir)
     return None
-  elif files_list:
-    data = open(files_list[0],'r').read().splitlines()
+  elif log_files_list:
+    data = open(log_files_list[0],'r').read().splitlines()
     i = 0
     for l in data:
       # collect data from file
@@ -576,7 +578,6 @@ def collect_refine_data(pdb_dir):
       rotamer_outliers = re.search(r'(rotamer outliers.*:)(.*)(\%)',l)
       c_beta_deviation = re.search(r'(cbeta deviations.*:)(.*)',l)
       cpu_time = re.search(r'(Total CPU time:)(.*)(minutes)',l)
-      next_line_are_results = re.search(r'Accepted refinement result:',l)
       molprobity_statistics = re.search(r'Molprobity statistics',l)
       i += 1
       # update record
@@ -595,17 +596,38 @@ def collect_refine_data(pdb_dir):
         refine_results.rotamer_outliers = float(rotamer_outliers.group(2))
       if c_beta_deviation:
         refine_results.c_beta_deviation = float(c_beta_deviation.group(2))
-      if next_line_are_results:
-        d = data[i].split()
-        if len(d) == 12:
-          refine_results.clashscore_final = float(d[5])
-          refine_results.rama_final = float(d[6])
-          refine_results.rotamer_final = float(d[7])
-          refine_results.c_beta_final = float(d[8])
       if molprobity_statistics:
         d = data[i + 2].split()
         if d[0].lower() == 'outliers':
           refine_results.rama_outliers = float(d[2])
+    if len(pdb_files_list) == 1:
+      try:
+        pdb_inp = iotbx.pdb.input(file_name=pdb_files_list[0])
+      except:
+        # skip files with refinement issues
+        pdb_inp = None
+      if pdb_inp:
+        data = pdb_inp.remark_section().as_1d()
+        i = 0
+        for l in data:
+          # collect data from refined pdb file
+          l = l.lower()
+          clashscore = re.search(r'(all-atom clashscore.*:)(.*)',l)
+          rotamer_outliers = re.search(r'(rotamer outliers.*:)(.*)(\%)',l)
+          c_beta_deviation = re.search(r'(cbeta deviations.*:)(.*)',l)
+          molprobity_statistics = re.search(r'Molprobity statistics',l)
+          i += 1
+          # update record
+          if clashscore:
+            refine_results.clashscore_final = float(clashscore.group(2))
+          if rotamer_outliers:
+            refine_results.rotamer_final = float(rotamer_outliers.group(2))
+          if c_beta_deviation:
+            refine_results.c_beta_final = float(c_beta_deviation.group(2))
+          if molprobity_statistics:
+            d = data[i + 2].split()
+            if d[0].lower() == 'outliers':
+              refine_results.rama_final = float(d[2])
     return refine_results
   else:
     return None

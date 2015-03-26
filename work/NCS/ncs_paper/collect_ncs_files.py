@@ -241,6 +241,16 @@ class ncs_paper_data_collection(object):
     else:
       return None
 
+  def add_data_to_ncs_ratio(self,file_record):
+    pdb = os.path.join(self.asu_dir,file_record.pdb_id + '.pdb')
+    ncs_obj = iotbx.ncs.input(file_name=pdb)
+    data_size = file_record.data_to_param_ratio * 3 * file_record.n_atoms_in_asu
+    # fixme: finish this len(ncs_obj.something)
+    n_atoms_in_ncs = len(ncs_obj)
+    file_record.data_to_param_ratio_ncs = data_size/3.0/n_atoms_in_ncs
+    pass
+
+
   def collect_all_file_records(self):
     """
     Collect the information on all files

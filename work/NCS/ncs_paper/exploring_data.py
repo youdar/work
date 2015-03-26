@@ -196,8 +196,60 @@ class Explore_data(object):
     g &= (df['r-free final : torsion ncs restraints'] > 0)
     return df[g]
 
+  def find_when_to_use_ncs(self,df,var_name,test_name):
+    """
+    Learn from data what are the conditions where NCS refinement will be most
+    useful
 
-def learn_relations_param_to_bad_refine(data):
+    Args:
+      df : data frame
+      var_name (str): the name of the variable we want to make a plot for
+      test_name (str): refinement test name
+
+    Returns:
+
+    """
+    # get the results:
+    #   y = 1 : NCS improved results (smaller value)
+    #   y = 0 : NCS did not improve
+    tests = ['no ncs',test_name]
+    col_list = ['{} : {}'.format(var_name,x) for x in tests]
+    col_list.insert(0,'pdb id')
+    f = self.get_clean_data_frame(df)
+    f = f.dropna(axis=1)
+    # drop non numerical columns
+    # todo: check why the following have missing values (look at mtx files)
+    '''
+    3asn
+
+    '''
+    # todo: add data to ncs ratio
+
+
+    drop_list = ['pdb id','year','r-free header','r-work header','master only',
+                 'experiment']
+    refine_n = collect_ncs_files.get_refine_test_names()
+    remove_n = ['refinement time']
+    for tst in refine_n:
+      remove_list = ['{} : {}'.format(x,tst) for x in remove_n]
+      drop_list.extend(remove_list)
+    for col in drop_list:
+      if col in f.columns:
+        f.drop(col,axis=1,inplace=True)
+    #
+    g = f[col_list[1]]>f[col_list[2]]
+    # remove the answer column from data
+    f.drop(col_list[2],axis=1,inplace=True)
+    y = np.array(g*1)
+    y = y.reshape((len(g),1))
+
+
+    print 'Done'
+
+
+
+
+def learn_relations_param_to_good_ncs_effect(data):
   """
   Use logistic regression to evaluate when will the NCS refinement results
   will not be as good as those without NCS
@@ -283,14 +335,16 @@ def predict_func(theta):
 def run():
   explore = Explore_data()
   df = explore.get_data_frame()
-  # explore.plot_delta_r_values(['r-work final','r-free final'])
-  explore.find_outliers(df,'r-free final','cartesian ncs restraints')
-  print '+'*50
-  explore.find_outliers(df,'final clashscore','cartesian ncs restraints')
-  print '+'*50
   #
-  explore.plot_final_values('r-free final')
-  explore.plot_final_values('final clashscore')
+  explore.find_when_to_use_ncs(df,'r-free final','cartesian ncs restraints')
+  # # explore.plot_delta_r_values(['r-work final','r-free final'])
+  # explore.find_outliers(df,'r-free final','cartesian ncs restraints')
+  # print '+'*50
+  # explore.find_outliers(df,'final clashscore','cartesian ncs restraints')
+  # print '+'*50
+  # #
+  # explore.plot_final_values('r-free final')
+  # explore.plot_final_values('final clashscore')
   # explore.save_pdb_ids_with_ncs_issues(df)
   print 'Done'
 

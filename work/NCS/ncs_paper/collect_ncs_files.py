@@ -241,14 +241,23 @@ class ncs_paper_data_collection(object):
     else:
       return None
 
-  def add_data_to_ncs_ratio(self,file_record):
+  def get_data_to_ncs_ratio(self,file_record):
+    """
+    Add data-to-parameters ration for a single ncs copy
+
+    Args:
+      file_record (obj): File_records object
+
+    Return:
+      file_record (obj): File_records object
+    """
     pdb = os.path.join(self.asu_dir,file_record.pdb_id + '.pdb')
     ncs_obj = iotbx.ncs.input(file_name=pdb)
-    data_size = file_record.data_to_param_ratio * 3 * file_record.n_atoms_in_asu
+    data_size = file_record.data_to_param_ratio * file_record.n_atoms_in_asu
     # fixme: finish this len(ncs_obj.something)
-    n_atoms_in_ncs = len(ncs_obj)
-    file_record.data_to_param_ratio_ncs = data_size/3.0/n_atoms_in_ncs
-    pass
+    n_atoms_in_ncs = ncs_obj.ncs_atom_selection.count(True)
+    file_record.data_to_param_ratio_ncs = round(data_size/n_atoms_in_ncs,2)
+    return file_record
 
 
   def collect_all_file_records(self):
@@ -266,8 +275,11 @@ class ncs_paper_data_collection(object):
     self.files_list = [x[-4:] for x in files_list]
     return self.pdbs_dict
 
-  def collect_refinement_results(self):
-    """ updates records with refinement results """
+  def collect_refinement_results(self,pdb_id=None):
+    """ updates records with refinement results
+    Args:
+      pdb_id (str): When given, collect info only for that PDB ID
+    """
     paths = [
       self.refine_no_ncs_dir,self.refine_cartesian_ncs,
       self.refine_torsion_ncs,self.refine_ncs_con_no_oper,
@@ -277,7 +289,11 @@ class ncs_paper_data_collection(object):
     for test_name,data_path in zip(refine_test_names,paths):
       # get all folders in directory
       if os.path.isdir(data_path):
-        pdb_id_dirs = glob(os.path.join(data_path,'*'))
+        if pdb_id:
+          pdb_id_dirs = [os.path.join(data_path,pdb_id)]
+          if not os.path.isdir(pdb_id_dirs[0]): continue
+        else:
+          pdb_id_dirs = glob(os.path.join(data_path,'*'))
         for pdb_dir in pdb_id_dirs:
           # update relevant record with new data
           pdb_id = pdb_dir[-4:]

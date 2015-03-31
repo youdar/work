@@ -30,7 +30,7 @@ class run_queue_tests(object):
     # The commands list is a list that will be sent to the queue for processing
     self.commands = []
     # the number of command in each "chunk" sent to the queue
-    self.size_of_chunks = 200
+    self.size_of_chunks = 1
     self.options = [
       '-no_ncs','-cartesian_ncs_restraints','-torsion_ncs_restraints']
 
@@ -51,7 +51,7 @@ class run_queue_tests(object):
     self.pdb_log_id_list = open(fn,'r').read().splitlines()
     print 'Processing {} files'.format(len(self.pdb_log_id_list))
     # for testing
-    # self.pdb_log_id_list = ['1vcr']
+    self.pdb_log_id_list = ['1m1c']
 
   def get_commands(self):
     """
@@ -76,7 +76,7 @@ class run_queue_tests(object):
       where = self.where_to_run_dir,
       # Optional, when you want all jobs to run on machine_name
       # list of newer hosts: beck, morse, gently, rebus
-      # qsub_cmd = 'qsub -q all.q@beck',
+      qsub_cmd = 'qsub -q all.q@rebus',
       commands = self.commands,
       # set the number of commands to send together to the queue.
       size_of_chunks= self.size_of_chunks)

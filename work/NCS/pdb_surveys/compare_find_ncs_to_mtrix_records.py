@@ -167,8 +167,10 @@ def get_4_letters_pdb_id(file_name):
   """(str)  -> str
   clean a pdb file name, remove path and file extensions
 
-  :param file_name (str): pdb file name that may look like pdb1a37.pdb
-  :return pdb_id (str): the 4 letter pdb id
+  Args:
+   file_name (str): pdb file name that may look like pdb1a37.pdb
+  Return:
+   pdb_id (str): the 4 letter pdb id
 
   >>>get_4_letters_pdb_id('pdb1a37.pdb')
   1a37

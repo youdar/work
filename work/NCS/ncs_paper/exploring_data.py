@@ -1,4 +1,5 @@
 from __future__ import division
+from pandas.tools.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 from libtbx.utils import Sorry
 import scipy.optimize as op
@@ -215,39 +216,138 @@ class Explore_data(object):
     tests = ['no ncs',test_name]
     col_list = ['{} : {}'.format(var_name,x) for x in tests]
     col_list.insert(0,'pdb id')
-    f = self.get_clean_data_frame(df)
-    f = f.dropna(axis=1)
+
     # drop non numerical columns
-    # todo: check why the following have missing values (look at mtx files)
+    # todo: check why the following have missing values (look at mtz files)
     '''
     3asn
 
     '''
-    # todo: add data to ncs ratio
+    drop_list = ['pdb id','year','r-free header',
+                 'r-work header','master only',
+                 'experiment',
+                 'r-free init : torsion ncs restraints',
+                 'r-free init : cartesian ncs restraints']
 
+    remove_n = [
+      'refinement time','r-work final',
+      'cbeta deviations','cbeta final','rotamer outliers','rama outliers',
+      'rotamer final','r-work init']
+    # replace column names with shorter names
+    new_names_1=[
+      'Copies','Groups','Res.','Comp.','Solv.',
+      'ASU Atom','p/d ncs','p/d asu',
+      'R-Free init', 'R-Free final',
+      'R final Cartesian',
+      'R final Torsion']
+    old_names_1=[
+      'n copies', 'n groups', 'resolution', 'completeness', 'solvent fraction',
+      'atoms in asu', 'p-to-d ratio ncs', 'p-to-d ratio asu',
+      'r-free init : no ncs', 'r-free final : no ncs',
+      'r-free final : cartesian ncs restraints',
+      'r-free final : torsion ncs restraints']
+    remove_n_1 = remove_n + ['final clashscore','all-atom clashscore']
 
-    drop_list = ['pdb id','year','r-free header','r-work header','master only',
-                 'experiment']
+    n = 100
+    sampled_f = self.get_partial_df(
+      df,
+      drop_list=drop_list,
+      new_names=new_names_1,
+      old_names=old_names_1,
+      remove_n=remove_n_1,
+      n=n)
+    scatterplot_matrix(sampled_f,fig_name='r_free_grid.png')
+
+    test_df = pd.DataFrame(np.random.randn(1000,4),columns=['a','b','c','d'])
+    # scatterplot_matrix(test_df)
+
+    # plot 2
+    new_names_2=[
+      'Copies','Groups','Res.','Comp.','Solv.',
+      'ASU Atom','p/d ncs','p/d asu',
+      'R-Free final',
+      'clashsocre',
+      'C.S. Cartesian',
+      'C.S. Torsion']
+    old_names_2=[
+      'n copies', 'n groups', 'resolution', 'completeness', 'solvent fraction',
+      'atoms in asu', 'p-to-d ratio ncs', 'p-to-d ratio asu',
+      'r-free final : no ncs',
+      'final clashscore : no ncs',
+      'final clashscore : cartesian ncs restraints',
+      'final clashscore : torsion ncs restraints']
+    drop_list_2 = drop_list + ['r-free final : cartesian ncs restraints']
+    drop_list_2.append('r-free final : torsion ncs restraints')
+    drop_list_2.append('r-free init : no ncs')
+    remove_n_2 = remove_n + ['all-atom clashscore']
+
+    sampled_f = self.get_partial_df(
+      df,
+      drop_list=drop_list_2,
+      new_names=new_names_2,
+      old_names=old_names_2,
+      remove_n=remove_n_2,
+      n=n)
+    scatterplot_matrix(sampled_f,fig_name='clashscore_grid.png')
+
+    # g = f[col_list[1]]>f[col_list[2]]
+    # # remove the answer column from data
+    # f.drop(col_list[2],axis=1,inplace=True)
+    # y = np.array(g*1)
+    # y = y.reshape((len(g),1))
+    print 'Done'
+
+  def get_partial_df(self,df,drop_list,new_names,old_names,remove_n,n):
+    """ remove item from dataframe """
+    drop_list = list(drop_list)
     refine_n = collect_ncs_files.get_refine_test_names()
-    remove_n = ['refinement time']
+    f = self.get_clean_data_frame(df)
+    f = f.dropna(axis=1)
     for tst in refine_n:
       remove_list = ['{} : {}'.format(x,tst) for x in remove_n]
       drop_list.extend(remove_list)
     for col in drop_list:
       if col in f.columns:
         f.drop(col,axis=1,inplace=True)
-    #
-    g = f[col_list[1]]>f[col_list[2]]
-    # remove the answer column from data
-    f.drop(col_list[2],axis=1,inplace=True)
-    y = np.array(g*1)
-    y = y.reshape((len(g),1))
+    rows = np.random.choice(f.index.values, n)
+    f = f.ix[rows]
+    assert len(new_names) == len(old_names)
+    assert list(f.columns) == old_names
+    f.columns = new_names
+    return f
 
-
-    print 'Done'
-
-
-
+def scatterplot_matrix(df,fig_name=''):
+  g = sns.PairGrid(
+    df,
+    hue="p/d ncs",
+    size=1,
+    # aspect=1.6,
+    dropna=True)
+  # fig.square_grid = True
+  g.map_diag(plt.hist)
+  g.map_offdiag(plt.scatter)
+  g.add_legend()
+  g.set(ylim=(0, None))
+  g.set(xlim=(0, None))
+  # set the space between subplot
+  g.fig.subplots_adjust(wspace=0.01,hspace=0.01)
+  # set the number of ticks in each subplot
+  allticks = g.fig.get_axes()
+  for ticks in allticks:
+    # reduce the number of ticks
+    tx = ticks.get_xticks()
+    ty = ticks.get_yticks()
+    if len(tx) > 3:
+      mx = len(tx)//2
+      ticks.set_xticks([tx[1],tx[mx],tx[-2]])
+    if len(ty) > 3:
+      my = len(ty)//2
+      ticks.set_yticks([ty[1],ty[my],ty[-2]])
+  # fig.map(plt.scatter)
+  if fig_name:
+    c = collect_ncs_files.ncs_paper_data_collection()
+    plt.savefig(os.path.join(c.figures_dir,fig_name),ext="png",dpi=300)
+  plt.show()
 
 def learn_relations_param_to_good_ncs_effect(data):
   """
@@ -337,7 +437,7 @@ def run():
   df = explore.get_data_frame()
   #
   explore.find_when_to_use_ncs(df,'r-free final','cartesian ncs restraints')
-  # # explore.plot_delta_r_values(['r-work final','r-free final'])
+  # explore.plot_delta_r_values(['r-work final','r-free final'])
   # explore.find_outliers(df,'r-free final','cartesian ncs restraints')
   # print '+'*50
   # explore.find_outliers(df,'final clashscore','cartesian ncs restraints')

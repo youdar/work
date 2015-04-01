@@ -43,26 +43,33 @@ def run(args):
   cif = os.path.join(c.cif_dir,pdb_id + '.ligands.cif')
   if not os.path.isfile(cif): cif = ''
   files = '{} {} {} '.format(pdb,mtz,cif)
-  refinement_dir_list = [
-    'refine_no_ncs_dir','refine_cartesian_ncs','refine_torsion_ncs',
-    'refine_ncs_con_no_oper','refine_ncs_con_all']
-  option_list = [
-    '-no_ncs','-cartesian_ncs_restraints','-torsion_ncs_restraints',
-    '-ncs_constraints_no_operators','-ncs_constraints_all']
-  # remove limits on ncs distance
-  dist_limit = ' refinement.ncs.excessive_distance_limit=None'
-  cmd_option_list = [
-    '',
-    'main.ncs=True ncs.type=cartesian' + dist_limit,
-    'main.ncs=True' + dist_limit,
-    '','']
-  i = option_list.index(refine_method)
-  cmd_option = cmd_option_list[i]
-  out_folder = c.__dict__[refinement_dir_list[i]]
+  refinement_dir_list = collect_ncs_files.get_refinement_folders()
   # refinement string
   s = 'optimize_xyz=true '
-  s += 'optimize_adp=true strategy=individual_sites+individual_adp '
-  cmd = 'phenix.refine {} {} '.format(files,cmd_option) + s
+  s += 'optimize_adp=true strategy=individual_sites+individual_adp'
+  option_list = [
+    '-no_ncs',
+    '-cartesian_ncs_restraints',
+    '-torsion_ncs_restraints',
+    '-ncs_constraints_sites_no_operators',
+    '-ncs_constraints_sites_operators',
+    '-ncs_constraints_adp_operators',
+    '-ncs_constraints_all']
+  # remove limits on ncs distance
+  dist_limit = ' refinement.ncs.excessive_distance_limit=None '
+  cmd_option_list = [
+    s,
+    'main.ncs=True ncs.type=cartesian ' + s,
+    'main.ncs=True ' + s,
+    'ncs_search=true refine_operators=false strategy=individual_sites',
+    'ncs_search=true refine_operators=true strategy=individual_sites',
+    'ncs_search=true refine_operators=true strategy=individual_adp',
+    'ncs_search=true refine_operators=true strategy=individual_adp+individual_sites']
+  i = option_list.index(refine_method)
+  cmd_option = cmd_option_list[i]
+  out_folder = refinement_dir_list[i]
+  #
+  cmd = 'phenix.refine {} {} '.format(files,cmd_option) + dist_limit
   # Run refinement
   current_dir = os.getcwd()
   make_new_folder = True
@@ -80,7 +87,8 @@ def run(args):
   if make_new_folder:
     os.mkdir(pdb_id)
     os.chdir(pdb_id)
-    r = easy_run.fully_buffered(cmd)
+    # r = easy_run.fully_buffered(cmd)
+    r = easy_run.go(cmd)
   os.chdir(current_dir)
   print 'Done'
 

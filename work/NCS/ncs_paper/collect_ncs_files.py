@@ -118,11 +118,15 @@ class ncs_paper_data_collection(object):
     self.cif_dir = os.path.join(self.ncs_dir,'cif')
     self.data_dir = os.path.join(self.ncs_dir,'data')
     self.figures_dir = os.path.join(self.ncs_dir,'figures')
+    # refinement folders
     self.refine_no_ncs_dir = os.path.join(self.ncs_dir,'refine_no_ncs')
     self.refine_cartesian_ncs = os.path.join(self.ncs_dir,'refine_cartesian_ncs')
     self.refine_torsion_ncs = os.path.join(self.ncs_dir,'refine_torsion_ncs')
-    self.refine_ncs_con_no_oper = os.path.join(self.ncs_dir,'refine_ncs_no_oper')
-    self.refine_ncs_con_all = os.path.join(self.ncs_dir,'refine_ncs_con_all')
+    self.refine_ncs_sites_no_oper = os.path.join(self.ncs_dir,'refine_ncs_sites_no_oper')
+    self.refine_ncs_sites_oper = os.path.join(self.ncs_dir,'refine_ncs_sites_oper')
+    self.refine_ncs_adp_oper = os.path.join(self.ncs_dir,'refine_ncs_adp_oper')
+    self.refine_ncs_con_all = os.path.join(self.ncs_dir,'refine_ncs_site_adp_oper')
+    #
     self.model_vs_data_dir = os.path.join(self.ncs_dir,'model_vs_data')
     self.pdb_not_used_dir = os.path.join(self.ncs_dir,'pdb_with_ncs_not_used')
     self.current_dir = os.getcwd()
@@ -275,22 +279,20 @@ class ncs_paper_data_collection(object):
     self.files_list = [x[-4:] for x in files_list]
     return self.pdbs_dict
 
-  def collect_refinement_results(self,pdb_id=None):
+  def collect_refinement_results(self,pdb_id_str=None):
     """ updates records with refinement results
     Args:
-      pdb_id (str): When given, collect info only for that PDB ID
+      pdb_id_str (str): When given, collect info only for that PDB ID
     """
-    paths = [
-      self.refine_no_ncs_dir,self.refine_cartesian_ncs,
-      self.refine_torsion_ncs,self.refine_ncs_con_no_oper,
-      self.refine_ncs_con_all]
+    paths = get_refinement_folders()
     refine_test_names = get_refine_test_names()
     records = self.collect_all_file_records()
+    assert len(refine_test_names) == len(paths)
     for test_name,data_path in zip(refine_test_names,paths):
       # get all folders in directory
       if os.path.isdir(data_path):
-        if pdb_id:
-          pdb_id_dirs = [os.path.join(data_path,pdb_id)]
+        if pdb_id_str:
+          pdb_id_dirs = [os.path.join(data_path,pdb_id_str)]
           if not os.path.isdir(pdb_id_dirs[0]): continue
         else:
           pdb_id_dirs = glob(os.path.join(data_path,'*'))
@@ -731,20 +733,52 @@ def table_headers():
   headers.refinement_records['torsion ncs restraints'] = test
   #
   test = Refinement_results()
-  test.r_free_init      = 'r-free init : ncs constraints no operators'
-  test.r_work_init      = 'r-work init : ncs constraints no operators'
-  test.r_free_final     = 'r-free final : ncs constraints no operators'
-  test.r_work_final     = 'r-work final : ncs constraints no operators'
-  test.refinement_time  = 'refinement time : ncs constraints no operators'
-  test.clashscore       = 'all-atom clashscore : ncs constraints no operators'
-  test.clashscore_final = 'final clashscore : ncs constraints no operators'
-  test.rotamer_outliers = 'rotamer outliers : ncs constraints no operators'
-  test.rotamer_final    = 'rotamer final : ncs constraints no operators'
-  test.c_beta_deviation = 'cbeta deviations : ncs constraints no operators'
-  test.c_beta_final     = 'cbeta final : ncs constraints no operators'
-  test.rama_outliers    = 'rama outliers : ncs constraints no operators'
-  test.rama_final       = 'rama final : ncs constraints no operators'
-  headers.refinement_records['ncs constraints no operators'] = test
+  test.r_free_init      = 'r-free init : ncs constraints sites'
+  test.r_work_init      = 'r-work init : ncs constraints sites'
+  test.r_free_final     = 'r-free final : ncs constraints sites'
+  test.r_work_final     = 'r-work final : ncs constraints sites'
+  test.refinement_time  = 'refinement time : ncs constraints sites'
+  test.clashscore       = 'all-atom clashscore : ncs constraints sites'
+  test.clashscore_final = 'final clashscore : ncs constraints sites'
+  test.rotamer_outliers = 'rotamer outliers : ncs constraints sites'
+  test.rotamer_final    = 'rotamer final : ncs constraints sites'
+  test.c_beta_deviation = 'cbeta deviations : ncs constraints sites'
+  test.c_beta_final     = 'cbeta final : ncs constraints sites'
+  test.rama_outliers    = 'rama outliers : ncs constraints sites'
+  test.rama_final       = 'rama final : ncs constraints sites'
+  headers.refinement_records['ncs constraints sites'] = test
+  test = Refinement_results()
+  #
+  test.r_free_init      = 'r-free init : ncs constraints sites and operators'
+  test.r_work_init      = 'r-work init : ncs constraints sites and operators'
+  test.r_free_final     = 'r-free final : ncs constraints sites and operators'
+  test.r_work_final     = 'r-work final : ncs constraints sites and operators'
+  test.refinement_time  = 'refinement time : ncs constraints sites and operators'
+  test.clashscore       = 'all-atom clashscore : ncs constraints sites and operators'
+  test.clashscore_final = 'final clashscore : ncs constraints sites and operators'
+  test.rotamer_outliers = 'rotamer outliers : ncs constraints sites and operators'
+  test.rotamer_final    = 'rotamer final : ncs constraints sites and operators'
+  test.c_beta_deviation = 'cbeta deviations : ncs constraints sites and operators'
+  test.c_beta_final     = 'cbeta final : ncs constraints sites and operators'
+  test.rama_outliers    = 'rama outliers : ncs constraints sites and operators'
+  test.rama_final       = 'rama final : ncs constraints sites and operators'
+  headers.refinement_records['ncs constraints sites and operators'] = test
+  #
+  test = Refinement_results()
+  test.r_free_init      = 'r-free init : ncs constraints adp and operators'
+  test.r_work_init      = 'r-work init : ncs constraints adp and operators'
+  test.r_free_final     = 'r-free final : ncs constraints adp and operators'
+  test.r_work_final     = 'r-work final : ncs constraints adp and operators'
+  test.refinement_time  = 'refinement time : ncs constraints adp and operators'
+  test.clashscore       = 'all-atom clashscore : ncs constraints adp and operators'
+  test.clashscore_final = 'final clashscore : ncs constraints adp and operators'
+  test.rotamer_outliers = 'rotamer outliers : ncs constraints adp and operators'
+  test.rotamer_final    = 'rotamer final : ncs constraints adp and operators'
+  test.c_beta_deviation = 'cbeta deviations : ncs constraints adp and operators'
+  test.c_beta_final     = 'cbeta final : ncs constraints adp and operators'
+  test.rama_outliers    = 'rama outliers : ncs constraints adp and operators'
+  test.rama_final       = 'rama final : ncs constraints adp and operators'
+  headers.refinement_records['ncs constraints adp and operators'] = test
   #
   test = Refinement_results()
   test.r_free_init      = 'r-free init : ncs constraints all'
@@ -819,19 +853,45 @@ def table_headers():
       'cbeta final : torsion ncs restraints',
       'rama outliers : torsion ncs restraints',
       'rama final : torsion ncs restraints',
-      'r-free init : ncs constraints no operators',
-      'r-work init : ncs constraints no operators',
-      'r-free final : ncs constraints no operators',
-      'r-work final : ncs constraints no operators',
-      'refinement time : ncs constraints no operators',
-      'all-atom clashscore : ncs constraints no operators',
-      'final clashscore : ncs constraints no operators',
-      'rotamer outliers : ncs constraints no operators',
-      'rotamer final : ncs constraints no operators',
-      'cbeta deviations : ncs constraints no operators',
-      'cbeta final : ncs constraints no operators',
-      'rama outliers : ncs constraints no operators',
-      'rama final : ncs constraints no operators',
+      'r-free init : ncs constraints sites',
+      'r-work init : ncs constraints sites',
+      'r-free final : ncs constraints sites',
+      'r-work final : ncs constraints sites',
+      'refinement time : ncs constraints sites',
+      'all-atom clashscore : ncs constraints sites',
+      'final clashscore : ncs constraints sites',
+      'rotamer outliers : ncs constraints sites',
+      'rotamer final : ncs constraints sites',
+      'cbeta deviations : ncs constraints sites',
+      'cbeta final : ncs constraints sites',
+      'rama outliers : ncs constraints sites',
+      'rama final : ncs constraints sites',
+      'r-free init : ncs constraints sites and operators',
+      'r-work init : ncs constraints sites and operators',
+      'r-free final : ncs constraints sites and operators',
+      'r-work final : ncs constraints sites and operators',
+      'refinement time : ncs constraints sites and operators',
+      'all-atom clashscore : ncs constraints sites and operators',
+      'final clashscore : ncs constraints sites and operators',
+      'rotamer outliers : ncs constraints sites and operators',
+      'rotamer final : ncs constraints sites and operators',
+      'cbeta deviations : ncs constraints sites and operators',
+      'cbeta final : ncs constraints sites and operators',
+      'rama outliers : ncs constraints sites and operators',
+      'rama final : ncs constraints sites and operators',
+      'r-free init : ncs constraints adp and operators',
+      'r-work init : ncs constraints adp and operators',
+      'r-free final : ncs constraints adp and operators',
+      'r-work final : ncs constraints adp and operators',
+      'refinement time : ncs constraints adp and operators',
+      'all-atom clashscore : ncs constraints adp and operators',
+      'final clashscore : ncs constraints adp and operators',
+      'rotamer outliers : ncs constraints adp and operators',
+      'rotamer final : ncs constraints adp and operators',
+      'cbeta deviations : ncs constraints adp and operators',
+      'cbeta final : ncs constraints adp and operators',
+      'rama outliers : ncs constraints adp and operators',
+      'rama final : ncs constraints adp and operators',
       'r-free init : ncs constraints all',
       'r-work init : ncs constraints all',
       'r-free final : ncs constraints all',
@@ -851,6 +911,23 @@ def table_headers():
 
 def get_refine_test_names():
   refine_test_names = [
-    'no ncs','cartesian ncs restraints','torsion ncs restraints',
-    'ncs constraints no operators','ncs constraints all']
+    'no ncs',
+    'cartesian ncs restraints',
+    'torsion ncs restraints',
+    'ncs constraints sites',
+    'ncs constraints sites and operators',
+    'ncs constraints adp and operators',
+    'ncs constraints all']
   return refine_test_names
+
+def get_refinement_folders():
+  c = ncs_paper_data_collection()
+  refinement_folders = [
+      c.refine_no_ncs_dir,
+      c.refine_cartesian_ncs,
+      c.refine_torsion_ncs,
+      c.refine_ncs_sites_no_oper,
+      c.refine_ncs_sites_oper,
+      c.refine_ncs_adp_oper,
+      c.refine_ncs_con_all]
+  return refinement_folders

@@ -172,11 +172,12 @@ class Explore_data(object):
       var_name (str): the name of the variable we want to make a plot for
       test_name (str): refinement test name
     """
+    # create the names of the columns to use
     tests = ['no ncs',test_name]
     col_list = ['{} : {}'.format(var_name,x) for x in tests]
     col_list.insert(0,'pdb id')
     print col_list
-
+    # Get those columns
     f = self.get_clean_data_frame(df)
     f = f[col_list]
     f = f.dropna()
@@ -184,9 +185,9 @@ class Explore_data(object):
     f = f[g]
     f['delta'] = f[col_list[2]]  - f[col_list[1]]
     f = f.sort(['delta'],ascending=False)
-    print len(f)
+    print 'number of files with worse results:',sum(g)
     print f.head(6)
-
+    print f.describe()
     print 'done'
 
 
@@ -256,7 +257,7 @@ class Explore_data(object):
       old_names=old_names_1,
       remove_n=remove_n_1,
       n=n)
-    scatterplot_matrix(sampled_f,fig_name='r_free_grid.png')
+    scatterplot_matrix(sampled_f,fig_name='Grid_R_free.png')
 
     test_df = pd.DataFrame(np.random.randn(1000,4),columns=['a','b','c','d'])
     # scatterplot_matrix(test_df)
@@ -288,7 +289,7 @@ class Explore_data(object):
       old_names=old_names_2,
       remove_n=remove_n_2,
       n=n)
-    scatterplot_matrix(sampled_f,fig_name='clashscore_grid.png')
+    scatterplot_matrix(sampled_f,fig_name='Grid_clashscore.png')
 
     # g = f[col_list[1]]>f[col_list[2]]
     # # remove the answer column from data
@@ -320,17 +321,26 @@ def scatterplot_matrix(df,fig_name=''):
   g = sns.PairGrid(
     df,
     hue="p/d ncs",
-    size=1,
+    size=1.2,
     # aspect=1.6,
     dropna=True)
   # fig.square_grid = True
   g.map_diag(plt.hist)
   g.map_offdiag(plt.scatter)
-  g.add_legend()
+  # reduce the number of values in the legend
+  legend_keys = sorted(g._legend_data)
+  i = len(legend_keys) - 1
+  d = i//10 + 1
+  keys = []
+  while i>=0:
+    keys.append(legend_keys[i])
+    i -= d
+  legend = {k:g._legend_data[k] for k in keys}
+  g.add_legend(title='Data/Param NCS',legend_data=legend)
   g.set(ylim=(0, None))
   g.set(xlim=(0, None))
   # set the space between subplot
-  g.fig.subplots_adjust(wspace=0.01,hspace=0.01)
+  g.fig.subplots_adjust(wspace=0.02,hspace=0.02)
   # set the number of ticks in each subplot
   allticks = g.fig.get_axes()
   for ticks in allticks:
@@ -339,15 +349,15 @@ def scatterplot_matrix(df,fig_name=''):
     ty = ticks.get_yticks()
     if len(tx) > 3:
       mx = len(tx)//2
-      ticks.set_xticks([tx[1],tx[mx],tx[-2]])
+      ticks.set_xticks([tx[0],tx[mx],tx[-2]])
     if len(ty) > 3:
       my = len(ty)//2
-      ticks.set_yticks([ty[1],ty[my],ty[-2]])
+      ticks.set_yticks([ty[0],ty[my],ty[-2]])
   # fig.map(plt.scatter)
   if fig_name:
     c = collect_ncs_files.ncs_paper_data_collection()
     plt.savefig(os.path.join(c.figures_dir,fig_name),ext="png",dpi=300)
-  plt.show()
+  # plt.show()
 
 def learn_relations_param_to_good_ncs_effect(data):
   """
@@ -439,9 +449,9 @@ def run():
   explore.find_when_to_use_ncs(df,'r-free final','cartesian ncs restraints')
   # explore.plot_delta_r_values(['r-work final','r-free final'])
   # explore.find_outliers(df,'r-free final','cartesian ncs restraints')
-  # print '+'*50
-  # explore.find_outliers(df,'final clashscore','cartesian ncs restraints')
-  # print '+'*50
+  print '+'*50
+  explore.find_outliers(df,'final clashscore','cartesian ncs restraints')
+  print '+'*50
   # #
   # explore.plot_final_values('r-free final')
   # explore.plot_final_values('final clashscore')

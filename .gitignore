@@ -24,6 +24,7 @@ _*.nb
 *.png
 *.py[cod]
 .svn/
+*.ebignore
 
 /work/Clashes/Data
 /work/Clashes/junk
